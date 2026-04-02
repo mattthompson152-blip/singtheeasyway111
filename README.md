@@ -11,6 +11,7 @@ singtheeasyway/
 ├── testimonials.html       # Testimonials page
 ├── contact.html            # Contact page
 ├── blog.html               # Blog listing page
+├── blog-post-sing-with-emotion.html  # April 1, 2026 - Sing with Emotion
 ├── blog-post-vocal-registers.html    # April 2, 2026 - Vocal Registers
 ├── blog-post-vocal-muscle-memory.html # March 31, 2026 - Muscle Memory
 ├── blog-post-vocal-health.html       # March 30, 2026 - Vocal Health
