@@ -10,6 +10,17 @@ singtheeasyway/
 ├── pricing.html            # Pricing page
 ├── testimonials.html       # Testimonials page
 ├── contact.html            # Contact page
+├── blog.html               # Blog listing page
+├── blog-post-vocal-registers.html    # April 2, 2026 - Vocal Registers
+├── blog-post-vocal-muscle-memory.html # March 31, 2026 - Muscle Memory
+├── blog-post-vocal-health.html       # March 30, 2026 - Vocal Health
+├── blog-post-microphones.html        # March 29, 2026 - Microphones
+├── blog-post-vocal-range.html        # March 28, 2026 - Vocal Range
+├── blog-post-online-vs-inperson.html # March 27, 2026 - Online vs In-Person
+├── blog-post-stage-fright.html       # March 26, 2026 - Stage Fright
+├── blog-post-breathing-techniques.html # March 25, 2026 - Breathing
+├── blog-post-30-day-singing.html     # March 24, 2026 - 30 Day Plan
+├── blog-post-vocal-warmups.html      # March 23, 2026 - Warm-ups
 ├── privacy-policy.html     # Privacy Policy
 ├── environmental-policy.html # Environmental Policy
 ├── sitemap.xml             # XML Sitemap for Google

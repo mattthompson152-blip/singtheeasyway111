@@ -27,20 +27,9 @@
     .blog-excerpt { color: #a3a3a3; margin-bottom: 1rem; line-height: 1.6; }
     .read-more { color: #ff6b4a; text-decoration: none; font-weight: 600; }
     .read-more:hover { text-decoration: underline; }
-    nav { background: #0a0a0a; padding: 1rem 2rem; border-bottom: 1px solid #333; position: relative; }
-    .nav-container { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; }
-    .logo { color: #fff; text-decoration: none; font-weight: 700; }
-    #mainNav { display: flex; list-style: none; gap: 2rem; margin: 0; padding: 0; }
-    #mainNav a { color: #fff; text-decoration: none; font-size: 0.9rem; transition: color 0.3s; }
-    #mainNav a:hover { color: #ff6b4a; }
-    .mobile-menu-toggle { display: none; background: none; border: none; cursor: pointer; padding: 0.5rem; }
-    .mobile-menu-toggle span { display: block; width: 25px; height: 3px; background: #fff; margin: 5px 0; transition: 0.3s; }
-    @media (max-width: 768px) {
-      .mobile-menu-toggle { display: block; }
-      #mainNav { display: none; position: absolute; top: 100%; left: 0; right: 0; background: #0a0a0a; flex-direction: column; padding: 1rem 2rem; border-bottom: 1px solid #333; }
-      #mainNav.active { display: flex; }
-      #mainNav li { margin: 0.5rem 0; }
-    }
+    nav { background: #0a0a0a; padding: 1rem 2rem; border-bottom: 1px solid #333; }
+    nav a { color: #fff; text-decoration: none; margin-right: 2rem; }
+    nav a:hover { color: #ff6b4a; }
     footer { background: #0a0a0a; padding: 2rem; text-align: center; border-top: 1px solid #333; margin-top: 4rem; }
     footer a { color: #a3a3a3; text-decoration: none; margin: 0 1rem; }
     footer a:hover { color: #ff6b4a; }
@@ -64,29 +53,14 @@
 <body>
 
   <nav>
-    <div class="nav-container">
-      <a href="index.html" class="logo">
-        <img src="assets/images/logo.png" alt="Sing The Easy Way" style="height: 40px; width: auto;">
-      </a>
-      
-      <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Toggle menu">
-        <span></span>
-        <span></span>
-        <span></span>
-      </button>
-      
-      <ul id="mainNav">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="about.html">About Matt</a></li>
-        <li><a href="lessons.html">Lessons</a></li>
-        <li><a href="pricing.html">Pricing</a></li>
-        <li><a href="testimonials.html">Testimonials</a></li>
-        <li><a href="contact.html">Contact</a></li>
-        <li><a href="blog.html">Blog</a></li>
-        <li><a href="terms.html">Terms & Conditions</a></li>
-        <li><a href="faq.html">FAQ</a></li>
-      </ul>
-    </div>
+    <a href="index.html">Home</a>
+    <a href="about.html">About Matt</a>
+    <a href="lessons.html">Lessons</a>
+    <a href="pricing.html">Pricing</a>
+    <a href="faq.html">FAQ</a>
+    <a href="blog.html">Blog</a>
+    <a href="terms.html">Terms & Conditions</a>
+    <a href="contact.html">Contact</a>
   </nav>
 
   <div class="container">
@@ -94,37 +68,24 @@
     <p class="subtitle">Tips, insights, and thoughts on singing, technique, and finding your voice.</p>
 
     <div class="blog-grid">
-
-      <!-- Blog Post 0 (Newest - April 2) -->
+      
+      <!-- Blog Post 0 (Newest - March 31) -->
       <article class="blog-card">
         <div class="blog-image">
-          <a href="blog-post-vocal-registers.html"><img src="https://images.unsplash.com/photo-1511379938547-c1f69419868d?w=600&auto=format&fit=crop" alt="Vocal registers - singer transitioning between chest and head voice"></a>
+          <img src="https://images.unsplash.com/photo-1501386761578-eac5c94b800a?w=600&auto=format&fit=crop" alt="Singer belting with passion">
         </div>
         <div class="blog-content">
-          <div class="blog-date">April 2, 2026</div>
-          <h2 class="blog-title"><a href="blog-post-vocal-registers.html">Vocal Registers Explained: How to Master Chest Voice, Head Voice & Mix</a></h2>
-          <p class="blog-excerpt">Learn how to navigate vocal registers smoothly. Master chest voice, head voice, and mix voice with expert techniques from celebrity vocal coach Matt Thompson. Eliminate vocal breaks forever.</p>
-          <a href="blog-post-vocal-registers.html" class="read-more">Read more →</a>
+          <div class="blog-date">April 1, 2026</div>
+          <h2 class="blog-title"><a href="blog-post-belting-techniques.html">Belting Techniques: How to Sing with Power Without Damage</a></h2>
+          <p class="blog-excerpt">Learn safe belting techniques to add power to your voice without damaging your vocal cords. Expert tips from celebrity vocal coach Matt Thompson.</p>
+          <a href="blog-post-belting-techniques.html" class="read-more">Read more →</a>
         </div>
       </article>
 
-      <!-- Blog Post 1 (March 31) -->
+      <!-- Blog Post 1 (March 30) -->
       <article class="blog-card">
         <div class="blog-image">
-          <a href="blog-post-vocal-muscle-memory.html"><img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=600&auto=format&fit=crop" alt="Vocal exercise and muscle memory"></a>
-        </div>
-        <div class="blog-content">
-          <div class="blog-date">March 31, 2026</div>
-          <h2 class="blog-title"><a href="blog-post-vocal-muscle-memory.html">How Vocal Exercise Builds Muscle Memory, Confidence & Voice Strength</a></h2>
-          <p class="blog-excerpt">Discover how consistent vocal exercise creates muscle memory, builds singing confidence, and strengthens your voice over time. Expert insights from celebrity vocal coach Matt Thompson.</p>
-          <a href="blog-post-vocal-muscle-memory.html" class="read-more">Read more →</a>
-        </div>
-      </article>
-
-      <!-- Blog Post 2 (March 30) -->
-      <article class="blog-card">
-        <div class="blog-image">
-          <a href="blog-post-vocal-health.html"><img src="https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?w=600&auto=format&fit=crop" alt="Vocal health"></a>
+          <img src="https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?w=600&auto=format&fit=crop" alt="Vocal health">
         </div>
         <div class="blog-content">
           <div class="blog-date">March 30, 2026</div>
@@ -134,10 +95,10 @@
         </div>
       </article>
 
-      <!-- Blog Post 3 -->
+      <!-- Blog Post 2 -->
       <article class="blog-card">
         <div class="blog-image">
-          <a href="blog-post-microphones.html"><img src="https://images.unsplash.com/photo-1590602847861-f357a9332bbc?w=600&auto=format&fit=crop" alt="Recording microphone"></a>
+          <img src="https://images.unsplash.com/photo-1590602847861-f357a9332bbc?w=600&auto=format&fit=crop" alt="Recording microphone">
         </div>
         <div class="blog-content">
           <div class="blog-date">March 29, 2026</div>
@@ -147,10 +108,10 @@
         </div>
       </article>
 
-      <!-- Blog Post 4 -->
+      <!-- Blog Post 3 -->
       <article class="blog-card">
         <div class="blog-image">
-          <a href="blog-post-vocal-range.html"><img src="https://images.unsplash.com/photo-1514320291840-2e0a9bf2a9ae?w=600&auto=format&fit=crop" alt="Vocal range"></a>
+          <img src="https://images.unsplash.com/photo-1514320291840-2e0a9bf2a9ae?w=600&auto=format&fit=crop" alt="Vocal range">
         </div>
         <div class="blog-content">
           <div class="blog-date">March 28, 2026</div>
@@ -160,10 +121,10 @@
         </div>
       </article>
 
-      <!-- Blog Post 5 -->
+      <!-- Blog Post 4 -->
       <article class="blog-card">
         <div class="blog-image">
-          <a href="blog-post-online-vs-inperson.html"><img src="https://images.unsplash.com/photo-1587825140708-dfaf72ae4b04?w=600&auto=format&fit=crop" alt="Online singing lessons"></a>
+          <img src="https://images.unsplash.com/photo-1587825140708-dfaf72ae4b04?w=600&auto=format&fit=crop" alt="Online singing lessons">
         </div>
         <div class="blog-content">
           <div class="blog-date">March 27, 2026</div>
@@ -173,10 +134,10 @@
         </div>
       </article>
 
-      <!-- Blog Post 6 -->
+      <!-- Blog Post 5 -->
       <article class="blog-card">
         <div class="blog-image">
-          <a href="blog-post-stage-fright.html"><img src="https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=600&auto=format&fit=crop" alt="Stage performance"></a>
+          <img src="https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=600&auto=format&fit=crop" alt="Stage performance">
         </div>
         <div class="blog-content">
           <div class="blog-date">March 26, 2026</div>
@@ -186,10 +147,10 @@
         </div>
       </article>
 
-      <!-- Blog Post 7 -->
+      <!-- Blog Post 6 -->
       <article class="blog-card">
         <div class="blog-image">
-          <a href="blog-post-breathing-techniques.html"><img src="https://images.unsplash.com/photo-1598488035139-bdbb2231ce04?w=600&auto=format&fit=crop" alt="Breathing techniques"></a>
+          <img src="https://images.unsplash.com/photo-1598488035139-bdbb2231ce04?w=600&auto=format&fit=crop" alt="Breathing techniques">
         </div>
         <div class="blog-content">
           <div class="blog-date">March 25, 2026</div>
@@ -199,10 +160,10 @@
         </div>
       </article>
 
-      <!-- Blog Post 8 -->
+      <!-- Blog Post 7 -->
       <article class="blog-card">
         <div class="blog-image">
-          <a href="blog-post-30-day-singing.html"><img src="https://images.unsplash.com/photo-1507838153414-b4b713384a76?w=600&auto=format&fit=crop" alt="30 day singing plan"></a>
+          <img src="https://images.unsplash.com/photo-1507838153414-b4b713384a76?w=600&auto=format&fit=crop" alt="30 day singing plan">
         </div>
         <div class="blog-content">
           <div class="blog-date">March 24, 2026</div>
@@ -212,10 +173,10 @@
         </div>
       </article>
 
-      <!-- Blog Post 9 (Oldest) -->
+      <!-- Blog Post 8 (Oldest) -->
       <article class="blog-card">
         <div class="blog-image">
-          <a href="blog-post-vocal-warmups.html"><img src="https://images.unsplash.com/photo-1470225620780-dba8ba36b745?w=600&auto=format&fit=crop" alt="Vocal warm-ups"></a>
+          <img src="https://images.unsplash.com/photo-1470225620780-dba8ba36b745?w=600&auto=format&fit=crop" alt="Vocal warm-ups">
         </div>
         <div class="blog-content">
           <div class="blog-date">March 23, 2026</div>
@@ -251,13 +212,6 @@
     <a href="terms.html">Terms & Conditions</a>
     <a href="contact.html">Contact</a>
   </footer>
-
-  <script>
-    // Mobile menu toggle
-    document.getElementById('mobileMenuToggle').addEventListener('click', function() {
-      document.getElementById('mainNav').classList.toggle('active');
-    });
-  </script>
 
 </body>
 </html>
