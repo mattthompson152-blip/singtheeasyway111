@@ -1,93 +1,142 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-GB">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Preparing for Online Singing Lessons: Essential Tech Setup Guide | Sing The Easy Way</title>
-    <meta name="description" content="Essential tech setup guide for online singing lessons. Learn about microphones, internet requirements, and room setup for the best virtual vocal coaching experience.">
-    <link rel="stylesheet" href="styles.css">
-    <!-- Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-72QBZSZZBP"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-        gtag('config', 'G-72QBZSZZBP');
-    </script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Preparing for Online Singing Lessons: Essential Tech Setup Guide | Sing The Easy Way</title>
+  <meta name="description" content="Essential tech setup guide for online singing lessons. Learn about microphones, internet requirements, and room setup for the best virtual vocal coaching experience.">
+  
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+  
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Inter', sans-serif; background: #0a0a0a; color: #ffffff; line-height: 1.6; }
+    .container { max-width: 800px; margin: 0 auto; padding: 2rem; }
+    nav { background: #0a0a0a; padding: 1rem 2rem; border-bottom: 1px solid #333; position: relative; }
+    .nav-container { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; }
+    .logo { color: #fff; text-decoration: none; font-weight: 700; }
+    #mainNav { display: flex; list-style: none; gap: 2rem; margin: 0; padding: 0; }
+    #mainNav a { color: #fff; text-decoration: none; font-size: 0.9rem; transition: color 0.3s; }
+    #mainNav a:hover { color: #ff6b4a; }
+    .mobile-menu-toggle { display: none; background: none; border: none; cursor: pointer; padding: 0.5rem; }
+    .mobile-menu-toggle span { display: block; width: 25px; height: 3px; background: #fff; margin: 5px 0; }
+    @media (max-width: 768px) {
+      .mobile-menu-toggle { display: block; }
+      #mainNav { display: none; position: absolute; top: 100%; left: 0; right: 0; background: #0a0a0a; flex-direction: column; padding: 1rem 2rem; border-bottom: 1px solid #333; }
+      #mainNav.active { display: flex; }
+      #mainNav li { margin: 0.5rem 0; }
+    }
+    .blog-post-header { text-align: center; margin-bottom: 2rem; }
+    .blog-date { color: #737373; font-size: 0.875rem; margin-bottom: 0.5rem; }
+    h1 { font-family: 'Playfair Display', serif; font-size: 2.5rem; margin-bottom: 1.5rem; line-height: 1.2; }
+    .featured-image { width: 100%; max-width: 800px; height: auto; border-radius: 8px; margin-bottom: 2rem; }
+    .blog-content h2 { font-family: 'Playfair Display', serif; font-size: 1.5rem; margin: 2rem 0 1rem; color: #fff; }
+    .blog-content p { color: #a3a3a3; margin-bottom: 1rem; line-height: 1.8; }
+    .blog-content ul { color: #a3a3a3; margin: 1rem 0 1rem 2rem; }
+    .blog-content li { margin-bottom: 0.5rem; }
+    .blog-content a { color: #ff6b4a; text-decoration: none; }
+    .blog-content a:hover { text-decoration: underline; }
+    .blog-navigation { display: flex; justify-content: space-between; margin-top: 3rem; padding-top: 2rem; border-top: 1px solid #333; }
+    .blog-navigation a { color: #ff6b4a; text-decoration: none; }
+    footer { background: #0a0a0a; padding: 2rem; text-align: center; border-top: 1px solid #333; margin-top: 4rem; }
+    footer a { color: #a3a3a3; text-decoration: none; margin: 0 1rem; }
+    footer a:hover { color: #ff6b4a; }
+  </style>
+  
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-72QBZSZZBP"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-72QBZSZZBP');
+  </script>
+  
+  <link rel="icon" type="image/x-icon" href="assets/images/favicon.ico">
+  <meta name="theme-color" content="#0a0a0a">
 </head>
 <body>
-    <header>
-        <nav>
-            <div class="logo">
-                <a href="index.html">Sing The Easy Way</a>
-            </div>
-            <ul class="nav-links">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="lessons.html">Lessons</a></li>
-                <li><a href="blog.html">Blog</a></li>
-                <li><a href="contact.html">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
 
-    <main class="blog-post">
-        <article>
-            <div class="blog-post-header">
-                <span class="blog-date">April 3, 2026</span>
-                <h1>Preparing for Online Singing Lessons: Essential Tech Setup Guide</h1>
-            </div>
-            
-            <img src="images/online-singing-lessons-tech-setup.jpg" alt="Online singing lessons tech setup with microphone and computer" class="blog-featured-image">
-            
-            <div class="blog-content">
-                <p>Online singing lessons have revolutionised how we learn to sing. Whether you're taking your first lesson or you're a seasoned vocalist, having the right tech setup can make the difference between a frustrating experience and a transformative one. Here's everything you need to know to prepare for your online singing lessons.</p>
-                
-                <h2>Your Microphone Matters More Than You Think</h2>
-                <p>For online singing lessons, your microphone is your voice's ambassador. While built-in laptop microphones work in a pinch, they compress your vocal range and miss subtle tonal qualities your teacher needs to hear. A USB condenser microphone (£50-£150) captures the full spectrum of your voice, allowing your coach to identify register transitions, breath support issues, and resonance placement accurately.</p>
-                
-                <p><strong>Pro tip:</strong> Position your microphone at nose height, approximately 6-8 inches away, angled slightly downward. This captures your voice without excessive breathing noise or plosives.</p>
-                
-                <h2>Internet Speed: The Silent Lesson Killer</h2>
-                <p>Nothing disrupts online singing lessons like lag or dropped audio. You need a minimum of 5 Mbps upload speed for clear audio transmission. Video requires 10 Mbps or higher. Before your lesson, close unnecessary applications and ask household members to pause downloads or streaming.</p>
-                
-                <p>Wired ethernet connections outperform Wi-Fi every time. If you must use Wi-Fi, position yourself close to your router and reduce interference from other devices.</p>
-                
-                <h2>Room Acoustics on a Budget</h2>
-                <p>Your room affects how your teacher hears you. Hard, empty rooms create echo that masks vocal clarity. Soft furnishings absorb excess sound. Position yourself in a carpeted room if possible, or hang a thick duvet behind your singing space. Avoid corners where bass frequencies build up unnaturally.</p>
-                
-                <h2>Lighting and Camera Position</h2>
-                <p>Your teacher observes posture, facial tension, and mouth shape—crucial elements of vocal technique. Position a light source behind your camera, facing you. Avoid backlighting from windows behind you. Your camera should capture you from the waist up, allowing your teacher to see breathing mechanics and posture.</p>
-                
-                <h2>Backup Plans Save Lessons</h2>
-                <p>Technology fails. Have a backup device ready, keep your teacher's contact details handy, and test your setup 15 minutes before each lesson. Record your lessons (with permission) so you can review feedback later.</p>
-                
-                <h2>The Platform Makes a Difference</h2>
-                <p>Zoom, Skype, and Google Meet each handle audio differently. Zoom's "Original Sound" mode (found in audio settings) disables noise suppression that often mistakes singing for background noise. Enable this for the most accurate vocal transmission during your online singing lessons.</p>
-                
-                <h2>Ready to Start?</h2>
-                <p>With proper preparation, online singing lessons offer convenience without compromising quality. The technology exists to support excellent vocal training—you simply need to set it up correctly.</p>
-                
-                <p><a href="contact.html">Book your online singing lesson today</a> and experience professional vocal coaching from anywhere in the world.</p>
-            </div>
-            
-            <div class="blog-tags">
-                <span>Tags:</span>
-                <a href="#">online singing lessons</a>,
-                <a href="#">vocal coaching</a>,
-                <a href="#">singing tips</a>,
-                <a href="#">vocal lessons</a>
-            </div>
-        </article>
-        
-        <div class="blog-navigation">
-            <a href="blog-post-vocal-registers.html" class="prev-post">← Previous Post</a>
-            <a href="blog-post-choosing-singing-teacher.html" class="next-post">Next Post →</a>
-        </div>
-    </main>
+  <nav>
+    <div class="nav-container">
+      <a href="index.html" class="logo">
+        <img src="assets/images/logo.png" alt="Sing The Easy Way" style="height: 40px; width: auto;">
+      </a>
+      <button class="mobile-menu-toggle" id="mobileMenuToggle">
+        <span></span><span></span><span></span>
+      </button>
+      <ul id="mainNav">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About Matt</a></li>
+        <li><a href="lessons.html">Lessons</a></li>
+        <li><a href="pricing.html">Pricing</a></li>
+        <li><a href="testimonials.html">Testimonials</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="blog.html">Blog</a></li>
+        <li><a href="terms.html">Terms</a></li>
+        <li><a href="faq.html">FAQ</a></li>
+      </ul>
+    </div>
+  </nav>
 
-    <footer>
-        <p>&copy; 2026 Sing The Easy Way. All rights reserved.</p>
-    </footer>
+  <div class="container">
+    <div class="blog-post-header">
+      <div class="blog-date">April 3, 2026</div>
+      <h1>Preparing for Online Singing Lessons: Essential Tech Setup Guide</h1>
+    </div>
+    
+    <img src="https://images.unsplash.com/photo-1590602847861-f357a9332bbc?w=800&auto=format&fit=crop" alt="Tech setup for online singing lessons" class="featured-image">
+    
+    <div class="blog-content">
+      <p>Online singing lessons have revolutionised how we learn to sing. Whether you're taking your first lesson or you're a seasoned vocalist, having the right tech setup can make the difference between a frustrating experience and a transformative one. Here's everything you need to know to prepare for your online singing lessons.</p>
+      
+      <h2>Your Microphone Matters More Than You Think</h2>
+      <p>For online singing lessons, your microphone is your voice's ambassador. While built-in laptop microphones work in a pinch, they compress your vocal range and miss subtle tonal qualities your teacher needs to hear. A USB condenser microphone (£50-£150) captures the full spectrum of your voice, allowing your coach to identify register transitions, breath support issues, and resonance placement accurately.</p>
+      <p><strong>Pro tip:</strong> Position your microphone at nose height, approximately 6-8 inches away, angled slightly downward. This captures your voice without excessive breathing noise or plosives.</p>
+      
+      <h2>Internet Speed: The Silent Lesson Killer</h2>
+      <p>Nothing disrupts online singing lessons like lag or dropped audio. You need a minimum of 5 Mbps upload speed for clear audio transmission. Video requires 10 Mbps or higher. Before your lesson, close unnecessary applications and ask household members to pause downloads or streaming.</p>
+      <p>Wired ethernet connections outperform Wi-Fi every time. If you must use Wi-Fi, position yourself close to your router and reduce interference from other devices.</p>
+      
+      <h2>Room Acoustics on a Budget</h2>
+      <p>Your room affects how your teacher hears you. Hard, empty rooms create echo that masks vocal clarity. Soft furnishings absorb excess sound. Position yourself in a carpeted room if possible, or hang a thick duvet behind your singing space. Avoid corners where bass frequencies build up unnaturally.</p>
+      
+      <h2>Lighting and Camera Position</h2>
+      <p>Your teacher observes posture, facial tension, and mouth shape—crucial elements of vocal technique. Position a light source behind your camera, facing you. Avoid backlighting from windows behind you. Your camera should capture you from the waist up, allowing your teacher to see breathing mechanics and posture.</p>
+      
+      <h2>Backup Plans Save Lessons</h2>
+      <p>Technology fails. Have a backup device ready, keep your teacher's contact details handy, and test your setup 15 minutes before each lesson. Record your lessons (with permission) so you can review feedback later.</p>
+      
+      <h2>The Platform Makes a Difference</h2>
+      <p>Zoom, Skype, and Google Meet each handle audio differently. Zoom's "Original Sound" mode (found in audio settings) disables noise suppression that often mistakes singing for background noise. Enable this for the most accurate vocal transmission during your online singing lessons.</p>
+      
+      <h2>Ready to Start?</h2>
+      <p>With proper preparation, online singing lessons offer convenience without compromising quality. The technology exists to support excellent vocal training—you simply need to set it up correctly.</p>
+      <p><a href="contact.html">Book your online singing lesson today</a> and experience professional vocal coaching from anywhere in the world.</p>
+    </div>
+    
+    <div class="blog-navigation">
+      <a href="blog-post-vocal-registers.html">← Previous Post</a>
+      <a href="blog-post-choosing-singing-teacher.html">Next Post →</a>
+    </div>
+  </div>
+
+  <footer>
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="lessons.html">Lessons</a>
+    <a href="pricing.html">Pricing</a>
+    <a href="faq.html">FAQ</a>
+    <a href="blog.html">Blog</a>
+    <a href="terms.html">Terms</a>
+    <a href="contact.html">Contact</a>
+  </footer>
+
+  <script>
+    document.getElementById('mobileMenuToggle').addEventListener('click', function() {
+      document.getElementById('mainNav').classList.toggle('active');
+    });
+  </script>
+
 </body>
 </html>
