@@ -12,9 +12,26 @@
     * { margin: 0; padding: 0; box-sizing: border-box; }
     body { font-family: 'Inter', sans-serif; background: #0a0a0a; color: #ffffff; line-height: 1.6; }
     .container { max-width: 800px; margin: 0 auto; padding: 2rem; }
-    nav { background: #0a0a0a; padding: 1rem 2rem; border-bottom: 1px solid #333; }
-    nav a { color: #fff; text-decoration: none; margin-right: 2rem; }
-    nav a:hover { color: #ff6b4a; }
+    
+    /* Navigation with Burger Menu */
+    header { background: #0a0a0a; border-bottom: 1px solid #333; position: relative; }
+    nav { max-width: 1200px; margin: 0 auto; padding: 1rem 2rem; display: flex; justify-content: space-between; align-items: center; }
+    .logo a { color: #fff; text-decoration: none; font-weight: 700; font-size: 1.25rem; }
+    .nav-links { display: flex; gap: 2rem; list-style: none; }
+    .nav-links a { color: #a3a3a3; text-decoration: none; transition: color 0.3s; }
+    .nav-links a:hover { color: #ff6b4a; }
+    
+    /* Burger Menu */
+    .burger { display: none; flex-direction: column; cursor: pointer; gap: 5px; }
+    .burger span { width: 25px; height: 3px; background: #fff; transition: 0.3s; }
+    
+    @media (max-width: 768px) {
+      .burger { display: flex; }
+      .nav-links { position: fixed; top: 60px; right: -100%; width: 100%; height: calc(100vh - 60px); background: #0a0a0a; flex-direction: column; align-items: center; padding-top: 2rem; transition: right 0.3s; z-index: 1000; }
+      .nav-links.active { right: 0; }
+      .nav-links li { margin: 1rem 0; }
+    }
+    
     .blog-post-header { text-align: center; margin-bottom: 2rem; }
     .blog-date { color: #737373; font-size: 0.875rem; margin-bottom: 0.5rem; }
     h1 { font-family: 'Playfair Display', serif; font-size: 2.5rem; margin-bottom: 1.5rem; line-height: 1.2; }
@@ -34,6 +51,12 @@
     footer a:hover { color: #ff6b4a; }
   </style>
   
+  <script>
+    function toggleMenu() {
+      document.querySelector('.nav-links').classList.toggle('active');
+    }
+  </script>
+  
   <!-- Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-72QBZSZZBP"></script>
   <script>
@@ -45,13 +68,23 @@
 </head>
 <body>
 
-  <nav>
-    <a href="index.html">Home</a>
-    <a href="about.html">About</a>
-    <a href="lessons.html">Lessons</a>
-    <a href="blog.html">Blog</a>
-    <a href="contact.html">Contact</a>
-  </nav>
+  <header>
+    <nav>
+      <div class="logo"><a href="index.html">Sing The Easy Way</a></div>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="lessons.html">Lessons</a></li>
+        <li><a href="blog.html">Blog</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+      <div class="burger" onclick="toggleMenu()">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </nav>
+  </header>
 
   <div class="container">
     <div class="blog-post-header">

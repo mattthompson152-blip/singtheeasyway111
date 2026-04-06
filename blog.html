@@ -13,12 +13,23 @@
         body { font-family: 'Inter', sans-serif; background: #0a0a0a; color: #ffffff; line-height: 1.6; }
         
         /* Navigation */
-        header { background: #0a0a0a; border-bottom: 1px solid #333; }
+        header { background: #0a0a0a; border-bottom: 1px solid #333; position: relative; }
         nav { max-width: 1200px; margin: 0 auto; padding: 1rem 2rem; display: flex; justify-content: space-between; align-items: center; }
         .logo a { color: #fff; text-decoration: none; font-weight: 700; font-size: 1.25rem; }
         .nav-links { display: flex; gap: 2rem; list-style: none; }
         .nav-links a { color: #a3a3a3; text-decoration: none; transition: color 0.3s; }
         .nav-links a:hover { color: #ff6b4a; }
+        
+        /* Burger Menu */
+        .burger { display: none; flex-direction: column; cursor: pointer; gap: 5px; }
+        .burger span { width: 25px; height: 3px; background: #fff; transition: 0.3s; }
+        
+        @media (max-width: 768px) {
+            .burger { display: flex; }
+            .nav-links { position: fixed; top: 60px; right: -100%; width: 100%; height: calc(100vh - 60px); background: #0a0a0a; flex-direction: column; align-items: center; padding-top: 2rem; transition: right 0.3s; }
+            .nav-links.active { right: 0; }
+            .nav-links li { margin: 1rem 0; }
+        }
         
         /* Blog Header */
         .blog-header { text-align: center; padding: 4rem 2rem 2rem; background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%); border-bottom: 1px solid #333; }
@@ -50,10 +61,14 @@
         @media (max-width: 768px) {
             .blog-header h1 { font-size: 2rem; }
             .blog-grid { grid-template-columns: 1fr; padding: 2rem 1rem; }
-            nav { flex-wrap: wrap; }
-            .nav-links { gap: 1rem; font-size: 0.9rem; }
         }
     </style>
+    
+    <script>
+        function toggleMenu() {
+            document.querySelector('.nav-links').classList.toggle('active');
+        }
+    </script>
     
     <!-- Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-72QBZSZZBP"></script>
@@ -68,13 +83,18 @@
     <header>
         <nav>
             <div class="logo"><a href="index.html">Sing The Easy Way</a></div>
-            <ul class="nav-links">
+            <ul class="nav-links" id="navLinks">
                 <li><a href="index.html">Home</a></li>
                 <li><a href="about.html">About</a></li>
                 <li><a href="lessons.html">Lessons</a></li>
                 <li><a href="blog.html">Blog</a></li>
                 <li><a href="contact.html">Contact</a></li>
             </ul>
+            <div class="burger" onclick="toggleMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
         </nav>
     </header>
 
@@ -241,7 +261,7 @@
                 </div>
             </article>
 
-            <!-- March 25, 2026 - FIXED UNIQUE IMAGE -->
+            <!-- March 25, 2026 -->
             <article class="blog-card">
                 <a href="blog-post-breathing-techniques.html" class="image-link">
                     <img src="https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?w=800&q=80" alt="Singer practicing diaphragmatic breathing techniques for online singing lessons" loading="lazy">
