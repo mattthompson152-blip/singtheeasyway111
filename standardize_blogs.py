@@ -1,33 +1,44 @@
-<!DOCTYPE html>
+#!/usr/bin/env python3
+"""
+Blog Post Standardization Script
+Converts all blog posts to use the same header/footer as main site pages
+"""
+
+import os
+import re
+import glob
+
+# Standard head template (up to </head>)
+HEAD_TEMPLATE = '''<!DOCTYPE html>
 <html lang="en">
 <head>
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-72QBZSZZBP"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
+      function gtag(){{dataLayer.push(arguments);}}
       gtag('js', new Date());
       gtag('config', 'G-72QBZSZZBP');
     </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Preparing for Online Singing Lessons: Essential Tech Setup Guide | Sing The Easy Way</title>
-    <meta name="description" content="Essential tech setup guide for online singing lessons. Learn about microphones, internet requirements, and room setup for the best virtual vocal coaching experience.">
+    <title>{title}</title>
+    <meta name="description" content="{description}">
     <meta name="author" content="Matt Thompson">
     <meta name="robots" content="index, follow">
     
     <!-- Open Graph -->
-    <meta property="og:title" content="Preparing for Online Singing Lessons: Essential Tech Setup Guide | Sing The Easy Way">
-    <meta property="og:description" content="Essential tech setup guide for online singing lessons. Learn about microphones, internet requirements, and room setup for the best virtual vocal coaching experience.">
+    <meta property="og:title" content="{title}">
+    <meta property="og:description" content="{description}">
     <meta property="og:type" content="article">
-    <meta property="og:url" content="https://singtheeasyway.com/blog-post-tech-setup.html">
+    <meta property="og:url" content="https://singtheeasyway.com/{filename}">
     
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Preparing for Online Singing Lessons: Essential Tech Setup Guide | Sing The Easy Way">
-    <meta name="twitter:description" content="Essential tech setup guide for online singing lessons. Learn about microphones, internet requirements, and room setup for the best virtual vocal coaching experience.">
+    <meta name="twitter:title" content="{title}">
+    <meta name="twitter:description" content="{description}">
     
     <!-- Canonical -->
-    <link rel="canonical" href="https://singtheeasyway.com/blog-post-tech-setup.html">
+    <link rel="canonical" href="https://singtheeasyway.com/{filename}">
     
     <!-- Stylesheets -->
     <link rel="stylesheet" href="assets/css/style.css">
@@ -43,7 +54,10 @@
     <meta name="theme-color" content="#0a0a0a">
 </head>
 <body>
-<!-- Navigation -->
+'''
+
+# Navigation template
+NAV_TEMPLATE = '''<!-- Navigation -->
 <nav>
     <div class="nav-container">
         <a href="index.html" class="logo">
@@ -69,62 +83,10 @@
         </ul>
     </div>
 </nav>
+'''
 
-<!-- Blog Post Header -->
-<section class="page-header">
-    <div class="container">
-        <div class="breadcrumb">
-            <a href="index.html">Home</a> / <a href="blog.html">Blog</a>
-        </div>
-    </div>
-</section>
-
-<article class="blog-post">
-<div class="container">
-<div class="container">
-    <div class="blog-post-header">
-      <div class="blog-date">April 3, 2026</div>
-      <h1>Preparing for Online Singing Lessons: Essential Tech Setup Guide</h1>
-    </div>
-    
-    <img src="https://images.unsplash.com/photo-1590602847861-f357a9332bbc?w=800&auto=format&fit=crop" alt="Tech setup for online singing lessons at home" class="featured-image">
-    
-    <div class="blog-content">
-      <p>Online singing lessons have revolutionised how we learn to sing. Whether you're taking your first lesson or you're a seasoned vocalist, having the right tech setup can make the difference between a frustrating experience and a transformative one. Here's everything you need to know to prepare for your online singing lessons.</p>
-      
-      <h2>Your Microphone Matters More Than You Think</h2>
-      <p>For online singing lessons, your microphone is your voice's ambassador. While built-in laptop microphones work in a pinch, they compress your vocal range and miss subtle tonal qualities your teacher needs to hear. A USB condenser microphone (£50-£150) captures the full spectrum of your voice, allowing your coach to identify register transitions, breath support issues, and resonance placement accurately.</p>
-      <p><strong>Pro tip:</strong> Position your microphone at nose height, approximately 6-8 inches away, angled slightly downward. This captures your voice without excessive breathing noise or plosives.</p>
-      
-      <h2>Internet Speed: The Silent Lesson Killer</h2>
-      <p>Nothing disrupts online singing lessons like lag or dropped audio. You need a minimum of 5 Mbps upload speed for clear audio transmission. Video requires 10 Mbps or higher. Before your lesson, close unnecessary applications and ask household members to pause downloads or streaming.</p>
-      <p>Wired ethernet connections outperform Wi-Fi every time. If you must use Wi-Fi, position yourself close to your router and reduce interference from other devices.</p>
-      
-      <h2>Room Acoustics on a Budget</h2>
-      <p>Your room affects how your teacher hears you. Hard, empty rooms create echo that masks vocal clarity. Soft furnishings absorb excess sound. Position yourself in a carpeted room if possible, or hang a thick duvet behind your singing space. Avoid corners where bass frequencies build up unnaturally.</p>
-      
-      <h2>Lighting and Camera Position</h2>
-      <p>Your teacher observes posture, facial tension, and mouth shape—crucial elements of vocal technique. Position a light source behind your camera, facing you. Avoid backlighting from windows behind you. Your camera should capture you from the waist up, allowing your teacher to see breathing mechanics and posture.</p>
-      
-      <h2>Backup Plans Save Lessons</h2>
-      <p>Technology fails. Have a backup device ready, keep your teacher's contact details handy, and test your setup 15 minutes before each lesson. Record your lessons (with permission) so you can review feedback later.</p>
-      
-      <h2>The Platform Makes a Difference</h2>
-      <p>Zoom, Skype, and Google Meet each handle audio differently. Zoom's "Original Sound" mode (found in audio settings) disables noise suppression that often mistakes singing for background noise. Enable this for the most accurate vocal transmission during your online singing lessons.</p>
-      
-      <h2>Ready to Start?</h2>
-      <p>With proper preparation, online singing lessons offer convenience without compromising quality. The technology exists to support excellent vocal training—you simply need to set it up correctly.</p>
-      <p><a href="contact.html">Book your online singing lesson today</a> and experience professional vocal coaching from anywhere in the world.</p>
-    </div>
-    
-    <div class="blog-navigation">
-      <a href="blog-post-vocal-registers.html">← Previous Post</a>
-      <a href="blog-post-choosing-singing-teacher.html">Next Post →</a>
-    </div>
-  </div>
-</div>
-</article>
-<!-- Footer -->
+# Footer template
+FOOTER_TEMPLATE = '''<!-- Footer -->
 <footer>
     <div class="container">
         <div class="footer-grid">
@@ -253,3 +215,94 @@
 </script>
 </body>
 </html>
+'''
+
+def extract_content(filepath):
+    """Extract title, meta description, and article content from blog post"""
+    with open(filepath, 'r', encoding='utf-8') as f:
+        content = f.read()
+    
+    # Extract title
+    title_match = re.search(r'<title>(.*?)</title>', content, re.IGNORECASE)
+    title = title_match.group(1) if title_match else "Blog Post"
+    
+    # Extract meta description
+    desc_match = re.search(r'<meta[^>]*name=["\']description["\'][^>]*content=["\']([^"\']*)["\']', content, re.IGNORECASE)
+    if not desc_match:
+        desc_match = re.search(r'<meta[^>]*content=["\']([^"\']*)["\'][^>]*name=["\']description["\']', content, re.IGNORECASE)
+    description = desc_match.group(1) if desc_match else "Professional online singing lessons with Matt Thompson"
+    
+    # Extract article content (everything between first <h1> or <div class="container"> and </body> or footer)
+    # Look for the main article content
+    article_match = re.search(r'(<article.*?>.*?</article>)', content, re.DOTALL | re.IGNORECASE)
+    if article_match:
+        article_content = article_match.group(1)
+    else:
+        # Try to find content between nav and footer
+        content_match = re.search(r'</nav>\s*(.*?)\s*(?:<footer>|</body>)', content, re.DOTALL | re.IGNORECASE)
+        if content_match:
+            article_content = content_match.group(1).strip()
+            # Wrap in article tag if not already
+            if not article_content.startswith('<article'):
+                article_content = f'<article class="blog-post">\n<div class="container">\n{article_content}\n</div>\n</article>'
+        else:
+            article_content = '<article class="blog-post"><div class="container"><p>Content loading...</p></div></article>'
+    
+    return title, description, article_content
+
+def process_blog_post(filepath):
+    """Process a single blog post file"""
+    filename = os.path.basename(filepath)
+    
+    print(f"Processing: {filename}")
+    
+    title, description, article_content = extract_content(filepath)
+    
+    # Build new HTML
+    new_html = HEAD_TEMPLATE.format(
+        title=title,
+        description=description,
+        filename=filename
+    )
+    new_html += NAV_TEMPLATE
+    new_html += f'''
+<!-- Blog Post Header -->
+<section class="page-header">
+    <div class="container">
+        <div class="breadcrumb">
+            <a href="index.html">Home</a> / <a href="blog.html">Blog</a>
+        </div>
+    </div>
+</section>
+
+'''
+    new_html += article_content
+    new_html += '\n'
+    new_html += FOOTER_TEMPLATE
+    
+    return new_html
+
+def main():
+    """Process all blog post files"""
+    os.chdir('/root/.openclaw/workspace/singtheeasyway111')
+    
+    blog_files = glob.glob('blog-post-*.html')
+    
+    print(f"Found {len(blog_files)} blog post files to process")
+    
+    for filepath in blog_files:
+        try:
+            new_content = process_blog_post(filepath)
+            
+            # Write new content
+            with open(filepath, 'w', encoding='utf-8') as f:
+                f.write(new_content)
+            
+            print(f"  ✓ Updated {filepath}")
+        except Exception as e:
+            print(f"  ✗ Error processing {filepath}: {e}")
+    
+    print("\nDone! All blog posts standardized.")
+
+if __name__ == '__main__':
+    main()
