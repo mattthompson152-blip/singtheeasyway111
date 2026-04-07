@@ -1,309 +1,512 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-72QBZSZZBP"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-72QBZSZZBP');
+</script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Blog - Sing The Easy Way</title>
+    <title>Blog - Sing The Easy Way | Online Singing Lessons</title>
     <meta name="description" content="Expert singing tips, vocal techniques, and insights from celebrity vocal coach Matt Thompson. Improve your voice with professional online singing lessons advice.">
+    <meta name="author" content="Matt Thompson">
+    <meta name="robots" content="index, follow">
     
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+    <!-- Open Graph -->
+    <meta property="og:title" content="Blog - Sing The Easy Way | Online Singing Lessons">
+    <meta property="og:description" content="Expert singing tips, vocal techniques, and insights from celebrity vocal coach Matt Thompson.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://singtheeasyway.com/blog.html">
     
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Blog - Sing The Easy Way">
+    <meta name="twitter:description" content="Expert singing tips and vocal techniques from celebrity vocal coach Matt Thompson.">
+    
+    <!-- Canonical -->
+    <link rel="canonical" href="https://singtheeasyway.com/blog.html">
+    
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/responsive.css">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="assets/images/favicon.ico">
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/images/favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/images/favicon-32x32.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/images/apple-touch-icon.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <meta name="theme-color" content="#0a0a0a">
+    
+    <!-- Blog-specific styles -->
     <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: 'Inter', sans-serif; background: #0a0a0a; color: #ffffff; line-height: 1.6; }
-        
-        /* Navigation */
-        header { background: #0a0a0a; border-bottom: 1px solid #333; position: relative; }
-        nav { max-width: 1200px; margin: 0 auto; padding: 1rem 2rem; display: flex; justify-content: space-between; align-items: center; }
-        .logo a { color: #fff; text-decoration: none; font-weight: 700; font-size: 1.25rem; }
-        .nav-links { display: flex; gap: 2rem; list-style: none; }
-        .nav-links a { color: #a3a3a3; text-decoration: none; transition: color 0.3s; }
-        .nav-links a:hover { color: #ff6b4a; }
-        
-        /* Burger Menu */
-        .burger { display: none; flex-direction: column; cursor: pointer; gap: 5px; }
-        .burger span { width: 25px; height: 3px; background: #fff; transition: 0.3s; }
-        
-        @media (max-width: 768px) {
-            .burger { display: flex; }
-            .nav-links { position: fixed; top: 60px; right: -100%; width: 100%; height: calc(100vh - 60px); background: #0a0a0a; flex-direction: column; align-items: center; padding-top: 2rem; transition: right 0.3s; }
-            .nav-links.active { right: 0; }
-            .nav-links li { margin: 1rem 0; }
+        /* Blog Header */
+        .blog-header {
+            text-align: center;
+            padding: 4rem 2rem 2rem;
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            border-bottom: 1px solid #333;
+        }
+        .blog-header h1 {
+            font-family: var(--font-display);
+            font-size: 3rem;
+            margin-bottom: 0.5rem;
+            color: #fff;
+        }
+        .blog-header p {
+            color: #a3a3a3;
+            font-size: 1.2rem;
         }
         
-        /* Blog Header */
-        .blog-header { text-align: center; padding: 4rem 2rem 2rem; background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%); border-bottom: 1px solid #333; }
-        .blog-header h1 { font-family: 'Playfair Display', serif; font-size: 3rem; margin-bottom: 0.5rem; }
-        .blog-header p { color: #a3a3a3; font-size: 1.2rem; }
-        
         /* Blog Grid */
-        .blog-grid { max-width: 1200px; margin: 0 auto; padding: 3rem 2rem; display: grid; grid-template-columns: repeat(auto-fill, minmax(350px, 1fr)); gap: 2rem; }
+        .blog-grid {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 3rem 2rem;
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 2rem;
+        }
         
         /* Blog Card */
-        .blog-card { background: #1a1a1a; border: 1px solid #333; border-radius: 12px; overflow: hidden; transition: transform 0.3s, border-color 0.3s; }
-        .blog-card:hover { border-color: #ff6b4a; transform: translateY(-4px); }
-        .blog-card .image-link { display: block; }
-        .blog-card img { width: 100%; height: 200px; object-fit: cover; display: block; }
-        .blog-card-content { padding: 1.5rem; }
-        .blog-date { display: inline-block; padding: 4px 12px; background: rgba(255, 107, 53, 0.15); border: 1px solid #ff6b4a; color: #ff6b4a; border-radius: 20px; font-size: 0.8rem; margin-bottom: 1rem; }
-        .blog-card h2 { font-size: 1.25rem; margin-bottom: 0.75rem; }
-        .blog-card h2 a { color: #fff; text-decoration: none; }
-        .blog-card h2 a:hover { color: #ff6b4a; }
-        .blog-card p { color: #a3a3a3; font-size: 0.95rem; margin-bottom: 1rem; line-height: 1.6; }
-        .read-more { color: #ff6b4a; text-decoration: none; font-weight: 600; }
-        .read-more:hover { text-decoration: underline; }
-        
-        /* Footer */
-        footer { padding: 2rem; text-align: center; border-top: 1px solid #333; background: #0a0a0a; }
-        footer p { color: #737373; font-size: 0.9rem; }
+        .blog-card {
+            background: #1a1a1a;
+            border: 1px solid #333;
+            border-radius: 12px;
+            overflow: hidden;
+            transition: transform 0.3s, border-color 0.3s;
+        }
+        .blog-card:hover {
+            border-color: #ff6b4a;
+            transform: translateY(-4px);
+        }
+        .blog-card .image-link {
+            display: block;
+        }
+        .blog-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            display: block;
+        }
+        .blog-card-content {
+            padding: 1.5rem;
+        }
+        .blog-date {
+            display: inline-block;
+            padding: 4px 12px;
+            background: rgba(255, 107, 53, 0.15);
+            border: 1px solid #ff6b4a;
+            color: #ff6b4a;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            margin-bottom: 1rem;
+        }
+        .blog-card h2 {
+            font-size: 1.25rem;
+            margin-bottom: 0.75rem;
+        }
+        .blog-card h2 a {
+            color: #fff;
+            text-decoration: none;
+        }
+        .blog-card h2 a:hover {
+            color: #ff6b4a;
+        }
+        .blog-card p {
+            color: #a3a3a3;
+            font-size: 0.95rem;
+            margin-bottom: 1rem;
+            line-height: 1.6;
+        }
+        .read-more {
+            color: #ff6b4a;
+            text-decoration: none;
+            font-weight: 600;
+        }
+        .read-more:hover {
+            text-decoration: underline;
+        }
         
         /* Responsive */
         @media (max-width: 768px) {
-            .blog-header h1 { font-size: 2rem; }
-            .blog-grid { grid-template-columns: 1fr; padding: 2rem 1rem; }
+            .blog-header h1 {
+                font-size: 2rem;
+            }
+            .blog-grid {
+                grid-template-columns: 1fr;
+                padding: 2rem 1rem;
+            }
         }
     </style>
-    
-    <script>
-        function toggleMenu() {
-            document.querySelector('.nav-links').classList.toggle('active');
-        }
-    </script>
-    
-    <!-- Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-72QBZSZZBP"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-        gtag('config', 'G-72QBZSZZBP');
-    </script>
 </head>
 <body>
-    <header>
-        <nav>
-            <div class="logo"><a href="index.html">Sing The Easy Way</a></div>
-            <ul class="nav-links" id="navLinks">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="lessons.html">Lessons</a></li>
-                <li><a href="blog.html">Blog</a></li>
-                <li><a href="contact.html">Contact</a></li>
-            </ul>
-            <div class="burger" onclick="toggleMenu()">
-                <span></span>
-                <span></span>
-                <span></span>
+
+<!-- Navigation -->
+<nav>
+    <div class="nav-container">
+        <a href="index.html" class="logo">
+            <img src="assets/images/logo.png" alt="Sing The Easy Way" style="height: 40px; width: auto;">
+        </a>
+        
+        <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Toggle menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+        
+        <ul id="mainNav">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Matt</a></li>
+            <li><a href="lessons.html">Lessons</a></li>
+            <li><a href="pricing.html">Pricing</a></li>
+            <li><a href="testimonials.html">Testimonials</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="blog.html">Blog</a></li>
+            <li><a href="terms.html">Terms & Conditions</a></li>
+            <li><a href="faq.html">FAQ</a></li>
+        </ul>
+    </div>
+</nav>
+
+<!-- Blog Header -->
+<section class="blog-header">
+    <div class="container">
+        <div class="breadcrumb">
+            <a href="index.html">Home</a> / Blog
+        </div>
+        <h1>Singing Blog</h1>
+        <p>Tips, insights, and thoughts on singing, technique, and finding your voice.</p>
+    </div>
+</section>
+
+<!-- Blog Grid -->
+<section class="blog-grid">
+    <!-- April 6, 2026 -->
+    <article class="blog-card">
+        <a href="blog-post-vibrato-mastery.html" class="image-link">
+            <img src="https://images.unsplash.com/photo-1516280440614-6697288d5d38?w=800&q=80" alt="Singer practicing vibrato technique during online singing lesson" loading="lazy">
+        </a>
+        <div class="blog-card-content">
+            <span class="blog-date">April 6, 2026</span>
+            <h2><a href="blog-post-vibrato-mastery.html">How to Develop Natural Vibrato: A Step by Step Guide</a></h2>
+            <p>Learn how to develop beautiful, natural vibrato in your singing voice. Expert techniques to add warmth and expression to your online singing lessons.</p>
+            <a href="blog-post-vibrato-mastery.html" class="read-more">Read more →</a>
+        </div>
+    </article>
+
+    <!-- April 5, 2026 -->
+    <article class="blog-card">
+        <a href="blog-post-first-online-lesson.html" class="image-link">
+            <img src="https://images.unsplash.com/photo-1593642632559-0c6d3fc62b89?w=800&q=80" alt="Student preparing for first online singing lesson at home with headphones and laptop" loading="lazy">
+        </a>
+        <div class="blog-card-content">
+            <span class="blog-date">April 5, 2026</span>
+            <h2><a href="blog-post-first-online-lesson.html">What to Expect From Your First Online Singing Lesson</a></h2>
+            <p>Your complete guide to online singing lessons. What to expect, how to prepare, and why learning to sing from home might be the best decision you ever make.</p>
+            <a href="blog-post-first-online-lesson.html" class="read-more">Read more →</a>
+        </div>
+    </article>
+
+    <!-- April 4, 2026 -->
+    <article class="blog-card">
+        <a href="blog-post-choosing-singing-teacher.html" class="image-link">
+            <img src="https://images.unsplash.com/photo-1598387993441-a364f854c3e1?w=800&q=80" alt="Woman taking virtual singing lesson with online singing teacher via laptop at home" loading="lazy">
+        </a>
+        <div class="blog-card-content">
+            <span class="blog-date">April 4, 2026</span>
+            <h2><a href="blog-post-choosing-singing-teacher.html">7 Essential Questions to Ask Before Hiring an Online Singing Teacher</a></h2>
+            <p>What to ask a singing teacher before committing. Essential questions that expose poor teaching methods and help you find quality online singing lessons.</p>
+            <a href="blog-post-choosing-singing-teacher.html" class="read-more">Read more →</a>
+        </div>
+    </article>
+
+    <!-- April 3, 2026 -->
+    <article class="blog-card">
+        <a href="blog-post-tech-setup.html" class="image-link">
+            <img src="https://images.unsplash.com/photo-1598488035139-bdbb2231ce04?w=800&q=80" alt="Tech setup for online singing lessons with microphone and computer" loading="lazy">
+        </a>
+        <div class="blog-card-content">
+            <span class="blog-date">April 3, 2026</span>
+            <h2><a href="blog-post-tech-setup.html">Preparing for Online Singing Lessons: Essential Tech Setup Guide</a></h2>
+            <p>Essential tech setup guide for online singing lessons. Learn about microphones, internet requirements, and room setup for the best virtual vocal coaching.</p>
+            <a href="blog-post-tech-setup.html" class="read-more">Read more →</a>
+        </div>
+    </article>
+
+    <!-- April 2, 2026 -->
+    <article class="blog-card">
+        <a href="blog-post-vocal-registers.html" class="image-link">
+            <img src="https://images.unsplash.com/photo-1511379938547-c1f69419868d?w=800&q=80" alt="Vocal registers diagram showing chest voice head voice and mixed voice" loading="lazy">
+        </a>
+        <div class="blog-card-content">
+            <span class="blog-date">April 2, 2026</span>
+            <h2><a href="blog-post-vocal-registers.html">Vocal Registers Explained: How to Master Chest Voice, Head Voice & Mix</a></h2>
+            <p>Learn how to navigate vocal registers smoothly. Master chest voice, head voice, and mix voice with expert techniques from celebrity vocal coach.</p>
+            <a href="blog-post-vocal-registers.html" class="read-more">Read more →</a>
+        </div>
+    </article>
+
+    <!-- April 1, 2026 -->
+    <article class="blog-card">
+        <a href="blog-post-sing-with-emotion.html" class="image-link">
+            <img src="https://images.unsplash.com/photo-1525201548942-d8732f6617a0?w=800&q=80" alt="Singer performing with emotional connection on stage" loading="lazy">
+        </a>
+        <div class="blog-card-content">
+            <span class="blog-date">April 1, 2026</span>
+            <h2><a href="blog-post-sing-with-emotion.html">How to Sing with Emotion: Moving Beyond Technique to Touch Hearts</a></h2>
+            <p>Learn how to sing with genuine emotion and connect with your audience. Expert techniques from celebrity vocal coach Matt Thompson.</p>
+            <a href="blog-post-sing-with-emotion.html" class="read-more">Read more →</a>
+        </div>
+    </article>
+
+    <!-- March 31, 2026 -->
+    <article class="blog-card">
+        <a href="blog-post-vocal-muscle-memory.html" class="image-link">
+            <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=800&q=80" alt="Daily vocal practice routine for muscle memory" loading="lazy">
+        </a>
+        <div class="blog-card-content">
+            <span class="blog-date">March 31, 2026</span>
+            <h2><a href="blog-post-vocal-muscle-memory.html">How Vocal Exercise Builds Muscle Memory, Confidence & Voice Strength</a></h2>
+            <p>Discover how consistent vocal exercise creates muscle memory, builds singing confidence, and strengthens your voice over time.</p>
+            <a href="blog-post-vocal-muscle-memory.html" class="read-more">Read more →</a>
+        </div>
+    </article>
+
+    <!-- March 30, 2026 -->
+    <article class="blog-card">
+        <a href="blog-post-vocal-health.html" class="image-link">
+            <img src="https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?w=800&q=80" alt="Vocal health tips hydration and vocal care" loading="lazy">
+        </a>
+        <div class="blog-card-content">
+            <span class="blog-date">March 30, 2026</span>
+            <h2><a href="blog-post-vocal-health.html">Vocal Health: How to Keep Your Voice in Peak Condition</a></h2>
+            <p>Essential vocal health tips for singers. Learn how to protect your voice, prevent strain, and maintain optimal vocal health.</p>
+            <a href="blog-post-vocal-health.html" class="read-more">Read more →</a>
+        </div>
+    </article>
+
+    <!-- March 29, 2026 -->
+    <article class="blog-card">
+        <a href="blog-post-microphones.html" class="image-link">
+            <img src="https://images.unsplash.com/photo-1590602847861-f357a9332bbc?w=800&q=80" alt="Professional microphone for home vocal recording" loading="lazy">
+        </a>
+        <div class="blog-card-content">
+            <span class="blog-date">March 29, 2026</span>
+            <h2><a href="blog-post-microphones.html">The Best Microphones for Home Vocal Recording</a></h2>
+            <p>Professional vocal coach recommendations for home recording microphones. Find the best mic for your voice and budget.</p>
+            <a href="blog-post-microphones.html" class="read-more">Read more →</a>
+        </div>
+    </article>
+
+    <!-- March 28, 2026 -->
+    <article class="blog-card">
+        <a href="blog-post-vocal-range.html" class="image-link">
+            <img src="https://images.unsplash.com/photo-1514320291840-2e0a9bf2a9ae?w=800&q=80" alt="Singer testing vocal range on piano" loading="lazy">
+        </a>
+        <div class="blog-card-content">
+            <span class="blog-date">March 28, 2026</span>
+            <h2><a href="blog-post-vocal-range.html">How to Find Your Vocal Range (And Expand It)</a></h2>
+            <p>Learn how to find your vocal range and safely expand it. Expert techniques to increase your high and low notes.</p>
+            <a href="blog-post-vocal-range.html" class="read-more">Read more →</a>
+        </div>
+    </article>
+
+    <!-- March 27, 2026 -->
+    <article class="blog-card">
+        <a href="blog-post-online-vs-inperson.html" class="image-link">
+            <img src="https://images.unsplash.com/photo-1587825140708-dfaf72ae4b04?w=800&q=80" alt="Comparison of online singing lessons versus in person lessons" loading="lazy">
+        </a>
+        <div class="blog-card-content">
+            <span class="blog-date">March 27, 2026</span>
+            <h2><a href="blog-post-online-vs-inperson.html">Online Singing Lessons vs In-Person: Which is Better?</a></h2>
+            <p>Comparing online singing lessons to in-person training. Learn the pros and cons of virtual vocal coaching.</p>
+            <a href="blog-post-online-vs-inperson.html" class="read-more">Read more →</a>
+        </div>
+    </article>
+
+    <!-- March 26, 2026 -->
+    <article class="blog-card">
+        <a href="blog-post-stage-fright.html" class="image-link">
+            <img src="https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=800&q=80" alt="Singer overcoming stage fright and performance anxiety" loading="lazy">
+        </a>
+        <div class="blog-card-content">
+            <span class="blog-date">March 26, 2026</span>
+            <h2><a href="blog-post-stage-fright.html">How to Overcome Stage Fright & Performance Anxiety</a></h2>
+            <p>Proven strategies to overcome stage fright and performance anxiety. Learn techniques used by professional singers.</p>
+            <a href="blog-post-stage-fright.html" class="read-more">Read more →</a>
+        </div>
+    </article>
+
+    <!-- March 25, 2026 -->
+    <article class="blog-card">
+        <a href="blog-post-breathing-techniques.html" class="image-link">
+            <img src="https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?w=800&q=80" alt="Singer practicing diaphragmatic breathing techniques for online singing lessons" loading="lazy">
+        </a>
+        <div class="blog-card-content">
+            <span class="blog-date">March 25, 2026</span>
+            <h2><a href="blog-post-breathing-techniques.html">Breathing Techniques for Singers: The Complete Guide</a></h2>
+            <p>Master the breathing techniques professional singers use. Learn diaphragmatic breathing, breath control, and support.</p>
+            <a href="blog-post-breathing-techniques.html" class="read-more">Read more →</a>
+        </div>
+    </article>
+
+    <!-- March 24, 2026 -->
+    <article class="blog-card">
+        <a href="blog-post-30-day-singing.html" class="image-link">
+            <img src="https://images.unsplash.com/photo-1507838153414-b4b713384a76?w=800&q=80" alt="30 day singing improvement plan calendar" loading="lazy">
+        </a>
+        <div class="blog-card-content">
+            <span class="blog-date">March 24, 2026</span>
+            <h2><a href="blog-post-30-day-singing.html">How to Improve Your Singing Voice in 30 Days</a></h2>
+            <p>A proven 30-day plan to transform your singing voice. Daily exercises, practice routines, and expert tips.</p>
+            <a href="blog-post-30-day-singing.html" class="read-more">Read more →</a>
+        </div>
+    </article>
+
+    <!-- March 23, 2026 -->
+    <article class="blog-card">
+        <a href="blog-post-vocal-warmups.html" class="image-link">
+            <img src="https://images.unsplash.com/photo-1470225620780-dba8ba36b745?w=800&q=80" alt="Vocal warm up exercises daily routine" loading="lazy">
+        </a>
+        <div class="blog-card-content">
+            <span class="blog-date">March 23, 2026</span>
+            <h2><a href="blog-post-vocal-warmups.html">5 Vocal Warm-Ups Professionals Use Every Day</a></h2>
+            <p>Learn the 5 essential vocal warm-ups professional singers use daily. Improve your vocal range, prevent strain.</p>
+            <a href="blog-post-vocal-warmups.html" class="read-more">Read more →</a>
+        </div>
+    </article>
+</section>
+
+<!-- Footer -->
+<footer>
+    <div class="container">
+        <div class="footer-grid">
+            <div>
+                <div class="footer-logo">Sing The Easy Way</div>
+                <p>Professional online singing lessons with celebrity vocal coach Matt Thompson. 25+ years of experience teaching recording artists, film stars, and performers worldwide.</p>
+                <p class="trading-as">Previously trading as Arpeggio Music</p>
+                <div class="socials">
+                    <a href="https://www.instagram.com/singtheeasyway" target="_blank" rel="noopener">Instagram</a>
+                    <a href="https://www.tiktok.com/@mattsjourneysofar" target="_blank" rel="noopener">TikTok</a>
+                </div>
             </div>
-        </nav>
-    </header>
+            
+            <div>
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About Matt</a></li>
+                    <li><a href="lessons.html">Lessons</a></li>
+                    <li><a href="pricing.html">Pricing</a></li>
+                    <li><a href="testimonials.html">Testimonials</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                    <li><a href="terms.html">Terms & Conditions</a></li>
+                    <li><a href="faq.html">FAQ</a></li>
+                </ul>
+            </div>
+            
+            <div>
+                <h3>Legal</h3>
+                <ul>
+                    <li><a href="privacy-policy.html">Privacy Policy</a></li>
+                    <li><a href="environmental-policy.html">Environmental Policy</a></li>
+                    <li><a href="sitemap.xml">Sitemap</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-contact">
+                <h3>Get in Touch</h3>
+                <p><a href="tel:+447792511393">+44 7792 511393</a></p>
+                <p><a href="mailto:matt@singtheeasyway.com">matt@singtheeasyway.com</a></p>
+                <button class="btn primary enquiry-btn" data-enquiry style="margin-top: var(--space-sm);">Send Enquiry</button>
+                <p class="lesson-platforms">Lessons via FaceTime, WhatsApp & Microsoft Teams</p>
+                <p class="lesson-platforms">Teaching from my mobile studio</p>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>&copy; 2026 Sing The Easy Way. All rights reserved.</p>
+            <div class="footer-legal">
+                <a href="privacy-policy.html">Privacy Policy</a>
+                <a href="environmental-policy.html">Environmental Policy</a>
+            </div>
+            <p>Celebrity Vocal Coach Matt Thompson</p>
+        </div>
+    </div>
+</footer>
 
-    <main>
-        <section class="blog-header">
-            <h1>Singing Blog</h1>
-            <p>Tips, insights, and thoughts on singing, technique, and finding your voice.</p>
-        </section>
+<!-- Floating CTA -->
+<div class="floating-cta">
+    <button class="btn primary book-btn" data-booking>Book Lesson</button>
+    <button class="btn secondary enquiry-btn" data-enquiry>Enquire</button>
+</div>
 
-        <section class="blog-grid">
-            <!-- April 6, 2026 -->
-            <article class="blog-card">
-                <a href="blog-post-vibrato-mastery.html" class="image-link">
-                    <img src="https://images.unsplash.com/photo-1516280440614-6697288d5d38?w=800&q=80" alt="Singer practicing vibrato technique during online singing lesson" loading="lazy">
-                </a>
-                <div class="blog-card-content">
-                    <span class="blog-date">April 6, 2026</span>
-                    <h2><a href="blog-post-vibrato-mastery.html">How to Develop Natural Vibrato: A Step by Step Guide</a></h2>
-                    <p>Learn how to develop beautiful, natural vibrato in your singing voice. Expert techniques to add warmth and expression to your online singing lessons.</p>
-                    <a href="blog-post-vibrato-mastery.html" class="read-more">Read more →</a>
-                </div>
-            </article>
+<!-- Scripts -->
+<script src="assets/js/main.js"></script>
 
-            <!-- April 5, 2026 -->
-            <article class="blog-card">
-                <a href="blog-post-first-online-lesson.html" class="image-link">
-                    <img src="https://images.unsplash.com/photo-1593642632559-0c6d3fc62b89?w=800&q=80" alt="Student preparing for first online singing lesson at home with headphones and laptop" loading="lazy">
-                </a>
-                <div class="blog-card-content">
-                    <span class="blog-date">April 5, 2026</span>
-                    <h2><a href="blog-post-first-online-lesson.html">What to Expect From Your First Online Singing Lesson</a></h2>
-                    <p>Your complete guide to online singing lessons. What to expect, how to prepare, and why learning to sing from home might be the best decision you ever make.</p>
-                    <a href="blog-post-first-online-lesson.html" class="read-more">Read more →</a>
-                </div>
-            </article>
+<!-- SimplyBook.me Widget -->
+<script src="//widget.simplybook.me/v2/widget/widget.js"></script>
+<script>
+    var widget = new SimplybookWidget({
+        "widget_type": "button",
+        "url": "https://singtheeasyway.simplybook.me",
+        "theme": "default",
+        "theme_settings": {
+            "timeline_hide_unavailable": "1",
+            "hide_past_days": "0",
+            "timeline_show_end_time": "0",
+            "timeline_modern_display": "as_slots",
+            "sb_base_color": "#ff6b35",
+            "display_item_mode": "block",
+            "booking_nav_bg_color": "#ff6b35",
+            "body_bg_color": "#f2f2f2",
+            "dark_font_color": "#474747",
+            "light_font_color": "#f5fcff",
+            "btn_color_1": "#ff6b35",
+            "sb_company_label_color": "#552f34",
+            "hide_img_mode": "1",
+            "show_sidebar": "1"
+        },
+        "timeline": "modern",
+        "datepicker": "top_calendar",
+        "is_rtl": false,
+        "app_config": {
+            "clear_session": 0,
+            "allow_switch_to_ada": 0,
+            "predefined": []
+        }
+    });
+</script>
 
-            <!-- April 4, 2026 -->
-            <article class="blog-card">
-                <a href="blog-post-choosing-singing-teacher.html" class="image-link">
-                    <img src="https://images.unsplash.com/photo-1598387993441-a364f854c3e1?w=800&q=80" alt="Woman taking virtual singing lesson with online singing teacher via laptop at home" loading="lazy">
-                </a>
-                <div class="blog-card-content">
-                    <span class="blog-date">April 4, 2026</span>
-                    <h2><a href="blog-post-choosing-singing-teacher.html">7 Essential Questions to Ask Before Hiring an Online Singing Teacher</a></h2>
-                    <p>What to ask a singing teacher before committing. Essential questions that expose poor teaching methods and help you find quality online singing lessons.</p>
-                    <a href="blog-post-choosing-singing-teacher.html" class="read-more">Read more →</a>
-                </div>
-            </article>
-
-            <!-- April 3, 2026 -->
-            <article class="blog-card">
-                <a href="blog-post-tech-setup.html" class="image-link">
-                    <img src="https://images.unsplash.com/photo-1598488035139-bdbb2231ce04?w=800&q=80" alt="Tech setup for online singing lessons with microphone and computer" loading="lazy">
-                </a>
-                <div class="blog-card-content">
-                    <span class="blog-date">April 3, 2026</span>
-                    <h2><a href="blog-post-tech-setup.html">Preparing for Online Singing Lessons: Essential Tech Setup Guide</a></h2>
-                    <p>Essential tech setup guide for online singing lessons. Learn about microphones, internet requirements, and room setup for the best virtual vocal coaching.</p>
-                    <a href="blog-post-tech-setup.html" class="read-more">Read more →</a>
-                </div>
-            </article>
-
-            <!-- April 2, 2026 -->
-            <article class="blog-card">
-                <a href="blog-post-vocal-registers.html" class="image-link">
-                    <img src="https://images.unsplash.com/photo-1511379938547-c1f69419868d?w=800&q=80" alt="Vocal registers diagram showing chest voice head voice and mixed voice" loading="lazy">
-                </a>
-                <div class="blog-card-content">
-                    <span class="blog-date">April 2, 2026</span>
-                    <h2><a href="blog-post-vocal-registers.html">Vocal Registers Explained: How to Master Chest Voice, Head Voice & Mix</a></h2>
-                    <p>Learn how to navigate vocal registers smoothly. Master chest voice, head voice, and mix voice with expert techniques from celebrity vocal coach.</p>
-                    <a href="blog-post-vocal-registers.html" class="read-more">Read more →</a>
-                </div>
-            </article>
-
-            <!-- April 1, 2026 -->
-            <article class="blog-card">
-                <a href="blog-post-sing-with-emotion.html" class="image-link">
-                    <img src="https://images.unsplash.com/photo-1525201548942-d8732f6617a0?w=800&q=80" alt="Singer performing with emotional connection on stage" loading="lazy">
-                </a>
-                <div class="blog-card-content">
-                    <span class="blog-date">April 1, 2026</span>
-                    <h2><a href="blog-post-sing-with-emotion.html">How to Sing with Emotion: Moving Beyond Technique to Touch Hearts</a></h2>
-                    <p>Learn how to sing with genuine emotion and connect with your audience. Expert techniques from celebrity vocal coach Matt Thompson.</p>
-                    <a href="blog-post-sing-with-emotion.html" class="read-more">Read more →</a>
-                </div>
-            </article>
-
-            <!-- March 31, 2026 -->
-            <article class="blog-card">
-                <a href="blog-post-vocal-muscle-memory.html" class="image-link">
-                    <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=800&q=80" alt="Daily vocal practice routine for muscle memory" loading="lazy">
-                </a>
-                <div class="blog-card-content">
-                    <span class="blog-date">March 31, 2026</span>
-                    <h2><a href="blog-post-vocal-muscle-memory.html">How Vocal Exercise Builds Muscle Memory, Confidence & Voice Strength</a></h2>
-                    <p>Discover how consistent vocal exercise creates muscle memory, builds singing confidence, and strengthens your voice over time.</p>
-                    <a href="blog-post-vocal-muscle-memory.html" class="read-more">Read more →</a>
-                </div>
-            </article>
-
-            <!-- March 30, 2026 -->
-            <article class="blog-card">
-                <a href="blog-post-vocal-health.html" class="image-link">
-                    <img src="https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?w=800&q=80" alt="Vocal health tips hydration and vocal care" loading="lazy">
-                </a>
-                <div class="blog-card-content">
-                    <span class="blog-date">March 30, 2026</span>
-                    <h2><a href="blog-post-vocal-health.html">Vocal Health: How to Keep Your Voice in Peak Condition</a></h2>
-                    <p>Essential vocal health tips for singers. Learn how to protect your voice, prevent strain, and maintain optimal vocal health.</p>
-                    <a href="blog-post-vocal-health.html" class="read-more">Read more →</a>
-                </div>
-            </article>
-
-            <!-- March 29, 2026 -->
-            <article class="blog-card">
-                <a href="blog-post-microphones.html" class="image-link">
-                    <img src="https://images.unsplash.com/photo-1590602847861-f357a9332bbc?w=800&q=80" alt="Professional microphone for home vocal recording" loading="lazy">
-                </a>
-                <div class="blog-card-content">
-                    <span class="blog-date">March 29, 2026</span>
-                    <h2><a href="blog-post-microphones.html">The Best Microphones for Home Vocal Recording</a></h2>
-                    <p>Professional vocal coach recommendations for home recording microphones. Find the best mic for your voice and budget.</p>
-                    <a href="blog-post-microphones.html" class="read-more">Read more →</a>
-                </div>
-            </article>
-
-            <!-- March 28, 2026 -->
-            <article class="blog-card">
-                <a href="blog-post-vocal-range.html" class="image-link">
-                    <img src="https://images.unsplash.com/photo-1514320291840-2e0a9bf2a9ae?w=800&q=80" alt="Singer testing vocal range on piano" loading="lazy">
-                </a>
-                <div class="blog-card-content">
-                    <span class="blog-date">March 28, 2026</span>
-                    <h2><a href="blog-post-vocal-range.html">How to Find Your Vocal Range (And Expand It)</a></h2>
-                    <p>Learn how to find your vocal range and safely expand it. Expert techniques to increase your high and low notes.</p>
-                    <a href="blog-post-vocal-range.html" class="read-more">Read more →</a>
-                </div>
-            </article>
-
-            <!-- March 27, 2026 -->
-            <article class="blog-card">
-                <a href="blog-post-online-vs-inperson.html" class="image-link">
-                    <img src="https://images.unsplash.com/photo-1587825140708-dfaf72ae4b04?w=800&q=80" alt="Comparison of online singing lessons versus in person lessons" loading="lazy">
-                </a>
-                <div class="blog-card-content">
-                    <span class="blog-date">March 27, 2026</span>
-                    <h2><a href="blog-post-online-vs-inperson.html">Online Singing Lessons vs In-Person: Which is Better?</a></h2>
-                    <p>Comparing online singing lessons to in-person training. Learn the pros and cons of virtual vocal coaching.</p>
-                    <a href="blog-post-online-vs-inperson.html" class="read-more">Read more →</a>
-                </div>
-            </article>
-
-            <!-- March 26, 2026 -->
-            <article class="blog-card">
-                <a href="blog-post-stage-fright.html" class="image-link">
-                    <img src="https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=800&q=80" alt="Singer overcoming stage fright and performance anxiety" loading="lazy">
-                </a>
-                <div class="blog-card-content">
-                    <span class="blog-date">March 26, 2026</span>
-                    <h2><a href="blog-post-stage-fright.html">How to Overcome Stage Fright & Performance Anxiety</a></h2>
-                    <p>Proven strategies to overcome stage fright and performance anxiety. Learn techniques used by professional singers.</p>
-                    <a href="blog-post-stage-fright.html" class="read-more">Read more →</a>
-                </div>
-            </article>
-
-            <!-- March 25, 2026 -->
-            <article class="blog-card">
-                <a href="blog-post-breathing-techniques.html" class="image-link">
-                    <img src="https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?w=800&q=80" alt="Singer practicing diaphragmatic breathing techniques for online singing lessons" loading="lazy">
-                </a>
-                <div class="blog-card-content">
-                    <span class="blog-date">March 25, 2026</span>
-                    <h2><a href="blog-post-breathing-techniques.html">Breathing Techniques for Singers: The Complete Guide</a></h2>
-                    <p>Master the breathing techniques professional singers use. Learn diaphragmatic breathing, breath control, and support.</p>
-                    <a href="blog-post-breathing-techniques.html" class="read-more">Read more →</a>
-                </div>
-            </article>
-
-            <!-- March 24, 2026 -->
-            <article class="blog-card">
-                <a href="blog-post-30-day-singing.html" class="image-link">
-                    <img src="https://images.unsplash.com/photo-1507838153414-b4b713384a76?w=800&q=80" alt="30 day singing improvement plan calendar" loading="lazy">
-                </a>
-                <div class="blog-card-content">
-                    <span class="blog-date">March 24, 2026</span>
-                    <h2><a href="blog-post-30-day-singing.html">How to Improve Your Singing Voice in 30 Days</a></h2>
-                    <p>A proven 30-day plan to transform your singing voice. Daily exercises, practice routines, and expert tips.</p>
-                    <a href="blog-post-30-day-singing.html" class="read-more">Read more →</a>
-                </div>
-            </article>
-
-            <!-- March 23, 2026 -->
-            <article class="blog-card">
-                <a href="blog-post-vocal-warmups.html" class="image-link">
-                    <img src="https://images.unsplash.com/photo-1470225620780-dba8ba36b745?w=800&q=80" alt="Vocal warm up exercises daily routine" loading="lazy">
-                </a>
-                <div class="blog-card-content">
-                    <span class="blog-date">March 23, 2026</span>
-                    <h2><a href="blog-post-vocal-warmups.html">5 Vocal Warm-Ups Professionals Use Every Day</a></h2>
-                    <p>Learn the 5 essential vocal warm-ups professional singers use daily. Improve your vocal range, prevent strain.</p>
-                    <a href="blog-post-vocal-warmups.html" class="read-more">Read more →</a>
-                </div>
-            </article>
-        </section>
-    </main>
-
-    <footer>
-        <p>&copy; 2026 Sing The Easy Way. All rights reserved.</p>
-    </footer>
+<!-- Jotform Widget -->
+<script src="https://form.jotform.com/static/feedback2.js"></script>
+<script>
+    var jotformFeedback = new JotformFeedback({
+        formId: '260846246211049',
+        base: 'https://form.jotform.com/',
+        windowTitle: 'Send an Enquiry',
+        background: '#ff6b35',
+        fontColor: '#FFFFFF',
+        type: '1',
+        height: 500,
+        width: 700,
+        openOnLoad: false
+    });
+</script>
+<script>
+    // Booking button handler
+    document.querySelectorAll('.book-btn').forEach(btn => {
+        btn.addEventListener('click', function() {
+            if (typeof widget !== 'undefined' && widget.open) {
+                widget.open();
+            }
+        });
+    });
+</script>
 </body>
 </html>
