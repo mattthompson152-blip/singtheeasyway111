@@ -540,6 +540,18 @@
   </footer>
 
   <script src="assets/js/main.js"></script>
+  <script>
+    (function() {
+      var mobileMenuToggle = document.getElementById('mobileMenuToggle');
+      var mainNav = document.getElementById('mainNav');
+      if (mobileMenuToggle && mainNav) {
+        mobileMenuToggle.addEventListener('click', function() {
+          mobileMenuToggle.classList.toggle('active');
+          mainNav.classList.toggle('active');
+        });
+      }
+    })();
+  </script>
 
 </body>
 </html>
