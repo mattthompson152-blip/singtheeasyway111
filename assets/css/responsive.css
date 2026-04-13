@@ -69,7 +69,8 @@
         display: flex;
     }
     
-    nav ul {
+    nav ul,
+    .nav-container ul {
         display: none;
     }
     
