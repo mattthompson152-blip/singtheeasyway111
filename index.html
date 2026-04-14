@@ -113,7 +113,19 @@
     </div>
 </header>
 
-  </div>
+<!-- Email Community Signup -->
+<section class="email-signup-section" style="background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%); border-top: 1px solid #333; border-bottom: 1px solid #333; padding: 2rem 0;">
+    <div class="container" style="text-align: center;">
+        <div style="max-width: 600px; margin: 0 auto;">
+            <h2 style="font-family: var(--font-display); font-size: 1.8rem; margin-bottom: 0.5rem; color: #fff;">Come and Join Matt's Singing Community</h2>
+            <p style="color: #a3a3a3; margin-bottom: 1.5rem; font-size: 1rem;">Get exclusive singing tips, vocal exercises, and insider secrets delivered straight to your inbox.</p>
+            <form id="emailSignupForm" style="display: flex; flex-wrap: wrap; gap: 1rem; justify-content: center; align-items: center;">
+                <input type="email" id="communityEmail" placeholder="Enter your email address" required style="flex: 1; min-width: 250px; padding: 1rem 1.5rem; border: 2px solid #333; border-radius: 8px; background: #0a0a0a; color: #fff; font-size: 1rem; transition: border-color 0.3s;" onfocus="this.style.borderColor='#ff6b4a'" onblur="this.style.borderColor='#333'">
+                <button type="submit" class="btn primary" style="padding: 1rem 2rem; font-size: 1rem; white-space: nowrap;">Join the Community</button>
+            </form>
+            <p style="color: #666; font-size: 0.8rem; margin-top: 1rem;">No spam. Unsubscribe anytime. Join thousands of singers worldwide.</p>
+        </div>
+    </div>
 </section>
 
 <!-- Motorhome Section with Question Mark -->
@@ -358,10 +370,6 @@
     </div>
 </section>
 
-<script type="text/javascript" src="https://form.jotform.com/jsform/260871603876061"></script>
-    
-  </div>
-</section>    
 <!-- Latest Blog Posts -->
 <section class="blog-preview-section">
     <div class="container">
@@ -935,6 +943,19 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
     });
+    
+    // Email Community Signup - open Jotform with email pre-filled
+    const emailSignupForm = document.getElementById('emailSignupForm');
+    if (emailSignupForm) {
+        emailSignupForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            const email = document.getElementById('communityEmail').value;
+            if (email) {
+                // Open Jotform with email pre-filled
+                window.open('https://form.jotform.com/260871603876061?email=' + encodeURIComponent(email), '_blank');
+            }
+        });
+    }
 });
 </script>
 
