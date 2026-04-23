@@ -148,6 +148,9 @@ nav ul.active {
     padding: var(--space-md);
     border-bottom: 1px solid var(--border);
     z-index: 999;
+    max-height: calc(100vh - 60px);
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
 }
 
 nav ul.active li {
