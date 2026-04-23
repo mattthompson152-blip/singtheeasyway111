@@ -232,10 +232,13 @@ nav ul.active {
     left: 0;
     right: 0;
     background: rgba(13, 13, 13, 0.98);
-    padding: var(--space-md);
+    padding: 8px 16px;
     border-bottom: 1px solid var(--border);
     z-index: 999;
     animation: slideDown 0.3s ease;
+    max-height: calc(100vh - 60px);
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
 }
 
 @keyframes slideDown {
@@ -250,11 +253,13 @@ nav ul.active {
 }
 
 nav ul.active li {
-    margin: var(--space-xs) 0;
+    margin: 0;
+    line-height: 1;
 }
 
 nav ul.active a {
     display: block;
-    padding: var(--space-xs) 0;
-    font-size: 1rem;
+    padding: 6px 0;
+    font-size: 0.95rem;
+    line-height: 1.2;
 }
