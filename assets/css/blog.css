@@ -85,12 +85,16 @@ article li {
 }
 
 /* Featured Image */
-.featured-image {
+.featured-image,
+.blog-hero-image {
     width: 100%;
+    height: auto;
+    max-height: 450px;
     aspect-ratio: 16/9;
     object-fit: cover;
     border-radius: 8px;
     margin: var(--space-md) 0 var(--space-lg);
+    display: block;
 }
 
 /* Tip Box */
@@ -194,12 +198,30 @@ article li {
     article h1 {
         font-size: 1.75rem;
     }
-    
+
     article h2 {
         font-size: 1.4rem;
     }
-    
+
     .blog-post {
         padding: var(--space-md) 0;
+    }
+
+    .featured-image,
+    .blog-hero-image {
+        max-height: 280px;
+        aspect-ratio: 4/3;
+        margin: var(--space-sm) 0 var(--space-md);
+        border-radius: 6px;
+    }
+}
+
+@media (max-width: 480px) {
+    .featured-image,
+    .blog-hero-image {
+        max-height: 220px;
+        aspect-ratio: 3/2;
+        margin: var(--space-xs) 0 var(--space-sm);
+        border-radius: 4px;
     }
 }
