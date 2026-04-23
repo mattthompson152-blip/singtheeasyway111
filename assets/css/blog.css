@@ -193,6 +193,36 @@ article li {
     border-bottom: 1px solid var(--border);
 }
 
+/* Back to Blog Button */
+.back-to-blog {
+    max-width: 800px;
+    margin: 0 auto var(--space-sm);
+    padding: 0 var(--space-md);
+}
+
+.back-to-blog .btn {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-xs);
+    padding: 12px 24px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--text-secondary);
+    background: transparent;
+    border: 2px solid var(--border);
+    border-radius: var(--radius);
+    text-decoration: none;
+    transition: all var(--transition);
+    cursor: pointer;
+}
+
+.back-to-blog .btn:hover {
+    color: var(--accent);
+    border-color: var(--accent);
+    background: rgba(255, 107, 53, 0.05);
+    transform: translateX(-4px);
+}
+
 /* Responsive */
 @media (max-width: 768px) {
     article h1 {
