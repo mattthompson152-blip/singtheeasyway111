@@ -224,18 +224,39 @@
 /* =======================================
    NAVIGATION ACTIVE STATE
    ======================================= */
-nav ul.active {
-    display: flex !important;
-    flex-direction: column;
-    position: absolute;
-    top: 100%;
-    left: 0;
-    right: 0;
-    background: rgba(13, 13, 13, 0.98);
-    padding: var(--space-md);
-    border-bottom: 1px solid var(--border);
-    z-index: 999;
-    animation: slideDown 0.3s ease;
+@media (max-width: 768px) {
+    nav ul.active,
+    .nav-container ul.active {
+        display: flex !important;
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: rgba(13, 13, 13, 0.98);
+        padding: 8px 16px !important;
+        border-bottom: 1px solid var(--border);
+        z-index: 999;
+        animation: slideDown 0.3s ease;
+        max-height: calc(100vh - 60px);
+        overflow-y: auto;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    nav ul.active li,
+    .nav-container ul.active li {
+        margin: 0 !important;
+        padding: 0 !important;
+        line-height: 1 !important;
+    }
+
+    nav ul.active a,
+    .nav-container ul.active a {
+        display: block;
+        padding: 6px 0 !important;
+        font-size: 0.95rem !important;
+        line-height: 1.2 !important;
+    }
 }
 
 @keyframes slideDown {
@@ -247,14 +268,4 @@ nav ul.active {
         opacity: 1;
         transform: translateY(0);
     }
-}
-
-nav ul.active li {
-    margin: var(--space-xs) 0;
-}
-
-nav ul.active a {
-    display: block;
-    padding: var(--space-xs) 0;
-    font-size: 1rem;
 }
