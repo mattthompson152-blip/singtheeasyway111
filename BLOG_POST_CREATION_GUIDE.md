@@ -232,6 +232,180 @@ repo/
 
 ---
 
+## For Your Telegram Bot — Authentication & Automation
+
+### GitHub Token Setup
+
+Your bot needs a GitHub token to commit changes. Store this securely as an environment variable — **never** hardcode the token in script files.
+
+### Setting Up the Token
+
+On your server, create an environment variable file that your bot can read:
+
+```bash
+# Create a .env file in your bot's directory
+echo "GITHUB_TOKEN=your_token_here" > /path/to/bot/.env
+
+# Secure the file so only you can read it
+chmod 600 /path/to/bot/.env
+```
+
+In your bot script, read it from the environment:
+```python
+import os
+from dotenv import load_dotenv
+
+load_dotenv()  # Loads variables from .env file
+token = os.environ.get('GITHUB_TOKEN')
+```
+
+### Repository Details
+
+| Setting | Value |
+|---|---|
+| Repository | `mattthompson152-blip/singtheeasyway111` |
+| Branch | `main` |
+| Token | Stored in `.env` file (provided separately) |
+
+### Daily Automation — 7:00 AM Every Day
+
+To run the blog post creation automatically at 7:00 AM daily, set up a cron job:
+
+```bash
+# Edit your crontab
+crontab -e
+
+# Add this line for 7:00 AM daily:
+0 7 * * * cd /path/to/singtheeasyway111 && python3 /path/to/your/bot-script.py >> /var/log/blog-bot.log 2>&1
+```
+
+This will:
+- Run every day at 7:00 AM
+- Execute your bot script
+- Log output to `/var/log/blog-bot.log`
+
+### Bot Script Structure
+
+Your Python bot script should follow this order:
+
+```python
+#!/usr/bin/env python3
+"""
+Daily Blog Post Bot for Sing The Easy Way
+Runs at 7:00 AM every day
+"""
+
+import os
+import subprocess
+from datetime import datetime
+
+REPO_PATH = "/path/to/singtheeasyway111"
+BLOG_DIR = os.path.join(REPO_PATH, "assets/blog")
+WAITING_DIR = os.path.join(REPO_PATH, "assets/images/imageswaitingtobeposted")
+POSTED_DIR = os.path.join(REPO_PATH, "assets/images/imagesalreadyposted")
+TEMPLATE_PATH = os.path.join(BLOG_DIR, "BLOG_POST_TEMPLATE.html")
+BLOG_HTML_PATH = os.path.join(REPO_PATH, "blog.html")
+GITHUB_TOKEN = os.environ.get('GITHUB_TOKEN')
+
+def create_blog_post():
+    # 1. Check if images are available
+    images = [f for f in os.listdir(WAITING_DIR) if f.endswith('.jpg')]
+    if not images:
+        print("No images available in imageswaitingtobeposted/")
+        return False
+    
+    # 2. Pick the first image
+    image = images[0]
+    
+    # 3. Generate date (today)
+    today = datetime.now()
+    date_code = today.strftime("%d%m")  # DDMM format
+    date_display = today.strftime("%B %d, %Y")  # e.g., "April 24, 2026"
+    
+    # 4. Generate topic and filename (customise this logic)
+    # Your bot should generate or select a topic
+    topic = "your-topic-here"  # Replace with actual topic generation
+    filename = f"blog-post-{topic}-{date_code}.html"
+    
+    # 5. Read template and replace placeholders
+    with open(TEMPLATE_PATH, 'r') as f:
+        content = f.read()
+    
+    # Replace all placeholders (customise content generation)
+    content = content.replace('[POST TITLE]', 'Your Generated Title')
+    content = content.replace('[DATE, 2026]', date_display)
+    content = content.replace('[CATEGORY]', 'Singing Tips')
+    content = content.replace('[IMAGE-NAME]', image.replace('.jpg', ''))
+    # ... replace other placeholders
+    
+    # 6. Save blog post
+    post_path = os.path.join(BLOG_DIR, filename)
+    with open(post_path, 'w') as f:
+        f.write(content)
+    
+    # 7. Move image to posted folder
+    os.rename(
+        os.path.join(WAITING_DIR, image),
+        os.path.join(POSTED_DIR, image)
+    )
+    
+    # 8. Add card to blog.html
+    # Read current blog.html and insert new card at top
+    with open(BLOG_HTML_PATH, 'r') as f:
+        blog_content = f.read()
+    
+    # Insert card HTML (before first existing card)
+    card_html = f'''    <article class="blog-card">
+        <a href="assets/blog/{filename}" class="image-link">
+            <img src="assets/images/imagesalreadyposted/{image}" alt="Blog post image" loading="lazy">
+        </a>
+        <div class="blog-card-content">
+            <span class="blog-date">{date_display}</span>
+            <h2><a href="assets/blog/{filename}">Your Post Title</a></h2>
+            <p>Your post description.</p>
+            <a href="assets/blog/{filename}" class="read-more">Read more →</a>
+        </div>
+    </article>
+
+'''
+    # Find insertion point (after <section class="blog-grid">)
+    blog_content = blog_content.replace(
+        '<section class="blog-grid">\n',
+        '<section class="blog-grid">\n' + card_html
+    )
+    
+    with open(BLOG_HTML_PATH, 'w') as f:
+        f.write(blog_content)
+    
+    # 9. Git commit and push
+    os.chdir(REPO_PATH)
+    subprocess.run(['git', 'add', '-A'], check=True)
+    subprocess.run(['git', 'commit', '-m', f'Add blog post for {date_display}'], check=False)
+    subprocess.run(['git', 'push', 'origin', 'main'], check=True)
+    
+    print(f"Blog post created: {filename}")
+    print(f"Image used: {image}")
+    return True
+
+if __name__ == "__main__":
+    create_blog_post()
+```
+
+### Daily Checklist for the Bot
+
+Before running each day:
+- [ ] Check `imageswaitingtobeposted/` has at least 1 image
+- [ ] Check `imageswaitingtobeposted/` is not empty (stop if it is)
+- [ ] Generate or select a topic for the blog post
+- [ ] Generate the blog content using the template
+- [ ] Use today's date in DDMM format
+- [ ] Move the used image to `imagesalreadyposted/`
+- [ ] Add card to top of `blog.html`
+- [ ] Commit with message: "Add blog post for [Date]"
+- [ ] Push to `main` branch
+
+---
+
 ## Important Rules
 
 1. **Always use the template** — never copy an existing blog post
@@ -241,3 +415,4 @@ repo/
 5. **New cards go at the top** of blog.html
 6. **No visible template text** — remove all placeholder comments before publishing
 7. **Every post must have** a tip box and a CTA consultation button
+8. **Never hardcode tokens** — always use environment variables
