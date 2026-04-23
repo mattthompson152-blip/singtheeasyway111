@@ -1,0 +1,772 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-72QBZSZZBP"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-72QBZSZZBP');
+    </script>
+    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Free Vocal Exercises & Scales | Sing The Easy Way</title>
+    <meta name="description" content="Free vocal exercises and scales for singers of all levels. Warm-ups, range builders, agility drills and more. Used by celebrity vocal coach Matt Thompson in online singing lessons.">
+    <meta name="author" content="Matt Thompson">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="Free Vocal Exercises & Scales | Sing The Easy Way">
+    <meta property="og:description" content="Free vocal exercises and scales for singers of all levels. Warm-ups, range builders, agility drills and more.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://singtheeasyway.com/vocal-exercises.html">
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Free Vocal Exercises & Scales | Sing The Easy Way">
+    <meta name="twitter:description" content="Free vocal exercises and scales for singers of all levels.">
+    
+    <!-- Canonical -->
+    <link rel="canonical" href="https://singtheeasyway.com/vocal-exercises.html">
+    
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/cookie-consent.css">
+    <link rel="stylesheet" href="assets/css/responsive.css">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="assets/images/favicon.ico">
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/images/favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/images/favicon-32x32.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/images/apple-touch-icon.png">
+    <link rel="manifest" href="site.webmanifest">
+    <meta name="theme-color" content="#0a0a0a">
+    
+    <style>
+        /* Vocal Exercises Page Styles */
+        .exercises-hero {
+            text-align: center;
+            padding: 4rem 2rem 2rem;
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            border-bottom: 1px solid #333;
+        }
+        .exercises-hero h1 {
+            font-family: var(--font-display);
+            font-size: 3rem;
+            margin-bottom: 0.5rem;
+            color: #fff;
+        }
+        .exercises-hero p {
+            color: #a3a3a3;
+            font-size: 1.2rem;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        /* Range Selector */
+        .range-selector {
+            max-width: 800px;
+            margin: 2rem auto;
+            padding: 0 2rem;
+        }
+        .range-selector h2 {
+            text-align: center;
+            margin-bottom: 1rem;
+        }
+        .range-buttons {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            justify-content: center;
+        }
+        .range-btn {
+            padding: 10px 20px;
+            border: 2px solid var(--border);
+            background: transparent;
+            color: var(--text-secondary);
+            border-radius: 30px;
+            cursor: pointer;
+            transition: all 0.3s;
+            font-size: 0.9rem;
+            font-weight: 600;
+        }
+        .range-btn:hover, .range-btn.active {
+            border-color: var(--accent);
+            color: var(--accent);
+            background: rgba(255,107,53,0.1);
+        }
+        .range-info {
+            text-align: center;
+            margin-top: 1rem;
+            padding: 1rem;
+            background: var(--bg-card);
+            border-radius: 8px;
+            display: none;
+        }
+        .range-info.visible {
+            display: block;
+        }
+        .range-info p {
+            color: var(--text-secondary);
+            margin: 0;
+        }
+        
+        /* Exercise Sections */
+        .exercise-section {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+        .exercise-section h2 {
+            color: var(--accent);
+            margin-bottom: 0.5rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid var(--accent);
+        }
+        .exercise-section > p {
+            color: var(--text-secondary);
+            margin-bottom: 1.5rem;
+        }
+        
+        /* Exercise Card */
+        .exercise-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            transition: border-color 0.3s;
+        }
+        .exercise-card:hover {
+            border-color: var(--accent);
+        }
+        .exercise-card h3 {
+            color: #fff;
+            margin-bottom: 0.5rem;
+        }
+        .exercise-card .description {
+            color: var(--text-secondary);
+            margin-bottom: 1rem;
+            line-height: 1.6;
+        }
+        .exercise-card .benefits {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+            font-style: italic;
+        }
+        
+        /* Audio Player */
+        .audio-player {
+            width: 100%;
+            margin: 0.5rem 0 1rem;
+        }
+        .audio-player audio {
+            width: 100%;
+            height: 40px;
+            border-radius: 8px;
+        }
+        
+        /* Note Pattern Display */
+        .note-pattern {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px;
+            margin: 0.5rem 0 1rem;
+            align-items: center;
+        }
+        .note-pattern .note {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            min-width: 36px;
+            height: 36px;
+            background: rgba(255,107,53,0.15);
+            border: 1px solid rgba(255,107,53,0.3);
+            border-radius: 6px;
+            color: var(--accent);
+            font-size: 0.85rem;
+            font-weight: 600;
+            padding: 0 6px;
+        }
+        .note-pattern .arrow {
+            color: var(--text-muted);
+            font-size: 0.8rem;
+        }
+        
+        /* Instructions Box */
+        .instructions {
+            background: rgba(255,255,255,0.03);
+            border-left: 3px solid var(--accent);
+            padding: 1rem 1rem 1rem 1.2rem;
+            border-radius: 0 8px 8px 0;
+            margin-top: 0.5rem;
+        }
+        .instructions strong {
+            color: var(--accent);
+        }
+        .instructions p {
+            color: var(--text-secondary);
+            margin: 0;
+            font-size: 0.9rem;
+            line-height: 1.6;
+        }
+        
+        /* CTA Box */
+        .cta-box {
+            background: linear-gradient(135deg, var(--accent) 0%, #e55a3b 100%);
+            padding: 2rem;
+            border-radius: 8px;
+            text-align: center;
+            margin: 2rem auto;
+            max-width: 800px;
+        }
+        .cta-box h3 {
+            color: #fff;
+            margin-bottom: 0.5rem;
+        }
+        .cta-box p {
+            color: rgba(255,255,255,0.9);
+            margin-bottom: 1rem;
+        }
+        .cta-box .btn {
+            display: inline-block;
+            background: #fff;
+            color: var(--accent);
+            padding: 12px 24px;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: 600;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .exercises-hero h1 {
+                font-size: 2rem;
+            }
+            .range-buttons {
+                gap: 8px;
+            }
+            .range-btn {
+                padding: 8px 16px;
+                font-size: 0.85rem;
+            }
+            .note-pattern {
+                gap: 4px;
+            }
+            .note-pattern .note {
+                min-width: 30px;
+                height: 30px;
+                font-size: 0.75rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<!-- Navigation -->
+<nav>
+    <div class="nav-container">
+        <a href="index.html" class="logo">
+            <img src="assets/images/logo.png" alt="Sing The Easy Way" style="height: 40px; width: auto;">
+        </a>
+        
+        <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Toggle menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+        
+        <ul id="mainNav">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Matt</a></li>
+            <li><a href="lessons.html">Lessons</a></li>
+            <li><a href="pricing.html">Pricing</a></li>
+            <li><a href="testimonials.html">Testimonials</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="blog.html">Blog</a></li>
+            <li><a href="vocal-exercises.html">Vocal Exercises</a></li>
+            <li><a href="terms.html">Terms & Conditions</a></li>
+            <li><a href="faq.html">FAQ</a></li>
+        </ul>
+    </div>
+</nav>
+
+<!-- Hero Section -->
+<section class="exercises-hero">
+    <div class="container">
+        <div class="breadcrumb">
+            <a href="index.html">Home</a> / Vocal Exercises
+        </div>
+        <h1>Free Vocal Exercises</h1>
+        <p>Professional scales and exercises used in online singing lessons with celebrity vocal coach Matt Thompson. Choose your vocal range and start practising.</p>
+    </div>
+</section>
+
+<!-- Vocal Range Selector -->
+<section class="range-selector">
+    <h2>Select Your Vocal Range</h2>
+    <div class="range-buttons">
+        <button class="range-btn" data-range="soprano" data-note="C4" data-low="C4" data-high="C6">Soprano</button>
+        <button class="range-btn" data-range="mezzo" data-note="A3" data-low="A3" data-high="A5">Mezzo-Soprano</button>
+        <button class="range-btn" data-range="alto" data-note="F3" data-low="F3" data-high="F5">Alto</button>
+        <button class="range-btn" data-range="tenor" data-note="C3" data-low="C3" data-high="C5">Tenor</button>
+        <button class="range-btn" data-range="baritone" data-note="A2" data-low="A2" data-high="A4">Baritone</button>
+        <button class="range-btn" data-range="bass" data-note="E2" data-low="E2" data-high="E4">Bass</button>
+    </div>
+    <div class="range-info" id="rangeInfo">
+        <p id="rangeText"></p>
+    </div>
+</section>
+
+<!-- Warm-Up Section -->
+<section class="exercise-section">
+    <h2>Warm-Up Exercises</h2>
+    <p>Gentle exercises to prepare your voice before singing. Always start here.</p>
+    
+    <div class="exercise-card">
+        <h3>1. Five-Tone Warm-Up</h3>
+        <p class="description">The classic singer's warm-up. A gentle ascending and descending pattern that eases your voice into action without strain.</p>
+        <p class="benefits">Benefits: Warms up vocal cords gradually, establishes breath support, smooths register transitions.</p>
+        <div class="note-pattern">
+            <span class="note">Do</span><span class="arrow">&rarr;</span>
+            <span class="note">Re</span><span class="arrow">&rarr;</span>
+            <span class="note">Mi</span><span class="arrow">&rarr;</span>
+            <span class="note">Fa</span><span class="arrow">&rarr;</span>
+            <span class="note">Sol</span><span class="arrow">&rarr;</span>
+            <span class="note">Fa</span><span class="arrow">&rarr;</span>
+            <span class="note">Mi</span><span class="arrow">&rarr;</span>
+            <span class="note">Re</span><span class="arrow">&rarr;</span>
+            <span class="note">Do</span>
+        </div>
+        <div class="audio-player">
+            <audio controls preload="metadata">
+                <source src="assets/audio/scale-warmup.wav" type="audio/wav">
+                Your browser does not support the audio element.
+            </audio>
+        </div>
+        <div class="instructions">
+            <p><strong>How to sing:</strong> Sing on a gentle "mm" or "ng" hum. Keep your jaw relaxed and your breath steady. Move smoothly between each note without gaps. Repeat 2-3 times, starting slightly higher each time.</p>
+        </div>
+    </div>
+    
+    <div class="exercise-card">
+        <h3>2. Major Scale</h3>
+        <p class="description">The foundation of Western singing. Master this and everything else becomes easier.</p>
+        <p class="benefits">Benefits: Builds pitch accuracy, trains interval recognition, develops consistent tone across your range.</p>
+        <div class="note-pattern">
+            <span class="note">Do</span><span class="arrow">&rarr;</span>
+            <span class="note">Re</span><span class="arrow">&rarr;</span>
+            <span class="note">Mi</span><span class="arrow">&rarr;</span>
+            <span class="note">Fa</span><span class="arrow">&rarr;</span>
+            <span class="note">Sol</span><span class="arrow">&rarr;</span>
+            <span class="note">La</span><span class="arrow">&rarr;</span>
+            <span class="note">Ti</span><span class="arrow">&rarr;</span>
+            <span class="note">Do</span><span class="arrow">&darr;</span>
+            <span class="note">Ti</span><span class="arrow">&darr;</span>
+            <span class="note">La</span><span class="arrow">&darr;</span>
+            <span class="note">Sol</span><span class="arrow">&darr;</span>
+            <span class="note">Fa</span><span class="arrow">&darr;</span>
+            <span class="note">Mi</span><span class="arrow">&darr;</span>
+            <span class="note">Re</span><span class="arrow">&darr;</span>
+            <span class="note">Do</span>
+        </div>
+        <div class="audio-player">
+            <audio controls preload="metadata">
+                <source src="assets/audio/scale-major.wav" type="audio/wav">
+                Your browser does not support the audio element.
+            </audio>
+        </div>
+        <div class="instructions">
+            <p><strong>How to sing:</strong> Use any vowel ("ah", "ee", "oo"). Keep each note the same length and volume. Breathe before you need to. Sing legato (smoothly connected). Start comfortable and repeat a semitone higher each time.</p>
+        </div>
+    </div>
+    
+    <div class="exercise-card">
+        <h3>3. Octave Slide (Siren)</h3>
+        <p class="description">A smooth glide from low to high and back, like a siren. Essential for releasing tension.</p>
+        <p class="benefits">Benefits: Releases vocal cord tension, connects chest and head voice, improves vocal flexibility.</p>
+        <div class="note-pattern">
+            <span class="note">Low Do</span><span class="arrow">&rarr;</span>
+            <span class="note">High Do</span><span class="arrow">&darr;</span>
+            <span class="note">Low Do</span>
+        </div>
+        <div class="audio-player">
+            <audio controls preload="metadata">
+                <source src="assets/audio/scale-octave_slide.wav" type="audio/wav">
+                Your browser does not support the audio element.
+            </audio>
+        </div>
+        <div class="instructions">
+            <p><strong>How to sing:</strong> Slide on "oo" or "ng" (like the end of "sing"). Don't aim for distinct notes — glide smoothly between them. Imagine a siren sound. Keep it gentle, especially at the top. Do 3-5 times.</p>
+        </div>
+    </div>
+</section>
+
+<!-- Range Building Section -->
+<section class="exercise-section">
+    <h2>Range Building</h2>
+    <p>Exercises to expand your comfortable singing range safely over time.</p>
+    
+    <div class="exercise-card">
+        <h3>4. Pentatonic Scale</h3>
+        <p class="description">A five-note scale common in pop, soul, and folk music. Great for finding natural melodic patterns in your voice.</p>
+        <p class="benefits">Benefits: Builds confidence with accessible patterns, trains ear for popular music, smooth voice placement.</p>
+        <div class="note-pattern">
+            <span class="note">Do</span><span class="arrow">&rarr;</span>
+            <span class="note">Re</span><span class="arrow">&rarr;</span>
+            <span class="note">Mi</span><span class="arrow">&rarr;</span>
+            <span class="note">Sol</span><span class="arrow">&rarr;</span>
+            <span class="note">La</span><span class="arrow">&rarr;</span>
+            <span class="note">Do</span><span class="arrow">&darr;</span>
+            <span class="note">La</span><span class="arrow">&darr;</span>
+            <span class="note">Sol</span><span class="arrow">&darr;</span>
+            <span class="note">Mi</span><span class="arrow">&darr;</span>
+            <span class="note">Re</span><span class="arrow">&darr;</span>
+            <span class="note">Do</span>
+        </div>
+        <div class="audio-player">
+            <audio controls preload="metadata">
+                <source src="assets/audio/scale-pentatonic.wav" type="audio/wav">
+                Your browser does not support the audio element.
+            </audio>
+        </div>
+        <div class="instructions">
+            <p><strong>How to sing:</strong> Sing on "la" or "na". This scale skips the 4th and 7th degrees, making it very natural-sounding. Move it up by semitones until you reach your comfortable limit. Don't push past comfort.</p>
+        </div>
+    </div>
+    
+    <div class="exercise-card">
+        <h3>5. Chromatic Scale</h3>
+        <p class="description">Every semitone step. The ultimate precision drill for pitch accuracy.</p>
+        <p class="benefits">Benefits: Perfects pitch accuracy, eliminates gaps between notes, trains smooth register transitions.</p>
+        <div class="note-pattern">
+            <span class="note">Do</span><span class="arrow">&rarr;</span>
+            <span class="note">Do#</span><span class="arrow">&rarr;</span>
+            <span class="note">Re</span><span class="arrow">&rarr;</span>
+            <span class="note">Re#</span><span class="arrow">&rarr;</span>
+            <span class="note">Mi</span><span class="arrow">&rarr;</span>
+            <span class="note">Fa</span><span class="arrow">&rarr;</span>
+            <span class="note">Fa#</span><span class="arrow">&rarr;</span>
+            <span class="note">Sol</span><span class="arrow">&rarr;</span>
+            <span class="note">Sol#</span><span class="arrow">&rarr;</span>
+            <span class="note">La</span><span class="arrow">&rarr;</span>
+            <span class="note">La#</span><span class="arrow">&rarr;</span>
+            <span class="note">Ti</span><span class="arrow">&rarr;</span>
+            <span class="note">Do</span><span class="arrow">&darr;</span>...
+        </div>
+        <div class="audio-player">
+            <audio controls preload="metadata">
+                <source src="assets/audio/scale-chromatic.wav" type="audio/wav">
+                Your browser does not support the audio element.
+            </audio>
+        </div>
+        <div class="instructions">
+            <p><strong>How to sing:</strong> Use "ee" or "oo" for clarity. Each note must be perfectly even in length and volume. This is harder than it sounds. Start slow. Only increase speed when you can sing it perfectly.</p>
+        </div>
+    </div>
+    
+    <div class="exercise-card">
+        <h3>6. Arpeggios — Major & Minor</h3>
+        <p class="description">Jumping between the notes of a chord. Essential for building vocal cord independence.</p>
+        <p class="benefits">Benefits: Strengthens vocal cord coordination, improves pitch leaps, builds power and control.</p>
+        <div class="note-pattern">
+            <span class="note">Do</span><span class="arrow">&rarr;</span>
+            <span class="note">Mi</span><span class="arrow">&rarr;</span>
+            <span class="note">Sol</span><span class="arrow">&rarr;</span>
+            <span class="note">High Do</span><span class="arrow">&darr;</span>
+            <span class="note">Sol</span><span class="arrow">&darr;</span>
+            <span class="note">Mi</span><span class="arrow">&darr;</span>
+            <span class="note">Do</span>
+        </div>
+        <div class="audio-player">
+            <audio controls preload="metadata">
+                <source src="assets/audio/scale-major_arpeggio.wav" type="audio/wav">
+                Your browser does not support the audio element.
+            </audio>
+        </div>
+        <div class="instructions">
+            <p><strong>How to sing:</strong> Use "ah" or "oh". Keep the vowel consistent on every note. Each note should be equally loud. Think of your voice as a trumpet hitting clear, strong notes. Move up by semitones.</p>
+        </div>
+    </div>
+</section>
+
+<!-- Agility & Technique Section -->
+<section class="exercise-section">
+    <h2>Agility & Technique</h2>
+    <p>Exercises to develop speed, precision, and vocal control.</p>
+    
+    <div class="exercise-card">
+        <h3>7. Natural Minor Scale</h3>
+        <p class="description">The minor scale has a different emotional quality — moody, soulful, expressive. Essential for contemporary singing.</p>
+        <p class="benefits">Benefits: Trains ear for minor keys, develops emotional expression, improves interval accuracy.</p>
+        <div class="note-pattern">
+            <span class="note">Do</span><span class="arrow">&rarr;</span>
+            <span class="note">Re</span><span class="arrow">&rarr;</span>
+            <span class="note">Me</span><span class="arrow">&rarr;</span>
+            <span class="note">Fa</span><span class="arrow">&rarr;</span>
+            <span class="note">Sol</span><span class="arrow">&rarr;</span>
+            <span class="note">Le</span><span class="arrow">&rarr;</span>
+            <span class="note">Te</span><span class="arrow">&rarr;</span>
+            <span class="note">Do</span><span class="arrow">&darr;</span>...
+        </div>
+        <div class="audio-player">
+            <audio controls preload="metadata">
+                <source src="assets/audio/scale-minor_natural.wav" type="audio/wav">
+                Your browser does not support the audio element.
+            </audio>
+        </div>
+        <div class="instructions">
+            <p><strong>How to sing:</strong> Sing on "ah" or "eh". Notice the different feel compared to major. The lowered 3rd, 6th and 7th give it that melancholy quality. Essential for soul, R&B, and ballads.</p>
+        </div>
+    </div>
+    
+    <div class="exercise-card">
+        <h3>8. Harmonic Minor Scale</h3>
+        <p class="description">The minor scale with a raised 7th. Creates a distinctive, dramatic sound heard in Middle Eastern and Flamenco-influenced music.</p>
+        <p class="benefits">Benefits: Expands vocal colour palette, trains larger intervals, develops dramatic expression.</p>
+        <div class="audio-player">
+            <audio controls preload="metadata">
+                <source src="assets/audio/scale-minor_harmonic.wav" type="audio/wav">
+                Your browser does not support the audio element.
+            </audio>
+        </div>
+        <div class="instructions">
+            <p><strong>How to sing:</strong> Use "ah" or "ee". Pay attention to the larger jump between the 6th and 7th notes. That's the characteristic sound. Keep the top note supported with good breath.</p>
+        </div>
+    </div>
+    
+    <div class="exercise-card">
+        <h3>9. 1-3-5-1 Pattern</h3>
+        <p class="description">A classic vocal exercise that strengthens your ability to move between chord tones cleanly and quickly.</p>
+        <p class="benefits">Benefits: Builds chord tone awareness, improves vocal agility, strengthens head voice connection.</p>
+        <div class="note-pattern">
+            <span class="note">Do</span><span class="arrow">&rarr;</span>
+            <span class="note">Mi</span><span class="arrow">&rarr;</span>
+            <span class="note">Sol</span><span class="arrow">&rarr;</span>
+            <span class="note">Mi</span><span class="arrow">&rarr;</span>
+            <span class="note">Do</span>
+        </div>
+        <div class="audio-player">
+            <audio controls preload="metadata">
+                <source src="assets/audio/scale-lip_trill_1351.wav" type="audio/wav">
+                Your browser does not support the audio element.
+            </audio>
+        </div>
+        <div class="instructions">
+            <p><strong>How to sing:</strong> Best on a lip trill (brrr) or tongue trill (rrr). These keep your voice relaxed while building coordination. Move up through your range smoothly. If the trill breaks, you're pushing too hard.</p>
+        </div>
+    </div>
+</section>
+
+<!-- Cool Down Section -->
+<section class="exercise-section">
+    <h2>Cool Down</h2>
+    <p>After singing, cool your voice down gradually. Never finish a session without cooling down.</p>
+    
+    <div class="exercise-card">
+        <h3>10. Descending Cool-Down</h3>
+        <p class="description">A gentle descending pattern to relax your vocal cords and bring your voice back to its resting state.</p>
+        <p class="benefits">Benefits: Prevents vocal fatigue, reduces post-singing hoarseness, promotes vocal recovery.</p>
+        <div class="note-pattern">
+            <span class="note">High Do</span><span class="arrow">&darr;</span>
+            <span class="note">Ti</span><span class="arrow">&darr;</span>
+            <span class="note">La</span><span class="arrow">&darr;</span>
+            <span class="note">Sol</span><span class="arrow">&darr;</span>
+            <span class="note">Fa</span><span class="arrow">&darr;</span>
+            <span class="note">Mi</span><span class="arrow">&darr;</span>
+            <span class="note">Re</span><span class="arrow">&darr;</span>
+            <span class="note">Do</span><span class="arrow">&darr;</span>...
+        </div>
+        <div class="audio-player">
+            <audio controls preload="metadata">
+                <source src="assets/audio/scale-cooldown.wav" type="audio/wav">
+                Your browser does not support the audio element.
+            </audio>
+        </div>
+        <div class="instructions">
+            <p><strong>How to sing:</strong> Use a gentle hum ("mm") or "ng". Very soft volume. Let your voice descend naturally without forcing. Imagine sighing the notes out. Your voice should feel relaxed and free by the end.</p>
+        </div>
+    </div>
+</section>
+
+<!-- How to Use This Page -->
+<section class="exercise-section">
+    <h2>How to Use These Exercises</h2>
+    
+    <div class="exercise-card">
+        <h3>Recommended Practice Structure</h3>
+        <p class="description">Follow this order for a complete vocal workout:</p>
+        <ol style="color: var(--text-secondary); line-height: 1.8; margin-left: 1.5rem;">
+            <li><strong>Warm-Up (5-10 min):</strong> Start with exercises 1-3. Always begin gently.</li>
+            <li><strong>Range Building (10-15 min):</strong> Move to exercises 4-6. Gradually work higher.</li>
+            <li><strong>Agility Work (10 min):</strong> Exercises 7-9 for speed and precision.</li>
+            <li><strong>Cool Down (3-5 min):</strong> Finish with exercise 10. Never skip this.</li>
+        </ol>
+        <p style="color: var(--text-muted); margin-top: 1rem; font-size: 0.9rem;">
+            <strong>Total time:</strong> Approximately 30-40 minutes. For a quick warm-up, do exercises 1, 2, and 10 only (about 10 minutes).
+        </p>
+    </div>
+    
+    <div class="exercise-card">
+        <h3>Tips for Best Results</h3>
+        <ul style="color: var(--text-secondary); line-height: 1.8; margin-left: 1.5rem;">
+            <li><strong>Stay hydrated</strong> — drink water before, during, and after.</li>
+            <li><strong>Don't push</strong> — if it hurts, stop. Discomfort means you're doing too much.</li>
+            <li><strong>Breathe properly</strong> — support from your diaphragm, not your throat.</li>
+            <li><strong>Be consistent</strong> — 20 minutes daily beats 2 hours once a week.</li>
+            <li><strong>Record yourself</strong> — you'll hear progress you don't feel.</li>
+            <li><strong>Warm up before singing songs</strong> — never go straight into repertoire.</li>
+        </ul>
+    </div>
+</section>
+
+<!-- CTA Section -->
+<div class="cta-box">
+    <h3>Want Personalised Vocal Training?</h3>
+    <p>These exercises are a great start, but a professional vocal coach can identify exactly what your voice needs. Matt Thompson has 25+ years experience teaching recording artists, West End performers, and complete beginners.</p>
+    <a href="pricing.html" class="btn">Book a £25 Consultation</a>
+</div>
+
+<!-- Footer -->
+<footer>
+    <div class="container">
+        <div class="footer-grid">
+            <div>
+                <div class="footer-logo">Sing The Easy Way</div>
+                <p>Professional online singing lessons with celebrity vocal coach Matt Thompson. 25+ years of experience teaching recording artists, film stars, and performers worldwide.</p>
+                <p class="trading-as">Previously trading as Arpeggio Music</p>
+                <div class="socials">
+                    <a href="https://www.instagram.com/singtheeasyway" target="_blank" rel="noopener">Instagram</a>
+                    <a href="https://www.tiktok.com/@mattsjourneysofar" target="_blank" rel="noopener">TikTok</a>
+                </div>
+            </div>
+            
+            <div>
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About Matt</a></li>
+                    <li><a href="lessons.html">Lessons</a></li>
+                    <li><a href="pricing.html">Pricing</a></li>
+                    <li><a href="testimonials.html">Testimonials</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                    <li><a href="vocal-exercises.html">Vocal Exercises</a></li>
+                </ul>
+            </div>
+            
+            <div>
+                <h3>Legal</h3>
+                <ul>
+                    <li><a href="privacy-policy.html">Privacy Policy</a></li>
+                    <li><a href="environmental-policy.html">Environmental Policy</a></li>
+                    <li><a href="sitemap.xml">Sitemap</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-contact">
+                <h3>Get in Touch</h3>
+                <p><a href="tel:+447792511393">+44 7792 511393</a></p>
+                <p><a href="mailto:matt@singtheeasyway.com">matt@singtheeasyway.com</a></p>
+                <button class="btn primary enquiry-btn" data-enquiry style="margin-top: var(--space-sm);">Send Enquiry</button>
+                <p class="lesson-platforms">Lessons via FaceTime, WhatsApp & Microsoft Teams</p>
+                <p class="lesson-platforms">Teaching from my mobile studio</p>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>&copy; 2026 Sing The Easy Way. All rights reserved.</p>
+            <div class="footer-legal">
+                <a href="privacy-policy.html">Privacy Policy</a>
+                <a href="environmental-policy.html">Environmental Policy</a>
+            </div>
+            <p>Celebrity Vocal Coach Matt Thompson</p>
+        </div>
+    </div>
+</footer>
+
+<!-- Floating CTA -->
+<div class="floating-cta">
+    <button class="btn primary book-btn" data-booking>Book Lesson</button>
+    <button class="btn secondary enquiry-btn" data-enquiry>Enquire</button>
+</div>
+
+<!-- Scripts -->
+<script src="assets/js/main.js"></script>
+
+<!-- SimplyBook.me Widget -->
+<script src="//widget.simplybook.me/v2/widget/widget.js"></script>
+<script>
+    var widget = new SimplybookWidget({
+        widget_type: "iframe",
+        url: "https://singtheeasyway.simplybook.me",
+        theme: "default",
+        theme_settings: {
+            timeline_hide_unavailable: "1",
+            hide_past_days: "0",
+            timeline_show_end_time: "0",
+            timeline_modern_display: "as_slots",
+            sb_base_color: "#ff6b35",
+            display_item_mode: "block",
+            body_bg: "#0a0a0a",
+            sb_review_image: "",
+            dark_font_color: "#ffffff",
+            light_font_color: "#ffffff",
+            sb_company_label_color: "#ffffff",
+            hide_img_mode: "0",
+            show_sidebar: "1",
+            sb_busy: "#ffffff",
+            sb_available: "#ffffff"
+        },
+        timeline: "modern",
+        datepicker: "top_calendar",
+        is_rtl: false,
+        app_config: {
+            clear_session: 0,
+            allow_switch_to_appointments: "0",
+            allow_guests: "1",
+            show_cookie_banner: "0"
+        },
+        continue_new_tab: false
+    });
+</script>
+
+<!-- Cookie Consent -->
+<script src="assets/js/cookie-consent.js"></script>
+
+<!-- Range Selector Script -->
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const rangeButtons = document.querySelectorAll('.range-btn');
+        const rangeInfo = document.getElementById('rangeInfo');
+        const rangeText = document.getElementById('rangeText');
+        
+        const rangeDescriptions = {
+            soprano: 'Soprano: C4 to C6 — The highest female voice. Start your exercises on C4 and work upward.',
+            mezzo: 'Mezzo-Soprano: A3 to A5 — The middle female voice. A versatile range suitable for many styles.',
+            alto: 'Alto: F3 to F5 — The lowest female voice. Rich, warm tones. Start exercises on F3.',
+            tenor: 'Tenor: C3 to C5 — The highest male voice. Great for pop, rock, and classical.',
+            baritone: 'Baritone: A2 to A4 — The most common male voice. Start exercises on A2.',
+            bass: 'Bass: E2 to E4 — The lowest male voice. Deep, powerful foundation.'
+        };
+        
+        rangeButtons.forEach(btn => {
+            btn.addEventListener('click', function() {
+                // Remove active from all
+                rangeButtons.forEach(b => b.classList.remove('active'));
+                // Add active to clicked
+                this.classList.add('active');
+                // Show info
+                const range = this.dataset.range;
+                rangeText.textContent = rangeDescriptions[range] || '';
+                rangeInfo.classList.add('visible');
+            });
+        });
+    });
+</script>
+
+</body>
+</html>
