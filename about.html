@@ -11,8 +11,8 @@
 </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About Matt Thompson | Celebrity Vocal Coach | Sing The Easy Way</title>
-    <meta name="description" content="Learn about Matt Thompson, celebrity vocal coach with 25+ years experience teaching recording artists, film stars, TV personalities, and Bollywood performers online.">
+    <title>About Matt Thompson | Live 1-to-1 Online Singing Lessons | Sing The Easy Way</title>
+    <meta name="description" content="Learn about Matt Thompson, celebrity vocal coach offering live 1-to-1 online singing lessons. 25+ years experience teaching recording artists, film stars, TV personalities, and Bollywood performers in real-time sessions.">
     <meta name="keywords" content="celebrity vocal coach, Matt Thompson vocal coach, online singing teacher, vocal coach biography, singing lessons instructor">
     <meta name="author" content="Matt Thompson">
     <meta name="robots" content="index, follow">
@@ -43,7 +43,9 @@
 <!-- Navigation -->
 <nav>
     <div class="nav-container">
-        <a href="index.html" class="logo">Sing The Easy Way</a>
+        <a href="index.html" class="logo">
+            <img src="assets/images/logo.png" alt="Sing The Easy Way" style="height: 40px; width: auto;">
+        </a>
         
         <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Toggle menu">
             <span></span>
@@ -53,13 +55,14 @@
         
         <ul id="mainNav">
             <li><a href="index.html">Home</a></li>
-            <li><a href="about.html">About Matt</a></li>
+            <li><a href="about.html" class="active">About Matt</a></li>
             <li><a href="lessons.html">Lessons</a></li>
             <li><a href="pricing.html">Pricing</a></li>
+            <li><a href="enquiry.html">Enquire</a></li>
             <li><a href="testimonials.html">Testimonials</a></li>
             <li><a href="contact.html">Contact</a></li>
             <li><a href="blog.html">Blog</a></li>
-            <li><a href="terms.html" class="active">Terms & Conditions</a></li>
+            <li><a href="terms.html">Terms & Conditions</a></li>
             <li><a href="faq.html">FAQ</a></li>
         </ul>
     </div>
@@ -70,7 +73,7 @@
     <div class="hero-bg"></div>
     <div class="page-header-content">
         <h1>About Matt</h1>
-        <p>25+ years of professional vocal coaching experience.</p>
+        <p>25+ years of professional live 1-to-1 vocal coaching experience. Real-time lessons — not pre-recorded videos.</p>
     </div>
 </header>
 
@@ -126,7 +129,7 @@
     <div class="container">
         <span class="badge">Ready to Start?</span>
         <h2>Begin Your Vocal Journey Today</h2>
-        <p>Book your consultation or send an enquiry.</p>
+        <p>Enquire about your consultation or send an enquiry.</p>
         <div class="cta-block">
             <button class="btn primary book-btn" data-booking>Enquire About a Consultation</button>
             <button class="btn secondary enquiry-btn" data-enquiry>Send an Enquiry</button>
@@ -155,6 +158,7 @@
                     <li><a href="about.html">About Matt</a></li>
                     <li><a href="lessons.html">Lessons</a></li>
                     <li><a href="pricing.html">Pricing</a></li>
+                    <li><a href="enquiry.html">Enquire</a></li>
                     <li><a href="testimonials.html">Testimonials</a></li>
                     <li><a href="contact.html">Contact</a></li>
                     <li><a href="blog.html">Blog</a></li>
@@ -190,7 +194,6 @@
 <!-- Floating CTA -->
 <div class="floating-cta">
     <button class="btn primary book-btn" data-booking>Enquire</button>
-    <button class="btn secondary enquiry-btn" data-enquiry>Enquire</button>
 </div>
 
 <!-- Scripts -->
@@ -218,11 +221,7 @@ document.addEventListener('DOMContentLoaded', function() {
     document.querySelectorAll('[data-booking]').forEach(function(btn) {
         btn.addEventListener('click', function(e) {
             e.preventDefault();
-            if (widget && typeof widget.open === 'function') {
-                widget.open();
-            } else {
-                window.location.href = 'enquiry.html';
-            }
+            window.location.href = 'enquiry.html';
         });
     });
     

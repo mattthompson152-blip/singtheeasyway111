@@ -11,8 +11,8 @@
 </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact | Online Singing Lessons | Sing The Easy Way</title>
-    <meta name="description" content="Get in touch with Matt Thompson for online singing lessons. Enquire about a consultation or send an enquiry about virtual vocal coaching.">
+    <title>Contact | Live 1-to-1 Online Singing Lessons | Sing The Easy Way</title>
+    <meta name="description" content="Get in touch with Matt Thompson for live 1-to-1 online singing lessons. Enquire about a real-time consultation or send an enquiry about virtual vocal coaching. Not pre-recorded videos.">
     <meta name="keywords" content="contact singing teacher, book singing lessons, vocal coach contact, online singing lessons enquiry">
     <meta name="author" content="Matt Thompson">
     <meta name="robots" content="index, follow">
@@ -43,7 +43,9 @@
 <!-- Navigation -->
 <nav>
     <div class="nav-container">
-        <a href="index.html" class="logo">Sing The Easy Way</a>
+        <a href="index.html" class="logo">
+            <img src="assets/images/logo.png" alt="Sing The Easy Way" style="height: 40px; width: auto;">
+        </a>
         
         <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Toggle menu">
             <span></span>
@@ -56,10 +58,11 @@
             <li><a href="about.html">About Matt</a></li>
             <li><a href="lessons.html">Lessons</a></li>
             <li><a href="pricing.html">Pricing</a></li>
+            <li><a href="enquiry.html">Enquire</a></li>
             <li><a href="testimonials.html">Testimonials</a></li>
-            <li><a href="contact.html">Contact</a></li>
+            <li><a href="contact.html" class="active">Contact</a></li>
             <li><a href="blog.html">Blog</a></li>
-            <li><a href="terms.html" class="active">Terms & Conditions</a></li>
+            <li><a href="terms.html">Terms & Conditions</a></li>
             <li><a href="faq.html">FAQ</a></li>
         </ul>
     </div>
@@ -70,7 +73,7 @@
     <div class="hero-bg"></div>
     <div class="page-header-content">
         <h1>Get In Touch</h1>
-        <p>Enquire about a consultation or send an enquiry.</p>
+        <p>Enquire about a live 1-to-1 consultation or send an enquiry. Real-time lessons — not pre-recorded videos.</p>
     </div>
 </header>
 
@@ -127,7 +130,7 @@
     <div class="container">
         <span class="badge">Ready to Start?</span>
         <h2>Begin Your Vocal Journey Today</h2>
-        <p>Book your consultation or send an enquiry.</p>
+        <p>Enquire about your consultation or send an enquiry.</p>
         <div class="cta-block">
             <button class="btn primary book-btn" data-booking>Enquire About a Consultation</button>
             <button class="btn secondary enquiry-btn" data-enquiry>Send an Enquiry</button>
@@ -158,6 +161,7 @@
                     <li><a href="pricing.html">Pricing</a></li>
                     <li><a href="testimonials.html">Testimonials</a></li>
                     <li><a href="contact.html">Contact</a></li>
+                    <li><a href="enquiry.html">Enquire</a></li>
                     <li><a href="blog.html">Blog</a></li>
                     <li><a href="terms.html">Terms & Conditions</a></li>
                     <li><a href="faq.html">FAQ</a></li>
@@ -191,7 +195,6 @@
 <!-- Floating CTA -->
 <div class="floating-cta">
     <button class="btn primary book-btn" data-booking>Enquire</button>
-    <button class="btn secondary enquiry-btn" data-enquiry>Enquire</button>
 </div>
 
 <!-- Scripts -->
@@ -219,11 +222,7 @@ document.addEventListener('DOMContentLoaded', function() {
     document.querySelectorAll('[data-booking]').forEach(function(btn) {
         btn.addEventListener('click', function(e) {
             e.preventDefault();
-            if (widget && typeof widget.open === 'function') {
-                widget.open();
-            } else {
-                window.location.href = 'enquiry.html';
-            }
+            window.location.href = 'enquiry.html';
         });
     });
     
