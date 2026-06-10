@@ -1,6 +1,6 @@
 /** 
  * GDPR Cookie Consent Manager
- * Handles Google Analytics, SimplyBook.me, and JotForm consent
+ * Handles Google Analytics and JotForm consent
  */
 
 (function() {
@@ -81,7 +81,7 @@
                         </label>
                     </div>
                     <p style="color: #666; font-size: 0.8rem; margin-top: 10px;">
-                        Includes: Session cookies, SimplyBook.me booking system, JotForm forms
+                        Includes: Session cookies, JotForm enquiry forms
                     </p>
                 </div>
                 

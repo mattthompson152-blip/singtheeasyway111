@@ -115,7 +115,7 @@
                 
                 <!-- Embedded JotForm -->
                 <div style="margin-top: var(--space-md);">
-                    <script type="text/javascript" src="https://form.jotform.com/jsform/260846246211049"></script>
+                    <script type="text/javascript" src="https://form.jotform.com/jsform/261603325649357"></script>
                 </div>
             </div>
         </div>
@@ -197,45 +197,11 @@
 <!-- Scripts -->
 <script src="assets/js/main.js"></script>
 
-<!-- SimplyBook.me Widget -->
-<script src="//widget.simplybook.me/v2/widget/widget.js"></script>
-<script>
-    var widget = new SimplybookWidget({
-        "widget_type": "button",
-        "url": "https://singtheeasyway.simplybook.me",
-        "theme": "default",
-        "theme_settings": {
-            "timeline_hide_unavailable": "1",
-            "hide_past_days": "0",
-            "timeline_show_end_time": "0",
-            "timeline_modern_display": "as_slots",
-            "sb_base_color": "#ff6b35",
-            "display_item_mode": "block",
-            "booking_nav_bg_color": "#ff6b35",
-            "body_bg_color": "#f2f2f2",
-            "dark_font_color": "#474747",
-            "light_font_color": "#f5fcff",
-            "btn_color_1": "#ff6b35",
-            "sb_company_label_color": "#552f34",
-            "hide_img_mode": "1",
-            "show_sidebar": "1"
-        },
-        "timeline": "modern",
-        "datepicker": "top_calendar",
-        "is_rtl": false,
-        "app_config": {
-            "clear_session": 0,
-            "allow_switch_to_ada": 0,
-            "predefined": []
-        }
-    });
-</script>
-
 <!-- Jotform Widget -->
 <script src="https://form.jotform.com/static/feedback2.js"></script>
 <script>
     var jotformFeedback = new JotformFeedback({
-        formId: '260846246211049',
+        formId: '261603325649357',
         base: 'https://form.jotform.com/',
         windowTitle: 'Send an Enquiry',
         background: '#ff6b35',
@@ -256,7 +222,7 @@ document.addEventListener('DOMContentLoaded', function() {
             if (widget && typeof widget.open === 'function') {
                 widget.open();
             } else {
-                window.open('https://singtheeasyway.simplybook.me', '_blank');
+                window.location.href = 'book.html';
             }
         });
     });
@@ -267,7 +233,7 @@ document.addEventListener('DOMContentLoaded', function() {
             if (jotformFeedback && typeof jotformFeedback.open === 'function') {
                 jotformFeedback.open();
             } else {
-                window.open('https://form.jotform.com/260846246211049', '_blank');
+                window.open('https://form.jotform.com/261603325649357', '_blank');
             }
         });
     });
