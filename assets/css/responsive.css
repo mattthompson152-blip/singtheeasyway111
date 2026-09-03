@@ -59,14 +59,6 @@
     .savings-display {
         grid-template-columns: 1fr;
     }
-    
-    .comparison-grid {
-        grid-template-columns: 1fr !important;
-    }
-    
-    .comparison-card {
-        transform: none !important;
-    }
 }
 
 /* =======================================
@@ -140,22 +132,6 @@
         right: var(--space-md);
         flex-direction: row;
         justify-content: center;
-        gap: var(--space-xs);
-    }
-    
-    .floating-cta .btn {
-        flex: 1;
-        max-width: none;
-        text-align: center;
-        justify-content: center;
-    }
-    
-    .comparison-grid {
-        grid-template-columns: 1fr !important;
-    }
-    
-    .comparison-card {
-        transform: none !important;
     }
     
     .footer-bottom {
