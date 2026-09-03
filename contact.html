@@ -28,7 +28,7 @@
     
     <!-- Stylesheets -->
     <link rel="stylesheet" href="assets/css/style.css?v=3">
-        <link rel="stylesheet" href="assets/css/cookie-consent.css?v=3">
+    <link rel="stylesheet" href="assets/css/cookie-consent.css?v=3">
     <link rel="stylesheet" href="assets/css/responsive.css?v=3">
   <!-- Favicon -->
   <link rel="icon" type="image/x-icon" href="assets/images/favicon.ico">
@@ -59,7 +59,7 @@
             <li><a href="testimonials.html">Testimonials</a></li>
             <li><a href="contact.html">Contact</a></li>
             <li><a href="blog.html">Blog</a></li>
-            <li><a href="terms.html" class="active">Terms & Conditions</a></li>
+            <li><a href="terms.html">Terms & Conditions</a></li>
             <li><a href="faq.html">FAQ</a></li>
         </ul>
     </div>
@@ -104,7 +104,7 @@
                 </div>
                 
                 <div class="cta-block" style="justify-content: flex-start; margin-top: var(--space-lg);">
-                    <button class="btn primary book-btn" data-booking>Enquire About a Consultation</button>
+                    <button class="btn primary enquiry-btn" data-enquiry>Enquire About a Consultation</button>
                     <button class="btn secondary enquiry-btn" data-enquiry>Send an Enquiry</button>
                 </div>
             </div>
@@ -129,7 +129,7 @@
         <h2>Begin Your Vocal Journey Today</h2>
         <p>Book your consultation or send an enquiry.</p>
         <div class="cta-block">
-            <button class="btn primary book-btn" data-booking>Enquire About a Consultation</button>
+            <button class="btn primary enquiry-btn" data-enquiry>Enquire About a Consultation</button>
             <button class="btn secondary enquiry-btn" data-enquiry>Send an Enquiry</button>
         </div>
     </div>
@@ -190,7 +190,7 @@
 
 <!-- Floating CTA -->
 <div class="floating-cta">
-    <button class="btn primary book-btn" data-booking>Enquire</button>
+    <button class="btn primary enquiry-btn" data-enquiry>Enquire</button>
     <button class="btn secondary enquiry-btn" data-enquiry>Enquire</button>
 </div>
 
@@ -203,7 +203,7 @@
     var jotformFeedback = new JotformFeedback({
         formId: '261603325649357',
         base: 'https://form.jotform.com/',
-        windowTitle: 'Send an Enquiry',
+        windowTitle: 'Sing The Easy Way',
         background: '#ff6b35',
         fontColor: '#FFFFFF',
         type: '1',
@@ -216,17 +216,6 @@
 <!-- Button Click Handlers -->
 <script>
 document.addEventListener('DOMContentLoaded', function() {
-    document.querySelectorAll('[data-booking]').forEach(function(btn) {
-        btn.addEventListener('click', function(e) {
-            e.preventDefault();
-            if (widget && typeof widget.open === 'function') {
-                widget.open();
-            } else {
-                window.location.href = 'enquiry.html';
-            }
-        });
-    });
-    
     document.querySelectorAll('[data-enquiry]').forEach(function(btn) {
         btn.addEventListener('click', function(e) {
             e.preventDefault();
@@ -237,9 +226,21 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
     });
+    
+    // Mobile menu toggle
+    const mobileMenuToggle = document.getElementById('mobileMenuToggle');
+    const mainNav = document.getElementById('mainNav');
+    
+    if (mobileMenuToggle) {
+        mobileMenuToggle.addEventListener('click', function() {
+            mobileMenuToggle.classList.toggle('active');
+            mainNav.classList.toggle('active');
+        });
+    }
 });
 </script>
 
-    <script src="assets/js/cookie-consent.js"></script>
+<script src="assets/js/cookie-consent.js"></script>
+
 </body>
 </html>
