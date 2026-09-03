@@ -84,4 +84,31 @@ document.addEventListener('DOMContentLoaded', function() {
     
     window.addEventListener('scroll', updateNavbar);
     
+    // ======================================
+    // JOTFORM MODAL HANDLER
+    // ======================================
+    function handleJotformClick(e) {
+        e.preventDefault();
+        try {
+            if (window.jotformFeedback && typeof window.jotformFeedback.open === 'function') {
+                window.jotformFeedback.open();
+                return;
+            }
+        } catch (err) {
+            console.warn('Jotform modal error:', err);
+        }
+        // Fallback to enquiry page
+        window.location.href = '/enquiry.html';
+    }
+    
+    // Attach handler to all [data-booking] buttons
+    document.querySelectorAll('[data-booking]').forEach(function(btn) {
+        btn.addEventListener('click', handleJotformClick);
+    });
+    
+    // Attach handler to all [data-enquiry] buttons
+    document.querySelectorAll('[data-enquiry]').forEach(function(btn) {
+        btn.addEventListener('click', handleJotformClick);
+    });
+    
 });
