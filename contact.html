@@ -12,7 +12,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact | Online Singing Lessons | Sing The Easy Way</title>
-    <meta name="description" content="Get in touch with Matt Thompson for online singing lessons. Enquire about a consultation or send an enquiry about virtual vocal coaching.">
+    <meta name="description" content="Get in touch with Matt Thompson for online singing lessons. Send your enquiry and get a response within 24 hours.">
     <meta name="keywords" content="contact singing teacher, book singing lessons, vocal coach contact, online singing lessons enquiry">
     <meta name="author" content="Matt Thompson">
     <meta name="robots" content="index, follow">
@@ -70,7 +70,7 @@
     <div class="hero-bg"></div>
     <div class="page-header-content">
         <h1>Get In Touch</h1>
-        <p>Enquire about a consultation or send an enquiry.</p>
+        <p>Send your enquiry and I'll be in touch within 24 hours.</p>
     </div>
 </header>
 
@@ -81,7 +81,7 @@
             <div class="contact-info">
                 <span class="badge">Contact Information</span>
                 <h2>Ready to Start Your Vocal Journey?</h2>
-                <p>Get in touch to book a consultation or ask any questions about online singing lessons.</p>
+                <p>Get in touch to send your enquiry or ask any questions about online singing lessons.</p>
                 
                 <div class="contact-method">
                     <h3>📧 Email</h3>
@@ -104,8 +104,7 @@
                 </div>
                 
                 <div class="cta-block" style="justify-content: flex-start; margin-top: var(--space-lg);">
-                    <button class="btn primary enquiry-btn" data-enquiry>Enquire About a Consultation</button>
-                    <button class="btn secondary enquiry-btn" data-enquiry>Send an Enquiry</button>
+                    <button class="btn primary enquiry-btn" data-enquiry>Start Your Enquiry</button>
                 </div>
             </div>
             
@@ -127,10 +126,9 @@
     <div class="container">
         <span class="badge">Ready to Start?</span>
         <h2>Begin Your Vocal Journey Today</h2>
-        <p>Book your consultation or send an enquiry.</p>
+        <p>Send your enquiry for a £25 assessment, an £85 lesson, or a £700 ten-lesson block.</p>
         <div class="cta-block">
-            <button class="btn primary enquiry-btn" data-enquiry>Enquire About a Consultation</button>
-            <button class="btn secondary enquiry-btn" data-enquiry>Send an Enquiry</button>
+            <button class="btn primary enquiry-btn" data-enquiry>Start Your Enquiry</button>
         </div>
     </div>
 </section>
@@ -177,7 +175,7 @@
                 <h3>Get in Touch</h3>
                 <p><a href="tel:+447792511393">+44 7792 511393</a></p>
                 <p><a href="mailto:matt@singtheeasyway.com">matt@singtheeasyway.com</a></p>
-                <button class="btn primary enquiry-btn" data-enquiry style="margin-top: var(--space-sm);">Send Enquiry</button>
+                <button class="btn primary enquiry-btn" data-enquiry style="margin-top: var(--space-sm);">Start Your Enquiry</button>
             </div>
         </div>
         
@@ -190,8 +188,7 @@
 
 <!-- Floating CTA -->
 <div class="floating-cta">
-    <button class="btn primary enquiry-btn" data-enquiry>Enquire</button>
-    <button class="btn secondary enquiry-btn" data-enquiry>Enquire</button>
+    <button class="btn primary enquiry-btn" data-enquiry>Start Your Enquiry</button>
 </div>
 
 <!-- Scripts -->
@@ -199,46 +196,6 @@
 
 <!-- Jotform Widget -->
 <script src="https://form.jotform.com/static/feedback2.js"></script>
-<script>
-    var jotformFeedback = new JotformFeedback({
-        formId: '261603325649357',
-        base: 'https://form.jotform.com/',
-        windowTitle: 'Sing The Easy Way',
-        background: '#ff6b35',
-        fontColor: '#FFFFFF',
-        type: '1',
-        height: 500,
-        width: 700,
-        openOnLoad: false
-    });
-</script>
-
-<!-- Button Click Handlers -->
-<script>
-document.addEventListener('DOMContentLoaded', function() {
-    document.querySelectorAll('[data-enquiry]').forEach(function(btn) {
-        btn.addEventListener('click', function(e) {
-            e.preventDefault();
-            if (jotformFeedback && typeof jotformFeedback.open === 'function') {
-                jotformFeedback.open();
-            } else {
-                window.open('https://form.jotform.com/261603325649357', '_blank');
-            }
-        });
-    });
-    
-    // Mobile menu toggle
-    const mobileMenuToggle = document.getElementById('mobileMenuToggle');
-    const mainNav = document.getElementById('mainNav');
-    
-    if (mobileMenuToggle) {
-        mobileMenuToggle.addEventListener('click', function() {
-            mobileMenuToggle.classList.toggle('active');
-            mainNav.classList.toggle('active');
-        });
-    }
-});
-</script>
 
 <script src="assets/js/cookie-consent.js"></script>
 

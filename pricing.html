@@ -12,14 +12,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pricing | Live 1-to-1 Online Singing Lessons | Sing The Easy Way</title>
-    <meta name="description" content="Online singing lesson pricing with Matt Thompson. Live 1-to-1 lessons: £25 consultation (limited time), £85 single lessons, or £700 for 10-lesson blocks.">
+    <meta name="description" content="Online singing lesson pricing with Matt Thompson. Live 1-to-1 lessons: £25 assessment, £85 lesson, or £700 for a 10-lesson block.">
     <meta name="keywords" content="singing lesson prices, online singing lessons cost, vocal coach prices, singing teacher rates, affordable singing lessons">
     <meta name="author" content="Matt Thompson">
     <meta name="robots" content="index, follow">
     
     <!-- Open Graph -->
     <meta property="og:title" content="Pricing | Online Singing Lessons">
-    <meta property="og:description" content="£25 consultation (was £50 — 50% off for a limited time), £85 single lessons, or £700 for 10-lesson blocks.">
+    <meta property="og:description" content="£25 assessment, £85 lesson, or £700 for a 10-lesson block.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://singtheeasyway.com/pricing.html">
     
@@ -90,7 +90,7 @@
                     <li>Technique overview</li>
                     <li>No obligation to continue</li>
                 </ul>
-                <button class="btn primary book-btn" data-booking>Book a Consultation</button>
+                <button class="btn primary enquiry-btn" data-enquiry>Start Your Enquiry</button>
             </div>
             
             <div class="pricing-card fade-in">
@@ -103,7 +103,7 @@
                     <li>Lesson recording provided</li>
                     <li>Practice notes included</li>
                 </ul>
-                <button class="btn primary book-btn" data-booking>Book a Single Lesson</button>
+                <button class="btn primary enquiry-btn" data-enquiry>Start Your Enquiry</button>
             </div>
             
             <div class="pricing-card featured fade-in">
@@ -116,7 +116,7 @@
                     <li>Email support between lessons</li>
                     <li>Priority booking</li>
                 </ul>
-                <button class="btn primary book-btn" data-booking>Book a 10-Lesson Block</button>
+                <button class="btn primary enquiry-btn" data-enquiry>Start Your Enquiry</button>
             </div>
         </div>
         
@@ -172,8 +172,7 @@
         </div>
         
         <div class="cta-block text-center" style="margin-top: var(--space-xl);">
-            <button class="btn primary book-btn" data-booking>Book a Consultation</button>
-            <button class="btn secondary enquiry-btn" data-enquiry>Send an Enquiry</button>
+            <button class="btn primary enquiry-btn" data-enquiry>Start Your Enquiry</button>
         </div>
     </div>
 </main>
@@ -183,10 +182,9 @@
     <div class="container">
         <span class="badge">Ready to Start?</span>
         <h2>Begin Your Vocal Journey Today</h2>
-        <p>Book your consultation or send an enquiry.</p>
+        <p>Send your enquiry for a £25 assessment, an £85 lesson, or a £700 ten-lesson block.</p>
         <div class="cta-block">
-            <button class="btn primary book-btn" data-booking>Book a Consultation</button>
-            <button class="btn secondary enquiry-btn" data-enquiry>Send an Enquiry</button>
+            <button class="btn primary enquiry-btn" data-enquiry>Start Your Enquiry</button>
         </div>
     </div>
 </section>
@@ -233,7 +231,7 @@
                 <h3>Get in Touch</h3>
                 <p><a href="tel:+447792511393">+44 7792 511393</a></p>
                 <p><a href="mailto:matt@singtheeasyway.com">matt@singtheeasyway.com</a></p>
-                <button class="btn primary enquiry-btn" data-enquiry style="margin-top: var(--space-sm);">Send Enquiry</button>
+                <button class="btn primary enquiry-btn" data-enquiry style="margin-top: var(--space-sm);">Start Your Enquiry</button>
             </div>
         </div>
         
@@ -246,8 +244,7 @@
 
 <!-- Floating CTA -->
 <div class="floating-cta">
-    <button class="btn primary book-btn" data-booking>Enquire</button>
-    <button class="btn secondary enquiry-btn" data-enquiry>Enquire</button>
+    <button class="btn primary enquiry-btn" data-enquiry>Start Your Enquiry</button>
 </div>
 
 <!-- Scripts -->
@@ -255,47 +252,6 @@
 
 <!-- Jotform Widget -->
 <script src="https://form.jotform.com/static/feedback2.js"></script>
-<script>
-    var jotformFeedback = new JotformFeedback({
-        formId: '261603325649357',
-        base: 'https://form.jotform.com/',
-        windowTitle: 'Send an Enquiry',
-        background: '#ff6b35',
-        fontColor: '#FFFFFF',
-        type: '1',
-        height: 500,
-        width: 700,
-        openOnLoad: false
-    });
-</script>
-
-<!-- Button Click Handlers -->
-<script>
-document.addEventListener('DOMContentLoaded', function() {
-    document.querySelectorAll('[data-booking]').forEach(function(btn) {
-        btn.addEventListener('click', function(e) {
-            e.preventDefault();
-            if (widget && typeof widget.open === 'function') {
-                widget.open();
-            } else {
-                window.location.href = 'enquiry.html';
-            }
-        });
-    });
-    
-    document.querySelectorAll('[data-enquiry]').forEach(function(btn) {
-        btn.addEventListener('click', function(e) {
-            e.preventDefault();
-            if (jotformFeedback && typeof jotformFeedback.open === 'function') {
-                jotformFeedback.open();
-            } else {
-                window.open('https://form.jotform.com/261603325649357', '_blank');
-            }
-        });
-    });
-});
-</script>
-
     <script src="assets/js/cookie-consent.js"></script>
 </body>
 </html>
