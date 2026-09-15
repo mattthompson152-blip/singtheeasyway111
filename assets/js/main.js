@@ -87,6 +87,20 @@ document.addEventListener('DOMContentLoaded', function() {
     // ======================================
     // JOTFORM MODAL HANDLER
     // ======================================
+    if (!window.jotformFeedback && typeof window.JotformFeedback === 'function') {
+        window.jotformFeedback = new window.JotformFeedback({
+            formId: '261603325649357',
+            base: 'https://form.jotform.com/',
+            windowTitle: 'Send an Enquiry',
+            background: '#ff6b35',
+            fontColor: '#FFFFFF',
+            type: '1',
+            height: 500,
+            width: 700,
+            openOnLoad: false
+        });
+    }
+
     function handleJotformClick(e) {
         e.preventDefault();
         try {
