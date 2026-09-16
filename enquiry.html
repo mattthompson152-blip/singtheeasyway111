@@ -4,7 +4,7 @@
     
     
 
-    Enquire About a Lesson | Sing The Easy Way
+    Enquire About Online Singing Lessons | Sing The Easy Way
 
     
 
@@ -50,7 +50,7 @@
         window.dataLayer = window.dataLayer || [];
 
         function gtag() {
-            dataLayer.push(arguments);
+            window.dataLayer.push(arguments);
         }
 
         gtag('js', new Date());
@@ -65,18 +65,18 @@
                     rgba(255, 107, 53, 0.1) 0%,
                     rgba(13, 13, 13, 0.95) 100%
                 ),
-                url('assets/images/hero-waveform.jpg') center / cover;
+                url("assets/images/hero-waveform.jpg") center / cover;
 
-            padding: 120px var(--space-md) 60px;
-            text-align: center;
             min-height: 50vh;
+            padding: 120px var(--space-md) 60px;
             display: flex;
             align-items: center;
             justify-content: center;
+            text-align: center;
         }
 
         .enquiry-hero-section h1 {
-            max-width: 700px;
+            max-width: 760px;
             margin: 0 auto var(--space-md);
             font-size: 2.2rem;
             font-weight: 700;
@@ -90,24 +90,25 @@
             line-height: 1.6;
         }
 
-        .enquiry-hero-cta {
-            margin-top: var(--space-lg);
-        }
-
-        .assessment-explanation {
+        .assessment-explanation,
+        .how-it-works,
+        .testimonial-showcase,
+        .faq-section {
             padding: var(--space-xl) var(--space-md);
             background: var(--bg-dark);
             border-bottom: 1px solid var(--border);
         }
 
-        .assessment-grid {
+        .assessment-grid,
+        .trust-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: var(--space-xl);
             align-items: start;
         }
 
-        .assessment-content h2 {
+        .assessment-content h2,
+        .trust-content h2 {
             margin-bottom: var(--space-md);
             font-size: 1.8rem;
         }
@@ -115,11 +116,11 @@
         .assessment-content h3 {
             margin-top: var(--space-lg);
             margin-bottom: var(--space-sm);
-            color: var(--text-primary);
             font-size: 1.1rem;
         }
 
-        .assessment-content p {
+        .assessment-content p,
+        .trust-content p {
             margin-bottom: var(--space-md);
             color: var(--text-secondary);
             line-height: 1.7;
@@ -142,658 +143,3 @@
         .assessment-content li::before {
             content: "✓";
             position: absolute;
-            left: 0;
-            color: var(--accent);
-            font-weight: 700;
-        }
-
-        .assessment-highlights {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: var(--space-md);
-        }
-
-        .highlight-box {
-            padding: var(--space-md);
-            background: var(--bg-card);
-            border-left: 3px solid var(--accent);
-            border-radius: 4px;
-        }
-
-        .highlight-box strong {
-            display: block;
-            margin-bottom: var(--space-xs);
-            color: var(--accent);
-        }
-
-        .how-it-works {
-            padding: var(--space-xl) var(--space-md);
-            background: var(--bg-dark);
-            border-bottom: 1px solid var(--border);
-        }
-
-        .how-it-works h2 {
-            margin-bottom: var(--space-lg);
-            text-align: center;
-            font-size: 1.8rem;
-        }
-
-        .steps-grid {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: var(--space-md);
-            max-width: 1000px;
-            margin: 0 auto;
-        }
-
-        .step-box {
-            padding: var(--space-lg);
-            text-align: center;
-            background: var(--bg-card);
-            border: 1px solid var(--border);
-            border-radius: var(--radius-lg);
-        }
-
-        .step-number {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            width: 40px;
-            height: 40px;
-            margin: 0 auto var(--space-md);
-            color: #000000;
-            background: var(--accent);
-            border-radius: 50%;
-            font-size: 1.1rem;
-            font-weight: 700;
-        }
-
-        .step-box h3 {
-            margin-bottom: var(--space-sm);
-            font-size: 1rem;
-        }
-
-        .step-box p {
-            color: var(--text-secondary);
-            font-size: 0.9rem;
-            line-height: 1.5;
-        }
-
-        .enquiry-form-section {
-            padding: var(--space-xl) var(--space-md);
-        }
-
-        .enquiry-form-wrapper {
-            max-width: 800px;
-            margin: 0 auto;
-        }
-
-        .form-intro {
-            margin-bottom: 2rem;
-            text-align: center;
-        }
-
-        .form-intro p {
-            color: var(--text-secondary);
-        }
-
-        .jotform-container {
-            width: 100%;
-            min-height: 900px;
-            margin: 0 auto;
-        }
-
-        .jotform-container iframe {
-            display: block;
-            width: 100%;
-            min-height: 900px;
-            border: 0;
-        }
-
-        .trust-credibility {
-            padding: var(--space-xl) var(--space-md);
-            background:
-                linear-gradient(
-                    to right,
-                    rgba(255, 107, 53, 0.05),
-                    rgba(255, 107, 53, 0.02)
-                );
-
-            border-bottom: 1px solid var(--border);
-        }
-
-        .trust-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: var(--space-xl);
-            align-items: center;
-        }
-
-        .trust-image {
-            text-align: center;
-        }
-
-        .trust-image img {
-            width: 100%;
-            max-width: 350px;
-            border-radius: var(--radius-lg);
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-        }
-
-        .trust-content h2 {
-            margin-bottom: var(--space-md);
-            font-size: 1.8rem;
-        }
-
-        .trust-content p {
-            margin-bottom: var(--space-md);
-            color: var(--text-secondary);
-            line-height: 1.7;
-        }
-
-        .credential-item {
-            display: flex;
-            gap: var(--space-sm);
-            align-items: flex-start;
-            margin-bottom: var(--space-sm);
-        }
-
-        .credential-item::before {
-            content: "✓";
-            min-width: 20px;
-            color: var(--accent);
-            font-weight: 700;
-        }
-
-        .testimonial-showcase {
-            padding: var(--space-xl) var(--space-md);
-            background: var(--bg-dark);
-            border-bottom: 1px solid var(--border);
-        }
-
-        .testimonial-showcase h2 {
-            margin-bottom: var(--space-lg);
-            text-align: center;
-            font-size: 1.8rem;
-        }
-
-        .testimonial-card {
-            max-width: 700px;
-            margin: 0 auto;
-            padding: var(--space-lg);
-            background: var(--bg-card);
-            border: 1px solid var(--border);
-            border-left: 4px solid var(--accent);
-            border-radius: var(--radius-lg);
-        }
-
-        .testimonial-quote {
-            margin-bottom: var(--space-md);
-            color: var(--text-secondary);
-            font-size: 1.05rem;
-            font-style: italic;
-            line-height: 1.8;
-        }
-
-        .testimonial-author {
-            margin-bottom: var(--space-xs);
-            color: var(--text-primary);
-            font-weight: 600;
-        }
-
-        .testimonial-source {
-            color: var(--text-secondary);
-            font-size: 0.9rem;
-        }
-
-        .faq-section {
-            padding: var(--space-xl) var(--space-md);
-            background: var(--bg-dark);
-            border-bottom: 1px solid var(--border);
-        }
-
-        .faq-section h2 {
-            margin-bottom: var(--space-lg);
-            text-align: center;
-            font-size: 1.8rem;
-        }
-
-        .faq-list {
-            max-width: 800px;
-            margin: 0 auto;
-        }
-
-        .faq-item {
-            margin-bottom: var(--space-md);
-            overflow: hidden;
-            background: var(--bg-card);
-            border: 1px solid var(--border);
-            border-radius: var(--radius-lg);
-        }
-
-        .faq-question {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            width: 100%;
-            padding: var(--space-md);
-            color: var(--text-primary);
-            text-align: left;
-            background: var(--bg-card);
-            border: 0;
-            cursor: pointer;
-            font: inherit;
-            font-weight: 600;
-        }
-
-        .faq-question:hover {
-            background: rgba(255, 107, 53, 0.05);
-        }
-
-        .faq-question:focus-visible {
-            outline: 2px solid var(--accent);
-            outline-offset: -2px;
-        }
-
-        .faq-toggle {
-            color: var(--accent);
-            font-weight: 700;
-            transition: transform 0.3s ease;
-        }
-
-        .faq-question[aria-expanded="true"] .faq-toggle {
-            transform: rotate(180deg);
-        }
-
-        .faq-answer {
-            display: none;
-            padding: var(--space-md);
-            color: var(--text-secondary);
-            border-top: 1px solid var(--border);
-            line-height: 1.7;
-        }
-
-        .faq-item.open .faq-answer {
-            display: block;
-        }
-
-        .email-alternative {
-            padding: var(--space-xl) var(--space-md);
-            text-align: center;
-        }
-
-        @media (max-width: 768px) {
-            .enquiry-hero-section {
-                min-height: 40vh;
-                padding: 100px var(--space-md) 40px;
-            }
-
-            .enquiry-hero-section h1 {
-                font-size: 1.6rem;
-            }
-
-            .enquiry-hero-section p {
-                font-size: 1rem;
-            }
-
-            .assessment-grid,
-            .trust-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .assessment-highlights,
-            .steps-grid {
-                grid-template-columns: 1fr 1fr;
-            }
-
-            .trust-image {
-                order: -1;
-            }
-        }
-
-        @media (max-width: 480px) {
-            .enquiry-hero-section h1 {
-                font-size: 1.4rem;
-            }
-
-            .assessment-highlights,
-            .steps-grid {
-                grid-template-columns: 1fr;
-            }
-        }
-    
-
-
-
-    
-        Skip to main content
-    
-
-    
-        
-            
-                
-                    
-                        Home
-                    
-
-                    
-                        About
-                    
-
-                    
-                        Lessons
-                    
-
-                    
-                        Pricing
-                    
-
-                    
-                        
-                            Enquire
-                        
-                    
-
-                    
-                        
-                            Testimonials
-                        
-                    
-
-                    
-                        Blog
-                    
-
-                    
-                        FAQ
-                    
-
-                    
-                        Contact
-                    
-                
-            
-
-            
-                
-                
-                
-            
-        
-    
-
-    
-        
-            
-                Find Your Voice with Expert Guidance
-
-                
-                    Submit your enquiry and I will be in touch within
-                    24 hours to arrange your £25 vocal assessment,
-                    an £85 lesson, or a £700 ten lesson block.
-                
-
-                
-                    
-                        Start Your Enquiry
-                    
-                
-            
-        
-
-        
-            
-                
-                    
-                        Your Vocal Assessment
-
-                        What You Will Experience
-
-                        
-                            A live, interactive, one to one session
-                            tailored to your current level and goals.
-                            I will listen to your voice, provide honest
-                            feedback and outline a clear path forward.
-                        
-
-                        What Is Included
-
-                        
-                            
-                                Comprehensive vocal assessment and
-                                technique review
-                            
-
-                            
-                                Discussion of your goals and musical
-                                interests
-                            
-
-                            
-                                Personalised feedback and practical
-                                guidance
-                            
-
-                            
-                                No pressure to commit beyond this
-                                session
-                            
-                        
-
-                        Who This Is For
-
-                        
-                            Complete beginners, intermediate singers
-                            and anyone looking to improve their vocal
-                            technique, confidence or performance.
-                        
-                    
-
-                    
-                        
-                            30 Minutes
-
-                            Dedicated time focused on understanding
-                            your voice.
-                        
-
-                        
-                            Save 50%
-
-                            Normally £50. The current assessment offer
-                            is £25, saving you £25.
-                        
-
-                        
-                            Live Only
-
-                            A personal video call, never an automated
-                            or prerecorded lesson.
-                        
-
-                        
-                            No Commitment
-
-                            Decide what is right for you after your
-                            assessment.
-                        
-                    
-                
-            
-        
-
-        
-            
-                How It Works
-
-                
-                    
-                        1
-
-                        Submit Your Enquiry
-
-                        
-                            Complete the form with your details and
-                            preferred lesson option.
-                        
-                    
-
-                    
-                        2
-
-                        Receive Confirmation
-
-                        
-                            I will contact you within 24 hours to
-                            arrange your session.
-                        
-                    
-
-                    
-                        3
-
-                        Join Your Session
-
-                        
-                            Connect through an agreed live video call
-                            at your arranged time.
-                        
-                    
-
-                    
-                        4
-
-                        Choose Your Next Step
-
-                        
-                            Receive feedback and decide what works
-                            best for your singing goals.
-                        
-                    
-                
-            
-        
-
-        
-            
-                
-                    
-                        Submit Your Enquiry
-
-                        
-                            Choose a £25 vocal assessment,
-                            an £85 single lesson, or a £700
-                            ten lesson block.
-                        
-                    
-
-                    
-                        
-                    
-                
-            
-        
-
-        
-            
-                
-                    
-                        
-                    
-
-                    
-                        Why Choose Matt?
-
-                        
-                            I am a professional vocal coach with more
-                            than 25 years of experience. Every lesson
-                            is live, personal and designed around your
-                            individual goals.
-                        
-
-                        
-                            More than 25 years of professional vocal
-                            coaching experience
-                        
-
-                        
-                            Personalised one to one sessions tailored
-                            to your level
-                        
-
-                        
-                            Live instruction rather than automated or
-                            prerecorded videos
-                        
-
-                        
-                            Clear, practical guidance based on your
-                            individual voice
-                        
-                    
-                
-            
-        
-
-        
-            
-                What Students Say
-
-                
-                    
-                        “I've had a few one to one lessons with Matt,
-                        and highly recommend him. I've come to
-                        understand more about my voice through these
-                        lessons than I have with other teachers.”
-                    
-
-                    
-                        Jane Morris
-                    
-
-                    
-                        One to One Vocal Tuition
-                    
-                
-            
-        
-
-        
-            
-                Common Questions
-
-                
-                    
-                        
-                            
-                                Do I need any singing experience?
-                            
-
-                            
-                                ▼
-                            
-                        
-
-                        
-                            
-                                No. Sessions are suitable for complete
-                                beginners as well as experienced
-                                singers.
-                            
-                        
-                    
-
-                    
-                        
-                            
-                                What if I want to continue after my
-                                assessment?
-                            
-
-                            
-                                ▼
-                            
-                        
-
-                        <div
