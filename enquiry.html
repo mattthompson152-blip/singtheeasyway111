@@ -364,6 +364,54 @@
             display: block;
         }
 
+        /* Enquiry Form Section */
+        .enquiry-form-section {
+            padding: var(--space-xl) var(--space-md);
+            background: var(--bg-dark);
+            border-bottom: 1px solid var(--border);
+        }
+
+        .enquiry-form-wrapper {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .form-intro {
+            text-align: center;
+            margin-bottom: var(--space-lg);
+        }
+
+        .form-intro h2 {
+            font-size: 1.8rem;
+            margin-bottom: var(--space-sm);
+        }
+
+        .form-intro p {
+            color: var(--text-secondary);
+            max-width: 600px;
+            margin: 0 auto;
+            line-height: 1.6;
+        }
+
+        .jotform-container {
+            width: 100%;
+            margin: 0 auto;
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-lg);
+            padding: var(--space-md);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+        }
+
+        .jotform-container iframe {
+            width: 100%;
+            min-height: 1400px;
+            height: 100%;
+            border: none;
+            display: block;
+            border-radius: var(--radius);
+        }
+
         /* Responsive */
         @media (max-width: 768px) {
             .enquiry-hero-section {
@@ -399,6 +447,14 @@
             .trust-image {
                 order: -1;
             }
+
+            .jotform-container {
+                padding: var(--space-sm);
+            }
+
+            .jotform-container iframe {
+                min-height: 1600px;
+            }
         }
 
         @media (max-width: 480px) {
@@ -417,6 +473,10 @@
             .step-box h3 {
                 font-size: 0.95rem;
             }
+
+            .jotform-container iframe {
+                min-height: 1800px;
+            }
         }
     </style>
 </head>
@@ -429,13 +489,6 @@
         <div class="container nav-container">
             <a href="index.html" class="logo-link">
                 <div class="logo">
-                    <div class="logo-icon">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <path d="M9 18V5l12-2v13"></path>
-                            <circle cx="6" cy="18" r="3"></circle>
-                            <circle cx="18" cy="16" r="3"></circle>
-                        </svg>
-                    </div>
                     <div class="logo-text">
                         <div class="logo-name">Sing The Easy Way</div>
                         <div class="logo-tagline">Online Singing Lessons</div>
@@ -483,7 +536,7 @@
                     <div class="assessment-content">
                         <h2>Your Vocal Assessment</h2>
                         <h3>What You'll Experience</h3>
-                        <p>A live, interactive one-to-one session tailored to your current level and goals. This is a genuine consultation where I'll listen to your voice, provide honest feedback, and outline a clear path forward.</p>
+                        <p>A live, interactive one-to-one session tailored to your current level and goals. This is a genuine consultation where I'll listen to your voice, provide honest feedback, and help you understand your next steps.</p>
 
                         <h3>What's Included</h3>
                         <ul>
@@ -549,16 +602,16 @@
         </section>
 
         <!-- Enquiry Form Section -->
-        <section class="section-alt" id="enquiry-form">
+        <section class="enquiry-form-section" id="enquiry-form">
             <div class="container">
-                <div style="max-width: 800px; margin: 0 auto;">
-                    <div class="form-intro" style="text-align: center; margin-bottom: 2rem;">
+                <div class="enquiry-form-wrapper">
+                    <div class="form-intro">
                         <h2>Submit Your Enquiry</h2>
                         <p>Choose the lesson type that suits you best. Whether it's a one-off assessment, a single lesson, or a block of ten, I'm here to help you find your voice.</p>
                     </div>
                     <!-- JotForm Embed -->
-                    <div class="jotform-container" style="width: 100%; margin: 0 auto;">
-                        <iframe id="JotFormIFrame" title="Lesson Enquiry" allowtransparency="true" allowfullscreen="true" allow="geolocation; microphone; camera" src="https://form.jotform.com/261603325649357" style="border:none;"></iframe>
+                    <div class="jotform-container">
+                        <iframe id="JotFormIFrame" title="Lesson Enquiry" allowtransparency="true" allowfullscreen="true" allow="geolocation; microphone; camera" src="https://form.jotform.com/261603325649357"></iframe>
                     </div>
                 </div>
             </div>
@@ -597,7 +650,7 @@
             <div class="container">
                 <h2>What Students Say</h2>
                 <div class="testimonial-card">
-                    <p class="testimonial-quote">"I've had a few one-to-one lessons with Matt, and highly recommend him. I've come to understand more about my voice through these lessons than I have with other teachers. He quickly identifies areas for improvement and explains technical aspects of singing in a way that makes sense."</p>
+                    <p class="testimonial-quote">"I've had a few one-to-one lessons with Matt, and highly recommend him. I've come to understand more about my voice through these lessons than I have in years of singing."</p>
                     <div class="testimonial-author">Jane Morris</div>
                     <div class="testimonial-source">One to One Vocal Tuition</div>
                 </div>
@@ -615,7 +668,7 @@
                             <span class="faq-toggle">▼</span>
                         </button>
                         <div class="faq-answer">
-                            <p>No. My sessions are designed for all levels, from complete beginners to experienced singers. There's no prerequisite experience—only a willingness to learn and improve. Many of my most rewarding students started with no singing background whatsoever.</p>
+                            <p>No. My sessions are designed for all levels, from complete beginners to experienced singers. There's no prerequisite experience—only a willingness to learn and improve.</p>
                         </div>
                     </div>
 
@@ -625,7 +678,7 @@
                             <span class="faq-toggle">▼</span>
                         </button>
                         <div class="faq-answer">
-                            <p>That's entirely up to you. After your assessment, I'll outline options including single lessons, 10-lesson packages, or regular ongoing tuition. There's no obligation to continue—the assessment gives you a genuine sense of my teaching style so you can make an informed decision.</p>
+                            <p>That's entirely up to you. After your assessment, I'll outline options including single lessons, 10-lesson packages, or regular ongoing tuition. There's no obligation to continue.</p>
                         </div>
                     </div>
 
@@ -635,7 +688,7 @@
                             <span class="faq-toggle">▼</span>
                         </button>
                         <div class="faq-answer">
-                            <p>All lessons are live, one-to-one video calls conducted via FaceTime, WhatsApp, or Microsoft Teams—whatever works best for you. You'll need a quiet space and a device with a camera and microphone. I've worked with students worldwide, and the online format works brilliantly for vocal coaching.</p>
+                            <p>All lessons are live, one-to-one video calls conducted via FaceTime, WhatsApp, or Microsoft Teams—whatever works best for you. You'll need a quiet space and a device with a camera.</p>
                         </div>
                     </div>
                 </div>
@@ -660,11 +713,6 @@
             <div class="footer-grid">
                 <div class="footer-brand">
                     <div class="footer-logo">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="24" height="24">
-                            <path d="M9 18V5l12-2v13"></path>
-                            <circle cx="6" cy="18" r="3"></circle>
-                            <circle cx="18" cy="16" r="3"></circle>
-                        </svg>
                         <span>Sing The Easy Way</span>
                     </div>
                     <p>Professional online singing lessons from an experienced vocal coach. Helping you find your voice, one lesson at a time.</p>
