@@ -17,8 +17,8 @@
     </script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>FAQ - Sing The Easy Way</title>
-  <meta name="description" content="Frequently asked questions about online singing lessons with vocal coach Matt Thompson.">
+  <title>Online Singing Lessons FAQ | Questions Before You Book</title>
+  <meta name="description" content="Honest answers about live one-to-one online singing lessons. Am I too old, what if I sing badly, do online lessons work, what does it cost. Asked and answered.">
   
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
@@ -269,6 +269,80 @@
   <link rel="manifest" href="/site.webmanifest">
   <meta name="theme-color" content="#0a0a0a">
     <link rel="stylesheet" href="/assets/css/cookie-consent.css?v=3">
+
+    <!-- Structured data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "Person",
+          "@id": "https://singtheeasyway.com/#matt",
+          "name": "Matt Thompson",
+          "jobTitle": "Vocal Coach",
+          "description": "UK vocal coach with more than 25 years of experience, teaching live one-to-one online singing lessons to beginners, developing singers, recording artists and performers.",
+          "image": "https://singtheeasyway.com/assets/images/matt/matt-thompson-headshot-primary.webp",
+          "url": "https://singtheeasyway.com/about.html",
+          "email": "matt@singtheeasyway.com",
+          "telephone": "+44-7792-511393",
+          "knowsAbout": ["Singing", "Vocal technique", "Vocal coaching", "English pronunciation for singers", "Performance coaching", "Recording session vocals"],
+          "sameAs": [
+            "https://www.instagram.com/singtheeasyway",
+            "https://www.tiktok.com/@mattsjourneysofar"
+          ]
+        },
+        {
+          "@type": "ProfessionalService",
+          "@id": "https://singtheeasyway.com/#business",
+          "name": "Sing The Easy Way",
+          "alternateName": "Matt Thompson Vocal Coaching",
+          "description": "Live one-to-one online singing lessons with vocal coach Matt Thompson, taught in real time on Microsoft Teams.",
+          "url": "https://singtheeasyway.com/",
+          "image": "https://singtheeasyway.com/assets/images/matt/matt-thompson-headshot-primary.webp",
+          "email": "matt@singtheeasyway.com",
+          "telephone": "+44-7792-511393",
+          "priceRange": "££",
+          "founder": { "@id": "https://singtheeasyway.com/#matt" },
+          "areaServed": "Worldwide",
+          "availableLanguage": "English",
+          "sameAs": [
+            "https://www.instagram.com/singtheeasyway",
+            "https://www.tiktok.com/@mattsjourneysofar"
+          ],
+          "hasOfferCatalog": {
+            "@type": "OfferCatalog",
+            "name": "Online singing lessons",
+            "itemListElement": [
+              {
+                "@type": "Offer",
+                "name": "30 minute consultation",
+                "price": "25.00",
+                "priceCurrency": "GBP",
+                "url": "https://singtheeasyway.com/pricing.html",
+                "itemOffered": { "@type": "Service", "name": "Online singing consultation", "serviceType": "Vocal assessment" }
+              },
+              {
+                "@type": "Offer",
+                "name": "One hour lesson",
+                "price": "85.00",
+                "priceCurrency": "GBP",
+                "url": "https://singtheeasyway.com/pricing.html",
+                "itemOffered": { "@type": "Service", "name": "Live one-to-one online singing lesson", "serviceType": "Singing lesson" }
+              },
+              {
+                "@type": "Offer",
+                "name": "Ten lesson block",
+                "price": "700.00",
+                "priceCurrency": "GBP",
+                "url": "https://singtheeasyway.com/pricing.html",
+                "itemOffered": { "@type": "Service", "name": "Ten live one-to-one online singing lessons", "serviceType": "Singing lessons" }
+              }
+            ]
+          }
+        }
+      ]
+    }
+    </script>
 </head>
 <body>
 
@@ -290,7 +364,7 @@
             <li><a href="/testimonials.html">Results</a></li>
             <li><a href="/pricing.html">Pricing</a></li>
             <li><a href="/blog.html">Blog</a></li>
-            <li><a href="/contact.html" class="btn primary">Book a Consultation</a></li>
+            <li><a href="/contact.html" class="btn primary">Book a consultation, £25</a></li>
         </ul>
     </div>
 </nav>
@@ -300,6 +374,66 @@
     <p class="subtitle">Everything you need to know about online singing lessons</p>
 
     <!-- FAQ 1 -->
+    <div class="faq-item">
+      <button class="faq-question" onclick="toggleFAQ(this)">
+        <span>What if I am rubbish? I am worried about being judged.</span>
+        <span class="faq-toggle">+</span>
+      </button>
+      <div class="faq-answer">
+        <p>Nobody is judged here. What you sing in the first few minutes does not define your voice, it just introduces it to me, and I will say that before you start. You are allowed to make mistakes, forget words and get it wrong. That is how lessons work. If being watched is the problem, you can turn your camera off and I will turn mine off too.</p>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-question" onclick="toggleFAQ(this)">
+        <span>Am I too old to start singing lessons?</span>
+        <span class="faq-toggle">+</span>
+      </button>
+      <div class="faq-answer">
+        <p>No. Adults who have never had a lesson, and adults coming back after decades away, are a large part of who I teach. The voice responds to good training at any age. The only thing that genuinely limits people is never starting.</p>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-question" onclick="toggleFAQ(this)">
+        <span>What if I have no natural talent?</span>
+        <span class="faq-toggle">+</span>
+      </button>
+      <div class="faq-answer">
+        <p>Almost everybody who says this has been told something unkind by somebody who was not qualified to say it. In 25 years I have met very few people who genuinely cannot learn to sing, and a great many who had been convinced they could not. Usually something specific is in the way, and it can be found and fixed.</p>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-question" onclick="toggleFAQ(this)">
+        <span>Will I be pressured into buying lessons?</span>
+        <span class="faq-toggle">+</span>
+      </button>
+      <div class="faq-answer">
+        <p>No. There is no hard sell in the consultation and you do not have to decide anything on the day. I would rather you went away and thought about it than signed up to something that is not right for you.</p>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-question" onclick="toggleFAQ(this)">
+        <span>What do I get after each lesson?</span>
+        <span class="faq-toggle">+</span>
+      </button>
+      <div class="faq-answer">
+        <p>A link to your own lesson folder. Inside it is the recording of the lesson, a written summary of what we worked on, and a clear path telling you exactly what to practise next. The folder stays available, so nothing depends on you remembering or taking notes while you sing.</p>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-question" onclick="toggleFAQ(this)">
+        <span>I have ADHD or I am autistic. Will that be a problem?</span>
+        <span class="faq-toggle">+</span>
+      </button>
+      <div class="faq-answer">
+        <p>The opposite. I have ADHD myself and I teach in a way that does not depend on memory, does not pile on six corrections at once, and never blames you for not understanding an explanation. <a href="/singing-lessons-for-adhd-and-autism.html" class="text-link">More on how I teach neurodivergent singers</a></p>
+      </div>
+    </div>
+
     <div class="faq-item">
       <button class="faq-question" onclick="toggleFAQ(this)">
         <span>Can anyone learn to sing, or do you need natural talent?</span>
@@ -468,7 +602,7 @@
     <div class="cta-box">
       <h2>Still Have Questions?</h2>
       <p>I'm happy to answer any other questions you have. Just drop me a message.</p>
-      <a href="/contact.html" class="btn">Send an Enquiry →</a>
+      <a href="/contact.html" class="btn">Book a consultation, £25</a>
     </div>
 
   </div>
@@ -523,7 +657,7 @@
                 <h3>Get in Touch</h3>
                 <p><a href="tel:+447792511393">+44 7792 511393</a></p>
                 <p><a href="mailto:matt@singtheeasyway.com">matt@singtheeasyway.com</a></p>
-                <a href="/contact.html" class="btn primary" style="margin-top: var(--space-sm);">Book a Consultation</a>
+                <a href="/contact.html" class="btn primary" style="margin-top: var(--space-sm);">Book a consultation, £25</a>
                 <p class="lesson-platforms">Lessons taught live on Microsoft Teams</p>
             </div>
         </div>

@@ -485,6 +485,80 @@
             }
         }
     </style>
+
+    <!-- Structured data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "Person",
+          "@id": "https://singtheeasyway.com/#matt",
+          "name": "Matt Thompson",
+          "jobTitle": "Vocal Coach",
+          "description": "UK vocal coach with more than 25 years of experience, teaching live one-to-one online singing lessons to beginners, developing singers, recording artists and performers.",
+          "image": "https://singtheeasyway.com/assets/images/matt/matt-thompson-headshot-primary.webp",
+          "url": "https://singtheeasyway.com/about.html",
+          "email": "matt@singtheeasyway.com",
+          "telephone": "+44-7792-511393",
+          "knowsAbout": ["Singing", "Vocal technique", "Vocal coaching", "English pronunciation for singers", "Performance coaching", "Recording session vocals"],
+          "sameAs": [
+            "https://www.instagram.com/singtheeasyway",
+            "https://www.tiktok.com/@mattsjourneysofar"
+          ]
+        },
+        {
+          "@type": "ProfessionalService",
+          "@id": "https://singtheeasyway.com/#business",
+          "name": "Sing The Easy Way",
+          "alternateName": "Matt Thompson Vocal Coaching",
+          "description": "Live one-to-one online singing lessons with vocal coach Matt Thompson, taught in real time on Microsoft Teams.",
+          "url": "https://singtheeasyway.com/",
+          "image": "https://singtheeasyway.com/assets/images/matt/matt-thompson-headshot-primary.webp",
+          "email": "matt@singtheeasyway.com",
+          "telephone": "+44-7792-511393",
+          "priceRange": "££",
+          "founder": { "@id": "https://singtheeasyway.com/#matt" },
+          "areaServed": "Worldwide",
+          "availableLanguage": "English",
+          "sameAs": [
+            "https://www.instagram.com/singtheeasyway",
+            "https://www.tiktok.com/@mattsjourneysofar"
+          ],
+          "hasOfferCatalog": {
+            "@type": "OfferCatalog",
+            "name": "Online singing lessons",
+            "itemListElement": [
+              {
+                "@type": "Offer",
+                "name": "30 minute consultation",
+                "price": "25.00",
+                "priceCurrency": "GBP",
+                "url": "https://singtheeasyway.com/pricing.html",
+                "itemOffered": { "@type": "Service", "name": "Online singing consultation", "serviceType": "Vocal assessment" }
+              },
+              {
+                "@type": "Offer",
+                "name": "One hour lesson",
+                "price": "85.00",
+                "priceCurrency": "GBP",
+                "url": "https://singtheeasyway.com/pricing.html",
+                "itemOffered": { "@type": "Service", "name": "Live one-to-one online singing lesson", "serviceType": "Singing lesson" }
+              },
+              {
+                "@type": "Offer",
+                "name": "Ten lesson block",
+                "price": "700.00",
+                "priceCurrency": "GBP",
+                "url": "https://singtheeasyway.com/pricing.html",
+                "itemOffered": { "@type": "Service", "name": "Ten live one-to-one online singing lessons", "serviceType": "Singing lessons" }
+              }
+            ]
+          }
+        }
+      ]
+    }
+    </script>
 </head>
 <body>
     <!-- Skip Link for Accessibility -->
@@ -508,7 +582,7 @@
             <li><a href="/testimonials.html">Results</a></li>
             <li><a href="/pricing.html">Pricing</a></li>
             <li><a href="/blog.html">Blog</a></li>
-            <li><a href="/contact.html" class="btn primary">Book a Consultation</a></li>
+            <li><a href="/contact.html" class="btn primary">Book a consultation, £25</a></li>
         </ul>
     </div>
 </nav>
@@ -521,7 +595,7 @@
                 <h1>Get In Touch</h1>
                 <p>Submit your enquiry and I'll be in touch within 24 hours to arrange your personalised vocal assessment or lesson.</p>
                 <div class="enquiry-hero-cta">
-                    <a href="#enquiry-form" class="btn primary">Start Your Enquiry</a>
+                    <a href="#enquiry-form" class="btn primary">Book a consultation, £25</a>
                 </div>
             </div>
         </section>
@@ -766,7 +840,7 @@
                 <h3>Get in Touch</h3>
                 <p><a href="tel:+447792511393">+44 7792 511393</a></p>
                 <p><a href="mailto:matt@singtheeasyway.com">matt@singtheeasyway.com</a></p>
-                <a href="/contact.html" class="btn primary" style="margin-top: var(--space-sm);">Book a Consultation</a>
+                <a href="/contact.html" class="btn primary" style="margin-top: var(--space-sm);">Book a consultation, £25</a>
                 <p class="lesson-platforms">Lessons taught live on Microsoft Teams</p>
             </div>
         </div>

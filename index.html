@@ -37,7 +37,7 @@
     <meta name="twitter:image" content="https://singtheeasyway.com/assets/images/matt/matt-thompson-headshot-primary.webp">
     <meta name="twitter:description" content="Live one-to-one online singing lessons that make you sound more like you, not less. Real-time coaching with Matt Thompson.">
     
-    <!-- FAQ Schema Markup -->
+        <!-- FAQ structured data -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -48,23 +48,47 @@
           "name": "Are these live or pre-recorded singing lessons?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "All lessons are live 1-to-1 sessions with Matt Thompson in real time on Microsoft Teams. They are not pre-recorded videos. You get real-time feedback, [...]
+            "text": "Every lesson is a live one-to-one session with Matt Thompson in real time on Microsoft Teams. Nothing is pre-recorded. You sing, Matt listens, and you get feedback as it happens."
           }
         },
         {
           "@type": "Question",
-          "name": "How do online singing lessons work?",
+          "name": "I have never had a singing lesson. Is that a problem?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Book your lesson online, receive a meeting link, and connect with Matt at your scheduled time. The lesson is a live video call where Matt hears your voice, watches your techni[...]
+            "text": "No. Complete beginners are the most common way people arrive here, and the approach is the same one used with professionals. Nothing is assumed and nothing is rushed."
           }
         },
         {
           "@type": "Question",
-          "name": "Can beginners learn to sing online?",
+          "name": "What if I sing badly in the consultation?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Absolutely. Matt specialises in helping nervous beginners find their voice. You don't need any experience — just a device with a camera and a quiet space. Many of Matt's mos[...]
+            "text": "One nervous attempt does not define your voice, and Matt will say so before you start. You can also turn your camera off if being watched is the thing stopping you."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Are online singing lessons as good as in person?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "For one-to-one coaching, yes. Pitch, tone, breath, strain and register changes all come through clearly, and tension and anticipation are visible on camera. Lessons are live on Microsoft Teams."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What do I get after each lesson?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "A link to your own lesson folder containing the recording of the lesson, a written summary of what was worked on, and a clear path setting out exactly what to practise next. The folder stays available to you."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How much do online singing lessons cost?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "A 30 minute consultation is £25, normally £50. A single 60 minute lesson is £85. A block of ten lessons is £700, which works out at £70 per lesson."
           }
         }
       ]
@@ -85,6 +109,80 @@
   <link rel="apple-touch-icon" sizes="180x180" href="/assets/images/global/apple-touch-icon.png">
   <link rel="manifest" href="/site.webmanifest">
   <meta name="theme-color" content="#0a0a0a">
+
+    <!-- Structured data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "Person",
+          "@id": "https://singtheeasyway.com/#matt",
+          "name": "Matt Thompson",
+          "jobTitle": "Vocal Coach",
+          "description": "UK vocal coach with more than 25 years of experience, teaching live one-to-one online singing lessons to beginners, developing singers, recording artists and performers.",
+          "image": "https://singtheeasyway.com/assets/images/matt/matt-thompson-headshot-primary.webp",
+          "url": "https://singtheeasyway.com/about.html",
+          "email": "matt@singtheeasyway.com",
+          "telephone": "+44-7792-511393",
+          "knowsAbout": ["Singing", "Vocal technique", "Vocal coaching", "English pronunciation for singers", "Performance coaching", "Recording session vocals"],
+          "sameAs": [
+            "https://www.instagram.com/singtheeasyway",
+            "https://www.tiktok.com/@mattsjourneysofar"
+          ]
+        },
+        {
+          "@type": "ProfessionalService",
+          "@id": "https://singtheeasyway.com/#business",
+          "name": "Sing The Easy Way",
+          "alternateName": "Matt Thompson Vocal Coaching",
+          "description": "Live one-to-one online singing lessons with vocal coach Matt Thompson, taught in real time on Microsoft Teams.",
+          "url": "https://singtheeasyway.com/",
+          "image": "https://singtheeasyway.com/assets/images/matt/matt-thompson-headshot-primary.webp",
+          "email": "matt@singtheeasyway.com",
+          "telephone": "+44-7792-511393",
+          "priceRange": "££",
+          "founder": { "@id": "https://singtheeasyway.com/#matt" },
+          "areaServed": "Worldwide",
+          "availableLanguage": "English",
+          "sameAs": [
+            "https://www.instagram.com/singtheeasyway",
+            "https://www.tiktok.com/@mattsjourneysofar"
+          ],
+          "hasOfferCatalog": {
+            "@type": "OfferCatalog",
+            "name": "Online singing lessons",
+            "itemListElement": [
+              {
+                "@type": "Offer",
+                "name": "30 minute consultation",
+                "price": "25.00",
+                "priceCurrency": "GBP",
+                "url": "https://singtheeasyway.com/pricing.html",
+                "itemOffered": { "@type": "Service", "name": "Online singing consultation", "serviceType": "Vocal assessment" }
+              },
+              {
+                "@type": "Offer",
+                "name": "One hour lesson",
+                "price": "85.00",
+                "priceCurrency": "GBP",
+                "url": "https://singtheeasyway.com/pricing.html",
+                "itemOffered": { "@type": "Service", "name": "Live one-to-one online singing lesson", "serviceType": "Singing lesson" }
+              },
+              {
+                "@type": "Offer",
+                "name": "Ten lesson block",
+                "price": "700.00",
+                "priceCurrency": "GBP",
+                "url": "https://singtheeasyway.com/pricing.html",
+                "itemOffered": { "@type": "Service", "name": "Ten live one-to-one online singing lessons", "serviceType": "Singing lessons" }
+              }
+            ]
+          }
+        }
+      ]
+    }
+    </script>
 </head>
 <body>
 
@@ -108,7 +206,7 @@
             <li><a href="/testimonials.html">Results</a></li>
             <li><a href="/pricing.html">Pricing</a></li>
             <li><a href="/blog.html">Blog</a></li>
-            <li><a href="/contact.html" class="btn primary">Book a Consultation</a></li>
+            <li><a href="/contact.html" class="btn primary">Book a consultation, £25</a></li>
         </ul>
     </div>
 </nav>
@@ -405,7 +503,7 @@
                     <li>At least one change you can hear</li>
                     <li>No obligation to continue</li>
                 </ul>
-                <a href="/contact.html" class="btn primary">Book a consultation</a>
+                <a href="/contact.html" class="btn primary">Book a consultation, £25</a>
             </div>
 
             <div class="pricing-card fade-in">
@@ -419,7 +517,7 @@
                     <li>Lesson recording provided</li>
                     <li>Practice notes included</li>
                 </ul>
-                <a href="/contact.html" class="btn primary">Book a consultation</a>
+                <a href="/contact.html" class="btn primary">Book a consultation, £25</a>
             </div>
 
             <div class="pricing-card featured fade-in">
@@ -433,7 +531,7 @@
                     <li>Email support between lessons</li>
                     <li>Priority booking</li>
                 </ul>
-                <a href="/contact.html" class="btn primary">Book a consultation</a>
+                <a href="/contact.html" class="btn primary">Book a consultation, £25</a>
             </div>
         </div>
     </div>
@@ -534,7 +632,7 @@
                 <h3>Get in Touch</h3>
                 <p><a href="tel:+447792511393">+44 7792 511393</a></p>
                 <p><a href="mailto:matt@singtheeasyway.com">matt@singtheeasyway.com</a></p>
-                <a href="/contact.html" class="btn primary" style="margin-top: var(--space-sm);">Book a Consultation</a>
+                <a href="/contact.html" class="btn primary" style="margin-top: var(--space-sm);">Book a consultation, £25</a>
                 <p class="lesson-platforms">Lessons taught live on Microsoft Teams</p>
             </div>
         </div>
@@ -548,7 +646,7 @@
 
 <!-- Floating CTA -->
 <div class="floating-cta">
-    <button class="btn primary enquiry-btn" data-enquiry>Book a consultation, £25</button>
+    <a href="/contact.html" class="btn primary">Book a consultation, £25</a>
 </div>
 
 <!-- Scripts -->

@@ -487,6 +487,42 @@ Use anchor elements for navigation. Use button elements for actions.
 
 `Book a Consultation` and every consultation or booking call to action must point there. There is no separate enquiry page. Do not invent an alternative booking destination.
 
+## CALL TO ACTION WORDING
+
+The site uses one primary call to action everywhere:
+
+```text
+Book a consultation, £25
+```
+
+It always links to `/contact.html`.
+
+Approved secondaries, used sparingly:
+
+```text
+View lesson prices
+Send a message
+Read common questions
+```
+
+Do not invent new button wording. Do not use Enquire, Submit, Learn More, Click Here, Go, or anything vague.
+
+## ANALYTICS AND CONSENT
+
+Google Analytics must never load before consent.
+
+Every page carries a Consent Mode default of `denied` in the head. Analytics is loaded only by `/assets/js/cookie-consent.js` after the visitor accepts.
+
+Never paste a raw `googletagmanager.com/gtag/js` tag into a page. Doing so breaks UK GDPR and PECR compliance.
+
+## LESSON PLATFORM
+
+Lessons are taught live on Microsoft Teams only.
+
+Do not mention FaceTime, WhatsApp, Zoom or Skype as lesson platforms anywhere in client facing copy.
+
+After booking, the student receives an email containing their Microsoft Teams link and the information they need. Lessons are never described as automatically scheduled.
+
 ## HEADING RULES
 
 Every page must contain exactly one `<h1>`.
