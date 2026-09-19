@@ -32,6 +32,7 @@ Core HTML pages must live in the repository root.
 /blog.html
 /contact.html
 /singing-lessons-for-adhd-and-autism.html
+/vocal-coach-film-recording-pronunciation.html
 /privacy-policy.html
 /terms.html
 /environmental-policy.html
@@ -182,6 +183,7 @@ Use `/` as the homepage URL.
 ├── blog.html
 ├── contact.html
 ├── singing-lessons-for-adhd-and-autism.html
+├── vocal-coach-film-recording-pronunciation.html
 ├── privacy-policy.html
 ├── terms.html
 ├── environmental-policy.html
@@ -264,6 +266,7 @@ Required links:
 ```text
 FAQ
 ADHD & Autism
+Film & Recording
 Contact
 Privacy Policy
 Terms
@@ -653,6 +656,16 @@ Current prices:
 Single 60 minute lesson   £85
 Block of 10 lessons       £700, £70 per lesson, saving £150
 ```
+
+## CLAIMS AND EVIDENCE
+
+Never invent a student result, a statistic, a review or a credential.
+
+Testimonials and transformation lines must come word for word from reviews students actually wrote. If a stronger example is needed, ask Matt for it rather than writing one.
+
+Do not name clients, films, productions or artists. Describe the work by category only. Discretion is part of what Matt sells.
+
+Banned unless evidence is supplied: student numbers, retention figures, success rates, "three times faster", "world class", "the best", "leading", and "celebrity vocal coach".
 
 ## CHANGE CONTROL
 
