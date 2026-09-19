@@ -317,6 +317,114 @@ Site footer
 
 Use one clear primary action per section.
 
+## PUBLISHING A NEW BLOG POST, FULL WORKFLOW
+
+A blog post is never one file. It is two pages plus an image plus the sitemap. The task is not finished until all four are done.
+
+### Step 1. The article image
+
+Do not convert, resize or rename an image by hand. Do not guess a filename. Run the script:
+
+```bash
+python3 assets/scripts/prepare-image.py <input-file> blog <keyword-phrase> <DDMM>
+```
+
+Example:
+
+```bash
+python3 assets/scripts/prepare-image.py ~/Desktop/photo.PNG blog online-singing-lessons-vocal-practice 1004
+```
+
+The script accepts PNG, JPEG, HEIC or anything else it can open. It converts to JPEG, resizes to 1200px wide, forces the filename to lowercase, writes it to `/assets/images/blog/`, verifies the file exists, and prints the exact `<img>` tag to paste.
+
+If it prints `FAILED`, nothing was written. Fix the problem and run it again. Never continue past a `FAILED`.
+
+`DDMM` is the publication day and month. The keyword phrase must come from this list:
+
+```text
+online-singing-lessons
+live-online-singing-lessons
+digital-singing-lessons
+remote-singing-lessons
+virtual-singing-lessons
+professional-singing-lessons
+singing-technique
+vocal-coach
+```
+
+For photographs of Matt use `matt` instead of `blog`, and no date. For page graphics use `page`.
+
+```bash
+python3 assets/scripts/prepare-image.py ~/Desktop/matt.jpeg matt matt-thompson-headshot-primary
+```
+
+Always write real alt text. If the image contains words, repeat those words in the alt text.
+
+### Step 2. The article page
+
+Copy `/templates/blog-post-template.html` to `/blog/[article-name].html`.
+
+```text
+Correct     /blog/vocal-health.html
+Wrong       /blog/blog-post-vocal-health-0704.html
+Wrong       /assets/blog/vocal-health.html
+```
+
+The article filename carries no date and no `blog-post-` prefix. The image filename carries the date. These two rules are different on purpose.
+
+Replace every `[SQUARE BRACKET]`, switch `noindex, nofollow` to `index, follow`, and set the title, description, canonical URL, Open Graph URL and Open Graph image.
+
+### Step 3. The blog index
+
+Add a card to `/blog.html`, newest first, inside `<section class="blog-grid">`. Copy this exactly and replace the values:
+
+```html
+<article class="blog-card">
+    <a href="/blog/[ARTICLE-NAME].html" class="image-link">
+        <img src="/assets/images/blog/[IMAGE-NAME]-[DDMM].jpg" alt="[ARTICLE TITLE] - Online Singing Lessons" loading="lazy">
+    </a>
+    <div class="blog-card-content">
+        <span class="blog-date">[Month DD, YYYY]</span>
+        <h2><a href="/blog/[ARTICLE-NAME].html">[ARTICLE TITLE]</a></h2>
+        <p>[SUMMARY, ONE OR TWO SENTENCES]</p>
+        <a href="/blog/[ARTICLE-NAME].html" class="read-more">Read more →</a>
+    </div>
+</article>
+```
+
+A post that is not on the blog index does not exist. Nobody will find it.
+
+### Step 4. The sitemap
+
+Add the post to `/sitemap.xml` in the same shape as every other entry:
+
+```xml
+<url>
+  <loc>https://singtheeasyway.com/blog/[ARTICLE-NAME].html</loc>
+  <lastmod>[YYYY-MM-DD]</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.6</priority>
+</url>
+```
+
+### Step 5. Run the checker before finishing
+
+```bash
+python3 assets/scripts/check-site.py
+```
+
+It checks every live page for broken links, missing images, relative paths, placeholder links, leftover `[PLACEHOLDERS]`, pages with the wrong number of H1 headings, links to `/index.html`, and image filenames containing capital letters.
+
+`PASSED` means publish. `FAILED` means do not publish, fix what it lists, run it again.
+
+Paste the output into your reply. Do not claim the checks passed without showing the result.
+
+Then confirm by eye:
+
+* The three card links on the blog index all open the new post
+* The card image loads and is not stretched
+* The consultation button opens `/contact.html`
+
 ## STANDARD BLOG PAGE TEMPLATE
 
 Use this order:
@@ -391,6 +499,21 @@ Correct:
 Do not publicly link to `/index.html`. Use `/`.
 
 Do not use placeholder links such as `#`, `javascript:void(0)`, or `example.com`.
+
+## REQUIRED SCRIPTS
+
+Two scripts live in `/assets/scripts/`. Using them is mandatory, for every AI and every person.
+
+```text
+assets/scripts/prepare-image.py    Converts and names every image
+assets/scripts/check-site.py       Verifies the whole site before publishing
+```
+
+`prepare-image.py` exists because hand conversion fails in three predictable ways: the file is renamed but never converted, the filename keeps capital letters on a case sensitive server, or the image is never written to the folder at all. The script converts with Pillow, falls back to `sips` on macOS and then to ImageMagick, verifies the output file exists and is not empty, and refuses to report success otherwise.
+
+`check-site.py` must be run and its output reported before any change is published.
+
+Never hand convert. Never hand rename. Never publish without running the checker.
 
 ## MANDATORY LINK AND BUTTON VALIDATION
 
@@ -472,6 +595,8 @@ Do not claim testing that was not performed.
 A task is complete only when:
 
 * The page was built from the correct template.
+* Every image was produced by `prepare-image.py`.
+* `check-site.py` was run and passed, and its output was reported.
 * No `[SQUARE BRACKET]` placeholder remains.
 * Files are in the correct folders.
 * The correct page template has been followed.

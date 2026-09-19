@@ -85,6 +85,27 @@
      Filename rules: lowercase, hyphens, no dates, no blog-post- prefix.
      Save to /blog/[article-name].html
      Then add the post to /blog.html and to /sitemap.xml
+
+     IMAGE: /assets/images/blog/[keyword-phrase]-[DDMM].jpg
+            landscape, about 3:2, 800 to 1280px wide, under 150KB
+            DDMM is the publication day and month
+
+     BLOG INDEX CARD, paste into <section class="blog-grid"> in
+     /blog.html, newest first:
+
+     <article class="blog-card">
+         <a href="/blog/[ARTICLE-NAME].html" class="image-link">
+             <img src="/assets/images/blog/[IMAGE-NAME]-[DDMM].jpg" alt="[ARTICLE TITLE] - Online Singing Lessons" loading="lazy">
+         </a>
+         <div class="blog-card-content">
+             <span class="blog-date">[Month DD, YYYY]</span>
+             <h2><a href="/blog/[ARTICLE-NAME].html">[ARTICLE TITLE]</a></h2>
+             <p>[SUMMARY]</p>
+             <a href="/blog/[ARTICLE-NAME].html" class="read-more">Read more &rarr;</a>
+         </div>
+     </article>
+
+     SITEMAP: add the post to /sitemap.xml, priority 0.6
      ===================================================== -->
 
 <main id="main-content">

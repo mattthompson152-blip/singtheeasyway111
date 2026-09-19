@@ -69,12 +69,50 @@ Every new page and every new blog post must be copied from a template. Never bui
 
 ### Adding a new blog post
 
-1. Copy `/templates/blog-post-template.html` to `/blog/`, named in lowercase with hyphens, no dates, no `blog-post-` prefix
-2. Replace every `[SQUARE BRACKET]` placeholder
-3. Change `noindex, nofollow` to `index, follow`
-4. Put the article image in `/assets/images/blog/`
-5. Add the post to `blog.html` and to `sitemap.xml`
-6. Check it links back to `/blog.html` and to one commercial page
+A blog post is four pieces of work, not one. All four are required.
+
+**1. The image**
+
+Never convert or rename an image by hand. Run this from the repository folder:
+
+```bash
+python3 assets/scripts/prepare-image.py <your-image> blog <keyword-phrase> <DDMM>
+```
+
+Example:
+
+```bash
+python3 assets/scripts/prepare-image.py ~/Desktop/photo.PNG blog online-singing-lessons-vocal-practice 1004
+```
+
+Give it a PNG, a JPEG, anything. It converts to JPEG, resizes to 1200px, forces lowercase, saves to `/assets/images/blog/`, checks the file exists and prints the `<img>` tag to paste. If it says FAILED, nothing was written, so fix it and run it again.
+
+Keyword phrase options: online-singing-lessons, live-online-singing-lessons, digital-singing-lessons, remote-singing-lessons, virtual-singing-lessons, professional-singing-lessons, singing-technique, vocal-coach.
+
+**2. The article page**
+
+- Copy `/templates/blog-post-template.html` to `/blog/[article-name].html`
+- Lowercase with hyphens, no date and no `blog-post-` prefix. The date lives on the image, not the article
+- Replace every `[SQUARE BRACKET]`, switch `noindex, nofollow` to `index, follow`, set the title, description, canonical and Open Graph values
+
+**3. The blog index**
+
+- Add a card to `blog.html`, newest first. The exact snippet is inside the blog template and in AI_RULES.md
+- A post missing from the index is invisible
+
+**4. The sitemap**
+
+- Add the post URL to `sitemap.xml` with priority 0.6
+
+**Then run the checker**
+
+```bash
+python3 assets/scripts/check-site.py
+```
+
+PASSED means publish. FAILED means do not publish, fix what it lists, run it again.
+
+It catches broken links, missing images, relative paths, placeholder links, unfinished `[PLACEHOLDERS]`, wrong H1 counts and capital letters in image filenames.
 
 ### Keeping the templates honest
 
@@ -132,6 +170,18 @@ These figures appear on the homepage, pricing page, FAQ and terms. If any price 
 Google Analytics, G-72QBZSZZBP, is installed on every page.
 
 To verify in Google Search Console, add the property `https://singtheeasyway.com`, choose Google Analytics as the verification method, and it will detect the existing tag.
+
+## The two scripts
+
+```bash
+# Convert any image into the right format, size, name and folder
+python3 assets/scripts/prepare-image.py <image> <blog|matt|page> <name> [DDMM]
+
+# Verify the whole site before publishing
+python3 assets/scripts/check-site.py
+```
+
+`prepare-image.py` needs Pillow. If it is missing, install it once with `python3 -m pip install Pillow`. On a Mac it will fall back to the built in `sips` tool if Pillow is unavailable.
 
 ## Local checks before publishing
 
