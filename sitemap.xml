@@ -7,12 +7,6 @@
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://singtheeasyway.com/index.html</loc>
-    <lastmod>2026-04-20</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
-  </url>
-  <url>
     <loc>https://singtheeasyway.com/about.html</loc>
     <lastmod>2026-04-20</lastmod>
     <changefreq>monthly</changefreq>
@@ -72,141 +66,146 @@
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>
-  <!-- Blog Posts - Updated with new assets/blog/ path -->
   <url>
-    <loc>https://singtheeasyway.com/assets/blog/blog-post-30-day-singing.html</loc>
+    <loc>https://singtheeasyway.com/blog/30-day-singing.html</loc>
     <lastmod>2026-04-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://singtheeasyway.com/assets/blog/blog-post-authentic-voice.html</loc>
+    <loc>https://singtheeasyway.com/blog/authentic-voice.html</loc>
     <lastmod>2026-04-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://singtheeasyway.com/assets/blog/blog-post-belt-safely.html</loc>
+    <loc>https://singtheeasyway.com/blog/belt-safely.html</loc>
     <lastmod>2026-04-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://singtheeasyway.com/assets/blog/blog-post-breathing-techniques.html</loc>
+    <loc>https://singtheeasyway.com/blog/breathing-techniques.html</loc>
     <lastmod>2026-04-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://singtheeasyway.com/assets/blog/blog-post-building-confidence.html</loc>
+    <loc>https://singtheeasyway.com/blog/building-confidence.html</loc>
     <lastmod>2026-04-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://singtheeasyway.com/assets/blog/blog-post-choosing-singing-teacher.html</loc>
+    <loc>https://singtheeasyway.com/blog/choosing-singing-teacher.html</loc>
     <lastmod>2026-04-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://singtheeasyway.com/assets/blog/blog-post-first-online-lesson.html</loc>
+    <loc>https://singtheeasyway.com/blog/first-online-lesson.html</loc>
     <lastmod>2026-04-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://singtheeasyway.com/assets/blog/blog-post-microphones.html</loc>
+    <loc>https://singtheeasyway.com/blog/microphones.html</loc>
     <lastmod>2026-04-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://singtheeasyway.com/assets/blog/blog-post-online-vs-inperson.html</loc>
+    <loc>https://singtheeasyway.com/blog/online-vs-inperson.html</loc>
     <lastmod>2026-04-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://singtheeasyway.com/assets/blog/blog-post-pitch-accuracy.html</loc>
+    <loc>https://singtheeasyway.com/blog/pitch-accuracy.html</loc>
     <lastmod>2026-04-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://singtheeasyway.com/assets/blog/blog-post-sing-with-emotion.html</loc>
+    <loc>https://singtheeasyway.com/blog/sing-with-emotion.html</loc>
     <lastmod>2026-04-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://singtheeasyway.com/assets/blog/blog-post-stage-fright.html</loc>
+    <loc>https://singtheeasyway.com/blog/stage-fright.html</loc>
     <lastmod>2026-04-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://singtheeasyway.com/assets/blog/blog-post-tech-setup.html</loc>
+    <loc>https://singtheeasyway.com/blog/tech-setup.html</loc>
     <lastmod>2026-04-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://singtheeasyway.com/assets/blog/blog-post-vibrato-mastery.html</loc>
+    <loc>https://singtheeasyway.com/blog/vibrato-mastery.html</loc>
     <lastmod>2026-04-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://singtheeasyway.com/assets/blog/blog-post-vocal-agility.html</loc>
+    <loc>https://singtheeasyway.com/blog/vocal-agility.html</loc>
     <lastmod>2026-04-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://singtheeasyway.com/assets/blog/blog-post-vocal-dynamics.html</loc>
+    <loc>https://singtheeasyway.com/blog/vocal-dynamics.html</loc>
     <lastmod>2026-04-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://singtheeasyway.com/assets/blog/blog-post-vocal-health.html</loc>
+    <loc>https://singtheeasyway.com/blog/vocal-health.html</loc>
     <lastmod>2026-04-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://singtheeasyway.com/assets/blog/blog-post-vocal-muscle-memory.html</loc>
+    <loc>https://singtheeasyway.com/blog/vocal-muscle-memory.html</loc>
     <lastmod>2026-04-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://singtheeasyway.com/assets/blog/blog-post-vocal-power.html</loc>
+    <loc>https://singtheeasyway.com/blog/vocal-power.html</loc>
     <lastmod>2026-04-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://singtheeasyway.com/assets/blog/blog-post-vocal-range.html</loc>
+    <loc>https://singtheeasyway.com/blog/vocal-range.html</loc>
     <lastmod>2026-04-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://singtheeasyway.com/assets/blog/blog-post-vocal-stamina.html</loc>
+    <loc>https://singtheeasyway.com/blog/vocal-stamina.html</loc>
     <lastmod>2026-04-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://singtheeasyway.com/assets/blog/blog-post-vocal-twang.html</loc>
+    <loc>https://singtheeasyway.com/blog/vocal-twang.html</loc>
     <lastmod>2026-04-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://singtheeasyway.com/assets/blog/blog-post-vocal-warmups.html</loc>
+    <loc>https://singtheeasyway.com/blog/vocal-warmups.html</loc>
+    <lastmod>2026-04-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://singtheeasyway.com/blog/choir-singing.html</loc>
     <lastmod>2026-04-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>

@@ -112,7 +112,7 @@ document.addEventListener('DOMContentLoaded', function() {
             console.warn('Jotform modal error:', err);
         }
         // Fallback to enquiry page
-        window.location.href = '/enquiry.html';
+        window.location.href = '/contact.html';
     }
     
     // Attach handler to all [data-booking] buttons
