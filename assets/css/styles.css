@@ -1028,3 +1028,25 @@ img[width][height] {
         border-radius: var(--radius);
     }
 }
+
+
+/* =======================================
+   BLOG ASIDES
+   Matt's own comments inside an article.
+   ======================================= */
+/* BLOG ASIDES */
+.matt-aside {
+    border-left: 3px solid var(--accent);
+    padding: var(--space-sm) var(--space-md);
+    margin: var(--space-md) 0;
+    background: rgba(255, 107, 53, 0.05);
+    border-radius: 0 var(--radius) var(--radius) 0;
+}
+
+.matt-aside p {
+    margin-bottom: 0;
+}
+
+.matt-aside strong {
+    color: var(--accent);
+}

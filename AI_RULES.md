@@ -441,6 +441,25 @@ Then confirm by eye:
 * The card image loads and is not stretched
 * The consultation button opens `/contact.html`
 
+## BLOG VOICE
+
+Every blog post carries Matt's voice in four places:
+
+```text
+.matt-hook      A first person opening, straight after the hero image
+.matt-aside     Two opinions or observations inside the article
+.matt-lesson    A "What I would do in your lesson" section before the bio
+The author bio  Ends every post
+```
+
+Write all of them in the first person. Use Matt's own comparisons, not stock ones. The guitar body analogy, the gym analogy and similar filler are banned.
+
+Use British spelling throughout. Maximise, practising, colour, favourite, analyse.
+
+State opinions. A post that any vocal coach could have written is not finished.
+
+Never invent a student. Real examples only, always anonymous.
+
 ## STANDARD BLOG PAGE TEMPLATE
 
 Use this order:
