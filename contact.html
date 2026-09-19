@@ -411,7 +411,7 @@
 
         .jotform-container iframe {
             width: 100%;
-            min-height: 1400px;
+            min-height: 700px;
             height: 100%;
             border: none;
             display: block;
@@ -459,7 +459,7 @@
             }
 
             .jotform-container iframe {
-                min-height: 1600px;
+                min-height: 700px;
             }
         }
 
@@ -481,7 +481,7 @@
             }
 
             .jotform-container iframe {
-                min-height: 1800px;
+                min-height: 700px;
             }
         }
     </style>
@@ -683,7 +683,7 @@
                     </div>
                     <!-- JotForm Embed -->
                     <div class="jotform-container">
-                        <iframe id="JotFormIFrame" title="Lesson Enquiry" allowtransparency="true" allowfullscreen="true" allow="geolocation; microphone; camera" src="https://form.jotform.com/261603325649357"></iframe>
+                        <iframe id="JotFormIFrame-261603325649357" title="Lesson Enquiry" allowtransparency="true" allowfullscreen="true" allow="geolocation; microphone; camera" src="https://form.jotform.com/261603325649357"></iframe>
                     </div>
                 </div>
             </div>
@@ -883,5 +883,11 @@
             });
         });
     </script>
+
+<!-- Jotform auto-resize, stops the form being cut off or leaving a huge gap -->
+<script src="https://cdn.jotfor.ms/s/umd/latest/for-form-embed-handler.js"></script>
+<script>
+  window.jotformEmbedHandler("iframe[id='JotFormIFrame-261603325649357']", "https://form.jotform.com/");
+</script>
 </body>
 </html>

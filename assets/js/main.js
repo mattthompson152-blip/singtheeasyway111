@@ -125,4 +125,38 @@ document.addEventListener('DOMContentLoaded', function() {
         btn.addEventListener('click', handleJotformClick);
     });
     
+
+    // ======================================
+    // FLOATING CTA VISIBILITY
+    // Hides the floating button when the page's
+    // own call to action is on screen, so the
+    // same button never appears twice.
+    // ======================================
+    function floatingCtaVisibility() {
+        var floating = document.querySelector('.floating-cta');
+        if (!floating) { return; }
+
+        var targets = document.querySelectorAll('.cta-section, footer');
+        if (!targets.length || !('IntersectionObserver' in window)) { return; }
+
+        floating.style.transition = 'opacity 0.25s ease, visibility 0.25s ease';
+
+        var observer = new IntersectionObserver(function (entries) {
+            var overlapping = entries.some(function (entry) { return entry.isIntersecting; });
+            if (overlapping) {
+                floating.style.opacity = '0';
+                floating.style.visibility = 'hidden';
+                floating.style.pointerEvents = 'none';
+            } else {
+                floating.style.opacity = '1';
+                floating.style.visibility = 'visible';
+                floating.style.pointerEvents = 'auto';
+            }
+        }, { threshold: 0.15 });
+
+        targets.forEach(function (el) { observer.observe(el); });
+    }
+
+    floatingCtaVisibility();
+
 });

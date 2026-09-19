@@ -997,3 +997,34 @@ img[width][height] {
 .matt-lesson p {
     margin-bottom: var(--space-md);
 }
+
+
+/* =======================================
+   EMBEDDED FORMS
+   Keeps third party form embeds from
+   looking bolted on, especially on phones.
+   ======================================= */
+/* EMBEDDED FORMS */
+.signup-form iframe,
+.jotform-container iframe {
+    background: transparent;
+    color-scheme: normal;
+}
+
+@media (max-width: 700px) {
+    .jotform-container {
+        padding: 0;
+        border: none;
+        background: transparent;
+        box-shadow: none;
+    }
+
+    .signup-box {
+        padding: var(--space-md);
+    }
+
+    .signup-form iframe,
+    .jotform-container iframe {
+        border-radius: var(--radius);
+    }
+}
