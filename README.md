@@ -4,7 +4,7 @@ Live one-to-one online singing lessons with Matt Thompson.
 
 Site: https://singtheeasyway.com
 
-`AI_RULES.md` is the source of truth for structure, layout and links. This README describes what is actually in the repository right now. If the two ever disagree, AI_RULES.md wins and this file should be corrected.
+`AI_RULES.md` is the source of truth for structure, layout and links. `HANDOVER.md` carries project status and history. This README describes what is actually in the repository right now. If the two ever disagree, AI_RULES.md wins and this file should be corrected.
 
 ## Repository structure
 
@@ -12,6 +12,7 @@ Site: https://singtheeasyway.com
 /
 ├── AI_RULES.md                  # Source of truth. Read before changing anything
 ├── README.md                    # This file
+├── HANDOVER.md                  # Project status and history. Read after AI_RULES.md
 ├── index.html                   # Homepage
 ├── about.html                   # About Matt
 ├── lessons.html                 # Lessons
