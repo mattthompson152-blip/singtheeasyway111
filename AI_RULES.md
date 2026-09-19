@@ -76,7 +76,30 @@ Approved image folders:
 /assets/images/matt/
 ```
 
+Photographs of Matt must live inside:
+
+```text
+/assets/images/matt/
+```
+
+Page graphics that are not photographs of Matt stay in `/assets/images/pages/`.
+
 Do not place HTML files inside any asset folder.
+
+### Image format and performance
+
+Use WebP for new photographs.
+
+```text
+Headshots        about 900px wide
+Wider images     about 1000px to 1600px wide
+```
+
+Do not publish an image straight from a camera or phone without resizing it.
+
+Every image must keep its natural proportions. If an image carries `width` and `height` attributes, its height must be released in CSS so it cannot stretch.
+
+Images containing words must repeat those words in the alt text, because search engines and screen readers cannot read text inside a picture.
 
 ### Stylesheets
 
@@ -156,6 +179,9 @@ Use `/` as the homepage URL.
 ├── robots.txt
 ├── blog/
 │   └── article-name.html
+├── templates/
+│   ├── page-template.html
+│   └── blog-post-template.html
 └── assets/
     ├── css/
     │   └── styles.css
@@ -237,6 +263,37 @@ Also include the business name, copyright notice, primary contact method, and va
 
 Do not place footer only pages in the main navigation.
 
+## TEMPLATES, MANDATORY
+
+Every new page and every new blog post must be built by copying a template. Do not build a page from scratch and do not copy an existing live page.
+
+```text
+/templates/page-template.html          Commercial and informational pages
+/templates/blog-post-template.html     Blog posts
+```
+
+Rules for using a template:
+
+* Copy the template. Never edit the template itself when building a page.
+* Save a page to the repository root. Save a blog post to `/blog/`.
+* Replace every `[SQUARE BRACKET]` placeholder. A page is not finished while one remains.
+* Change `noindex, nofollow` to `index, follow` on the real page.
+* Update the title, meta description, canonical URL, Open Graph URL and image.
+* Do not reorder, remove or add sections without explicit instruction.
+* Do not alter the header or the footer inside the template output.
+
+Rules for the templates themselves:
+
+* The templates are not public pages. They must stay `noindex, nofollow`, stay out of `sitemap.xml`, and stay blocked in `robots.txt`.
+* If the header, footer, stylesheet list or consultation destination changes anywhere on the site, update both templates in the same task.
+* Do not place templates inside `/assets/`.
+
+After creating a page:
+
+* Add a new blog post to `/blog.html` and to `/sitemap.xml`.
+* Add a new core page to `/sitemap.xml`, and link to it from somewhere real.
+* Run the link and button validation below.
+
 ## STANDARD COMMERCIAL PAGE TEMPLATE
 
 Use this order:
@@ -302,6 +359,14 @@ Do not use vague wording such as `Click Here`, `Learn More`, `Submit`, or `Go`.
 Use specific wording such as `Book a Consultation`, `View Lesson Options`, or `See Client Results`.
 
 Use anchor elements for navigation. Use button elements for actions.
+
+### Consultation destination
+
+```text
+/contact.html
+```
+
+`Book a Consultation` and every consultation or booking call to action must point there. There is no separate enquiry page. Do not invent an alternative booking destination.
 
 ## HEADING RULES
 
@@ -374,6 +439,22 @@ All form fields require visible labels.
 
 All interactive elements must work with a keyboard and display a visible focus state.
 
+## PRICING CONSISTENCY
+
+Prices appear on the homepage, the pricing page, the FAQ and the terms.
+
+If a price changes, all four must be updated in the same task, including the worked refund example in the terms.
+
+Calculate every figure. Do not estimate.
+
+Current prices:
+
+```text
+30 minute consultation    £25, normally £50
+Single 60 minute lesson   £85
+Block of 10 lessons       £700, £70 per lesson, saving £150
+```
+
 ## CHANGE CONTROL
 
 Inspect the existing repository and styles before making changes.
@@ -390,6 +471,8 @@ Do not claim testing that was not performed.
 
 A task is complete only when:
 
+* The page was built from the correct template.
+* No `[SQUARE BRACKET]` placeholder remains.
 * Files are in the correct folders.
 * The correct page template has been followed.
 * The header and footer match the website.
