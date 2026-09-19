@@ -73,6 +73,7 @@ Approved image folders:
 /assets/images/pages/
 /assets/images/blog/
 /assets/images/testimonials/
+/assets/images/matt/
 ```
 
 Do not place HTML files inside any asset folder.
@@ -166,6 +167,7 @@ Use `/` as the homepage URL.
         ├── global/
         ├── pages/
         ├── blog/
+        ├── matt/
         └── testimonials/
 ```
 

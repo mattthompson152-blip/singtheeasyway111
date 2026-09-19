@@ -429,6 +429,7 @@ nav ul.active a {
 
 .about-image img {
     width: 100%;
+    height: auto;
     max-width: 500px;
     border-radius: var(--radius-lg);
     box-shadow: 0 20px 40px rgba(0,0,0,0.4);
@@ -686,4 +687,19 @@ textarea:focus-visible,
     outline: 3px solid var(--accent);
     outline-offset: 3px;
     border-radius: var(--radius);
+}
+
+
+/* =======================================
+   IMAGE PROPORTIONS
+   Stops images distorting when width and
+   height attributes are present.
+   ======================================= */
+/* IMAGE PROPORTIONS */
+img {
+    max-width: 100%;
+}
+
+img[width][height] {
+    height: auto;
 }
