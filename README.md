@@ -45,7 +45,6 @@ Site: https://singtheeasyway.com
     │   ├── blog/                # Blog article images
     │   └── testimonials/        # Reserved for client images
     ├── media/                   # Video and audio
-    ├── docs/                    # Internal notes, not published content
     └── scripts/                 # Maintenance shell scripts
 ```
 
