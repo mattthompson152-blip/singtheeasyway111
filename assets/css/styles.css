@@ -1050,3 +1050,20 @@ img[width][height] {
 .matt-aside strong {
     color: var(--accent);
 }
+
+
+/* Beginner reassurance, first screen */
+.hero-beginners {
+    max-width: 640px;
+    margin: var(--space-md) auto 0 auto;
+    padding: var(--space-sm) var(--space-md);
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    color: var(--text-secondary);
+    font-size: 0.95rem;
+}
+
+.hero-beginners strong {
+    color: var(--text-primary);
+}

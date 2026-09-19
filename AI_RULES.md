@@ -188,6 +188,7 @@ Use `/` as the homepage URL.
 ├── terms.html
 ├── environmental-policy.html
 ├── sitemap.xml
+├── 404.html                      # Not found page, noindex, never in the sitemap
 ├── robots.txt
 ├── googlef8e9acb5c788aa99.html   # Google Search Console verification, do not delete
 ├── blog/
@@ -538,6 +539,20 @@ Google Analytics must never load before consent.
 Every page carries a Consent Mode default of `denied` in the head. Analytics is loaded only by `/assets/js/cookie-consent.js` after the visitor accepts.
 
 Never paste a raw `googletagmanager.com/gtag/js` tag into a page. Doing so breaks UK GDPR and PECR compliance.
+
+## CONVERSION TRACKING
+
+`/assets/js/main.js` sends GA4 events so Matt can see which calls to action work:
+
+```text
+consultation_click   any booking button, with its text and page section
+phone_click          tap on the phone number
+email_click          tap on the email address
+pricing_viewed       visitor scrolled as far as the prices
+signup_viewed        visitor reached the community signup
+```
+
+Events only fire when the visitor has accepted analytics, because `gtag` does not exist until then. Never make tracking fire regardless of consent.
 
 ## COOKIE CONSENT
 

@@ -159,4 +159,77 @@ document.addEventListener('DOMContentLoaded', function() {
 
     floatingCtaVisibility();
 
+
+    // ======================================
+    // CONVERSION TRACKING
+    // Fires GA4 events so Matt can see which
+    // calls to action actually work. Only runs
+    // if the visitor accepted analytics, because
+    // gtag does not exist until they do.
+    // ======================================
+    function trackConversionEvents() {
+        function send(name, params) {
+            if (typeof window.gtag === 'function') {
+                window.gtag('event', name, params || {});
+            }
+        }
+
+        // Every consultation button, wherever it is on the page
+        document.querySelectorAll('a[href="/contact.html"], a[href="#enquiry-form"]').forEach(function (el) {
+            if (!el.className || el.className.indexOf('btn') === -1) { return; }
+            el.addEventListener('click', function () {
+                var section = el.closest('section');
+                send('consultation_click', {
+                    button_text: (el.textContent || '').trim(),
+                    page_path: window.location.pathname,
+                    page_section: section ? (section.className || 'unknown') : 'unknown'
+                });
+            });
+        });
+
+        // Phone and email taps
+        document.querySelectorAll('a[href^="tel:"]').forEach(function (el) {
+            el.addEventListener('click', function () {
+                send('phone_click', { page_path: window.location.pathname });
+            });
+        });
+        document.querySelectorAll('a[href^="mailto:"]').forEach(function (el) {
+            el.addEventListener('click', function () {
+                send('email_click', { page_path: window.location.pathname });
+            });
+        });
+
+        // Did they get as far as seeing the community signup
+        var signup = document.querySelector('.signup-box');
+        if (signup && 'IntersectionObserver' in window) {
+            var seen = false;
+            var obs = new IntersectionObserver(function (entries) {
+                entries.forEach(function (entry) {
+                    if (entry.isIntersecting && !seen) {
+                        seen = true;
+                        send('signup_viewed', { page_path: window.location.pathname });
+                    }
+                });
+            }, { threshold: 0.4 });
+            obs.observe(signup);
+        }
+
+        // Did they reach the pricing at all
+        var pricing = document.querySelector('.pricing');
+        if (pricing && 'IntersectionObserver' in window) {
+            var pseen = false;
+            var pobs = new IntersectionObserver(function (entries) {
+                entries.forEach(function (entry) {
+                    if (entry.isIntersecting && !pseen) {
+                        pseen = true;
+                        send('pricing_viewed', { page_path: window.location.pathname });
+                    }
+                });
+            }, { threshold: 0.3 });
+            pobs.observe(pricing);
+        }
+    }
+
+    trackConversionEvents();
+
 });
