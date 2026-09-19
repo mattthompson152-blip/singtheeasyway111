@@ -953,3 +953,47 @@ img[width][height] {
     border-radius: var(--radius);
     background: transparent;
 }
+
+
+/* =======================================
+   BLOG VOICE BLOCKS
+   ======================================= */
+/* BLOG VOICE BLOCKS */
+.matt-hook {
+    border-left: 4px solid var(--accent);
+    background: rgba(255, 107, 53, 0.06);
+    padding: var(--space-md);
+    border-radius: var(--radius);
+    margin: var(--space-md) 0 var(--space-lg) 0;
+}
+
+.matt-hook p {
+    margin-bottom: var(--space-sm);
+}
+
+.matt-hook p:last-child {
+    margin-bottom: 0;
+}
+
+.matt-hook p:first-child {
+    font-size: 1.1rem;
+    color: var(--text-primary);
+}
+
+.matt-lesson {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    padding: var(--space-md);
+    margin: var(--space-lg) 0;
+}
+
+.matt-lesson h2 {
+    margin-top: 0;
+    margin-bottom: var(--space-sm);
+    font-size: 1.3rem;
+}
+
+.matt-lesson p {
+    margin-bottom: var(--space-md);
+}

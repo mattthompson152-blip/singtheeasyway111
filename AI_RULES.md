@@ -189,6 +189,7 @@ Use `/` as the homepage URL.
 ├── environmental-policy.html
 ├── sitemap.xml
 ├── robots.txt
+├── googlef8e9acb5c788aa99.html   # Google Search Console verification, do not delete
 ├── blog/
 │   └── article-name.html
 ├── templates/
@@ -549,6 +550,15 @@ Correct:
 Do not publicly link to `/index.html`. Use `/`.
 
 Do not use placeholder links such as `#`, `javascript:void(0)`, or `example.com`.
+
+## DO NOT DELETE
+
+```text
+/CNAME                             Custom domain. Deleting it breaks the website address.
+/googlef8e9acb5c788aa99.html       Google Search Console verification. Deleting it unverifies the site.
+```
+
+Neither file is a page. Do not tidy them away, do not add them to the sitemap, and do not link to them.
 
 ## REQUIRED SCRIPTS
 

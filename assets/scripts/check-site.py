@@ -44,6 +44,8 @@ def main():
             if not name.endswith(CHECK_EXTENSIONS):
                 continue
             path = os.path.join(folder, name).replace("\\", "/").lstrip("./")
+            if name.startswith("google") and name.endswith(".html"):
+                continue  # Google site verification file, not a page
             if path.endswith(".html"):
                 pages += 1
             text = open(path, encoding="utf-8", errors="ignore").read()
