@@ -585,6 +585,23 @@ A clear path setting out what to practise next
 
 The folder stays available to the student. Describe it in those terms. Do not promise anything beyond this list, and do not describe it as an app, a portal or a course.
 
+## COMMUNITY EMAIL SIGNUP
+
+The community signup is a Jotform embed. Form ID:
+
+```text
+261037482331047
+```
+
+It appears on every blog post, the blog index, the homepage, the ADHD page and both templates. It uses the `.signup-box` component.
+
+Rules:
+
+* Never place it above the fold, and never where it competes with a consultation call to action.
+* One per page.
+* It must always carry the no spam line and a link to `/privacy-policy.html`.
+* The enquiry form is a different form and a different ID. Do not confuse the two.
+
 ## PRICING CONSISTENCY
 
 Prices appear on the homepage, the pricing page, the FAQ and the terms.
