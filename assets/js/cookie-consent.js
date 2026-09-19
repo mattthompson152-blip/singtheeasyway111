@@ -22,7 +22,7 @@
     function initCookieConsent() {
         // Check if user has already given consent
         const consent = getCookie(CONSENT_COOKIE);
-        
+
         if (!consent) {
             // Show banner if no consent yet
             showCookieBanner();
@@ -30,7 +30,14 @@
             // Apply stored preferences
             applyConsentPreferences(JSON.parse(consent));
         }
-        
+
+        // The settings box must exist for everyone, not only first time
+        // visitors, otherwise the Cookie Settings link in the footer does
+        // nothing for anyone who has already made a choice.
+        if (!document.getElementById('cookie-settings-modal')) {
+            createSettingsModal();
+        }
+
         // Add footer link handler
         addFooterLinkHandler();
     }
@@ -57,7 +64,9 @@
         document.body.appendChild(banner);
         
         // Create settings modal
-        createSettingsModal();
+        if (!document.getElementById('cookie-settings-modal')) {
+            createSettingsModal();
+        }
     }
     
     function createSettingsModal() {

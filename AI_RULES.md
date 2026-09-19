@@ -272,6 +272,7 @@ Contact
 Privacy Policy
 Terms
 Environmental Policy
+Cookie Settings
 ```
 
 Also include the business name, copyright notice, primary contact method, and valid social links.
@@ -518,6 +519,14 @@ Google Analytics must never load before consent.
 Every page carries a Consent Mode default of `denied` in the head. Analytics is loaded only by `/assets/js/cookie-consent.js` after the visitor accepts.
 
 Never paste a raw `googletagmanager.com/gtag/js` tag into a page. Doing so breaks UK GDPR and PECR compliance.
+
+## COOKIE CONSENT
+
+The banner is created by `/assets/js/cookie-consent.js` on first visit and offers Accept All, Reject All and Cookie Settings.
+
+Every page footer must carry a `Cookie Settings` link pointing at `#cookie-settings`. The script wires it up. Removing it would leave visitors unable to change their mind, which UK GDPR does not allow.
+
+The settings box must be built for every visitor, not only first time ones, or that link silently does nothing.
 
 ## LESSON PLATFORM
 
