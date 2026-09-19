@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://singtheeasyway.com/sitemap.xml
