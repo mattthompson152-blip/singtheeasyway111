@@ -245,6 +245,7 @@ Required order:
 Logo
 Home
 Lessons
+ADHD & Autism
 About
 Results
 Pricing
@@ -253,6 +254,10 @@ Book a Consultation
 ```
 
 `Results` must link to the testimonials page.
+
+`ADHD & Autism` must link to `/singing-lessons-for-adhd-and-autism.html`. Agreed with Matt on 20 September 2026. This page is a primary page, not a footer only page. It sits directly after `Lessons` because that is where a visitor deciding whether Matt is the right teacher is already looking. It remains in the footer as well.
+
+The header carries eight items and a button. `/assets/css/responsive.css` tightens the navigation gap between 769px and 1024px so they fit above the mobile breakpoint. Do not lengthen an existing navigation label without rechecking that range.
 
 `Book a Consultation` must be the main header button.
 
@@ -280,6 +285,8 @@ Cookie Settings
 Also include the business name, copyright notice, primary contact method, and valid social links.
 
 Do not place footer only pages in the main navigation.
+
+`ADHD & Autism` is the one exception and is no longer a footer only page. It appears in both the header and the footer by agreement. Every other Information link stays in the footer.
 
 ## TEMPLATES, MANDATORY
 

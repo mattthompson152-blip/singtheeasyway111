@@ -6,6 +6,16 @@
    TABLETS (max-width: 1024px)
    ======================================= */
 @media (max-width: 1024px) {
+    /* Eight header items need a tighter gap between 769px and 1024px,
+       above the mobile hamburger breakpoint. Desktop and mobile unchanged. */
+    nav ul {
+        gap: var(--space-md);
+    }
+
+    nav a {
+        font-size: 0.85rem;
+    }
+
     .hero h1 {
         font-size: 3rem;
     }
