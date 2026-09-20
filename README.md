@@ -97,7 +97,7 @@ The standard header order is:
 6. Results
 7. Pricing
 8. Blog
-9. Book a Consultation
+9. Book Online
 
 `Results` links to `/testimonials.html`. `ADHD & Autism` links to `/singing-lessons-for-adhd-and-autism.html` and appears in both the header and footer. Desktop and mobile navigation must contain the same destinations.
 
@@ -114,27 +114,29 @@ The standard footer includes:
 
 It also includes the business name, copyright notice, primary contact method and valid social links.
 
-## Calls to action and current enquiry flow
+## Calls to action and booking flow
 
-Until the direct-booking form is implemented, the site uses one primary call to action:
+The site-wide primary call to action is:
 
-**Book a consultation, £25**
+**Book Online**
 
-It links to `/contact.html`. The enquiry form uses Jotform form ID `261603325649357`. The community email signup is a separate form using ID `261037482331047`; do not confuse the two.
+Primary CTA destination:
 
-## Planned direct-booking update
+`/book-online.html`
 
-Direct booking is planned but is not documented as live yet.
+Approved booking URL:
 
-The intended single booking form will offer:
+`https://pci.jotform.com/form/262622799830063`
+
+Booking options:
 
 - 30-minute consultation, £25
 - Single 60-minute lesson, £85
 - Block of 10 lessons, £700
 
-Before implementation, record the final booking URL or form ID and approved site-wide button wording in `AI_RULES.md`. Then update the header, both templates, relevant page calls to action, tracking hooks, privacy wording if required, and this README in one coordinated change.
+The old enquiry form (`261603325649357`) remains for contact support only and must not be reused for booking. The community email signup form (`261037482331047`) remains separate.
 
-Do not remove the contact route unless Matt explicitly approves that change. Keep a clear message option for visitors with questions.
+Keep `/contact.html` as the support and questions route for pre-booking questions, existing student communication, general contact, and technical issues.
 
 ## Lesson platform
 

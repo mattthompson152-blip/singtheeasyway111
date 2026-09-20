@@ -27,8 +27,10 @@ Matt has ADHD. This is public on the site and is presented as part of why his te
 - The standard header includes ADHD & Autism immediately after Lessons.
 - ADHD & Autism appears in both the header and footer.
 - The standard footer includes Film & Recording and Cookie Settings.
-- The current primary call to action is **Book a consultation, £25**, linking to `/contact.html`.
-- The enquiry form ID is `261603325649357`.
+- The current primary call to action is **Book Online**, linking to `/book-online.html`.
+- The approved booking form URL is `https://pci.jotform.com/form/262622799830063`.
+- The approved booking form ID is `262622799830063`.
+- The old enquiry form ID `261603325649357` is retained only for contact support workflow.
 - The community signup form ID is `261037482331047`.
 - Analytics is consent-gated.
 
@@ -45,22 +47,22 @@ Matt has ADHD. This is public on the site and is presented as part of why his te
 
 No live HTML, CSS or JavaScript change is represented by this documentation update.
 
-## Planned direct-booking change
+## Direct-booking change
 
-Matt intends to add one booking form that allows a visitor to choose:
+The site now uses one booking form that allows a visitor to choose:
 
 1. A 30-minute consultation for £25
 2. A single 60-minute lesson for £85
 3. A block of 10 lessons for £700
 
-This form is not marked as implemented in this handover. Before changing the site, confirm and record:
-
-- The booking form URL or form ID
-- The final primary CTA wording
-- Whether the form opens inline, on `/contact.html`, in a modal or on an external booking page
-- The payment and confirmation behaviour
-- The required GA4 events
-- Any privacy-policy wording required for the booking provider and payments
+- Booking URL: `https://pci.jotform.com/form/262622799830063`
+- Primary CTA wording: `Book Online`
+- Primary destination: `/book-online.html`
+- Product options:
+  1. 30-minute consultation, £25
+  2. Single 60-minute lesson, £85
+  3. Block of 10 lessons, £700
+- Contact page remains the support/questions route and is not a competing booking page.
 
 ## Files expected to change when booking is implemented
 
@@ -102,8 +104,7 @@ Do not make unrelated changes.
 
 - Blog article middles remain accurate but more generic than the openings, asides, lesson sections and bios.
 - Tablet layout still requires live browser checking.
-- Direct booking remains to be implemented and tested.
-- After implementation, verify the first booking and conversion events in the live systems.
+- Validate first live booking and conversion events after deployment.
 
 ## Things that will trip you up
 
@@ -163,4 +164,32 @@ No HTML, CSS, JavaScript, sitemap, legal page or live deployment was changed by 
 
 ## Rollback
 
-Before implementing direct booking, create a commit containing the working enquiry-first version. If the booking form, payment, confirmation or live deployment fails, revert the booking commit and restore **Book a consultation, £25** links to `/contact.html`.
+If the booking form, payment, confirmation or live deployment fails, revert the booking commit and restore the prior enquiry-first CTA state.
+
+## Book Online implementation record (20 September 2026)
+
+- Booking URL: `https://pci.jotform.com/form/262622799830063`
+- Booking form ID: `262622799830063`
+- Site-wide primary CTA: `Book Online`
+- Primary destination: `/book-online.html`
+- Booking options:
+  - 30-minute consultation, £25
+  - One-to-one singing lesson, £85
+  - 10-lesson block, £700 (£70 per lesson, save £150)
+- Contact fallback: `/contact.html` for support and questions only
+- Files changed:
+  - All public root HTML pages and all live blog posts for primary CTA destination/label consistency
+  - `/book-online.html` (new canonical booking page)
+  - `/templates/page-template.html` and `/templates/blog-post-template.html`
+  - `/pricing.html` for the three booking-option buttons and direct booking URL
+  - `/contact.html` to keep it lightweight support/questions, not a competing booking page
+  - `/assets/js/main.js` for consent-gated booking CTA tracking updates
+  - `/sitemap.xml` to include `/book-online.html` once
+  - `AI_RULES.md`, `README.md`, `HANDOVER.md` for live booking documentation
+- Checks run:
+  - `python3 assets/scripts/check-site.py` → `PASSED. No broken links, no missing images, no placeholders.`
+- Deployment result: `Pending merge into main and publishing pipeline completion`
+- Live verification: `Pending post-deployment manual check on non-www production URL`
+- Manual/Jotform verification still required:
+  - Jotform-side booking confirmation/payment behaviour on live form
+  - Live deployment confirmation from published non-www site

@@ -36,6 +36,7 @@ document.addEventListener('DOMContentLoaded', function() {
         mobileMenuToggle.addEventListener('click', function() {
             this.classList.toggle('active');
             mainNav.classList.toggle('active');
+            this.setAttribute('aria-expanded', mainNav.classList.contains('active') ? 'true' : 'false');
         });
         
         // Close menu when clicking a link
@@ -44,6 +45,7 @@ document.addEventListener('DOMContentLoaded', function() {
             link.addEventListener('click', function() {
                 mobileMenuToggle.classList.remove('active');
                 mainNav.classList.remove('active');
+                mobileMenuToggle.setAttribute('aria-expanded', 'false');
             });
         });
     }
@@ -174,15 +176,52 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         }
 
-        // Every consultation button, wherever it is on the page
-        document.querySelectorAll('a[href="/contact.html"], a[href="#enquiry-form"]').forEach(function (el) {
-            if (!el.className || el.className.indexOf('btn') === -1) { return; }
+        function isBookingHref(el) {
+            try {
+                var url = new URL(el.getAttribute('href'), window.location.origin);
+                var isLocalBooking = url.origin === window.location.origin && url.pathname === '/book-online.html';
+                var isJotformBooking = url.origin === 'https://pci.jotform.com' && url.pathname === '/form/262622799830063';
+                return isLocalBooking || isJotformBooking;
+            } catch (e) {
+                return false;
+            }
+        }
+
+        // Site-wide primary booking buttons
+        document.querySelectorAll('a.btn[href]').forEach(function (el) {
+            if (!isBookingHref(el)) { return; }
             el.addEventListener('click', function () {
+                if (el.dataset.bookingOption) { return; }
                 var section = el.closest('section');
-                send('consultation_click', {
+                send('book_online_click', {
                     button_text: (el.textContent || '').trim(),
                     page_path: window.location.pathname,
                     page_section: section ? (section.className || 'unknown') : 'unknown'
+                });
+            });
+        });
+
+        var optionEventMap = {
+            consultation: 'consultation_selection_click',
+            single_lesson: 'single_lesson_selection_click',
+            ten_lesson_block: 'ten_lesson_block_selection_click'
+        };
+        document.querySelectorAll('a[data-booking-option]').forEach(function (el) {
+            el.addEventListener('click', function () {
+                var eventName = optionEventMap[el.dataset.bookingOption];
+                if (!eventName) { return; }
+                send(eventName, {
+                    button_text: (el.textContent || '').trim(),
+                    page_path: window.location.pathname
+                });
+            });
+        });
+
+        document.querySelectorAll('a[data-contact-fallback="true"]').forEach(function (el) {
+            el.addEventListener('click', function () {
+                send('contact_fallback_click', {
+                    button_text: (el.textContent || '').trim(),
+                    page_path: window.location.pathname
                 });
             });
         });

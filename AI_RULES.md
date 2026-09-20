@@ -250,7 +250,7 @@ About
 Results
 Pricing
 Blog
-Book a Consultation
+Book Online
 ```
 
 `Results` must link to the testimonials page.
@@ -259,7 +259,7 @@ Book a Consultation
 
 The header carries eight items and a button. `/assets/css/responsive.css` tightens the navigation gap between 769px and 1024px so they fit above the mobile breakpoint. Do not lengthen an existing navigation label without rechecking that range.
 
-`Book a Consultation` must be the main header button.
+`Book Online` must be the main header button.
 
 Desktop and mobile navigation must contain the same destinations.
 
@@ -310,7 +310,7 @@ Rules for using a template:
 Rules for the templates themselves:
 
 * The templates are not public pages. They must stay `noindex, nofollow`, stay out of `sitemap.xml`, and stay blocked in `robots.txt`.
-* If the header, footer, stylesheet list or consultation destination changes anywhere on the site, update both templates in the same task.
+* If the header, footer, stylesheet list or booking destination changes anywhere on the site, update both templates in the same task.
 * Do not place templates inside `/assets/`.
 
 After creating a page:
@@ -328,7 +328,7 @@ Site header
 Hero section
 One clear H1 heading
 Short supporting statement
-Primary consultation button
+Primary booking button
 Who the page is for
 Problems or needs addressed
 Service details
@@ -336,7 +336,7 @@ How it works
 Client evidence
 Pricing or next step
 Frequently asked questions
-Final consultation section
+Final booking section
 Site footer
 ```
 
@@ -448,7 +448,7 @@ Then confirm by eye:
 
 * The three card links on the blog index all open the new post
 * The card image loads and is not stretched
-* The consultation button opens `/contact.html`
+* The primary booking button opens `/book-online.html`
 
 ## BLOG VOICE
 
@@ -508,27 +508,27 @@ All buttons must use clear wording, existing brand styles, visible hover styles,
 
 Do not use vague wording such as `Click Here`, `Learn More`, `Submit`, or `Go`.
 
-Use specific wording such as `Book a Consultation`, `View Lesson Options`, or `See Client Results`.
+Use specific wording such as `Book Online`, `View Lesson Options`, or `See Client Results`.
 
 Use anchor elements for navigation. Use button elements for actions.
 
-### Consultation destination
+### Primary booking destination
 
 ```text
-/contact.html
+/book-online.html
 ```
 
-`Book a Consultation` and every consultation or booking call to action must point there. There is no separate enquiry page. Do not invent an alternative booking destination.
+`Book Online` and every primary booking call to action must point there.
 
 ## CALL TO ACTION WORDING
 
 The site uses one primary call to action everywhere:
 
 ```text
-Book a consultation, £25
+Book Online
 ```
 
-It always links to `/contact.html`.
+It links to `/book-online.html`.
 
 Approved secondaries, used sparingly:
 
@@ -540,17 +540,21 @@ Read common questions
 
 Do not invent new button wording. Do not use Enquire, Submit, Learn More, Click Here, Go, or anything vague.
 
-## PLANNED DIRECT BOOKING SYSTEM
+## DIRECT BOOKING SYSTEM
 
-A direct booking system is planned but is not yet documented as live.
-
-When implemented, the site will use one booking form that allows visitors to choose:
+The live booking form allows visitors to choose:
 
 - 30-minute consultation, £25
 - Single 60-minute lesson, £85
 - Block of 10 lessons, £700
 
-Before deployment, record the final booking URL or form ID in this file and replace the current consultation-destination rule only as part of the same coordinated site-wide update.
+Booking URL:
+
+`https://pci.jotform.com/form/262622799830063`
+
+Booking form ID:
+
+`262622799830063`
 
 The site must keep one clear primary booking journey. Do not create separate competing forms for the three products unless Matt explicitly approves that change.
 
@@ -558,9 +562,7 @@ Product-specific buttons may be used on the pricing page, but they must open the
 
 Keep the contact route available for visitors who have questions before booking.
 
-Until the new booking system has been published and tested, the existing primary call to action remains `Book a consultation, £25` and continues to link to `/contact.html`.
-
-When the booking system is implemented, update the relevant pages, both templates, form or script hooks, analytics events, privacy wording where required, `README.md`, and `HANDOVER.md` in one coordinated change. Do not claim the booking flow is live until it has been tested on the published website.
+Keep `/contact.html` as a support and questions route for pre-booking questions, existing student communication, general contact, and technical issues.
 
 ## ANALYTICS AND CONSENT
 
@@ -719,7 +721,7 @@ It appears on every blog post, the blog index, the homepage, the ADHD page and b
 
 Rules:
 
-* Never place it above the fold, and never where it competes with a consultation call to action.
+* Never place it above the fold, and never where it competes with a primary booking call to action.
 * One per page.
 * It must always carry the no spam line and a link to `/privacy-policy.html`.
 * The enquiry form is a different form and a different ID. Do not confuse the two.
