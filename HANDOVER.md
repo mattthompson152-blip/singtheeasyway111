@@ -188,9 +188,8 @@ If the booking form, payment, confirmation or live deployment fails, revert the 
   - `AI_RULES.md`, `README.md`, `HANDOVER.md` for live booking documentation
 - Checks run:
   - `python3 assets/scripts/check-site.py` → `PASSED. No broken links, no missing images, no placeholders.`
-- Commit SHA: `PENDING`
-- Deployment result: `PENDING`
-- Live verification: `PENDING`
+- Deployment result: `Pending merge into main and publishing pipeline completion`
+- Live verification: `Pending post-deployment manual check on non-www production URL`
 - Manual/Jotform verification still required:
   - Jotform-side booking confirmation/payment behaviour on live form
   - Live deployment confirmation from published non-www site

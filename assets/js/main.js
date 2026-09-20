@@ -176,9 +176,20 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         }
 
+        function isBookingHref(el) {
+            try {
+                var url = new URL(el.getAttribute('href'), window.location.origin);
+                var isLocalBooking = url.origin === window.location.origin && url.pathname === '/book-online.html';
+                var isJotformBooking = url.origin === 'https://pci.jotform.com' && url.pathname === '/form/262622799830063';
+                return isLocalBooking || isJotformBooking;
+            } catch (e) {
+                return false;
+            }
+        }
+
         // Site-wide primary booking buttons
-        document.querySelectorAll('a[href="/book-online.html"], a[href="https://pci.jotform.com/form/262622799830063"]').forEach(function (el) {
-            if (!el.className || el.className.indexOf('btn') === -1) { return; }
+        document.querySelectorAll('a.btn[href]').forEach(function (el) {
+            if (!isBookingHref(el)) { return; }
             el.addEventListener('click', function () {
                 if (el.dataset.bookingOption) { return; }
                 var section = el.closest('section');

@@ -678,7 +678,7 @@
         </section>
 
         <!-- Message Section -->
-        <section class="enquiry-form-section" id="enquiry-form">
+        <section class="enquiry-form-section" id="contact-support">
             <div class="container">
                 <div class="enquiry-form-wrapper">
                     <div class="form-intro">
@@ -686,6 +686,17 @@
                         <p>Ready to get started? <a href="/book-online.html" class="text-link">Book Online</a>.</p>
                         <p>Have a question before booking? Send me an email at <a href="mailto:matt@singtheeasyway.com">matt@singtheeasyway.com</a> or call <a href="tel:+447792511393">+44 7792 511393</a>.</p>
                     </div>
+                    <form id="supportMessageForm" class="contact-form" style="margin-top: var(--space-md);" aria-describedby="support-form-help" action="mailto:matt@singtheeasyway.com" method="post" enctype="text/plain">
+                        <p id="support-form-help">Submitting this form opens a pre-filled draft in your email app. If it does not open, email <a href="mailto:matt@singtheeasyway.com">matt@singtheeasyway.com</a> directly.</p>
+                        <label for="support-name">Name</label>
+                        <input id="support-name" name="name" type="text" required>
+                        <label for="support-email">Email</label>
+                        <input id="support-email" name="email" type="email" required>
+                        <label for="support-message">Message</label>
+                        <textarea id="support-message" name="message" rows="5" required></textarea>
+                        <button type="submit" class="btn secondary" style="margin-top: var(--space-md);">Open email draft</button>
+                        <noscript><p>JavaScript is off. Please email <a href="mailto:matt@singtheeasyway.com">matt@singtheeasyway.com</a> directly.</p></noscript>
+                    </form>
                 </div>
             </div>
         </section>
