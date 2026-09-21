@@ -218,19 +218,23 @@
     }
     
     function enableGoogleAnalytics() {
-        // Load Google Analytics
-        if (!window.gtag) {
+        // The page head defines a Consent Mode default stub, so checking
+        // window.gtag would incorrectly imply that gtag.js is already loaded.
+        if (!window.gaScriptLoaded) {
+            window.gaScriptLoaded = true;
+
             const script = document.createElement('script');
             script.async = true;
-            script.src = `https://www.googletagmanager.com/gtag/js?id=${GA_ID}`;
+            script.src = 'https://www.googletagmanager.com/gtag/js?id=G-72QBZSZZBP';
             document.head.appendChild(script);
-            
+
             window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            window.gtag = gtag;
+            window.gtag = window.gtag || function(){window.dataLayer.push(arguments);};
             gtag('js', new Date());
-            gtag('config', GA_ID);
+            gtag('config', 'G-72QBZSZZBP');
         }
+
+        window['ga-disable-G-72QBZSZZBP'] = false;
         setCookie(ANALYTICS_COOKIE, 'enabled', 365);
     }
     
