@@ -269,6 +269,61 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
 
+    // ======================================
+    // LEAD TRACKING (generate_lead)
+    // Fires GA4 generate_lead only on confirmed
+    // successful submissions: JotForm's documented
+    // postMessage completion event, and the local
+    // support enquiry form's actual submit.
+    // ======================================
+    function trackLeadEvents() {
+        var leadSent = {};
+
+        function sendLeadOnce(key, params) {
+            if (leadSent[key]) { return; }
+            if (typeof window.gtag !== 'function') { return; }
+            leadSent[key] = true;
+            window.gtag('event', 'generate_lead', params || {});
+        }
+
+        // JotForm documented postMessage event for a completed submission.
+        window.addEventListener('message', function (event) {
+            if (typeof event.origin !== 'string' || event.origin.indexOf('jotform.com') === -1) {
+                return;
+            }
+
+            var data = event.data;
+            var type = '';
+
+            if (typeof data === 'string') {
+                type = data;
+            } else if (data && typeof data === 'object') {
+                type = data.type || data.action || '';
+            }
+
+            if (type === 'submission-completed' || type === 'form-submit-success') {
+                var formId = (data && typeof data === 'object' && (data.formID || data.formId)) || '';
+                sendLeadOnce('jotform-' + formId + '-' + Date.now(), {
+                    event_label: 'jotform_submission',
+                    form_id: formId,
+                    page_path: window.location.pathname
+                });
+            }
+        });
+
+        // Local support enquiry form on contact.html.
+        var supportForm = document.getElementById('supportMessageForm');
+        if (supportForm) {
+            supportForm.addEventListener('submit', function () {
+                sendLeadOnce('support-form', {
+                    event_label: 'support_email_form',
+                    page_path: window.location.pathname
+                });
+            });
+        }
+    }
+
     trackConversionEvents();
+    trackLeadEvents();
 
 });
