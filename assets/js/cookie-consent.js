@@ -220,6 +220,20 @@
     function enableGoogleAnalytics() {
         // The page head defines a Consent Mode default stub, so checking
         // window.gtag would incorrectly imply that gtag.js is already loaded.
+        window.dataLayer = window.dataLayer || [];
+        window.gtag = window.gtag || function(){window.dataLayer.push(arguments);};
+
+        // Tell Consent Mode the visitor has granted analytics/ad storage.
+        // Without this update call, GA4 keeps treating analytics_storage as
+        // 'denied' (the page head default) even after gtag.js loads, so no
+        // hits are ever sent to the property.
+        gtag('consent', 'update', {
+            analytics_storage: 'granted',
+            ad_storage: 'granted',
+            ad_user_data: 'granted',
+            ad_personalization: 'granted'
+        });
+
         if (!window.gaScriptLoaded) {
             window.gaScriptLoaded = true;
 
@@ -228,8 +242,6 @@
             script.src = 'https://www.googletagmanager.com/gtag/js?id=G-HT9YM456EH';
             document.head.appendChild(script);
 
-            window.dataLayer = window.dataLayer || [];
-            window.gtag = window.gtag || function(){window.dataLayer.push(arguments);};
             gtag('js', new Date());
             gtag('config', 'G-HT9YM456EH', { send_page_view: true });
         }
@@ -241,6 +253,16 @@
     function disableGoogleAnalytics() {
         // Disable Google Analytics
         window['ga-disable-' + GA_ID] = true;
+
+        // Tell Consent Mode the visitor has denied analytics/ad storage.
+        if (typeof window.gtag === 'function') {
+            window.gtag('consent', 'update', {
+                analytics_storage: 'denied',
+                ad_storage: 'denied',
+                ad_user_data: 'denied',
+                ad_personalization: 'denied'
+            });
+        }
         
         // Remove existing GA cookies
         deleteCookie('_ga');
