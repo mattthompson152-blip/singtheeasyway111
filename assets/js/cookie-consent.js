@@ -231,7 +231,7 @@
             window.dataLayer = window.dataLayer || [];
             window.gtag = window.gtag || function(){window.dataLayer.push(arguments);};
             gtag('js', new Date());
-            gtag('config', 'G-HT9YM456EH');
+            gtag('config', 'G-HT9YM456EH', { send_page_view: true });
         }
 
         window['ga-disable-G-HT9YM456EH'] = false;
