@@ -12,7 +12,7 @@
     const MARKETING_COOKIE = 'SingTheEasyWay_Marketing';
     
     // Google Analytics ID
-    const GA_ID = 'G-HT9YM456EH';
+    const GA_ID = 'G-72QBZSZZBP';
     
     // Initialize when DOM is ready
     document.addEventListener('DOMContentLoaded', function() {
@@ -239,14 +239,14 @@
 
             const script = document.createElement('script');
             script.async = true;
-            script.src = 'https://www.googletagmanager.com/gtag/js?id=G-HT9YM456EH';
+            script.src = 'https://www.googletagmanager.com/gtag/js?id=G-72QBZSZZBP';
             document.head.appendChild(script);
 
             gtag('js', new Date());
-            gtag('config', 'G-HT9YM456EH', { send_page_view: true });
+            gtag('config', 'G-72QBZSZZBP', { send_page_view: true });
         }
 
-        window['ga-disable-G-HT9YM456EH'] = false;
+        window['ga-disable-G-72QBZSZZBP'] = false;
         setCookie(ANALYTICS_COOKIE, 'enabled', 365);
     }
     
