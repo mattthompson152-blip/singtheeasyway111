@@ -132,7 +132,7 @@ Booking options:
 
 - 30-minute consultation, £25
 - Single 60-minute lesson, £85
-- Block of 10 lessons, £700
+- Development Programme (10 lessons), £700
 
 The old enquiry form (`261603325649357`) remains for contact support only and must not be reused for booking. The community email signup form (`261037482331047`) remains separate.
 
@@ -144,9 +144,9 @@ Lessons are taught live on Microsoft Teams. After booking, the student receives 
 
 ## Current pricing
 
-- 30-minute consultation: £25, normally £50
+- 30-minute consultation: £25
 - Single 60-minute lesson: £85
-- Block of 10 lessons: £700, or £70 per lesson, saving £150
+- Development Programme (10 lessons): £700
 
 Prices appear on the homepage, pricing page, FAQ and terms. If a price changes, update all four in one task, including the worked refund example in the terms.
 
