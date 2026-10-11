@@ -28,11 +28,14 @@ PLACEHOLDER_TEXT = re.compile(r"\[[A-Z][A-Z0-9 _\-]{2,}\]")
 RETIRED_FORM = "261603325649357"
 BOOKING_FORM = "262622799830063"
 COMMUNITY_FORM = "261037482331047"
+PROGRAMME_URL = "https://singtheeasyway.com/development-programme.html"
+PROGRAMME_IMAGE = "assets/images/matt/matt-thompson-online-vocal-coaching-session.webp"
 STALE_STRINGS = (RETIRED_FORM, "feedback2.js", "JotformFeedback", "widget.open")
 # data-booking-option is the only allowed data-booking-* attribute.
 STALE_ATTR = re.compile(r"data-booking(?!-option)|data-enquiry")
 BOOKING_LINK = re.compile(r"pci\.jotform\.com/form/(\d+)")
 EMBED_LINK = re.compile(r"(?<!pci\.)form\.jotform\.com/(\d+)")
+JOTFORM_ID = re.compile(r"(?:JotFormIFrame-|(?:pci\.)?form\.jotform\.com/(?:form/)?)(\d+)")
 
 
 def repo_root():
@@ -54,6 +57,9 @@ def check_stale_code(path, text, problems, retired_only=False):
     for form_id in sorted(set(EMBED_LINK.findall(text))):
         if form_id != COMMUNITY_FORM:
             problems.append("{0}: Jotform embed uses unapproved form {1}".format(path, form_id))
+    for form_id in sorted(set(JOTFORM_ID.findall(text))):
+        if form_id not in (BOOKING_FORM, COMMUNITY_FORM):
+            problems.append("{0}: contains unapproved Jotform ID {1}".format(path, form_id))
 
 
 def check_html_ending(path, text, problems):
@@ -63,6 +69,26 @@ def check_html_ending(path, text, problems):
     end = text.rfind("</html>")
     if end != -1 and text[end + len("</html>"):].strip():
         problems.append("{0}: content after final </html>".format(path))
+
+
+def check_programme_navigation(path, text, problems):
+    link = re.compile(
+        r'<a\b[^>]*href=["\']/development-programme\.html["\'][^>]*>'
+        r'\s*Development Programme\s*</a>',
+        re.IGNORECASE,
+    )
+    nav = re.search(r"<nav\b.*?</nav>", text, re.IGNORECASE | re.DOTALL)
+    if not nav or len(link.findall(nav.group(0))) != 1:
+        problems.append("{0}: header must contain one Development Programme link".format(path))
+
+    footer = re.search(r"<footer\b.*?</footer>", text, re.IGNORECASE | re.DOTALL)
+    explore = re.search(
+        r"<h3>\s*Explore\s*</h3>\s*<ul>(.*?)</ul>",
+        footer.group(0) if footer else "",
+        re.IGNORECASE | re.DOTALL,
+    )
+    if not explore or len(link.findall(explore.group(1))) != 1:
+        problems.append("{0}: Explore footer must contain one Development Programme link".format(path))
 
 
 def main():
@@ -117,6 +143,7 @@ def main():
             if path.endswith(".html"):
                 check_stale_code(path, text, problems)
                 check_html_ending(path, text, problems)
+                check_programme_navigation(path, text, problems)
                 if len(re.findall(r"<h1", text)) != 1:
                     problems.append(
                         "{0}: has {1} h1 headings, must have exactly 1".format(
@@ -125,6 +152,21 @@ def main():
                     )
                 for leftover in set(PLACEHOLDER_TEXT.findall(text)):
                     problems.append("{0}: unfinished placeholder {1}".format(path, leftover))
+
+    if not os.path.isfile("development-programme.html"):
+        problems.append("development-programme.html: page is missing")
+    elif BOOKING_FORM not in open("development-programme.html", encoding="utf-8").read():
+        problems.append("development-programme.html: approved booking form is missing")
+
+    if not os.path.isfile(PROGRAMME_IMAGE):
+        problems.append("{0}: programme image is missing".format(PROGRAMME_IMAGE))
+
+    if not os.path.isfile("sitemap.xml"):
+        problems.append("sitemap.xml: file is missing")
+    else:
+        sitemap = open("sitemap.xml", encoding="utf-8").read()
+        if sitemap.count(PROGRAMME_URL) != 1:
+            problems.append("sitemap.xml: must contain the programme canonical URL exactly once")
 
     # Templates are skipped above because they hold placeholders. Scan them
     # for retired code only.

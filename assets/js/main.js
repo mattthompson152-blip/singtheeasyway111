@@ -33,6 +33,15 @@ document.addEventListener('DOMContentLoaded', function() {
     const mainNav = document.getElementById('mainNav');
     
     if (mobileMenuToggle && mainNav) {
+        function closeMenu(returnFocus) {
+            mobileMenuToggle.classList.remove('active');
+            mainNav.classList.remove('active');
+            mobileMenuToggle.setAttribute('aria-expanded', 'false');
+            if (returnFocus) {
+                mobileMenuToggle.focus();
+            }
+        }
+
         mobileMenuToggle.addEventListener('click', function() {
             this.classList.toggle('active');
             mainNav.classList.toggle('active');
@@ -43,10 +52,14 @@ document.addEventListener('DOMContentLoaded', function() {
         const navLinks = mainNav.querySelectorAll('a');
         navLinks.forEach(link => {
             link.addEventListener('click', function() {
-                mobileMenuToggle.classList.remove('active');
-                mainNav.classList.remove('active');
-                mobileMenuToggle.setAttribute('aria-expanded', 'false');
+                closeMenu(false);
             });
+        });
+
+        document.addEventListener('keydown', function(event) {
+            if (event.key === 'Escape' && mainNav.classList.contains('active')) {
+                closeMenu(true);
+            }
         });
     }
     
