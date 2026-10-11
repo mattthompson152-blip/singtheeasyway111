@@ -546,7 +546,7 @@ The live booking form allows visitors to choose:
 
 - 30-minute consultation, £25
 - Single 60-minute lesson, £85
-- Block of 10 lessons, £700
+- Development Programme (10 lessons), £700
 
 Booking URL:
 
@@ -737,9 +737,9 @@ Calculate every figure. Do not estimate.
 Current prices:
 
 ```text
-30 minute consultation    £25, normally £50
+30 minute consultation    £25
 Single 60 minute lesson   £85
-Block of 10 lessons       £700, £70 per lesson, saving £150
+Development Programme      £700 (10 lessons)
 ```
 
 ## CLAIMS AND EVIDENCE

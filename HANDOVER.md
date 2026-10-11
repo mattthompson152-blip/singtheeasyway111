@@ -12,9 +12,9 @@ The website exists to turn suitable visitors into consultation bookings and ongo
 
 Current prices:
 
-- 30-minute consultation: £25, normally £50
+- 30-minute consultation: £25
 - Single 60-minute lesson: £85
-- Block of 10 lessons: £700, or £70 per lesson, saving £150
+- Development Programme (10 lessons): £700
 
 Positioning: lessons that make a singer sound more like themselves, not less. Individuality is the differentiator.
 
@@ -53,7 +53,7 @@ The site now uses one booking form that allows a visitor to choose:
 
 1. A 30-minute consultation for £25
 2. A single 60-minute lesson for £85
-3. A block of 10 lessons for £700
+3. The Development Programme (10 lessons) for £700
 
 - Booking URL: `https://pci.jotform.com/form/262622799830063`
 - Primary CTA wording: `Book Online`
@@ -61,7 +61,7 @@ The site now uses one booking form that allows a visitor to choose:
 - Product options:
   1. 30-minute consultation, £25
   2. Single 60-minute lesson, £85
-  3. Block of 10 lessons, £700
+  3. Development Programme (10 lessons), £700
 - Contact page remains the support/questions route and is not a competing booking page.
 
 ## Files expected to change when booking is implemented
@@ -99,6 +99,28 @@ Do not make unrelated changes.
 - Preserve consent-gated analytics.
 - Do not invent prices, availability, guarantees, scarcity or booking terms.
 - Update both templates whenever the header, footer, stylesheet list or primary destination changes.
+
+## Launch blockers: decisions needed from Matt
+
+1. **Refunds (decided by Matt).** There is no money-back guarantee. Terms are the authoritative policy. The FAQ states this and directs unhappy customers to contact Matt directly. Do not add any refund promise that is not in Terms. Terms section 4 still needs a legal check.
+2. **Star ratings.** `ratingValue: 5` was removed from every Review in the testimonials schema because the ratings were not confirmed. Reinstate only with real ratings. Reviews by Vivienne Dargan, Sarah K., James R. and Emma L. appear only in schema, not as visible copy. Confirm they are genuine and consented, or remove them.
+3. **Jane Morris.** Confirm consent for her full name and the description "Professional vocalist and experienced coach with 25+ years in the industry" (home, contact, results, schema).
+4. **Wording to soften if unverifiable:** "they all improved", "hundreds of times", "countless students" (FAQ and blog index), "One change you can hear" (`blog/confidence-is-not-a-personality-trait.html`), and the operational promises (priority booking, email support, response times).
+
+## Consistency pass: items Matt must verify
+
+A site-wide consistency pass standardised offers (Consultation £25, Single Lesson £85, Development Programme £700), removed legacy discount wording, unified navigation and footer, and separated lesson CTAs (Book Online) from professional CTAs (Professional Services). The following statements were left as they were and need factual confirmation from Matt. None have been strengthened or invented.
+
+- "More than 25 years" of experience, and trained at the Academy of Contemporary Music.
+- Results page: "Three notes to three and a half octaves" case study, including "well known in India". Unattributed and unverified.
+- Results page: Jane Morris and other named testimonials. Confirm consent for names and descriptions.
+- Film & Recording page: "there are very few people doing it properly", "I currently work with a film director", "Tour and stadium preparation", and the Spain, India and UK client claim.
+- Film & Recording page: "Remote or on location" and "On location work can be discussed". This is the only possible exception to Microsoft Teams as the sole delivery platform.
+- Contact page: "recording artists, actors, TV personalities" and "25+ years of professional vocal coaching experience".
+- Terms section 4: the Development Programme refund wording was reworded to remove discount framing. The sums are unchanged (completed lessons charged at £85). Have this checked before relying on it legally.
+- Consultation wording "at least one change you can hear" remains on some blog posts and works as a guarantee.
+- Blog posts `tech-setup` and `choosing-singing-teacher` mention Zoom, Skype and Google Meet as general advice. Lessons themselves are Microsoft Teams only. Decide whether to reword.
+- Professional enquiries currently go to Matt's email. A separate enquiry form has not been created.
 
 ## Open items
 
@@ -175,7 +197,7 @@ If the booking form, payment, confirmation or live deployment fails, revert the 
 - Booking options:
   - 30-minute consultation, £25
   - One-to-one singing lesson, £85
-  - 10-lesson block, £700 (£70 per lesson, save £150)
+  - Development Programme (10 lessons), £700
 - Contact fallback: `/contact.html` for support and questions only
 - Files changed:
   - All public root HTML pages and all live blog posts for primary CTA destination/label consistency
