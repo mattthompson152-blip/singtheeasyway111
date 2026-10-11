@@ -100,6 +100,13 @@ Do not make unrelated changes.
 - Do not invent prices, availability, guarantees, scarcity or booking terms.
 - Update both templates whenever the header, footer, stylesheet list or primary destination changes.
 
+## Launch blockers: decisions needed from Matt
+
+1. **Refunds.** The FAQ previously promised a free first lesson ("no questions asked") and a 30-day pro-rata Development Programme refund. Terms had neither (no cooling-off period in 1.1, expiry without refund in 4.2). The FAQ answer now defers to Terms and the promises are withdrawn. Decide whether to reinstate either, and if so add it to Terms too. Have Terms section 4 checked legally.
+2. **Star ratings.** `ratingValue: 5` was removed from every Review in the testimonials schema because the ratings were not confirmed. Reinstate only with real ratings. Reviews by Vivienne Dargan, Sarah K., James R. and Emma L. appear only in schema, not as visible copy. Confirm they are genuine and consented, or remove them.
+3. **Jane Morris.** Confirm consent for her full name and the description "Professional vocalist and experienced coach with 25+ years in the industry" (home, contact, results, schema).
+4. **Wording to soften if unverifiable:** "they all improved", "hundreds of times", "countless students" (FAQ and blog index), "One change you can hear" (`blog/confidence-is-not-a-personality-trait.html`), and the operational promises (priority booking, email support, response times).
+
 ## Consistency pass: items Matt must verify
 
 A site-wide consistency pass standardised offers (Consultation £25, Single Lesson £85, Development Programme £700), removed legacy discount wording, unified navigation and footer, and separated lesson CTAs (Book Online) from professional CTAs (Professional Services). The following statements were left as they were and need factual confirmation from Matt. None have been strengthened or invented.
