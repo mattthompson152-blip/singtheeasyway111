@@ -35,6 +35,7 @@ STALE_STRINGS = (RETIRED_FORM, "feedback2.js", "JotformFeedback", "widget.open")
 STALE_ATTR = re.compile(r"data-booking(?!-option)|data-enquiry")
 BOOKING_LINK = re.compile(r"pci\.jotform\.com/form/(\d+)")
 EMBED_LINK = re.compile(r"(?<!pci\.)form\.jotform\.com/(\d+)")
+JOTFORM_ID = re.compile(r"(?:JotFormIFrame-|(?:pci\.)?form\.jotform\.com/(?:form/)?)(\d+)")
 
 
 def repo_root():
@@ -56,6 +57,9 @@ def check_stale_code(path, text, problems, retired_only=False):
     for form_id in sorted(set(EMBED_LINK.findall(text))):
         if form_id != COMMUNITY_FORM:
             problems.append("{0}: Jotform embed uses unapproved form {1}".format(path, form_id))
+    for form_id in sorted(set(JOTFORM_ID.findall(text))):
+        if form_id not in (BOOKING_FORM, COMMUNITY_FORM):
+            problems.append("{0}: contains unapproved Jotform ID {1}".format(path, form_id))
 
 
 def check_html_ending(path, text, problems):

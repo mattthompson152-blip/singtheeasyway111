@@ -257,7 +257,7 @@ Book Online
 
 `Results` must link to the testimonials page.
 
-`ADHD & Autism` must link to `/singing-lessons-for-adhd-and-autism.html`. Agreed with Matt on 20 September 2026. This page is a primary page, not a footer only page. It sits directly after `Lessons` because that is where a visitor deciding whether Matt is the right teacher is already looking. It remains in the footer as well.
+`ADHD & Autism` must link to `/singing-lessons-for-adhd-and-autism.html`. Agreed with Matt on 20 September 2026. This page is a primary page, not a footer only page, and remains in the footer as well.
 
 The header carries nine destination links and the Book Online button. The mobile menu is available through 1100px so the desktop navigation does not wrap or overlap. Recheck the navigation at tablet and desktop widths after changing it.
 
