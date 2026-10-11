@@ -25,10 +25,43 @@ ATTR = re.compile(r"\b(href|src)\s*=\s*([\"'])([^\"']*)\2")
 CSS_URL = re.compile(r"url\(([\"']?)([^\"')]+)\1\)")
 PLACEHOLDER_TEXT = re.compile(r"\[[A-Z][A-Z0-9 _\-]{2,}\]")
 
+RETIRED_FORM = "261603325649357"
+BOOKING_FORM = "262622799830063"
+COMMUNITY_FORM = "261037482331047"
+STALE_STRINGS = (RETIRED_FORM, "feedback2.js", "JotformFeedback", "widget.open")
+STALE_ATTR = re.compile(r"data-booking(?!-option)|data-enquiry")
+BOOKING_LINK = re.compile(r"pci\.jotform\.com/form/(\d+)")
+EMBED_LINK = re.compile(r"(?<!pci\.)form\.jotform\.com/(\d+)")
+
 
 def repo_root():
     here = os.path.dirname(os.path.abspath(__file__))
     return os.path.abspath(os.path.join(here, "..", ".."))
+
+
+def check_stale_code(path, text, problems, retired_only=False):
+    for needle in STALE_STRINGS:
+        if needle in text:
+            problems.append("{0}: contains retired/stale code {1}".format(path, needle))
+    if retired_only:
+        return
+    for match in sorted(set(STALE_ATTR.findall(text))):
+        problems.append("{0}: uses retired attribute {1}".format(path, match))
+    for form_id in sorted(set(BOOKING_LINK.findall(text))):
+        if form_id != BOOKING_FORM:
+            problems.append("{0}: booking link uses unapproved form {1}".format(path, form_id))
+    for form_id in sorted(set(EMBED_LINK.findall(text))):
+        if form_id != COMMUNITY_FORM:
+            problems.append("{0}: Jotform embed uses unapproved form {1}".format(path, form_id))
+
+
+def check_html_ending(path, text, problems):
+    for tag in ("</html>", "</body>"):
+        if text.count(tag) != 1:
+            problems.append("{0}: has {1} {2} tags, must have exactly 1".format(path, text.count(tag), tag))
+    end = text.rfind("</html>")
+    if end != -1 and text[end + len("</html>"):].strip():
+        problems.append("{0}: content after final </html>".format(path))
 
 
 def main():
@@ -41,13 +74,17 @@ def main():
     for folder, dirs, files in os.walk("."):
         dirs[:] = [d for d in dirs if d not in SKIP_DIRS]
         for name in files:
-            if not name.endswith(CHECK_EXTENSIONS):
+            if not name.endswith(CHECK_EXTENSIONS + (".js",)):
                 continue
             path = os.path.join(folder, name).replace("\\", "/").lstrip("./")
             if name.startswith("google") and name.endswith(".html"):
                 continue  # Google site verification file, not a page
             if path.endswith(".html"):
                 pages += 1
+            if path.endswith(".js"):
+                text = open(path, encoding="utf-8", errors="ignore").read()
+                check_stale_code(path, text, problems)
+                continue
             text = open(path, encoding="utf-8", errors="ignore").read()
 
             for match in ATTR.finditer(text):
@@ -77,6 +114,10 @@ def main():
                     problems.append("{0}: missing file in CSS {1}".format(path, value))
 
             if path.endswith(".html"):
+                check_stale_code(path, text, problems)
+
+            if path.endswith(".html"):
+                check_html_ending(path, text, problems)
                 if len(re.findall(r"<h1", text)) != 1:
                     problems.append(
                         "{0}: has {1} h1 headings, must have exactly 1".format(
@@ -85,6 +126,14 @@ def main():
                     )
                 for leftover in set(PLACEHOLDER_TEXT.findall(text)):
                     problems.append("{0}: unfinished placeholder {1}".format(path, leftover))
+
+    # Templates are skipped above because they hold placeholders. Scan them
+    # for retired code only.
+    for name in sorted(os.listdir("templates")) if os.path.isdir("templates") else []:
+        if name.endswith((".html", ".js")):
+            path = "templates/" + name
+            text = open(path, encoding="utf-8", errors="ignore").read()
+            check_stale_code(path, text, problems, retired_only=True)
 
     # Images must be reachable, and filenames must be lowercase.
     for folder, dirs, files in os.walk("assets/images"):
