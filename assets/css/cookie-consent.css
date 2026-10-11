@@ -4,6 +4,7 @@
     bottom: 0;
     left: 0;
     right: 0;
+    box-sizing: border-box;
     background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
     border-top: 2px solid #ff6b4a;
     padding: 20px;
@@ -24,7 +25,7 @@
 
 .cookie-banner-text {
     flex: 1;
-    min-width: 300px;
+    min-width: 0;
 }
 
 .cookie-banner-text h3 {
@@ -250,4 +251,10 @@
 /* Hide banner when consent given */
 .cookie-banner.hidden {
     display: none;
+}
+
+.cookie-table {
+    display: block;
+    max-width: 100%;
+    overflow-x: auto;
 }

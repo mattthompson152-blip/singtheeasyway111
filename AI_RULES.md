@@ -244,12 +244,14 @@ Required order:
 ```text
 Logo
 Home
-Lessons
+Vocal Coaching
+Developing Singers
+Development Programme
+Professional Services
 ADHD & Autism
-About
 Results
+About Matt
 Pricing
-Blog
 Book Online
 ```
 
@@ -257,7 +259,7 @@ Book Online
 
 `ADHD & Autism` must link to `/singing-lessons-for-adhd-and-autism.html`. Agreed with Matt on 20 September 2026. This page is a primary page, not a footer only page. It sits directly after `Lessons` because that is where a visitor deciding whether Matt is the right teacher is already looking. It remains in the footer as well.
 
-The header carries eight items and a button. `/assets/css/responsive.css` tightens the navigation gap between 769px and 1024px so they fit above the mobile breakpoint. Do not lengthen an existing navigation label without rechecking that range.
+The header carries nine destination links and the Book Online button. The mobile menu is available through 1100px so the desktop navigation does not wrap or overlap. Recheck the navigation at tablet and desktop widths after changing it.
 
 `Book Online` must be the main header button.
 
@@ -268,6 +270,8 @@ Do not add navigation items without explicit instruction.
 ## STANDARD FOOTER
 
 Every public page must use the same footer.
+
+The Explore section includes `Development Programme` next to `Developing Singers`.
 
 Required links:
 
