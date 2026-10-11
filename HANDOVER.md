@@ -113,6 +113,7 @@ A site-wide consistency pass standardised offers (Consultation £25, Single Less
 - FAQ: "if you're not completely satisfied with your first lesson, it's free" and "unused lessons can be refunded pro-rata within 30 days". These are guarantees and conflict with Terms section 4 (six month validity, expiry without refund). Decide which is correct.
 - Terms section 4: the Development Programme refund wording was reworded to remove discount framing. The sums are unchanged (completed lessons charged at £85). Have this checked before relying on it legally.
 - Consultation wording "at least one change you can hear" remains on some blog posts and works as a guarantee.
+- Blog posts `tech-setup` and `choosing-singing-teacher` mention Zoom, Skype and Google Meet as general advice. Lessons themselves are Microsoft Teams only. Decide whether to reword.
 - Professional enquiries currently go to Matt's email. A separate enquiry form has not been created.
 
 ## Open items
