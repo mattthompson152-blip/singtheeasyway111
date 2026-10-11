@@ -102,7 +102,7 @@ Do not make unrelated changes.
 
 ## Launch blockers: decisions needed from Matt
 
-1. **Refunds.** The FAQ previously promised a free first lesson ("no questions asked") and a 30-day pro-rata Development Programme refund. Terms had neither (no cooling-off period in 1.1, expiry without refund in 4.2). The FAQ answer now defers to Terms and the promises are withdrawn. Decide whether to reinstate either, and if so add it to Terms too. Have Terms section 4 checked legally.
+1. **Refunds (decided by Matt).** There is no money-back guarantee. Terms are the authoritative policy. The FAQ states this and directs unhappy customers to contact Matt directly. Do not add any refund promise that is not in Terms. Terms section 4 still needs a legal check.
 2. **Star ratings.** `ratingValue: 5` was removed from every Review in the testimonials schema because the ratings were not confirmed. Reinstate only with real ratings. Reviews by Vivienne Dargan, Sarah K., James R. and Emma L. appear only in schema, not as visible copy. Confirm they are genuine and consented, or remove them.
 3. **Jane Morris.** Confirm consent for her full name and the description "Professional vocalist and experienced coach with 25+ years in the industry" (home, contact, results, schema).
 4. **Wording to soften if unverifiable:** "they all improved", "hundreds of times", "countless students" (FAQ and blog index), "One change you can hear" (`blog/confidence-is-not-a-personality-trait.html`), and the operational promises (priority booking, email support, response times).
@@ -117,7 +117,6 @@ A site-wide consistency pass standardised offers (Consultation £25, Single Less
 - Film & Recording page: "there are very few people doing it properly", "I currently work with a film director", "Tour and stadium preparation", and the Spain, India and UK client claim.
 - Film & Recording page: "Remote or on location" and "On location work can be discussed". This is the only possible exception to Microsoft Teams as the sole delivery platform.
 - Contact page: "recording artists, actors, TV personalities" and "25+ years of professional vocal coaching experience".
-- FAQ: "if you're not completely satisfied with your first lesson, it's free" and "unused lessons can be refunded pro-rata within 30 days". These are guarantees and conflict with Terms section 4 (six month validity, expiry without refund). Decide which is correct.
 - Terms section 4: the Development Programme refund wording was reworded to remove discount framing. The sums are unchanged (completed lessons charged at £85). Have this checked before relying on it legally.
 - Consultation wording "at least one change you can hear" remains on some blog posts and works as a guarantee.
 - Blog posts `tech-setup` and `choosing-singing-teacher` mention Zoom, Skype and Google Meet as general advice. Lessons themselves are Microsoft Teams only. Decide whether to reword.
