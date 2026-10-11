@@ -29,6 +29,7 @@ RETIRED_FORM = "261603325649357"
 BOOKING_FORM = "262622799830063"
 COMMUNITY_FORM = "261037482331047"
 STALE_STRINGS = (RETIRED_FORM, "feedback2.js", "JotformFeedback", "widget.open")
+# data-booking-option is the only allowed data-booking-* attribute.
 STALE_ATTR = re.compile(r"data-booking(?!-option)|data-enquiry")
 BOOKING_LINK = re.compile(r"pci\.jotform\.com/form/(\d+)")
 EMBED_LINK = re.compile(r"(?<!pci\.)form\.jotform\.com/(\d+)")
@@ -115,8 +116,6 @@ def main():
 
             if path.endswith(".html"):
                 check_stale_code(path, text, problems)
-
-            if path.endswith(".html"):
                 check_html_ending(path, text, problems)
                 if len(re.findall(r"<h1", text)) != 1:
                     problems.append(
