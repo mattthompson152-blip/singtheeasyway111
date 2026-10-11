@@ -380,49 +380,6 @@
 <!-- Scripts -->
 <script src="/assets/js/main.js"></script>
 
-<!-- Jotform Widget -->
-<script src="https://form.jotform.com/static/feedback2.js"></script>
-<script>
-    var jotformFeedback = new JotformFeedback({
-        formId: '261603325649357',
-        base: 'https://form.jotform.com/',
-        windowTitle: 'Send an Enquiry',
-        background: '#ff6b35',
-        fontColor: '#FFFFFF',
-        type: '1',
-        height: 500,
-        width: 700,
-        openOnLoad: false
-    });
-</script>
-
-<!-- Button Click Handlers -->
-<script>
-document.addEventListener('DOMContentLoaded', function() {
-    document.querySelectorAll('[data-booking]').forEach(function(btn) {
-        btn.addEventListener('click', function(e) {
-            e.preventDefault();
-            if (widget && typeof widget.open === 'function') {
-                widget.open();
-            } else {
-                window.location.href='/contact.html';
-            }
-        });
-    });
-    
-    document.querySelectorAll('[data-enquiry]').forEach(function(btn) {
-        btn.addEventListener('click', function(e) {
-            e.preventDefault();
-            if (jotformFeedback && typeof jotformFeedback.open === 'function') {
-                jotformFeedback.open();
-            } else {
-                window.open('https://form.jotform.com/261603325649357', '_blank');
-            }
-        });
-    });
-});
-</script>
-
-    <script src="/assets/js/cookie-consent.js"></script>
+<script src="/assets/js/cookie-consent.js"></script>
 </body>
 </html>

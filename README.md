@@ -134,7 +134,7 @@ Booking options:
 - Single 60-minute lesson, £85
 - Development Programme (10 lessons), £700
 
-The old enquiry form (`261603325649357`) remains for contact support only and must not be reused for booking. The community email signup form (`261037482331047`) remains separate.
+The old enquiry form (`261603325649357`) is RETIRED. It must not be used for any booking or contact button, popup or handler, and it has been removed from the codebase. The community email signup form (`261037482331047`) remains separate.
 
 Keep `/contact.html` as the support and questions route for pre-booking questions, existing student communication, general contact, and technical issues.
 

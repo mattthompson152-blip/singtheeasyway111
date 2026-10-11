@@ -30,7 +30,7 @@ Matt has ADHD. This is public on the site and is presented as part of why his te
 - The current primary call to action is **Book Online**, linking to `/book-online.html`.
 - The approved booking form URL is `https://pci.jotform.com/form/262622799830063`.
 - The approved booking form ID is `262622799830063`.
-- The old enquiry form ID `261603325649357` is retained only for contact support workflow.
+- The old enquiry form ID `261603325649357` is RETIRED. It must not be used for any booking or contact button, and it has been removed from the codebase.
 - The community signup form ID is `261037482331047`.
 - Analytics is consent-gated.
 
@@ -215,3 +215,20 @@ If the booking form, payment, confirmation or live deployment fails, revert the 
 - Manual/Jotform verification still required:
   - Jotform-side booking confirmation/payment behaviour on live form
   - Live deployment confirmation from published non-www site
+
+## Stale Jotform logic repair (11 October 2026)
+
+- Retired enquiry form `261603325649357` removed from the codebase. It must not control any button, popup or handler.
+- Approved booking form remains `262622799830063`. Community signup form `261037482331047` is unchanged and remains separate.
+- Files changed:
+  - `assets/js/main.js`: removed the "JOTFORM MODAL HANDLER" block (retired popup plus `[data-booking]`/`[data-enquiry]` listeners)
+  - `terms.html`, `testimonials.html`: removed the `feedback2.js` widget and button click handler scripts (including the undefined `widget.open()` call); repaired malformed trailing content in `terms.html`
+  - `blog/choir-singing.html`: removed the stale `[data-booking]` handler
+  - 22 blog posts (`blog/comparing-your-voice-to-other-singers.html`, `confidence-is-not-a-personality-trait.html`, `perfectionism-is-hurting-your-singing.html`, `singing-lessons-autistic-adults.html`, `stage-fright.html`, `the-fear-arrives-before-the-note.html`, `told-you-could-not-sing-as-a-child.html`, `vibrato-mastery.html`, `vocal-agility.html`, `vocal-dynamics.html`, `vocal-health.html`, `vocal-muscle-memory.html`, `vocal-power.html`, `vocal-range.html`, `vocal-stamina.html`, `vocal-twang.html`, `vocal-warmups.html`, `voice-in-your-head-says-you-cannot-sing.html`, `why-singing-lessons-fail-adhd.html`, `why-you-freeze-when-someone-watches.html`, `why-you-sound-better-alone.html`): removed corrupted fragments after the closing `</html>`
+  - `singing-lessons-for-adhd-and-autism.html`: moved the community signup section (form `261037482331047`, unchanged) from after `</html>` to just before the footer
+  - `book-online.html`: removed the hero "Book Online" button that linked to the page itself
+  - `assets/scripts/check-site.py`: new checks for retired form, stale widget code, bare `data-booking`/`data-enquiry`, wrong Jotform form IDs and trailing content after `</html>`
+  - `README.md`, `HANDOVER.md`: retired-form wording corrected. `AI_RULES.md` needed no change.
+- Check result: `python3 assets/scripts/check-site.py` → `PASSED`
+- Deployment result: `Pending merge into main and publishing pipeline completion`
+- Live verification: `Pending post-deployment manual check on non-www production URL`
