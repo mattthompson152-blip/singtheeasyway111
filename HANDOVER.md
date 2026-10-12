@@ -232,3 +232,36 @@ If the booking form, payment, confirmation or live deployment fails, revert the 
 - Check result: `python3 assets/scripts/check-site.py` → `PASSED`
 - Deployment result: `Pending merge into main and publishing pipeline completion`
 - Live verification: `Pending post-deployment manual check on non-www production URL`
+
+## Thank-you page, plain email links and About/FAQ updates (12 October 2026)
+
+- Purpose: `/thank-you.html` is the private page shown after a successful booking. It confirms only that the booking has been received.
+- Intended public URL: `https://singtheeasyway.com/thank-you.html`
+- Booking form ID: `262622799830063` (unchanged). Community form `261037482331047` unchanged. Retired ID `261603325649357` remains absent.
+- Required Jotform redirect (to be set by Matt in Jotform, successful submission only, no personal data or field variables in the URL): `https://singtheeasyway.com/thank-you.html`
+- Analytics event: `booking_complete` with only `form_name: vocal_coaching_booking`, `form_id: 262622799830063`, `conversion_location: website_thank_you_page`. Implemented in `assets/js/main.js` (`trackBookingComplete`), triggered by an `analytics-consent-granted` event dispatched by `assets/js/cookie-consent.js` after the existing consent-gated GA load.
+- Duplicate protection: `sessionStorage` key `ste_booking_complete_sent` plus a per-page-load flag. A new browser session can record a new booking.
+- Consent: the event never fires before analytics consent, and fires if consent is granted later on the page. No second GA install, measurement ID or Google Ads code was added.
+- No personal data (names, emails, phone numbers, dates, products, answers, notes, health information, payment details, booking references or query strings) is sent by the event. GA collects the page URL automatically, so the Jotform redirect URL must stay free of parameters.
+- Existing behaviour not changed: older events in `main.js` check `typeof window.gtag === 'function'`, but the page head defines a Consent Mode stub, so that check is true before consent. Consider tightening it in a future approved task.
+- Exclusions: `noindex, nofollow`; not in `sitemap.xml`; not in header or footer navigation; no page links to it. `check-site.py` enforces this.
+- Site-wide email rule: all Matt email links are exactly `mailto:matt@singtheeasyway.com`. Changed: `professional-services.html` (2 links) and `vocal-coach-film-recording-pronunciation.html` (3 links), each had `?subject=Professional%20Services%20Enquiry` removed.
+- Files created: `thank-you.html`
+- Files modified: `AI_RULES.md`, `README.md`, `HANDOVER.md`, `about.html`, `contact.html`, `faq.html`, `privacy-policy.html` (Cookiebot wording only), `professional-services.html`, `vocal-coach-film-recording-pronunciation.html`, `assets/js/main.js`, `assets/js/cookie-consent.js`, `assets/scripts/check-site.py`
+- Checker result: `python3 assets/scripts/check-site.py` → `Checked 53 pages. PASSED. No broken links, no missing images, no placeholders.`
+- Branch: `copilot/review-and-inspect-files`. Commit ID: see `git log` on that branch and the pull request description.
+- Items for Matt (not changed): privacy policy cookie table does not match the implementation (cookies are `SingTheEasyWay_Consent`, `SingTheEasyWay_Analytics`, `SingTheEasyWay_Marketing`, 365 days; no `CookieConsent` or `PHPSESSID` set by this code); payment providers (Stripe, PayPal) unverified; the booking form is described as an "enquiry form"; planned thank-you page and `booking_complete` event are not described; terms need legal review (section 1, section 4, refund timing, no mention of the confirmation process).
+
+### Status of each stage
+
+| Stage | Status |
+| --- | --- |
+| Edited locally | Done |
+| Committed | Done on the working branch (see branch and commit above) |
+| Pushed | Pending, depends on the pull request tooling |
+| Merged | Not done |
+| Deployed | Not done |
+| Verified live | Not done |
+| Configured in Jotform | Not done. The repository cannot prove or activate it |
+| Verified in analytics (GA4) | Not done |
+| Google Ads | Not configured or verified. No Google Ads conversion is claimed |

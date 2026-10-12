@@ -294,7 +294,43 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
 
+    // ======================================
+    // BOOKING COMPLETE (thank-you page only)
+    // Sends GA4 booking_complete once per browser
+    // session, and only after analytics consent.
+    // Parameters are fixed values. Nothing about
+    // the booking or the customer is ever sent.
+    // ======================================
+    function trackBookingComplete() {
+        if (window.location.pathname !== '/thank-you.html') { return; }
+
+        var storageKey = 'ste_booking_complete_sent';
+        var sentThisPage = false;
+
+        function alreadySent() {
+            try { return window.sessionStorage.getItem(storageKey) === '1'; } catch (e) { return false; }
+        }
+
+        function send() {
+            if (sentThisPage || alreadySent()) { return; }
+            if (typeof window.gtag !== 'function') { return; }
+            sentThisPage = true;
+            try { window.sessionStorage.setItem(storageKey, '1'); } catch (e) { /* storage unavailable, page-level guard still applies */ }
+            window.gtag('event', 'booking_complete', {
+                form_name: 'vocal_coaching_booking',
+                form_id: '262622799830063',
+                conversion_location: 'website_thank_you_page'
+            });
+        }
+
+        // cookie-consent.js announces this only after analytics consent is
+        // granted, whether stored from a previous visit or given on this page.
+        document.addEventListener('analytics-consent-granted', send);
+        if (window.gaScriptLoaded) { send(); }
+    }
+
     trackConversionEvents();
     trackLeadEvents();
+    trackBookingComplete();
 
 });
