@@ -246,6 +246,9 @@
             gtag('config', 'G-72QBZSZZBP', { send_page_view: true });
         }
 
+        // Lets other site scripts act only once analytics consent exists.
+        document.dispatchEvent(new CustomEvent('analytics-consent-granted'));
+
         window['ga-disable-G-72QBZSZZBP'] = false;
         setCookie(ANALYTICS_COOKIE, 'enabled', 365);
     }

@@ -40,6 +40,14 @@ Core HTML pages must live in the repository root.
 
 Do not place core pages inside `/assets/`.
 
+### Special conversion page
+
+```text
+/thank-you.html
+```
+
+`/thank-you.html` is a special conversion page. It is not a core landing page. See `THANK-YOU PAGE` below.
+
 ### Blog posts
 
 All blog post HTML files must live inside:
@@ -188,6 +196,7 @@ Use `/` as the homepage URL.
 ├── privacy-policy.html
 ├── terms.html
 ├── environmental-policy.html
+├── thank-you.html                # Private booking-received page, noindex, nofollow, never in the sitemap
 ├── sitemap.xml
 ├── 404.html                      # Not found page, noindex, never in the sitemap
 ├── robots.txt
@@ -582,6 +591,7 @@ Never paste a raw `googletagmanager.com/gtag/js` tag into a page. Doing so break
 
 ```text
 consultation_click   any booking button, with its text and page section
+booking_complete     /thank-you.html only, see THANK-YOU PAGE
 phone_click          tap on the phone number
 email_click          tap on the email address
 pricing_viewed       visitor scrolled as far as the prices
@@ -589,6 +599,22 @@ signup_viewed        visitor reached the community signup
 ```
 
 Events only fire when the visitor has accepted analytics, because `gtag` does not exist until then. Never make tracking fire regardless of consent.
+
+## THANK-YOU PAGE
+
+`/thank-you.html` is the intended destination after a successful booking through Jotform form `262622799830063`. The Jotform redirect is configured in Jotform, not in this repository, and must be verified there.
+
+- It must stay `noindex, nofollow`, outside `sitemap.xml`, and out of the header, the footer, page cards, promotional links and the normal browsing journey.
+- It is not a normal landing page and must not be treated or promoted as one.
+- It must not show form answers or personal data. The redirect URL must carry no personal data, Jotform field variables or booking parameters.
+- It keeps the standard header, footer and `Cookie Settings` link, and loads `/assets/js/main.js` and `/assets/js/cookie-consent.js`.
+- It must confirm only that the booking has been received. It must not claim confirmed appointments, confirmed payment, emails sent, links or joining instructions sent, receipts, or a confirmed date or time, unless that behaviour has been verified.
+- It may record the GA4 event `booking_complete` (fixed parameters `form_name`, `form_id`, `conversion_location` only), only after analytics consent, once per browser session. It must never send personal information to analytics.
+- Do not describe a Google Ads conversion as existing until it has been configured and verified.
+
+## EMAIL LINKS
+
+Every email link to Matt must use only `mailto:matt@singtheeasyway.com`. No subject, body, CC, BCC, tracking parameters or provider-specific webmail links, and no script that chooses an email provider. The site must not force a particular email app or account. `check-site.py` enforces this.
 
 ## COOKIE CONSENT
 

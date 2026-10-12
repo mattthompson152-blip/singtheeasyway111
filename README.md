@@ -26,6 +26,7 @@ Site: https://singtheeasyway.com
 ├── privacy-policy.html
 ├── terms.html
 ├── environmental-policy.html
+├── thank-you.html                # Private conversion-completion page, noindex, not in sitemap or navigation
 ├── sitemap.xml
 ├── robots.txt
 ├── site.webmanifest
@@ -150,6 +151,22 @@ Booking options:
 The old enquiry form (`261603325649357`) is RETIRED. It must not be used for any booking or contact button, popup or handler, and it has been removed from the codebase. The community email signup form (`261037482331047`) remains separate.
 
 Keep `/contact.html` as the support and questions route for pre-booking questions, existing student communication, general contact, and technical issues.
+
+### Booking completion page
+
+`/thank-you.html` is a private conversion-completion page. It is `noindex, nofollow`, is not in `sitemap.xml`, and is not linked from the header, footer or any page.
+
+Intended journey:
+
+Website → Book Online → Jotform form `262622799830063` → successful submission → `/thank-you.html`
+
+- The website page and the Jotform redirect are separate implementation stages. Publishing the HTML does not prove the redirect works. Matt must enter `https://singtheeasyway.com/thank-you.html` as the redirect in Jotform, with no personal data in the URL, and test it.
+- GA4 conversion configuration and Google Ads conversion configuration each need separate verification. The page only prepares the `booking_complete` event, which fires only after analytics consent.
+- Analytics remains consent-gated. Do not describe this journey as live until it has been deployed and tested.
+
+### Email links
+
+Email links to Matt are plain `mailto:matt@singtheeasyway.com` with no prepared subject or message. The site does not control which email app or account opens on a visitor's device.
 
 ## Lesson platform
 
