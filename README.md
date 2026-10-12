@@ -91,19 +91,32 @@ The standard header order is:
 
 1. Logo
 2. Home
-3. Lessons
-4. ADHD & Autism
-5. About
-6. Results
-7. Pricing
-8. Blog
-9. Book Online
+3. Vocal Coaching
+4. Developing Singers
+5. Development Programme
+6. Professional Services
+7. ADHD & Autism
+8. Results
+9. About Matt
+10. Pricing
+11. Book Online
 
-`Results` links to `/testimonials.html`. `ADHD & Autism` links to `/singing-lessons-for-adhd-and-autism.html` and appears in both the header and footer. Desktop and mobile navigation must contain the same destinations.
+`Results` links to `/testimonials.html`. `ADHD & Autism` links to `/singing-lessons-for-adhd-and-autism.html` and appears in both the header and footer. The Development Programme link appears after Developing Singers in both header and Explore footer. The tablet hamburger keeps the full navigation usable without desktop wrapping.
 
-The standard footer includes:
+The Explore footer includes:
+
+- Home
+- Vocal Coaching
+- Developing Singers
+- Development Programme
+- Professional Services
+- About Matt
+- Pricing
+
+The Information footer includes:
 
 - FAQ
+- Blog
 - ADHD & Autism
 - Film & Recording
 - Contact
@@ -134,7 +147,7 @@ Booking options:
 - Single 60-minute lesson, £85
 - Development Programme (10 lessons), £700
 
-The old enquiry form (`261603325649357`) remains for contact support only and must not be reused for booking. The community email signup form (`261037482331047`) remains separate.
+The old enquiry form (`261603325649357`) is RETIRED. It must not be used for any booking or contact button, popup or handler, and it has been removed from the codebase. The community email signup form (`261037482331047`) remains separate.
 
 Keep `/contact.html` as the support and questions route for pre-booking questions, existing student communication, general contact, and technical issues.
 

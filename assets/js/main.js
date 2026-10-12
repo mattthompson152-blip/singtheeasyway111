@@ -33,6 +33,15 @@ document.addEventListener('DOMContentLoaded', function() {
     const mainNav = document.getElementById('mainNav');
     
     if (mobileMenuToggle && mainNav) {
+        function closeMenu(returnFocus) {
+            mobileMenuToggle.classList.remove('active');
+            mainNav.classList.remove('active');
+            mobileMenuToggle.setAttribute('aria-expanded', 'false');
+            if (returnFocus) {
+                mobileMenuToggle.focus();
+            }
+        }
+
         mobileMenuToggle.addEventListener('click', function() {
             this.classList.toggle('active');
             mainNav.classList.toggle('active');
@@ -43,10 +52,14 @@ document.addEventListener('DOMContentLoaded', function() {
         const navLinks = mainNav.querySelectorAll('a');
         navLinks.forEach(link => {
             link.addEventListener('click', function() {
-                mobileMenuToggle.classList.remove('active');
-                mainNav.classList.remove('active');
-                mobileMenuToggle.setAttribute('aria-expanded', 'false');
+                closeMenu(false);
             });
+        });
+
+        document.addEventListener('keydown', function(event) {
+            if (event.key === 'Escape' && mainNav.classList.contains('active')) {
+                closeMenu(true);
+            }
         });
     }
     
@@ -86,48 +99,6 @@ document.addEventListener('DOMContentLoaded', function() {
     
     window.addEventListener('scroll', updateNavbar);
     
-    // ======================================
-    // JOTFORM MODAL HANDLER
-    // ======================================
-    if (!window.jotformFeedback && typeof window.JotformFeedback === 'function') {
-        window.jotformFeedback = new window.JotformFeedback({
-            formId: '261603325649357',
-            base: 'https://form.jotform.com/',
-            windowTitle: 'Send an Enquiry',
-            background: '#ff6b35',
-            fontColor: '#FFFFFF',
-            type: '1',
-            height: 500,
-            width: 700,
-            openOnLoad: false
-        });
-    }
-
-    function handleJotformClick(e) {
-        e.preventDefault();
-        try {
-            if (window.jotformFeedback && typeof window.jotformFeedback.open === 'function') {
-                window.jotformFeedback.open();
-                return;
-            }
-        } catch (err) {
-            console.warn('Jotform modal error:', err);
-        }
-        // Fallback to enquiry page
-        window.location.href = '/contact.html';
-    }
-    
-    // Attach handler to all [data-booking] buttons
-    document.querySelectorAll('[data-booking]').forEach(function(btn) {
-        btn.addEventListener('click', handleJotformClick);
-    });
-    
-    // Attach handler to all [data-enquiry] buttons
-    document.querySelectorAll('[data-enquiry]').forEach(function(btn) {
-        btn.addEventListener('click', handleJotformClick);
-    });
-    
-
     // ======================================
     // FLOATING CTA VISIBILITY
     // Hides the floating button when the page's

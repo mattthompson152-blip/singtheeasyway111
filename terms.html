@@ -129,13 +129,14 @@
 <nav>
     <div class="nav-container">
         <a href="/" class="logo">Sing The Easy Way</a>
-        <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Toggle menu" aria-expanded="false">
+        <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Toggle menu" aria-controls="mainNav" aria-expanded="false">
             <span></span><span></span><span></span>
         </button>
         <ul id="mainNav">
             <li><a href="/">Home</a></li>
             <li><a href="/lessons.html">Vocal Coaching</a></li>
             <li><a href="/developing-singers.html">Developing Singers</a></li>
+            <li><a href="/development-programme.html">Development Programme</a></li>
             <li><a href="/professional-services.html">Professional Services</a></li>
             <li><a href="/singing-lessons-for-adhd-and-autism.html">ADHD &amp; Autism</a></li>
             <li><a href="/testimonials.html">Results</a></li>
@@ -281,6 +282,7 @@
                     <li><a href="/">Home</a></li>
                     <li><a href="/lessons.html">Vocal Coaching</a></li>
                     <li><a href="/developing-singers.html">Developing Singers</a></li>
+                    <li><a href="/development-programme.html">Development Programme</a></li>
                     <li><a href="/professional-services.html">Professional Services</a></li>
                     <li><a href="/about.html">About Matt</a></li>
                     <li><a href="/pricing.html">Pricing</a></li>
@@ -324,55 +326,6 @@
 <!-- Scripts -->
 <script src="/assets/js/main.js"></script>
 
-<!-- Jotform Widget -->
-<script src="https://form.jotform.com/static/feedback2.js"></script>
-<script>
-    var jotformFeedback = new JotformFeedback({
-        formId: '261603325649357',
-        base: 'https://form.jotform.com/',
-        windowTitle: 'Send an Enquiry',
-        background: '#ff6b35',
-        fontColor: '#FFFFFF',
-        type: '1',
-        height: 500,
-        width: 700,
-        openOnLoad: false
-    });
-</script>
-
-<!-- Button Click Handlers -->
-<script>
-document.addEventListener('DOMContentLoaded', function() {
-    // Booking buttons - navigate to enquiry form
-    document.querySelectorAll('[data-booking]').forEach(function(btn) {
-        btn.addEventListener('click', function(e) {
-            e.preventDefault();
-            window.location.href='/contact.html';
-        });
-    });
-    
-    // Enquiry buttons - open Jotform popup
-    document.querySelectorAll('[data-enquiry]').forEach(function(btn) {
-        btn.addEventListener('click', function(e) {
-            e.preventDefault();
-            if (jotformFeedback && typeof jotformFeedback.open === 'function') {
-                jotformFeedback.open();
-            } else {
-                window.open('https://form.jotform.com/261603325649357', '_blank');
-            }
-        });
-    });
-});
-</script>
-
-    <script src="/assets/js/cookie-consent.js"></script>
-</body>
-</html>
-  });
-    });
-});
-</script>
-
-    <script src="/assets/js/cookie-consent.js"></script>
+<script src="/assets/js/cookie-consent.js"></script>
 </body>
 </html>
