@@ -15,11 +15,9 @@ export const HIDDEN_FIELDS = {
   sessionNumber: 'ga_session_number',
 };
 
-// PLACEHOLDER: the unique name of the existing Booking Option / product field in
-// Jotform. The owner must confirm it (Jotform builder > field > Properties >
-// Advanced > Unique Name) and set PRODUCT_FIELD_NAME. If the field is not found,
-// the product names in the payment block are used instead.
-export const DEFAULT_PRODUCT_FIELD_NAME = 'bookingOption';
+// The unique name of the existing Booking Options field is NOT defaulted. The
+// owner must read it from Jotform and set PRODUCT_FIELD_NAME (secret or var);
+// until then the Worker refuses to process anything (not_configured).
 
 // Exact mapping of Booking Options. `labels` are matched case-insensitively
 // against the verified submission (never against client data). Override with
@@ -64,7 +62,7 @@ export function loadConfig(env) {
     measurementId: env.GA4_MEASUREMENT_ID || DEFAULT_MEASUREMENT_ID,
     apiSecret: env.GA4_API_SECRET || '',
     formId: env.JOTFORM_FORM_ID || DEFAULT_FORM_ID,
-    productFieldName: env.PRODUCT_FIELD_NAME || DEFAULT_PRODUCT_FIELD_NAME,
+    productFieldName: (env.PRODUCT_FIELD_NAME || '').trim(),
     productMap,
   };
 }

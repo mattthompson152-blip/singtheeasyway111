@@ -41,9 +41,17 @@ The repo root has a `CNAME` (`singtheeasyway.com`) and no `wrangler.toml`, `netl
 ## Assumptions the owner must confirm (not guessed silently)
 
 1. **Payment status field.** Jotform's public docs do not guarantee one payment-status vocabulary across gateways. `isPaymentVerified()` assumes a payment control answer (type containing e.g. `stripe`, `paypal`, `square`) whose `answer` (or its `paymentArray` JSON) carries `status` / `paymentStatus` equal to one of `PAID`, `COMPLETED`, `COMPLETE`, `SUCCEEDED`, `SUCCESS`, `SUCCESSFUL`, `CAPTURED`, `SETTLED`. Any other value, a refund flag or a missing block is treated as unpaid. If your gateway reports something else, **every real booking will be recorded as `unpaid_or_unverified` and no conversion will be sent**; look at one real paid submission (`GET /submission/{id}` with your API key) and adjust `worker/src/payment.js`.
-2. **Product field unique name.** Placeholder `bookingOption` (`PRODUCT_FIELD_NAME`). Confirm the real unique name (Jotform builder > field > Properties > Advanced > Unique Name). If not found, product names in the payment block are used. If both exist they must agree.
+2. **Product field unique name.** Not defaulted. `PRODUCT_FIELD_NAME` must be set (see "Finding the Booking Options unique name"); without it the Worker returns `not_configured` and processes nothing. The product field value must be present in the verified submission and, if the payment block lists products, must agree with it; otherwise `needs_review`.
 3. **Amount format.** Total is read from the payment block (`total`, e.g. `25.00 GBP`). If it can't be read the result is `needs_review`.
 4. **API host.** `JOTFORM_API_BASE`: `https://api.jotform.com` (default), `https://eu-api.jotform.com` for EU-safe accounts, or your enterprise/PCI/HIPAA host if the account requires it (the form is on `pci.jotform.com`; use whichever host accepts your read-only key for this form).
+
+## Finding the Booking Options unique name
+
+In Jotform, open the form in the builder, click the Booking Options field, open its Properties (gear), then Advanced, and read **Unique Name**. Alternatively, call `GET <API host>/form/262622799830063/questions?apiKey=<read-only key>` and read the `name` of the question whose `text` is the Booking Options label. Use exactly that value (case-sensitive) as `PRODUCT_FIELD_NAME`. Do not guess.
+
+## Inspecting one paid submission (Stripe status)
+
+After one real paid test: `GET <API host>/submission/<submissionID>?apiKey=<read-only key>` (or open the submission in Jotform, then Submissions > the entry > "Edit/JSON view" if offered). In `content.answers`, find the entry whose `type` starts `control_` for your payment gateway (e.g. `control_stripe`). Note the exact `status` value (inside `answer` or its `paymentArray`) plus `total` and the `product` list, and the top-level `status` (`ACTIVE`). Check that value is in `PAID_STATUSES` in `worker/src/payment.js`; if not, send me the value (no personal data) and it is added. Also do the same for one abandoned/unpaid attempt and compare. Redact names and emails before sharing.
 
 ## Google Ads attribution (investigation)
 
@@ -58,7 +66,7 @@ Sources I could consult were limited (the sandbox could not open developers.goog
 
 ## Consent behaviour change (needs owner sign-off)
 
-`assets/js/cookie-consent.js` previously granted `ad_storage`, `ad_user_data` and `ad_personalization` whenever **analytics** was accepted. Now: analytics toggle -> `analytics_storage` only; marketing toggle -> `ad_storage`, `ad_user_data`, `ad_personalization` granted only when marketing is true, and denied otherwise including on withdrawal. Consent Mode default stays `denied`, there is no raw gtag loader, banner UI/copy and cookie names are unchanged, and `analytics-consent-granted` is still dispatched. `/privacy-policy.html` was **not** edited: these are pseudonymous identifiers stored in Jotform only when the visitor consented, so the owner should review its wording.
+`assets/js/cookie-consent.js` previously granted `ad_storage`, `ad_user_data` and `ad_personalization` whenever **analytics** was accepted. Now: analytics toggle -> `analytics_storage` only; marketing toggle -> `ad_storage`, `ad_user_data`, `ad_personalization` granted only when marketing is true, and denied otherwise including on withdrawal. Consent Mode default stays `denied`, there is no raw gtag loader, banner UI/copy and cookie names are unchanged, and `analytics-consent-granted` is still dispatched. `/privacy-policy.html` section 15 now describes the consented pseudonymous identifiers in Jotform, the webhook and server-side GA4 measurement; owner to review the wording.
 
 ## Jotform setup
 
@@ -86,7 +94,7 @@ Sources I could consult were limited (the sandbox could not open developers.goog
 | `JOTFORM_API_BASE` | var | default `https://api.jotform.com` |
 | `GA4_MEASUREMENT_ID` | var | default `G-72QBZSZZBP` |
 | `JOTFORM_FORM_ID` | var | default `262622799830063` |
-| `PRODUCT_FIELD_NAME` | var | default placeholder `bookingOption` |
+| `PRODUCT_FIELD_NAME` | secret/var, REQUIRED | no default; unique name of the Booking Options field |
 | `PRODUCT_MAP_JSON` | var, optional | see above |
 
 Secrets are set with `wrangler secret put` and never committed. `.dev.vars` is git-ignored.
@@ -100,6 +108,7 @@ npx wrangler login
 npx wrangler secret put WEBHOOK_SECRET
 npx wrangler secret put JOTFORM_API_KEY
 npx wrangler secret put GA4_API_SECRET
+npx wrangler secret put PRODUCT_FIELD_NAME
 npx wrangler deploy        # applies the Durable Object migration (new_sqlite_classes) and workers.dev route
 ```
 

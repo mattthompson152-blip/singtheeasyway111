@@ -215,3 +215,19 @@ test('responses never echo submission data', async () => {
   const { body } = await run(submission());
   assert.deepEqual(Object.keys(body), ['status']);
 });
+
+test('product field name not configured -> Worker refuses to process', async () => {
+  const m = mocks(submission());
+  const env = { ...ENV, PRODUCT_FIELD_NAME: '' };
+  const res = await handleRequest(webhook(), env, { fetch: m.fetch, dedupe: dedupeClient(fakeNamespace()) });
+  assert.equal(res.status, 500);
+  assert.equal(m.calls.ga.length + m.calls.jotform, 0);
+});
+
+test('product field missing from verified submission -> needs_review, nothing sent', async () => {
+  const sub = submission();
+  delete sub.answers[3];
+  const { body, calls } = await run(sub);
+  assert.equal(body.status, 'needs_review');
+  assert.equal(calls.ga.length, 0);
+});

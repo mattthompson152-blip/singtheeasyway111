@@ -3,7 +3,7 @@ import { SubmissionDedupe } from '../src/dedupe.js';
 
 export const SECRET = 'test-secret';
 export const SID = '5555555555555555555';
-export const ENV = { WEBHOOK_SECRET: SECRET, JOTFORM_API_KEY: 'k', GA4_API_SECRET: 's' };
+export const ENV = { WEBHOOK_SECRET: SECRET, JOTFORM_API_KEY: 'k', GA4_API_SECRET: 's', PRODUCT_FIELD_NAME: 'bookingOption' };
 
 // Real SQL (node:sqlite) behind the same Durable Object class used in production.
 export function fakeNamespace() {

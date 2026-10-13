@@ -65,8 +65,10 @@ function matchProducts(text, productMap) {
 // product map entry or null (unknown/ambiguous/inconsistent -> needs_review).
 export function identifyProduct(submission, config) {
   const candidates = [];
+  // The selected Booking Option field is mandatory: no field value, no product.
   const fieldText = textOf(answerByName(submission, config.productFieldName));
-  if (fieldText) candidates.push(matchProducts(fieldText, config.productMap));
+  if (!fieldText.trim()) return null;
+  candidates.push(matchProducts(fieldText, config.productMap));
   const payText = getPaymentDetails(submission).products.join(' ');
   if (payText) candidates.push(matchProducts(payText, config.productMap));
   if (candidates.length === 0) return null;
@@ -140,7 +142,7 @@ export async function handleRequest(request, env, deps = {}) {
   }
   if (!SUBMISSION_ID_RE.test(submissionId) || !FORM_ID_RE.test(formId)) return json(400, { status: 'bad_request' });
   if (formId !== config.formId) { log('wrong_form'); return json(400, { status: 'wrong_form' }); }
-  if (!config.jotformApiKey || !config.apiSecret) { log('not_configured'); return json(500, { status: 'not_configured' }); }
+  if (!config.jotformApiKey || !config.apiSecret || !config.productFieldName) { log('not_configured'); return json(500, { status: 'not_configured' }); }
 
   const submission = await fetchSubmission(config, submissionId, fetchImpl);
   if (!submission) { log('verification_unavailable', submissionId); return json(502, { status: 'verification_unavailable' }); }
