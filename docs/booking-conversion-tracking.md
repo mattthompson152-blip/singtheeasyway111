@@ -41,7 +41,7 @@ The repo root has a `CNAME` (`singtheeasyway.com`) and no `wrangler.toml`, `netl
 ## Assumptions the owner must confirm (not guessed silently)
 
 1. **Payment status field.** Jotform's public docs do not guarantee one payment-status vocabulary across gateways. `isPaymentVerified()` assumes a payment control answer (type containing e.g. `stripe`, `paypal`, `square`) whose `answer` (or its `paymentArray` JSON) carries `status` / `paymentStatus` equal to one of `PAID`, `COMPLETED`, `COMPLETE`, `SUCCEEDED`, `SUCCESS`, `SUCCESSFUL`, `CAPTURED`, `SETTLED`. Any other value, a refund flag or a missing block is treated as unpaid. If your gateway reports something else, **every real booking will be recorded as `unpaid_or_unverified` and no conversion will be sent**; look at one real paid submission (`GET /submission/{id}` with your API key) and adjust `worker/src/payment.js`.
-2. **Product field unique name.** Not defaulted. `PRODUCT_FIELD_NAME` must be set (see "Finding the Booking Options unique name"); without it the Worker returns `not_configured` and processes nothing. The product field value must be present in the verified submission and, if the payment block lists products, must agree with it; otherwise `needs_review`.
+2. **Product field unique name.** Confirmed by the owner as `bookingOptions` and set in `worker/wrangler.toml`; not defaulted in code. `PRODUCT_FIELD_NAME` must be set (see "Finding the Booking Options unique name"); without it the Worker returns `not_configured` and processes nothing. The product field value must be present in the verified submission and, if the payment block lists products, must agree with it; otherwise `needs_review`.
 3. **Amount format.** Total is read from the payment block (`total`, e.g. `25.00 GBP`). If it can't be read the result is `needs_review`.
 4. **API host.** `JOTFORM_API_BASE`: `https://api.jotform.com` (default), `https://eu-api.jotform.com` for EU-safe accounts, or your enterprise/PCI/HIPAA host if the account requires it (the form is on `pci.jotform.com`; use whichever host accepts your read-only key for this form).
 
@@ -94,7 +94,7 @@ Sources I could consult were limited (the sandbox could not open developers.goog
 | `JOTFORM_API_BASE` | var | default `https://api.jotform.com` |
 | `GA4_MEASUREMENT_ID` | var | default `G-72QBZSZZBP` |
 | `JOTFORM_FORM_ID` | var | default `262622799830063` |
-| `PRODUCT_FIELD_NAME` | secret/var, REQUIRED | no default; unique name of the Booking Options field |
+| `PRODUCT_FIELD_NAME` | var, REQUIRED | `bookingOptions` (confirmed by owner), set in `wrangler.toml`; no code default |
 | `PRODUCT_MAP_JSON` | var, optional | see above |
 
 Secrets are set with `wrangler secret put` and never committed. `.dev.vars` is git-ignored.
@@ -108,7 +108,6 @@ npx wrangler login
 npx wrangler secret put WEBHOOK_SECRET
 npx wrangler secret put JOTFORM_API_KEY
 npx wrangler secret put GA4_API_SECRET
-npx wrangler secret put PRODUCT_FIELD_NAME
 npx wrangler deploy        # applies the Durable Object migration (new_sqlite_classes) and workers.dev route
 ```
 

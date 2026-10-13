@@ -14,8 +14,8 @@ GA4_MEASUREMENT_ID = "G-72QBZSZZBP"
 JOTFORM_FORM_ID = "262622799830063"
 # Use https://eu-api.jotform.com for EU accounts, or your enterprise/PCI host if required.
 JOTFORM_API_BASE = "https://api.jotform.com"
-# PRODUCT_FIELD_NAME (unique name of the Booking Options field) is deliberately NOT set here.
-# Set it with: wrangler secret put PRODUCT_FIELD_NAME
+# Unique Name of the Booking Options field in Jotform (confirmed by owner).
+PRODUCT_FIELD_NAME = "bookingOptions"
 
 [[durable_objects.bindings]]
 name = "SUBMISSION_DEDUPE"

@@ -3,7 +3,7 @@ import { SubmissionDedupe } from '../src/dedupe.js';
 
 export const SECRET = 'test-secret';
 export const SID = '5555555555555555555';
-export const ENV = { WEBHOOK_SECRET: SECRET, JOTFORM_API_KEY: 'k', GA4_API_SECRET: 's', PRODUCT_FIELD_NAME: 'bookingOption' };
+export const ENV = { WEBHOOK_SECRET: SECRET, JOTFORM_API_KEY: 'k', GA4_API_SECRET: 's', PRODUCT_FIELD_NAME: 'bookingOptions' };
 
 // Real SQL (node:sqlite) behind the same Durable Object class used in production.
 export function fakeNamespace() {
@@ -34,7 +34,7 @@ export function submission(over = {}) {
     answers: {
       1: { name: 'fullName', type: 'control_fullname', answer: { first: 'Jane', last: 'Singer' } },
       2: { name: 'email', type: 'control_email', answer: 'jane@example.com' },
-      3: { name: 'bookingOption', type: 'control_radio', answer: 'Consultation' },
+      3: { name: 'bookingOptions', type: 'control_radio', answer: 'Consultation' },
       4: payment('COMPLETED'),
       5: hidden('analytics_consent', '1'), 6: hidden('ads_consent', ''),
       7: hidden('ga_client_id', '1234567890.1700000000'), 8: hidden('ga_session_id', '1700000001'),

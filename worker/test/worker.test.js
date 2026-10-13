@@ -75,7 +75,7 @@ const products = [
 for (const [label, type, value] of products) {
   test(`product ${label} -> ${type} ${value} GBP, txn id = submission id`, async () => {
     const sub = submission({ answers: {
-      3: { name: 'bookingOption', answer: label },
+      3: { name: 'bookingOptions', answer: label },
       4: payment('COMPLETED', {}, `${value}.00 GBP`, `${label} (Qty: 1, Amount: ${value}.00 GBP)`),
     } });
     const { body, calls } = await run(sub);
@@ -98,14 +98,14 @@ test('amount mismatch -> needs_review, nothing sent', async () => {
 });
 
 test('unknown product -> needs_review, nothing sent', async () => {
-  const sub = submission({ answers: { 3: { name: 'bookingOption', answer: 'Mystery' }, 4: payment('COMPLETED', {}, '25.00 GBP', 'Mystery (Qty: 1)') } });
+  const sub = submission({ answers: { 3: { name: 'bookingOptions', answer: 'Mystery' }, 4: payment('COMPLETED', {}, '25.00 GBP', 'Mystery (Qty: 1)') } });
   const { body, calls } = await run(sub);
   assert.equal(body.status, 'needs_review');
   assert.equal(calls.ga.length, 0);
 });
 
 test('product field and payment block disagree -> needs_review', async () => {
-  const sub = submission({ answers: { 3: { name: 'bookingOption', answer: 'Single Lesson' } } });
+  const sub = submission({ answers: { 3: { name: 'bookingOptions', answer: 'Single Lesson' } } });
   assert.equal((await run(sub)).body.status, 'needs_review');
 });
 
