@@ -18,7 +18,7 @@ import os
 import re
 import sys
 
-SKIP_DIRS = {"app", "templates", ".git", "node_modules"}
+SKIP_DIRS = {"app", "templates", "worker", ".git", "node_modules"}
 CHECK_EXTENSIONS = (".html", ".css", ".xml", ".webmanifest")
 EXTERNAL = re.compile(r"^(https?:|mailto:|tel:|data:|//)")
 ATTR = re.compile(r"\b(href|src)\s*=\s*([\"'])([^\"']*)\2")
@@ -47,6 +47,8 @@ WEBMAIL = re.compile(
 )
 MAILTO_ANCHOR = re.compile(r"<a\b[^>]*href=[\"']mailto:[^>]*>", re.IGNORECASE)
 RAW_GA_LOADER = re.compile(r"googletagmanager\.com|google-analytics\.com/analytics\.js", re.IGNORECASE)
+RETIRED_OPTION = "ten_lesson_block"
+DATE_NOW_KEY = re.compile(r"Date\.now\(\)")
 JOTFORM_VARIABLE = re.compile(r"\{[A-Za-z0-9_]+\}|jotform\.com|[?&](?:first|last|name|email|phone|date|time)=", re.IGNORECASE)
 JOTFORM_ID = re.compile(r"(?:JotFormIFrame-|(?:pci\.)?form\.jotform\.com/(?:form/)?)(\d+)")
 
@@ -73,6 +75,17 @@ def check_stale_code(path, text, problems, retired_only=False):
     for form_id in sorted(set(JOTFORM_ID.findall(text))):
         if form_id not in (BOOKING_FORM, COMMUNITY_FORM):
             problems.append("{0}: contains unapproved Jotform ID {1}".format(path, form_id))
+
+
+def check_tracking_code(path, text, problems):
+    """Conversion tracking rules: booking_complete is server-side only (worker/)."""
+    if RETIRED_OPTION in text:
+        problems.append("{0}: contains retired identifier {1}, use development_programme".format(path, RETIRED_OPTION))
+    if path.startswith("assets/js/") and path.endswith(".js"):
+        if "booking_complete" in text:
+            problems.append("{0}: must not send or mention booking_complete, it is recorded server-side only".format(path))
+        if DATE_NOW_KEY.search(text):
+            problems.append("{0}: Date.now() must not be used (never in a dedupe key)".format(path))
 
 
 def check_email_links(path, text, problems):
@@ -176,6 +189,7 @@ def main():
                 text = open(path, encoding="utf-8", errors="ignore").read()
                 check_stale_code(path, text, problems)
                 check_email_links(path, text, problems)
+                check_tracking_code(path, text, problems)
                 continue
             text = open(path, encoding="utf-8", errors="ignore").read()
 
@@ -208,6 +222,7 @@ def main():
             if path.endswith(".html"):
                 check_stale_code(path, text, problems)
                 check_email_links(path, text, problems)
+                check_tracking_code(path, text, problems)
                 if path != THANK_YOU and THANK_YOU in text:
                     problems.append("{0}: must not link to {1}".format(path, THANK_YOU))
                 if path != THANK_YOU and RAW_GA_LOADER.search(text):
@@ -248,6 +263,7 @@ def main():
             text = open(path, encoding="utf-8", errors="ignore").read()
             check_stale_code(path, text, problems, retired_only=True)
             check_email_links(path, text, problems)
+            check_tracking_code(path, text, problems)
 
     # Images must be reachable, and filenames must be lowercase.
     for folder, dirs, files in os.walk("assets/images"):

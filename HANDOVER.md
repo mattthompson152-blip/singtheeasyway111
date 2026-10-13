@@ -239,8 +239,7 @@ If the booking form, payment, confirmation or live deployment fails, revert the 
 - Intended public URL: `https://singtheeasyway.com/thank-you.html`
 - Booking form ID: `262622799830063` (unchanged). Community form `261037482331047` unchanged. Retired ID `261603325649357` remains absent.
 - Required Jotform redirect (to be set by Matt in Jotform, successful submission only, no personal data or field variables in the URL): `https://singtheeasyway.com/thank-you.html`
-- Analytics event: `booking_complete` with only `form_name: vocal_coaching_booking`, `form_id: 262622799830063`, `conversion_location: website_thank_you_page`. Implemented in `assets/js/main.js` (`trackBookingComplete`), triggered by an `analytics-consent-granted` event dispatched by `assets/js/cookie-consent.js` after the existing consent-gated GA load.
-- Duplicate protection: `sessionStorage` key `ste_booking_complete_sent` plus a per-page-load flag. A new browser session can record a new booking.
+- SUPERSEDED (see the verified conversion tracking section below): the page-load `booking_complete` (`trackBookingComplete`, `sessionStorage` key `ste_booking_complete_sent`) was removed because it counted manual visits. `thank-you.html` sends no event.
 - Consent: the event never fires before analytics consent, and fires if consent is granted later on the page. No second GA install, measurement ID or Google Ads code was added.
 - No personal data (names, emails, phone numbers, dates, products, answers, notes, health information, payment details, booking references or query strings) is sent by the event. GA collects the page URL automatically, so the Jotform redirect URL must stay free of parameters.
 - Existing behaviour not changed: older events in `main.js` check `typeof window.gtag === 'function'`, but the page head defines a Consent Mode stub, so that check is true before consent. Consider tightening it in a future approved task.
@@ -265,3 +264,12 @@ If the booking form, payment, confirmation or live deployment fails, revert the 
 | Configured in Jotform | Not done. The repository cannot prove or activate it |
 | Verified in analytics (GA4) | Not done |
 | Google Ads | Not configured or verified. No Google Ads conversion is claimed |
+
+## Verified server-side booking conversion (booking_complete)
+
+- Purpose: `booking_complete` is the only primary conversion and is recorded only server-side from a verified, PAID Jotform submission (form `262622799830063`), once per submission ID, and only with analytics consent. Page loads never count. `pricing_viewed`, `book_online_click`, `consultation_selection`, `single_lesson_selection` and `development_programme_selection` are secondary funnel events, not conversions.
+- Platform: standalone Cloudflare Worker + SQLite Durable Object in `worker/` on `*.workers.dev` (site is static GitHub Pages, so Pages Functions are not compatible). Full design, Jotform/GA4 setup, env vars, deploy, rollback and owner test script: `docs/booking-conversion-tracking.md`.
+- Client changes (`assets/js/main.js`): removed `trackBookingComplete()` and the Jotform postMessage listener; booking links get consented GA identifiers at click time; the retired ten-lesson option id renamed to `development_programme`; events renamed `consultation_selection`, `single_lesson_selection`, `development_programme_selection`.
+- Consent change (needs owner sign-off): `cookie-consent.js` analytics toggle grants `analytics_storage` only; marketing toggle alone grants ad storage/user data/personalization.
+- `check-site.py`: `worker` added to SKIP_DIRS; fails on the retired ten-lesson option id, `booking_complete` or `Date.now()` in `assets/js/*.js`.
+- NOT verified live: no real Jotform payment, GA4 receipt or deployment has been tested. Pending owner actions: create hidden Jotform fields, deploy Worker and set secrets, add webhook, confirm payment-status field and product field unique name, run three paid tests. `privacy-policy.html` section 15 now describes the identifiers, webhook and server-side measurement (owner to review wording). `PRODUCT_FIELD_NAME` is `bookingOptions` (owner-confirmed, in `worker/wrangler.toml`); it has no default in code.

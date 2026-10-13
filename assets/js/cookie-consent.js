@@ -223,15 +223,13 @@
         window.dataLayer = window.dataLayer || [];
         window.gtag = window.gtag || function(){window.dataLayer.push(arguments);};
 
-        // Tell Consent Mode the visitor has granted analytics/ad storage.
+        // Tell Consent Mode the visitor has granted analytics storage only.
         // Without this update call, GA4 keeps treating analytics_storage as
         // 'denied' (the page head default) even after gtag.js loads, so no
-        // hits are ever sent to the property.
+        // hits are ever sent to the property. Advertising signals are
+        // controlled separately by the marketing toggle.
         gtag('consent', 'update', {
-            analytics_storage: 'granted',
-            ad_storage: 'granted',
-            ad_user_data: 'granted',
-            ad_personalization: 'granted'
+            analytics_storage: 'granted'
         });
 
         if (!window.gaScriptLoaded) {
@@ -257,13 +255,11 @@
         // Disable Google Analytics
         window['ga-disable-' + GA_ID] = true;
 
-        // Tell Consent Mode the visitor has denied analytics/ad storage.
+        // Tell Consent Mode the visitor has denied analytics storage.
+        // Advertising signals follow the marketing toggle separately.
         if (typeof window.gtag === 'function') {
             window.gtag('consent', 'update', {
-                analytics_storage: 'denied',
-                ad_storage: 'denied',
-                ad_user_data: 'denied',
-                ad_personalization: 'denied'
+                analytics_storage: 'denied'
             });
         }
         
@@ -274,11 +270,23 @@
         deleteCookie(ANALYTICS_COOKIE);
     }
     
+    function updateAdConsent(state) {
+        window.dataLayer = window.dataLayer || [];
+        window.gtag = window.gtag || function(){window.dataLayer.push(arguments);};
+        window.gtag('consent', 'update', {
+            ad_storage: state,
+            ad_user_data: state,
+            ad_personalization: state
+        });
+    }
+
     function enableMarketingCookies() {
+        updateAdConsent('granted');
         setCookie(MARKETING_COOKIE, 'enabled', 365);
     }
     
     function disableMarketingCookies() {
+        updateAdConsent('denied');
         deleteCookie(MARKETING_COOKIE);
         // Delete any marketing-related cookies here
     }

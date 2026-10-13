@@ -173,9 +173,9 @@ document.addEventListener('DOMContentLoaded', function() {
         });
 
         var optionEventMap = {
-            consultation: 'consultation_selection_click',
-            single_lesson: 'single_lesson_selection_click',
-            ten_lesson_block: 'ten_lesson_block_selection_click'
+            consultation: 'consultation_selection',
+            single_lesson: 'single_lesson_selection',
+            development_programme: 'development_programme_selection'
         };
         document.querySelectorAll('a[data-booking-option]').forEach(function (el) {
             el.addEventListener('click', function () {
@@ -242,10 +242,9 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // ======================================
     // LEAD TRACKING (generate_lead)
-    // Fires GA4 generate_lead only on confirmed
-    // successful submissions: JotForm's documented
-    // postMessage completion event, and the local
-    // support enquiry form's actual submit.
+    // Local support enquiry form on contact.html only.
+    // Real booking generate_lead is sent server-side
+    // (worker/) from the verified Jotform submission.
     // ======================================
     function trackLeadEvents() {
         var leadSent = {};
@@ -256,31 +255,6 @@ document.addEventListener('DOMContentLoaded', function() {
             leadSent[key] = true;
             window.gtag('event', 'generate_lead', params || {});
         }
-
-        // JotForm documented postMessage event for a completed submission.
-        window.addEventListener('message', function (event) {
-            if (typeof event.origin !== 'string' || event.origin.indexOf('jotform.com') === -1) {
-                return;
-            }
-
-            var data = event.data;
-            var type = '';
-
-            if (typeof data === 'string') {
-                type = data;
-            } else if (data && typeof data === 'object') {
-                type = data.type || data.action || '';
-            }
-
-            if (type === 'submission-completed' || type === 'form-submit-success') {
-                var formId = (data && typeof data === 'object' && (data.formID || data.formId)) || '';
-                sendLeadOnce('jotform-' + formId + '-' + Date.now(), {
-                    event_label: 'jotform_submission',
-                    form_id: formId,
-                    page_path: window.location.pathname
-                });
-            }
-        });
 
         // Local support enquiry form on contact.html.
         var supportForm = document.getElementById('supportMessageForm');
@@ -295,42 +269,153 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     // ======================================
-    // BOOKING COMPLETE (thank-you page only)
-    // Sends GA4 booking_complete once per browser
-    // session, and only after analytics consent.
-    // Parameters are fixed values. Nothing about
-    // the booking or the customer is ever sent.
+    // BOOKING LINK ATTRIBUTION
+    // When (and only when) the visitor has consented, pseudonymous GA4
+    // identifiers are added to the outbound Jotform booking link so the
+    // server-side conversion (worker/) can be tied to the original
+    // GA4 session. No consent: the link is left exactly as written.
+    // Never carries names, email, phone, appointment or singing details.
+    // This script never sends the booking conversion itself.
     // ======================================
-    function trackBookingComplete() {
-        if (window.location.pathname !== '/thank-you.html') { return; }
+    function trackBookingLinkAttribution() {
+        var GA_ID = 'G-72QBZSZZBP';
+        var SESSION_COOKIE = '_ga_' + GA_ID.replace('G-', '');
+        var CLIENT_RE = /^\d{5,12}\.\d{5,12}$/;
+        var DIGITS_RE = /^\d{1,20}$/;
+        var CLICK_ID_RE = /^[A-Za-z0-9_-]{10,200}$/;
+        var OWN_PARAMS = ['analytics_consent', 'ads_consent', 'ga_client_id', 'ga_session_id',
+            'ga_session_number', 'gclid', 'gbraid', 'wbraid'];
+        var cache = {};
 
-        var storageKey = 'ste_booking_complete_sent';
-        var sentThisPage = false;
-
-        function alreadySent() {
-            try { return window.sessionStorage.getItem(storageKey) === '1'; } catch (e) { return false; }
+        function readCookie(name) {
+            var parts = document.cookie ? document.cookie.split(';') : [];
+            for (var i = 0; i < parts.length; i++) {
+                var part = parts[i].replace(/^\s+/, '');
+                if (part.indexOf(name + '=') === 0) {
+                    var raw = part.substring(name.length + 1);
+                    try { return decodeURIComponent(raw); } catch (e) { return raw; }
+                }
+            }
+            return '';
         }
 
-        function send() {
-            if (sentThisPage || alreadySent()) { return; }
-            if (typeof window.gtag !== 'function') { return; }
-            sentThisPage = true;
-            try { window.sessionStorage.setItem(storageKey, '1'); } catch (e) { /* storage unavailable, page-level guard still applies */ }
-            window.gtag('event', 'booking_complete', {
-                form_name: 'vocal_coaching_booking',
-                form_id: '262622799830063',
-                conversion_location: 'website_thank_you_page'
+        function consentState() {
+            try {
+                var prefs = JSON.parse(readCookie('SingTheEasyWay_Consent') || '{}');
+                return { analytics: prefs.analytics === true, marketing: prefs.marketing === true };
+            } catch (e) {
+                return { analytics: false, marketing: false };
+            }
+        }
+
+        function valid(re, value) {
+            value = value === undefined || value === null ? '' : String(value);
+            return re.test(value) ? value : '';
+        }
+
+        function cookieIds() {
+            var ids = {};
+            var m = /^GA\d\.\d+\.(\d+\.\d+)$/.exec(readCookie('_ga'));
+            if (m) { ids.client_id = m[1]; }
+            var s = readCookie(SESSION_COOKIE);
+            // GS1.1.<session_id>.<session_number>... and GS2.1.s<session_id>$o<session_number>$...
+            var m1 = /^GS1\.\d+\.(\d+)\.(\d+)/.exec(s);
+            var m2 = /^GS2\.\d+\.s(\d+)\$o(\d+)/.exec(s);
+            var ms = m1 || m2;
+            if (ms) { ids.session_id = ms[1]; ids.session_number = ms[2]; }
+            return ids;
+        }
+
+        // Official API first. Callbacks are asynchronous and never block
+        // navigation: links are always built synchronously from the cache
+        // or the cookies, and the cache simply improves later clicks.
+        function requestGtagIds() {
+            if (typeof window.gtag !== 'function' || !window.gaScriptLoaded) { return; }
+            ['client_id', 'session_id', 'session_number'].forEach(function (field) {
+                try {
+                    window.gtag('get', GA_ID, field, function (value) {
+                        var ok = valid(field === 'client_id' ? CLIENT_RE : DIGITS_RE, value);
+                        if (ok) { cache[field] = ok; }
+                    });
+                } catch (e) { /* cookies remain the fallback */ }
             });
         }
 
-        // cookie-consent.js announces this only after analytics consent is
-        // granted, whether stored from a previous visit or given on this page.
-        document.addEventListener('analytics-consent-granted', send);
-        if (window.gaScriptLoaded) { send(); }
+        function clickId(cookieName, param) {
+            var fromCookie = (readCookie(cookieName).split('.')[2]) || '';
+            var ok = valid(CLICK_ID_RE, fromCookie);
+            if (ok) { return ok; }
+            try {
+                return valid(CLICK_ID_RE, new URLSearchParams(window.location.search).get(param));
+            } catch (e) {
+                return '';
+            }
+        }
+
+        function buildParams() {
+            var consent = consentState();
+            var out = {};
+            if (!consent.analytics || typeof window.gtag !== 'function' || !window.gaScriptLoaded) { return out; }
+            var fallback = cookieIds();
+            var clientId = valid(CLIENT_RE, cache.client_id) || fallback.client_id || '';
+            var sessionId = valid(DIGITS_RE, cache.session_id) || fallback.session_id || '';
+            var sessionNumber = valid(DIGITS_RE, cache.session_number) || fallback.session_number || '';
+            out.analytics_consent = '1';
+            if (clientId) { out.ga_client_id = clientId; }
+            if (sessionId) { out.ga_session_id = sessionId; }
+            if (sessionNumber) { out.ga_session_number = sessionNumber; }
+            if (consent.marketing) {
+                out.ads_consent = '1';
+                var gclid = clickId('_gcl_aw', 'gclid');
+                var gbraid = clickId('_gcl_gb', 'gbraid');
+                var wbraid = valid(CLICK_ID_RE, (function () {
+                    try { return new URLSearchParams(window.location.search).get('wbraid'); } catch (e) { return ''; }
+                })());
+                if (gclid) { out.gclid = gclid; }
+                if (gbraid) { out.gbraid = gbraid; }
+                if (wbraid) { out.wbraid = wbraid; }
+            }
+            return out;
+        }
+
+        function isJotformBooking(el) {
+            try {
+                var url = new URL(el.getAttribute('href'), window.location.origin);
+                return url.origin === 'https://pci.jotform.com' && url.pathname === '/form/262622799830063';
+            } catch (e) {
+                return false;
+            }
+        }
+
+        function decorate(el) {
+            try {
+                var url = new URL(el.getAttribute('href'), window.location.origin);
+                var hadOwn = OWN_PARAMS.some(function (name) { return url.searchParams.has(name); });
+                var params = buildParams();
+                if (!hadOwn && Object.keys(params).length === 0) { return; }
+                OWN_PARAMS.forEach(function (name) { url.searchParams.delete(name); });
+                Object.keys(params).forEach(function (name) { url.searchParams.set(name, params[name]); });
+                el.setAttribute('href', url.toString());
+            } catch (e) { /* never break navigation */ }
+        }
+
+        function handler(event) {
+            if (event.type === 'keydown' && event.key !== 'Enter' && event.key !== ' ') { return; }
+            var target = event.target && event.target.closest ? event.target.closest('a[href]') : null;
+            if (!target || !isJotformBooking(target)) { return; }
+            requestGtagIds();
+            decorate(target);
+        }
+
+        ['mousedown', 'touchstart', 'keydown', 'contextmenu', 'click'].forEach(function (name) {
+            document.addEventListener(name, handler, true);
+        });
+        document.addEventListener('analytics-consent-granted', requestGtagIds);
+        requestGtagIds();
     }
 
     trackConversionEvents();
     trackLeadEvents();
-    trackBookingComplete();
+    trackBookingLinkAttribution();
 
 });
