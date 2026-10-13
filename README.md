@@ -161,7 +161,7 @@ Intended journey:
 Website → Book Online → Jotform form `262622799830063` → successful submission → `/thank-you.html`
 
 - The website page and the Jotform redirect are separate implementation stages. Publishing the HTML does not prove the redirect works. Matt must enter `https://singtheeasyway.com/thank-you.html` as the redirect in Jotform, with no personal data in the URL, and test it.
-- GA4 conversion configuration and Google Ads conversion configuration each need separate verification. The page only prepares the `booking_complete` event, which fires only after analytics consent.
+- GA4 conversion configuration and Google Ads conversion configuration each need separate verification. The page sends no event. `booking_complete` is the only primary conversion and is recorded server-side only (Cloudflare Worker in `worker/`, see `docs/booking-conversion-tracking.md`) from a verified paid Jotform submission, deduplicated on the submission ID, with analytics consent. `pricing_viewed`, `book_online_click` and the product selection events are secondary funnel events, not conversions. Nothing has been verified live until the owner completes the paid tests.
 - Analytics remains consent-gated. Do not describe this journey as live until it has been deployed and tested.
 
 ### Email links

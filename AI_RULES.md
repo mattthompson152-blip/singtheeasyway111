@@ -587,18 +587,27 @@ Never paste a raw `googletagmanager.com/gtag/js` tag into a page. Doing so break
 
 ## CONVERSION TRACKING
 
-`/assets/js/main.js` sends GA4 events so Matt can see which calls to action work:
+`booking_complete` is the ONLY primary conversion. It is recorded server-side only, by the Cloudflare Worker in `/worker/`, from a verified, PAID Jotform submission, deduplicated forever on the Jotform submission ID, and only when the visitor consented to analytics. No client code may send `booking_complete`, and a page load (including `/thank-you.html`) is never conversion proof. See `/docs/booking-conversion-tracking.md`.
+
+`/assets/js/main.js` sends these SECONDARY funnel events (they are not conversions) so Matt can see which calls to action work:
 
 ```text
-consultation_click   any booking button, with its text and page section
-booking_complete     /thank-you.html only, see THANK-YOU PAGE
-phone_click          tap on the phone number
-email_click          tap on the email address
-pricing_viewed       visitor scrolled as far as the prices
-signup_viewed        visitor reached the community signup
+book_online_click                any booking button, with its text and page section
+consultation_selection           Consultation option chosen
+single_lesson_selection          Single Lesson option chosen
+development_programme_selection  Development Programme option chosen
+phone_click                      tap on the phone number
+email_click                      tap on the email address
+pricing_viewed                   visitor scrolled as far as the prices
+signup_viewed                    visitor reached the community signup
+generate_lead                    local contact.html support form only (booking leads come from the Worker)
 ```
 
-Events only fire when the visitor has accepted analytics, because `gtag` does not exist until then. Never make tracking fire regardless of consent.
+`data-booking-option` values are `consultation`, `single_lesson` and `development_programme`. Never reintroduce the retired ten-lesson option id (enforced by `check-site.py`).
+
+Events only fire when the visitor has accepted analytics. Never make tracking fire regardless of consent. Consent Mode: the analytics toggle grants `analytics_storage` only; the marketing toggle alone grants `ad_storage`, `ad_user_data` and `ad_personalization`.
+
+When analytics consent exists, `main.js` appends pseudonymous GA identifiers (and, with marketing consent, Google click IDs) to the Jotform booking link. With no consent the link is unchanged. Never append names, emails, phone numbers, appointment or singing details.
 
 ## THANK-YOU PAGE
 
@@ -609,7 +618,7 @@ Events only fire when the visitor has accepted analytics, because `gtag` does no
 - It must not show form answers or personal data. The redirect URL must carry no personal data, Jotform field variables or booking parameters.
 - It keeps the standard header, footer and `Cookie Settings` link, and loads `/assets/js/main.js` and `/assets/js/cookie-consent.js`.
 - It must confirm only that the booking has been received. It must not claim confirmed appointments, confirmed payment, emails sent, links or joining instructions sent, receipts, or a confirmed date or time, unless that behaviour has been verified.
-- It may record the GA4 event `booking_complete` (fixed parameters `form_name`, `form_id`, `conversion_location` only), only after analytics consent, once per browser session. It must never send personal information to analytics.
+- It must stay static and send no analytics event. `booking_complete` is never recorded from this page; it comes only from the server-side Worker after a verified paid submission. It must never send personal information to analytics.
 - Do not describe a Google Ads conversion as existing until it has been configured and verified.
 
 ## EMAIL LINKS

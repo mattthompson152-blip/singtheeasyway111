@@ -1,0 +1,26 @@
+# Standalone Cloudflare Worker. Deployed to https://<name>.<account-subdomain>.workers.dev
+# No custom domain, no DNS change; the GitHub Pages website is untouched.
+# NO SECRETS HERE. Set them with:
+#   wrangler secret put WEBHOOK_SECRET
+#   wrangler secret put JOTFORM_API_KEY
+#   wrangler secret put GA4_API_SECRET
+name = "singtheeasyway-booking-tracker"
+main = "src/index.js"
+compatibility_date = "2025-01-01"
+workers_dev = true
+
+[vars]
+GA4_MEASUREMENT_ID = "G-72QBZSZZBP"
+JOTFORM_FORM_ID = "262622799830063"
+# Use https://eu-api.jotform.com for EU accounts, or your enterprise/PCI host if required.
+JOTFORM_API_BASE = "https://api.jotform.com"
+# Unique name of the existing Booking Option field. OWNER TO CONFIRM.
+PRODUCT_FIELD_NAME = "bookingOption"
+
+[[durable_objects.bindings]]
+name = "SUBMISSION_DEDUPE"
+class_name = "SubmissionDedupe"
+
+[[migrations]]
+tag = "v1"
+new_sqlite_classes = ["SubmissionDedupe"]
