@@ -42,6 +42,12 @@ function validProductMap(map) {
   });
 }
 
+function trimTrailingSlashes(value) {
+  let end = value.length;
+  while (end > 0 && value[end - 1] === '/') end--;
+  return value.slice(0, end);
+}
+
 export function loadConfig(env) {
   let productMap = DEFAULT_PRODUCT_MAP;
   if (env.PRODUCT_MAP_JSON) {
@@ -54,7 +60,7 @@ export function loadConfig(env) {
   return {
     webhookSecret: env.WEBHOOK_SECRET || '',
     jotformApiKey: env.JOTFORM_API_KEY || '',
-    jotformApiBase: (env.JOTFORM_API_BASE || DEFAULT_API_BASE).replace(/\/+$/, ''),
+    jotformApiBase: trimTrailingSlashes(env.JOTFORM_API_BASE || DEFAULT_API_BASE),
     measurementId: env.GA4_MEASUREMENT_ID || DEFAULT_MEASUREMENT_ID,
     apiSecret: env.GA4_API_SECRET || '',
     formId: env.JOTFORM_FORM_ID || DEFAULT_FORM_ID,

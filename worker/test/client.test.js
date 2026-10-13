@@ -133,7 +133,7 @@ test('withdrawn consent removes previously appended params', () => {
 });
 
 test('thank-you.html load sends no event; main.js has no booking_complete', () => {
-  const html = fs.readFileSync(path.join(root, 'thank-you.html'), 'utf8').replace(/<script[^>]*>[\s\S]*?<\/script>/g, '');
+  const html = fs.readFileSync(path.join(root, 'thank-you.html'), 'utf8');
   const dom = new JSDOM(html, { url: 'https://singtheeasyway.com/thank-you.html', runScripts: 'outside-only' });
   const w = dom.window;
   const events = [];
