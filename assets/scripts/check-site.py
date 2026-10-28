@@ -29,7 +29,7 @@ RETIRED_FORM = "261603325649357"
 BOOKING_FORM = "262622799830063"
 COMMUNITY_FORM = "261037482331047"
 PROGRAMME_URL = "https://singtheeasyway.com/development-programme.html"
-PROGRAMME_IMAGE = "assets/images/matt/matt-thompson-online-vocal-coaching-session.webp"
+PROGRAMME_IMAGE = "assets/images/matt/matt-thompson-vocal-coaching-session.webp"
 STALE_STRINGS = (RETIRED_FORM, "feedback2.js", "JotformFeedback", "widget.open")
 # data-booking-option is the only allowed data-booking-* attribute.
 STALE_ATTR = re.compile(r"data-booking(?!-option)|data-enquiry")
