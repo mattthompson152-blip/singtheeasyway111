@@ -28,6 +28,14 @@ PLACEHOLDER_TEXT = re.compile(r"\[[A-Z][A-Z0-9 _\-]{2,}\]")
 RETIRED_FORM = "261603325649357"
 BOOKING_FORM = "262622799830063"
 COMMUNITY_FORM = "261037482331047"
+GENERAL_ENQUIRY_FORM = "263014255269052"
+PROFESSIONAL_ENQUIRY_FORM = "263013855697062"
+ALLOWED_JOTFORM_FORMS = {
+    BOOKING_FORM,
+    COMMUNITY_FORM,
+    GENERAL_ENQUIRY_FORM,
+    PROFESSIONAL_ENQUIRY_FORM,
+}
 PROGRAMME_URL = "https://singtheeasyway.com/development-programme.html"
 PROGRAMME_IMAGE = "assets/images/matt/matt-thompson-vocal-coaching-session.webp"
 STALE_STRINGS = (RETIRED_FORM, "feedback2.js", "JotformFeedback", "widget.open")
@@ -70,10 +78,10 @@ def check_stale_code(path, text, problems, retired_only=False):
         if form_id != BOOKING_FORM:
             problems.append("{0}: booking link uses unapproved form {1}".format(path, form_id))
     for form_id in sorted(set(EMBED_LINK.findall(text))):
-        if form_id != COMMUNITY_FORM:
+        if form_id not in ALLOWED_JOTFORM_FORMS:
             problems.append("{0}: Jotform embed uses unapproved form {1}".format(path, form_id))
     for form_id in sorted(set(JOTFORM_ID.findall(text))):
-        if form_id not in (BOOKING_FORM, COMMUNITY_FORM):
+        if form_id not in ALLOWED_JOTFORM_FORMS:
             problems.append("{0}: contains unapproved Jotform ID {1}".format(path, form_id))
 
 

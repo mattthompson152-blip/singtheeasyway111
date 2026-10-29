@@ -489,78 +489,47 @@
     </style>
 
     <!-- Structured data -->
-    <script type="application/ld+json">
+
+<script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@graph": [
     {
-      "@context": "https://schema.org",
-      "@graph": [
-        {
-          "@type": "Person",
-          "@id": "https://singtheeasyway.com/#matt",
-          "name": "Matt Thompson",
-          "jobTitle": "Vocal Coach",
-          "description": "Specialist one-to-one vocal coach with more than 25 years of experience, identifying what is stopping singers from progressing. Works with new singers, developing singers, artists and professional project clients.",
-          "image": "https://singtheeasyway.com/assets/images/matt/matt-thompson-piano-headshot.webp",
-          "url": "https://singtheeasyway.com/about.html",
-          "email": "matt@singtheeasyway.com",
-          "telephone": "+44-7792-511393",
-          "knowsAbout": ["Singing", "Vocal technique", "Vocal coaching", "English pronunciation for singers", "Performance coaching", "Recording session vocals"],
-          "sameAs": [
-            "https://www.instagram.com/singtheeasyway",
-            "https://www.tiktok.com/@mattsjourneysofar"
-          ]
-        },
-        {
-          "@type": "ProfessionalService",
-          "@id": "https://singtheeasyway.com/#business",
-          "name": "Sing The Easy Way",
-          "alternateName": "Matt Thompson Vocal Coaching",
-          "description": "Specialist one-to-one vocal coaching with Matt Thompson. Diagnosis before exercises, delivered live on Microsoft Teams.",
-          "url": "https://singtheeasyway.com/",
-          "image": "https://singtheeasyway.com/assets/images/matt/matt-thompson-piano-headshot.webp",
-          "email": "matt@singtheeasyway.com",
-          "telephone": "+44-7792-511393",
-          "priceRange": "££",
-          "founder": { "@id": "https://singtheeasyway.com/#matt" },
-          "areaServed": "Worldwide",
-          "availableLanguage": "English",
-          "sameAs": [
-            "https://www.instagram.com/singtheeasyway",
-            "https://www.tiktok.com/@mattsjourneysofar"
-          ],
-          "hasOfferCatalog": {
-            "@type": "OfferCatalog",
-            "name": "Vocal coaching",
-            "itemListElement": [
-              {
-                "@type": "Offer",
-                "name": "30 minute consultation",
-                "price": "25.00",
-                "priceCurrency": "GBP",
-                "url": "https://singtheeasyway.com/pricing.html",
-                "itemOffered": { "@type": "Service", "name": "Vocal diagnostic consultation", "serviceType": "Vocal assessment" }
-              },
-              {
-                "@type": "Offer",
-                "name": "Private Vocal Coaching",
-                "price": "150.00",
-                "priceCurrency": "GBP",
-                "url": "https://singtheeasyway.com/pricing.html",
-                "itemOffered": { "@type": "Service", "name": "Live one-to-one vocal coaching lesson", "serviceType": "Vocal coaching" }
-              },
-              {
-                "@type": "Offer",
-                "name": "Development Programme",
-                "price": "1400.00",
-                "priceCurrency": "GBP",
-                "url": "https://singtheeasyway.com/pricing.html",
-                "itemOffered": { "@type": "Service", "name": "Ten structured one-to-one vocal coaching sessions", "serviceType": "Vocal coaching" }
-              }
-            ]
-          }
-        }
+      "@type": "Organization",
+      "@id": "https://singtheeasyway.com/#organization",
+      "name": "Sing The Easy Way",
+      "url": "https://singtheeasyway.com/",
+      "logo": "https://singtheeasyway.com/assets/images/Logo/sing-the-easy-way-logo-transparent.png",
+      "email": "matt@singtheeasyway.com",
+      "telephone": "+44-7792-511393",
+      "sameAs": [
+        "https://www.instagram.com/singtheeasyway",
+        "https://www.tiktok.com/@mattsjourneysofar"
       ]
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://singtheeasyway.com/#website",
+      "url": "https://singtheeasyway.com/",
+      "name": "Sing The Easy Way",
+      "publisher": {
+        "@id": "https://singtheeasyway.com/#organization"
+      }
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://singtheeasyway.com/contact.html#webpage",
+      "url": "https://singtheeasyway.com/contact.html",
+      "name": "Contact | Matt Thompson | Sing The Easy Way",
+      "description": "Get in touch with Matt Thompson with a question about one-to-one vocal coaching. Contact me directly or use Book Online to view current booking options.",
+      "isPartOf": {
+        "@id": "https://singtheeasyway.com/#website"
+      },
+      "publisher": {
+        "@id": "https://singtheeasyway.com/#organization"
+      }
     }
-    </script>
+  ]
+}</script>
 </head>
 <body>
     <!-- Skip Link for Accessibility -->
@@ -594,10 +563,11 @@
         <section class="enquiry-hero-section">
             <div class="container">
                 <h1>Get In Touch</h1>
-                <p>Ready to get started? <a href="/book-online.html" class="text-link">Book Online</a>.</p>
-                <p>Have a question before booking? Send me a message.</p>
+                <p>For a general question, send a message through the General Enquiry form.</p>
+                <p>To purchase coaching, use the separate paid-service booking route.</p>
                 <div class="enquiry-hero-cta">
-                    <a href="/book-online.html" class="btn primary">Book Online</a>
+                    <a href="https://form.jotform.com/263014255269052" class="btn primary">General Enquiry</a>
+                    <a href="/book-online.html" class="btn secondary">View paid coaching options</a>
                 </div>
             </div>
         </section>
@@ -607,7 +577,7 @@
             <div class="container">
                 <div class="assessment-grid">
                     <div class="assessment-content">
-                        <img src="/assets/images/matt/matt-thompson-piano-headshot.webp" alt="Matt Thompson, live online vocal coach" width="140" height="140" loading="lazy" style="width: 140px; height: 140px; border-radius: 50%; margin-bottom: var(--space-md); border: 2px solid rgba(255,255,255,0.1);">
+                        <img src="/assets/images/matt/matt-thompson-piano-headshot.webp" alt="Matt Thompson, live online vocal coach" loading="lazy" style="width: 140px; height: 140px; border-radius: 50%; margin-bottom: var(--space-md); border: 2px solid rgba(255,255,255,0.1);" width="900" height="900">
                         <h2>Questions and support</h2>
                         <h3>What this page is for</h3>
                         <p>Use this page if you have questions before booking, need existing student support, or want to report a technical issue.</p>
@@ -684,7 +654,8 @@
                 <div class="enquiry-form-wrapper">
                     <div class="form-intro" style="margin-bottom: 0;">
                         <h2>Contact Matt</h2>
-                        <p>If you have a question before booking, please get in touch directly.</p>
+                        <p>For questions, support or a general enquiry, use the General Enquiry form. This is not a free lesson, free coaching or free assessment route.</p>
+                        <p><a href="https://form.jotform.com/263014255269052" class="btn primary">Send a General Enquiry</a></p>
                         <p><strong>Email:</strong> <a href="mailto:matt@singtheeasyway.com">matt@singtheeasyway.com</a></p>
                         <p><strong>Phone:</strong> <a href="tel:+447792511393">+44 7792 511393</a></p>
                     </div>
@@ -697,23 +668,23 @@
             <div class="container">
                 <div class="trust-grid">
                     <div class="trust-image">
-                        <img src="/assets/images/pages/lesson-setup.jpg" alt="Professional vocal coaching studio setup with Matt Thompson">
+                        <img src="/assets/images/pages/lesson-setup.jpg" alt="Professional vocal coaching studio setup with Matt Thompson" width="1344" height="768">
                     </div>
                     <div class="trust-content">
                         <h2>Why Choose Matt?</h2>
-                        <p>I'm a professional vocal coach with over 25 years of experience in the music industry. I've worked with recording artists, actors, TV personalities, and everyday people[...]
+                        <p>Sing The Easy Way provides live, private, one-to-one online vocal coaching through Microsoft Teams, focused on contemporary and popular singing.</p>
 
                         <div class="credential-item">
-                            25+ years of professional vocal coaching experience
+                            Individual, diagnosis-led coaching
                         </div>
                         <div class="credential-item">
-                            Personalised 1-to-1 sessions tailored to your level
+                            Work inside real music
                         </div>
                         <div class="credential-item">
-                            Live instruction only—never automated or pre-recorded
+                            Protect what makes your voice recognisably your own
                         </div>
                         <div class="credential-item">
-                            Clear, practical guidance that produces real results
+                            Sessions delivered online through Microsoft Teams
                         </div>
                     </div>
                 </div>

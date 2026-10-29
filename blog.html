@@ -18,13 +18,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Blog - Sing The Easy Way | Vocal Coaching Advice</title>
-    <meta name="description" content="Expert singing tips, vocal techniques, and insights from vocal coach Matt Thompson. Practical advice on what holds a voice back and how to fix it.">
+    <meta name="description" content="Practical singing tips, vocal techniques, and insights from vocal coach Matt Thompson. Advice on what may be getting in the way of a singer's voice.">
     <meta name="author" content="Matt Thompson">
     <meta name="robots" content="index, follow">
     
     <!-- Open Graph -->
     <meta property="og:title" content="Blog - Sing The Easy Way | Vocal Coaching Advice">
-    <meta property="og:description" content="Expert singing tips, vocal techniques, and insights from vocal coach Matt Thompson.">
+    <meta property="og:description" content="Practical singing tips, vocal techniques, and insights from vocal coach Matt Thompson.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://singtheeasyway.com/blog.html">
     <meta property="og:image" content="https://singtheeasyway.com/assets/images/matt/matt-thompson-piano-headshot.webp">
@@ -33,7 +33,7 @@
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:image" content="https://singtheeasyway.com/assets/images/matt/matt-thompson-piano-headshot.webp">
     <meta name="twitter:title" content="Blog - Sing The Easy Way">
-    <meta name="twitter:description" content="Expert singing tips and vocal techniques from vocal coach Matt Thompson.">
+    <meta name="twitter:description" content="Practical singing tips and vocal techniques from vocal coach Matt Thompson.">
     
     <!-- Canonical -->
     <link rel="canonical" href="https://singtheeasyway.com/blog.html">
@@ -154,78 +154,47 @@
     </style>
 
     <!-- Structured data -->
-    <script type="application/ld+json">
+
+<script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@graph": [
     {
-      "@context": "https://schema.org",
-      "@graph": [
-        {
-          "@type": "Person",
-          "@id": "https://singtheeasyway.com/#matt",
-          "name": "Matt Thompson",
-          "jobTitle": "Vocal Coach",
-          "description": "Specialist one-to-one vocal coach with more than 25 years of experience, identifying what is stopping singers from progressing. Works with new singers, developing singers, artists and professional project clients.",
-          "image": "https://singtheeasyway.com/assets/images/matt/matt-thompson-piano-headshot.webp",
-          "url": "https://singtheeasyway.com/about.html",
-          "email": "matt@singtheeasyway.com",
-          "telephone": "+44-7792-511393",
-          "knowsAbout": ["Singing", "Vocal technique", "Vocal coaching", "English pronunciation for singers", "Performance coaching", "Recording session vocals"],
-          "sameAs": [
-            "https://www.instagram.com/singtheeasyway",
-            "https://www.tiktok.com/@mattsjourneysofar"
-          ]
-        },
-        {
-          "@type": "ProfessionalService",
-          "@id": "https://singtheeasyway.com/#business",
-          "name": "Sing The Easy Way",
-          "alternateName": "Matt Thompson Vocal Coaching",
-          "description": "Specialist one-to-one vocal coaching with Matt Thompson. Diagnosis before exercises, delivered live on Microsoft Teams.",
-          "url": "https://singtheeasyway.com/",
-          "image": "https://singtheeasyway.com/assets/images/matt/matt-thompson-piano-headshot.webp",
-          "email": "matt@singtheeasyway.com",
-          "telephone": "+44-7792-511393",
-          "priceRange": "££",
-          "founder": { "@id": "https://singtheeasyway.com/#matt" },
-          "areaServed": "Worldwide",
-          "availableLanguage": "English",
-          "sameAs": [
-            "https://www.instagram.com/singtheeasyway",
-            "https://www.tiktok.com/@mattsjourneysofar"
-          ],
-          "hasOfferCatalog": {
-            "@type": "OfferCatalog",
-            "name": "Vocal coaching",
-            "itemListElement": [
-              {
-                "@type": "Offer",
-                "name": "30 minute consultation",
-                "price": "25.00",
-                "priceCurrency": "GBP",
-                "url": "https://singtheeasyway.com/pricing.html",
-                "itemOffered": { "@type": "Service", "name": "Vocal diagnostic consultation", "serviceType": "Vocal assessment" }
-              },
-              {
-                "@type": "Offer",
-                "name": "Private Vocal Coaching",
-                "price": "150.00",
-                "priceCurrency": "GBP",
-                "url": "https://singtheeasyway.com/pricing.html",
-                "itemOffered": { "@type": "Service", "name": "Live one-to-one vocal coaching lesson", "serviceType": "Vocal coaching" }
-              },
-              {
-                "@type": "Offer",
-                "name": "Development Programme",
-                "price": "1400.00",
-                "priceCurrency": "GBP",
-                "url": "https://singtheeasyway.com/pricing.html",
-                "itemOffered": { "@type": "Service", "name": "Ten structured one-to-one vocal coaching sessions", "serviceType": "Vocal coaching" }
-              }
-            ]
-          }
-        }
+      "@type": "Organization",
+      "@id": "https://singtheeasyway.com/#organization",
+      "name": "Sing The Easy Way",
+      "url": "https://singtheeasyway.com/",
+      "logo": "https://singtheeasyway.com/assets/images/Logo/sing-the-easy-way-logo-transparent.png",
+      "email": "matt@singtheeasyway.com",
+      "telephone": "+44-7792-511393",
+      "sameAs": [
+        "https://www.instagram.com/singtheeasyway",
+        "https://www.tiktok.com/@mattsjourneysofar"
       ]
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://singtheeasyway.com/#website",
+      "url": "https://singtheeasyway.com/",
+      "name": "Sing The Easy Way",
+      "publisher": {
+        "@id": "https://singtheeasyway.com/#organization"
+      }
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://singtheeasyway.com/blog.html#webpage",
+      "url": "https://singtheeasyway.com/blog.html",
+      "name": "Blog - Sing The Easy Way | Vocal Coaching Advice",
+      "description": "Practical singing tips, vocal techniques, and insights from vocal coach Matt Thompson. Advice on what may be getting in the way of a singer's voice.",
+      "isPartOf": {
+        "@id": "https://singtheeasyway.com/#website"
+      },
+      "publisher": {
+        "@id": "https://singtheeasyway.com/#organization"
+      }
     }
-    </script>
+  ]
+}</script>
 </head>
 <body>
 
@@ -269,7 +238,7 @@
 <section class="blog-grid">
     <article class="blog-card">
         <a href="/blog/why-singing-lessons-fail-adhd.html" class="image-link">
-            <img src="/assets/images/blog/online-singing-lessons-adhd-focus-1909.jpg" alt="Why Singing Lessons Fail People With ADHD - Online Singing Lessons" loading="lazy">
+            <img src="/assets/images/blog/online-singing-lessons-adhd-focus-1909.jpg" alt="Why Singing Lessons Fail People With ADHD - Online Singing Lessons" loading="lazy" width="1200" height="1200">
         </a>
         <div class="blog-card-content">
             <span class="blog-date">19 September, 2026</span>
@@ -280,7 +249,7 @@
     </article>
     <article class="blog-card">
         <a href="/blog/singing-lessons-autistic-adults.html" class="image-link">
-            <img src="/assets/images/blog/virtual-singing-lessons-quiet-space-1809.jpg" alt="Singing Lessons When You Are Autistic - Online Singing Lessons" loading="lazy">
+            <img src="/assets/images/blog/virtual-singing-lessons-quiet-space-1809.jpg" alt="Singing Lessons When You Are Autistic - Online Singing Lessons" loading="lazy" width="1200" height="1200">
         </a>
         <div class="blog-card-content">
             <span class="blog-date">18 September, 2026</span>
@@ -291,7 +260,7 @@
     </article>
     <article class="blog-card">
         <a href="/blog/voice-in-your-head-says-you-cannot-sing.html" class="image-link">
-            <img src="/assets/images/blog/vocal-coach-inner-critic-1709.jpg" alt="The Voice In Your Head That Says You Cannot Sing - Online Singing Lessons" loading="lazy">
+            <img src="/assets/images/blog/vocal-coach-inner-critic-1709.jpg" alt="The Voice In Your Head That Says You Cannot Sing - Online Singing Lessons" loading="lazy" width="1200" height="1200">
         </a>
         <div class="blog-card-content">
             <span class="blog-date">17 September, 2026</span>
@@ -302,7 +271,7 @@
     </article>
     <article class="blog-card">
         <a href="/blog/why-you-freeze-when-someone-watches.html" class="image-link">
-            <img src="/assets/images/blog/online-singing-lessons-stage-nerves-1609.jpg" alt="Why You Freeze When Someone Watches You Sing - Online Singing Lessons" loading="lazy">
+            <img src="/assets/images/blog/online-singing-lessons-stage-nerves-1609.jpg" alt="Why You Freeze When Someone Watches You Sing - Online Singing Lessons" loading="lazy" width="1200" height="1200">
         </a>
         <div class="blog-card-content">
             <span class="blog-date">16 September, 2026</span>
@@ -313,7 +282,7 @@
     </article>
     <article class="blog-card">
         <a href="/blog/told-you-could-not-sing-as-a-child.html" class="image-link">
-            <img src="/assets/images/blog/singing-technique-childhood-memory-1509.jpg" alt="Being Told You Could Not Sing As A Child - Online Singing Lessons" loading="lazy">
+            <img src="/assets/images/blog/singing-technique-childhood-memory-1509.jpg" alt="Being Told You Could Not Sing As A Child - Online Singing Lessons" loading="lazy" width="1200" height="1200">
         </a>
         <div class="blog-card-content">
             <span class="blog-date">15 September, 2026</span>
@@ -324,7 +293,7 @@
     </article>
     <article class="blog-card">
         <a href="/blog/perfectionism-is-hurting-your-singing.html" class="image-link">
-            <img src="/assets/images/blog/professional-singing-lessons-perfectionism-1409.jpg" alt="Perfectionism Is Hurting Your Singing - Online Singing Lessons" loading="lazy">
+            <img src="/assets/images/blog/professional-singing-lessons-perfectionism-1409.jpg" alt="Perfectionism Is Hurting Your Singing - Online Singing Lessons" loading="lazy" width="1200" height="1200">
         </a>
         <div class="blog-card-content">
             <span class="blog-date">14 September, 2026</span>
@@ -335,7 +304,7 @@
     </article>
     <article class="blog-card">
         <a href="/blog/why-you-sound-better-alone.html" class="image-link">
-            <img src="/assets/images/blog/remote-singing-lessons-singing-alone-1309.jpg" alt="Why You Sound Better Alone Than In Front Of People - Online Singing Lessons" loading="lazy">
+            <img src="/assets/images/blog/remote-singing-lessons-singing-alone-1309.jpg" alt="Why You Sound Better Alone Than In Front Of People - Online Singing Lessons" loading="lazy" width="1200" height="1200">
         </a>
         <div class="blog-card-content">
             <span class="blog-date">13 September, 2026</span>
@@ -346,7 +315,7 @@
     </article>
     <article class="blog-card">
         <a href="/blog/the-fear-arrives-before-the-note.html" class="image-link">
-            <img src="/assets/images/blog/digital-singing-lessons-anticipation-1209.jpg" alt="The Fear Arrives Before The Note - Online Singing Lessons" loading="lazy">
+            <img src="/assets/images/blog/digital-singing-lessons-anticipation-1209.jpg" alt="The Fear Arrives Before The Note - Online Singing Lessons" loading="lazy" width="1200" height="1200">
         </a>
         <div class="blog-card-content">
             <span class="blog-date">12 September, 2026</span>
@@ -357,7 +326,7 @@
     </article>
     <article class="blog-card">
         <a href="/blog/comparing-your-voice-to-other-singers.html" class="image-link">
-            <img src="/assets/images/blog/live-online-singing-lessons-comparison-1109.jpg" alt="Stop Comparing Your Voice To Other Singers - Online Singing Lessons" loading="lazy">
+            <img src="/assets/images/blog/live-online-singing-lessons-comparison-1109.jpg" alt="Stop Comparing Your Voice To Other Singers - Online Singing Lessons" loading="lazy" width="1200" height="1200">
         </a>
         <div class="blog-card-content">
             <span class="blog-date">11 September, 2026</span>
@@ -368,7 +337,7 @@
     </article>
     <article class="blog-card">
         <a href="/blog/confidence-is-not-a-personality-trait.html" class="image-link">
-            <img src="/assets/images/blog/vocal-coach-confidence-building-1009.jpg" alt="Confidence Is Not A Personality Trait - Online Singing Lessons" loading="lazy">
+            <img src="/assets/images/blog/vocal-coach-confidence-building-1009.jpg" alt="Confidence Is Not A Personality Trait - Online Singing Lessons" loading="lazy" width="1200" height="1200">
         </a>
         <div class="blog-card-content">
             <span class="blog-date">10 September, 2026</span>
@@ -379,7 +348,7 @@
     </article>
     <article class="blog-card">
         <a href="/blog/choir-singing.html" class="image-link">
-            <img src="/assets/images/blog/digital-singing-lessons-choir-conductor-2404.jpg" alt="How to Sing in a Choir - Online Singing Lessons" loading="lazy">
+            <img src="/assets/images/blog/digital-singing-lessons-choir-conductor-2404.jpg" alt="How to Sing in a Choir - Online Singing Lessons" loading="lazy" width="1280" height="1024">
         </a>
         <div class="blog-card-content">
             <span class="blog-date">April 24, 2026</span>
@@ -391,7 +360,7 @@
 
     <article class="blog-card">
         <a href="/blog/30-day-singing.html" class="image-link">
-            <img src="/assets/images/blog/singing-lessons-vocal-range-practice-2304.jpg" alt="How to Improve Your Singing Voice in 30 Days - Online Singing Lessons" loading="lazy">
+            <img src="/assets/images/blog/singing-lessons-vocal-range-practice-2304.jpg" alt="How to Improve Your Singing Voice in 30 Days - Online Singing Lessons" loading="lazy" width="1280" height="853">
         </a>
         <div class="blog-card-content">
             <span class="blog-date">April 23, 2026</span>
@@ -403,7 +372,7 @@
 
     <article class="blog-card">
         <a href="/blog/authentic-voice.html" class="image-link">
-            <img src="/assets/images/blog/online-singing-lessons-woman-singer-2204.jpg" alt="Finding Your Authentic Voice: Beyond Imitation - Online Singing Lessons" loading="lazy">
+            <img src="/assets/images/blog/online-singing-lessons-woman-singer-2204.jpg" alt="Finding Your Authentic Voice: Beyond Imitation - Online Singing Lessons" loading="lazy" width="800" height="1200">
         </a>
         <div class="blog-card-content">
             <span class="blog-date">April 22, 2026</span>
@@ -415,7 +384,7 @@
 
     <article class="blog-card">
         <a href="/blog/belt-safely.html" class="image-link">
-            <img src="/assets/images/blog/professional-singing-lessons-voice-training-2104.jpg" alt="How to Belt Without Damaging Your Voice | Online Singing Lessons - Online Singing Lessons" loading="lazy">
+            <img src="/assets/images/blog/professional-singing-lessons-voice-training-2104.jpg" alt="How to Belt Without Damaging Your Voice | Online Singing Lessons - Online Singing Lessons" loading="lazy" width="1280" height="853">
         </a>
         <div class="blog-card-content">
             <span class="blog-date">April 21, 2026</span>
@@ -427,7 +396,7 @@
 
     <article class="blog-card">
         <a href="/blog/breathing-techniques.html" class="image-link">
-            <img src="/assets/images/blog/vocal-exercises-breathing-techniques-2004.jpg" alt="Breathing Techniques for Singers: The Complete Guide - Online Singing Lessons" loading="lazy">
+            <img src="/assets/images/blog/vocal-exercises-breathing-techniques-2004.jpg" alt="Breathing Techniques for Singers: The Complete Guide - Online Singing Lessons" loading="lazy" width="1000" height="666">
         </a>
         <div class="blog-card-content">
             <span class="blog-date">April 20, 2026</span>
@@ -439,7 +408,7 @@
 
     <article class="blog-card">
         <a href="/blog/building-confidence.html" class="image-link">
-            <img src="/assets/images/blog/online-vocal-lessons-confidence-1904.jpg" alt="Building Confidence Through Online Singing Lessons - Online Singing Lessons" loading="lazy">
+            <img src="/assets/images/blog/online-vocal-lessons-confidence-1904.jpg" alt="Building Confidence Through Online Singing Lessons - Online Singing Lessons" loading="lazy" width="1280" height="853">
         </a>
         <div class="blog-card-content">
             <span class="blog-date">April 19, 2026</span>
@@ -451,7 +420,7 @@
 
     <article class="blog-card">
         <a href="/blog/choosing-singing-teacher.html" class="image-link">
-            <img src="/assets/images/blog/vocal-coach-teaching-online-session-1804.jpg" alt="7 Essential Questions to Ask Before Hiring an Online Singing Teacher - Online Singing Lessons" loading="lazy">
+            <img src="/assets/images/blog/vocal-coach-teaching-online-session-1804.jpg" alt="7 Essential Questions to Ask Before Hiring an Online Singing Teacher - Online Singing Lessons" loading="lazy" width="1280" height="853">
         </a>
         <div class="blog-card-content">
             <span class="blog-date">April 18, 2026</span>
@@ -463,7 +432,7 @@
 
     <article class="blog-card">
         <a href="/blog/first-online-lesson.html" class="image-link">
-            <img src="/assets/images/blog/virtual-singing-lessons-singing-lesson-1704.jpg" alt="What to Expect From Your First Online Singing Lesson - Online Singing Lessons" loading="lazy">
+            <img src="/assets/images/blog/virtual-singing-lessons-singing-lesson-1704.jpg" alt="What to Expect From Your First Online Singing Lesson - Online Singing Lessons" loading="lazy" width="1280" height="853">
         </a>
         <div class="blog-card-content">
             <span class="blog-date">April 17, 2026</span>
@@ -475,7 +444,7 @@
 
     <article class="blog-card">
         <a href="/blog/microphones.html" class="image-link">
-            <img src="/assets/images/blog/singer-home-recording-microphone-1604.jpg" alt="The Best Microphones for Home Vocal Recording - Online Singing Lessons" loading="lazy">
+            <img src="/assets/images/blog/singer-home-recording-microphone-1604.jpg" alt="The Best Microphones for Home Vocal Recording - Online Singing Lessons" loading="lazy" width="1000" height="666">
         </a>
         <div class="blog-card-content">
             <span class="blog-date">April 16, 2026</span>
@@ -487,7 +456,7 @@
 
     <article class="blog-card">
         <a href="/blog/online-vs-inperson.html" class="image-link">
-            <img src="/assets/images/blog/online-singing-tutor-student-lesson-1504.jpg" alt="Online Singing Lessons vs In-Person: Which is Better? - Online Singing Lessons" loading="lazy">
+            <img src="/assets/images/blog/online-singing-tutor-student-lesson-1504.jpg" alt="Online Singing Lessons vs In-Person: Which is Better? - Online Singing Lessons" loading="lazy" width="1280" height="853">
         </a>
         <div class="blog-card-content">
             <span class="blog-date">April 15, 2026</span>
@@ -499,7 +468,7 @@
 
     <article class="blog-card">
         <a href="/blog/pitch-accuracy.html" class="image-link">
-            <img src="/assets/images/blog/virtual-singing-lessons-condenser-mic-1404.jpg" alt="Pitch Accuracy: Singing in Tune Every Time - Online Singing Lessons" loading="lazy">
+            <img src="/assets/images/blog/virtual-singing-lessons-condenser-mic-1404.jpg" alt="Pitch Accuracy: Singing in Tune Every Time - Online Singing Lessons" loading="lazy" width="800" height="533">
         </a>
         <div class="blog-card-content">
             <span class="blog-date">April 14, 2026</span>
@@ -511,7 +480,7 @@
 
     <article class="blog-card">
         <a href="/blog/sing-with-emotion.html" class="image-link">
-            <img src="/assets/images/blog/online-singing-lessons-live-performance-1304.jpg" alt="How to Sing with Emotion: Moving Beyond Technique to Touch Hearts - Online Singing Lessons" loading="lazy">
+            <img src="/assets/images/blog/online-singing-lessons-live-performance-1304.jpg" alt="How to Sing with Emotion: Moving Beyond Technique to Touch Hearts - Online Singing Lessons" loading="lazy" width="800" height="533">
         </a>
         <div class="blog-card-content">
             <span class="blog-date">April 13, 2026</span>
@@ -523,7 +492,7 @@
 
     <article class="blog-card">
         <a href="/blog/stage-fright.html" class="image-link">
-            <img src="/assets/images/blog/digital-singing-lessons-stage-performance-1204.jpg" alt="How to Overcome Stage Fright & Performance Anxiety - Online Singing Lessons" loading="lazy">
+            <img src="/assets/images/blog/digital-singing-lessons-stage-performance-1204.jpg" alt="How to Overcome Stage Fright & Performance Anxiety - Online Singing Lessons" loading="lazy" width="800" height="533">
         </a>
         <div class="blog-card-content">
             <span class="blog-date">April 12, 2026</span>
@@ -535,7 +504,7 @@
 
     <article class="blog-card">
         <a href="/blog/tech-setup.html" class="image-link">
-            <img src="/assets/images/blog/remote-singing-lessons-music-production-1104.jpg" alt="Preparing for Online Singing Lessons: Essential Tech Setup Guide - Online Singing Lessons" loading="lazy">
+            <img src="/assets/images/blog/remote-singing-lessons-music-production-1104.jpg" alt="Preparing for Online Singing Lessons: Essential Tech Setup Guide - Online Singing Lessons" loading="lazy" width="800" height="533">
         </a>
         <div class="blog-card-content">
             <span class="blog-date">April 11, 2026</span>
@@ -547,7 +516,7 @@
 
     <article class="blog-card">
         <a href="/blog/vibrato-mastery.html" class="image-link">
-            <img src="/assets/images/blog/online-singing-lessons-vocal-practice-1004.jpg" alt="How to Develop Natural Vibrato: A Step by Step Guide - Online Singing Lessons" loading="lazy">
+            <img src="/assets/images/blog/online-singing-lessons-vocal-practice-1004.jpg" alt="How to Develop Natural Vibrato: A Step by Step Guide - Online Singing Lessons" loading="lazy" width="1280" height="854">
         </a>
         <div class="blog-card-content">
             <span class="blog-date">April 10, 2026</span>
@@ -559,7 +528,7 @@
 
     <article class="blog-card">
         <a href="/blog/vocal-agility.html" class="image-link">
-            <img src="/assets/images/blog/singing-technique-performance-stage-0904.jpg" alt="Vocal Agility: Mastering Fast Runs and Melismas - Online Singing Lessons" loading="lazy">
+            <img src="/assets/images/blog/singing-technique-performance-stage-0904.jpg" alt="Vocal Agility: Mastering Fast Runs and Melismas - Online Singing Lessons" loading="lazy" width="1280" height="853">
         </a>
         <div class="blog-card-content">
             <span class="blog-date">April 9, 2026</span>
@@ -571,7 +540,7 @@
 
     <article class="blog-card">
         <a href="/blog/vocal-dynamics.html" class="image-link">
-            <img src="/assets/images/blog/digital-singing-lessons-gospel-choir-0804.jpg" alt="The Art of Vocal Dynamics: From Whisper to Power - Online Singing Lessons" loading="lazy">
+            <img src="/assets/images/blog/digital-singing-lessons-gospel-choir-0804.jpg" alt="The Art of Vocal Dynamics: From Whisper to Power - Online Singing Lessons" loading="lazy" width="800" height="533">
         </a>
         <div class="blog-card-content">
             <span class="blog-date">April 8, 2026</span>
@@ -583,7 +552,7 @@
 
     <article class="blog-card">
         <a href="/blog/vocal-health.html" class="image-link">
-            <img src="/assets/images/blog/remote-singing-lessons-female-singer-0704.jpg" alt="Vocal Health: How to Keep Your Voice in Peak Condition - Online Singing Lessons" loading="lazy">
+            <img src="/assets/images/blog/remote-singing-lessons-female-singer-0704.jpg" alt="Vocal Health: How to Keep Your Voice in Peak Condition - Online Singing Lessons" loading="lazy" width="800" height="533">
         </a>
         <div class="blog-card-content">
             <span class="blog-date">April 7, 2026</span>
@@ -595,7 +564,7 @@
 
     <article class="blog-card">
         <a href="/blog/vocal-muscle-memory.html" class="image-link">
-            <img src="/assets/images/blog/online-singing-lessons-choir-singing-0604.jpg" alt="How Vocal Exercise Builds Muscle Memory, Confidence & Voice Strength - Online Singing Lessons" loading="lazy">
+            <img src="/assets/images/blog/online-singing-lessons-choir-singing-0604.jpg" alt="How Vocal Exercise Builds Muscle Memory, Confidence & Voice Strength - Online Singing Lessons" loading="lazy" width="1280" height="853">
         </a>
         <div class="blog-card-content">
             <span class="blog-date">April 6, 2026</span>
@@ -607,7 +576,7 @@
 
     <article class="blog-card">
         <a href="/blog/vocal-power.html" class="image-link">
-            <img src="/assets/images/blog/virtual-singing-lessons-microphone-stage-0504.jpg" alt="Singing with Power: Building Vocal Strength - Online Singing Lessons" loading="lazy">
+            <img src="/assets/images/blog/virtual-singing-lessons-microphone-stage-0504.jpg" alt="Singing with Power: Building Vocal Strength - Online Singing Lessons" loading="lazy" width="800" height="450">
         </a>
         <div class="blog-card-content">
             <span class="blog-date">April 5, 2026</span>
@@ -619,7 +588,7 @@
 
     <article class="blog-card">
         <a href="/blog/vocal-range.html" class="image-link">
-            <img src="/assets/images/blog/remote-singing-lessons-singer-piano-0404.jpg" alt="How to Find Your Vocal Range (And Expand It) - Online Singing Lessons" loading="lazy">
+            <img src="/assets/images/blog/remote-singing-lessons-singer-piano-0404.jpg" alt="How to Find Your Vocal Range (And Expand It) - Online Singing Lessons" loading="lazy" width="800" height="533">
         </a>
         <div class="blog-card-content">
             <span class="blog-date">April 4, 2026</span>
@@ -631,7 +600,7 @@
 
     <article class="blog-card">
         <a href="/blog/vocal-stamina.html" class="image-link">
-            <img src="/assets/images/blog/remote-singing-lessons-duet-performing-0304.jpg" alt="Vocal Stamina: Building Endurance for Long Performances - Online Singing Lessons" loading="lazy">
+            <img src="/assets/images/blog/remote-singing-lessons-duet-performing-0304.jpg" alt="Vocal Stamina: Building Endurance for Long Performances - Online Singing Lessons" loading="lazy" width="1280" height="853">
         </a>
         <div class="blog-card-content">
             <span class="blog-date">April 3, 2026</span>
@@ -643,7 +612,7 @@
 
     <article class="blog-card">
         <a href="/blog/vocal-twang.html" class="image-link">
-            <img src="/assets/images/blog/online-singing-lessons-concert-audience-0204.jpg" alt="Vocal Twang Technique: Power Without Strain - Online Singing Lessons" loading="lazy">
+            <img src="/assets/images/blog/online-singing-lessons-concert-audience-0204.jpg" alt="Vocal Twang Technique: Power Without Strain - Online Singing Lessons" loading="lazy" width="800" height="533">
         </a>
         <div class="blog-card-content">
             <span class="blog-date">April 2, 2026</span>
@@ -655,7 +624,7 @@
 
     <article class="blog-card">
         <a href="/blog/vocal-warmups.html" class="image-link">
-            <img src="/assets/images/blog/online-singing-lessons-recording-console-0104.jpg" alt="5 Vocal Warm-Ups Professionals Use Every Day - Online Singing Lessons" loading="lazy">
+            <img src="/assets/images/blog/online-singing-lessons-recording-console-0104.jpg" alt="5 Vocal Warm-Ups Professionals Use Every Day - Online Singing Lessons" loading="lazy" width="800" height="533">
         </a>
         <div class="blog-card-content">
             <span class="blog-date">April 1, 2026</span>

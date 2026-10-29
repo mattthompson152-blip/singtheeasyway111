@@ -56,62 +56,48 @@
     <meta name="theme-color" content="#0a0a0a">
 
     <!-- Structured data -->
-    <script type="application/ld+json">
-{
+
+
+<script type="application/ld+json">{
   "@context": "https://schema.org",
-  "@type": "Article",
-  "headline": "The Voice In Your Head That Says You Cannot Sing",
-  "description": "Where the belief that you cannot sing usually comes from, why it is almost always wrong, and what a vocal coach actually does about it.",
-  "image": "https://singtheeasyway.com/assets/images/blog/vocal-coach-inner-critic-1709.jpg",
-  "datePublished": "2026-09-17",
-  "dateModified": "2026-09-17",
-  "mainEntityOfPage": {
-    "@type": "WebPage",
-    "@id": "https://singtheeasyway.com/blog/voice-in-your-head-says-you-cannot-sing.html"
-  },
-  "author": {
-    "@type": "Person",
-    "name": "Matt Thompson",
-    "url": "https://singtheeasyway.com/about.html"
-  },
-  "publisher": {
-    "@type": "Organization",
-    "name": "Sing The Easy Way",
-    "url": "https://singtheeasyway.com/",
-    "logo": {
-      "@type": "ImageObject",
-      "url": "https://singtheeasyway.com/assets/images/Logo/sing-the-easy-way-logo-transparent.png"
-    }
-  },
-  "inLanguage": "en-GB"
-}
-    </script>
-    <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  "itemListElement": [
+  "@graph": [
     {
-      "@type": "ListItem",
-      "position": 1,
-      "name": "Home",
-      "item": "https://singtheeasyway.com/"
+      "@type": "Organization",
+      "@id": "https://singtheeasyway.com/#organization",
+      "name": "Sing The Easy Way",
+      "url": "https://singtheeasyway.com/",
+      "logo": "https://singtheeasyway.com/assets/images/Logo/sing-the-easy-way-logo-transparent.png",
+      "email": "matt@singtheeasyway.com",
+      "telephone": "+44-7792-511393",
+      "sameAs": [
+        "https://www.instagram.com/singtheeasyway",
+        "https://www.tiktok.com/@mattsjourneysofar"
+      ]
     },
     {
-      "@type": "ListItem",
-      "position": 2,
-      "name": "Blog",
-      "item": "https://singtheeasyway.com/blog.html"
+      "@type": "WebSite",
+      "@id": "https://singtheeasyway.com/#website",
+      "url": "https://singtheeasyway.com/",
+      "name": "Sing The Easy Way",
+      "publisher": {
+        "@id": "https://singtheeasyway.com/#organization"
+      }
     },
     {
-      "@type": "ListItem",
-      "position": 3,
-      "name": "The Voice In Your Head That Says You Cannot Sing",
-      "item": "https://singtheeasyway.com/blog/voice-in-your-head-says-you-cannot-sing.html"
+      "@type": "WebPage",
+      "@id": "https://singtheeasyway.com/blog/voice-in-your-head-says-you-cannot-sing.html#webpage",
+      "url": "https://singtheeasyway.com/blog/voice-in-your-head-says-you-cannot-sing.html",
+      "name": "The Voice In Your Head That Says You Cannot Sing | Sing The Easy Way",
+      "description": "Where the belief that you cannot sing usually comes from, why it is almost always wrong, and what a vocal coach actually does about it.",
+      "isPartOf": {
+        "@id": "https://singtheeasyway.com/#website"
+      },
+      "publisher": {
+        "@id": "https://singtheeasyway.com/#organization"
+      }
     }
   ]
-}
-    </script>
+}</script>
 </head>
 <body>
 
@@ -143,7 +129,7 @@
 
     <h1>The Voice In Your Head That Says You Cannot Sing</h1>
 
-    <img src="/assets/images/blog/vocal-coach-inner-critic-1709.jpg" alt="The Voice In Your Head That Says You Cannot Sing" class="blog-hero-image" width="1200" height="1200" loading="eager">
+    <img src="/assets/images/blog/vocal-coach-inner-critic-1709.jpg" alt="The Voice In Your Head That Says You Cannot Sing" class="blog-hero-image" loading="eager" width="1200" height="1200">
 
 <div class="matt-hook">
 <p>Almost every adult who tells me they cannot sing can name the moment they decided it. A comment, a laugh, one teacher, one audition. Usually decades ago. Usually from somebody who was not qualified to make the call.</p>

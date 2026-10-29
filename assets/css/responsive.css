@@ -99,6 +99,7 @@
     nav ul.active a,
     .nav-container ul.active a {
         display: block;
+        min-height: 44px;
         padding: 12px 0;
         line-height: 1.3;
     }

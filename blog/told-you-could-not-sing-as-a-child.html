@@ -56,62 +56,48 @@
     <meta name="theme-color" content="#0a0a0a">
 
     <!-- Structured data -->
-    <script type="application/ld+json">
-{
+
+
+<script type="application/ld+json">{
   "@context": "https://schema.org",
-  "@type": "Article",
-  "headline": "Being Told You Could Not Sing As A Child",
-  "description": "What happens when a child is told they cannot sing, why it lasts decades, and what can be done about it as an adult. Written by a vocal coach of 25 years.",
-  "image": "https://singtheeasyway.com/assets/images/blog/singing-technique-childhood-memory-1509.jpg",
-  "datePublished": "2026-09-15",
-  "dateModified": "2026-09-15",
-  "mainEntityOfPage": {
-    "@type": "WebPage",
-    "@id": "https://singtheeasyway.com/blog/told-you-could-not-sing-as-a-child.html"
-  },
-  "author": {
-    "@type": "Person",
-    "name": "Matt Thompson",
-    "url": "https://singtheeasyway.com/about.html"
-  },
-  "publisher": {
-    "@type": "Organization",
-    "name": "Sing The Easy Way",
-    "url": "https://singtheeasyway.com/",
-    "logo": {
-      "@type": "ImageObject",
-      "url": "https://singtheeasyway.com/assets/images/Logo/sing-the-easy-way-logo-transparent.png"
-    }
-  },
-  "inLanguage": "en-GB"
-}
-    </script>
-    <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  "itemListElement": [
+  "@graph": [
     {
-      "@type": "ListItem",
-      "position": 1,
-      "name": "Home",
-      "item": "https://singtheeasyway.com/"
+      "@type": "Organization",
+      "@id": "https://singtheeasyway.com/#organization",
+      "name": "Sing The Easy Way",
+      "url": "https://singtheeasyway.com/",
+      "logo": "https://singtheeasyway.com/assets/images/Logo/sing-the-easy-way-logo-transparent.png",
+      "email": "matt@singtheeasyway.com",
+      "telephone": "+44-7792-511393",
+      "sameAs": [
+        "https://www.instagram.com/singtheeasyway",
+        "https://www.tiktok.com/@mattsjourneysofar"
+      ]
     },
     {
-      "@type": "ListItem",
-      "position": 2,
-      "name": "Blog",
-      "item": "https://singtheeasyway.com/blog.html"
+      "@type": "WebSite",
+      "@id": "https://singtheeasyway.com/#website",
+      "url": "https://singtheeasyway.com/",
+      "name": "Sing The Easy Way",
+      "publisher": {
+        "@id": "https://singtheeasyway.com/#organization"
+      }
     },
     {
-      "@type": "ListItem",
-      "position": 3,
-      "name": "Being Told You Could Not Sing As A Child",
-      "item": "https://singtheeasyway.com/blog/told-you-could-not-sing-as-a-child.html"
+      "@type": "WebPage",
+      "@id": "https://singtheeasyway.com/blog/told-you-could-not-sing-as-a-child.html#webpage",
+      "url": "https://singtheeasyway.com/blog/told-you-could-not-sing-as-a-child.html",
+      "name": "Being Told You Could Not Sing As A Child | Sing The Easy Way",
+      "description": "What happens when a child is told they cannot sing, why it lasts decades, and what can be done about it as an adult. Written by a vocal coach of 25 years.",
+      "isPartOf": {
+        "@id": "https://singtheeasyway.com/#website"
+      },
+      "publisher": {
+        "@id": "https://singtheeasyway.com/#organization"
+      }
     }
   ]
-}
-    </script>
+}</script>
 </head>
 <body>
 
@@ -143,7 +129,7 @@
 
     <h1>Being Told You Could Not Sing As A Child</h1>
 
-    <img src="/assets/images/blog/singing-technique-childhood-memory-1509.jpg" alt="Being Told You Could Not Sing As A Child" class="blog-hero-image" width="1200" height="1200" loading="eager">
+    <img src="/assets/images/blog/singing-technique-childhood-memory-1509.jpg" alt="Being Told You Could Not Sing As A Child" class="blog-hero-image" loading="eager" width="1200" height="1200">
 
 <div class="matt-hook">
 <p>Ask a room of adults who cannot sing and most of them will trace it to primary school. A teacher, a choir audition, being asked to mime. It is remarkable how durable those moments are, and how rarely they were accurate.</p>

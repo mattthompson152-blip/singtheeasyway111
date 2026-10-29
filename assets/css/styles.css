@@ -108,6 +108,9 @@ nav a {
     text-decoration: none;
     font-size: 0.9rem;
     transition: color var(--transition);
+    min-height: 44px;
+    display: inline-flex;
+    align-items: center;
 }
 
 nav a:hover {
@@ -119,12 +122,12 @@ nav a:hover {
     display: none;
     flex-direction: column;
     justify-content: space-around;
-    width: 30px;
-    height: 24px;
+    width: 44px;
+    height: 44px;
     background: transparent;
     border: none;
     cursor: pointer;
-    padding: 0;
+    padding: 10px;
     z-index: 1001;
     margin-left: auto;
 }
@@ -133,6 +136,15 @@ nav a:hover {
 nav a:focus-visible {
     outline: 3px solid var(--accent);
     outline-offset: 4px;
+}
+
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+    outline: 3px solid var(--accent);
+    outline-offset: 3px;
 }
 
 .mobile-menu-toggle span {

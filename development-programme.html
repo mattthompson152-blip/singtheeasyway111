@@ -37,29 +37,56 @@
     <link rel="icon" type="image/png" sizes="32x32" href="/assets/images/global/favicon-32x32.png">
     <link rel="apple-touch-icon" sizes="180x180" href="/assets/images/global/apple-touch-icon.png">
     <link rel="manifest" href="/site.webmanifest">
-    <script type="application/ld+json">
+
+<script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@graph": [
     {
-      "@context": "https://schema.org",
+      "@type": "Organization",
+      "@id": "https://singtheeasyway.com/#organization",
+      "name": "Sing The Easy Way",
+      "url": "https://singtheeasyway.com/",
+      "logo": "https://singtheeasyway.com/assets/images/Logo/sing-the-easy-way-logo-transparent.png",
+      "email": "matt@singtheeasyway.com",
+      "telephone": "+44-7792-511393",
+      "sameAs": [
+        "https://www.instagram.com/singtheeasyway",
+        "https://www.tiktok.com/@mattsjourneysofar"
+      ]
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://singtheeasyway.com/#website",
+      "url": "https://singtheeasyway.com/",
+      "name": "Sing The Easy Way",
+      "publisher": {
+        "@id": "https://singtheeasyway.com/#organization"
+      }
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://singtheeasyway.com/development-programme.html#webpage",
+      "url": "https://singtheeasyway.com/development-programme.html",
+      "name": "Development Programme | Structured Vocal Coaching",
+      "description": "Ten structured one-to-one vocal coaching sessions for singers ready to understand recurring problems and build a clearer route forward. £1,400 on Microsoft Teams, paid upfront.",
+      "isPartOf": {
+        "@id": "https://singtheeasyway.com/#website"
+      },
+      "publisher": {
+        "@id": "https://singtheeasyway.com/#organization"
+      }
+    },
+    {
       "@type": "Service",
       "name": "Development Programme",
-      "description": "Ten structured one-to-one vocal coaching sessions delivered live on Microsoft Teams and adapted to the individual voice.",
+      "description": "£1,400 paid in full upfront for one ten-session commitment; sessions 1–9 are 60 minutes and session 10 is 75 minutes with a 15-minute progress review and next-step plan; live through Microsoft Teams.",
       "provider": {
-        "@type": "Person",
-        "name": "Matt Thompson",
-        "url": "https://singtheeasyway.com/about.html"
+        "@id": "https://singtheeasyway.com/#organization"
       },
-      "offers": {
-        "@type": "Offer",
-        "url": "https://singtheeasyway.com/development-programme.html",
-        "price": "1400.00",
-        "priceCurrency": "GBP",
-        "itemOffered": {
-          "@type": "Service",
-          "name": "Ten structured one-to-one vocal coaching sessions"
-        }
-      }
+      "url": "https://pci.jotform.com/form/262622799830063"
     }
-    </script>
+  ]
+}</script>
 </head>
 <body>
 <a href="#main-content" class="skip-link">Skip to main content</a>
@@ -95,13 +122,13 @@
                 <p>The Development Programme is for singers tired of repeatedly fixing the same problems. You may have watched videos, tried exercises or had lessons, yet still hit the same wall.</p>
                 <p>Range that disappears. Confidence that comes and goes. A voice that works one day and feels unreliable the next.</p>
                 <p>Ten structured one-to-one sessions give us time to identify the actual blocker, work on it properly and build change into something more reliable.</p>
-                <p class="programme-summary"><strong>10 structured one-to-one sessions. £1,400 paid upfront. Delivered live on Microsoft Teams.</strong></p>
+                <p class="programme-summary"><strong>One ten-session commitment: £1,400 paid in full upfront. Sessions 1–9 are 60 minutes; session 10 is 75 minutes, including a 15-minute progress review and next-step plan. Live on Microsoft Teams.</strong></p>
                 <div class="cta-block">
                     <a href="https://pci.jotform.com/form/262622799830063" class="btn primary" data-booking-option="development_programme">Book the Programme</a>
                 </div>
             </div>
             <figure class="programme-hero-image">
-                <img src="/assets/images/matt/matt-thompson-vocal-coaching-session.webp" alt="Matt Thompson demonstrating a vocal exercise during a live online coaching session" width="1200" height="1902" fetchpriority="high">
+                <img src="/assets/images/matt/matt-thompson-vocal-coaching-session.webp" alt="Matt Thompson demonstrating a vocal exercise during a live online coaching session" fetchpriority="high" width="1200" height="1902">
             </figure>
         </div>
     </section>
@@ -117,7 +144,7 @@
                 <li>You want accountability and continuity.</li>
                 <li>You are prepared to work between sessions.</li>
             </ul>
-            <p>The programme may not be necessary if you have one isolated issue to work on. A single focused lesson may be the better option.</p>
+            <p>The programme is available from age 16. For a 16- or 17-year-old, a parent or legal guardian must purchase the programme and accept its terms. The programme may not be necessary if you have one isolated issue to work on; Private Vocal Coaching may be the better option.</p>
         </div>
     </section>
 
@@ -132,7 +159,7 @@
     <section class="section">
         <div class="container">
             <h2>What happens over ten sessions</h2>
-            <p class="section-intro">This is a four-stage guide, not an identical curriculum. The structure is adapted to your individual voice, goals and songs.</p>
+            <p class="section-intro">This is a guide, not a fixed curriculum. The structure is adapted to your individual voice, goals and songs.</p>
             <div class="programme-stages">
                 <article class="programme-stage">
                     <span class="step-time">Sessions 1–2</span>
@@ -150,9 +177,14 @@
                     <p>We test changes in real music, including demanding songs and difficult notes, and in relevant recording or performance situations.</p>
                 </article>
                 <article class="programme-stage">
-                    <span class="step-time">Sessions 9–10</span>
+                    <span class="step-time">Session 9</span>
                     <h3>Long-term consistency</h3>
-                    <p>We consolidate the work, identify what helps you maintain progress and outline a clearer independent route forward.</p>
+                    <p>We consolidate the work and identify what helps you maintain progress.</p>
+                </article>
+                <article class="programme-stage">
+                    <span class="step-time">Session 10 · 75 minutes</span>
+                    <h3>Progress review and next-step plan</h3>
+                    <p>The final session includes a 15-minute progress review and a plan for your next steps, tailored to the work completed.</p>
                 </article>
             </div>
         </div>
@@ -160,15 +192,8 @@
 
     <section class="section">
         <div class="container">
-            <h2>What you receive after every session</h2>
-            <p>Your personal lesson materials include:</p>
-            <ul>
-                <li>A recording of the lesson, with your agreement.</li>
-                <li>A written summary of the work covered.</li>
-                <li>A clear practice plan.</li>
-                <li>Access through your personal lesson folder.</li>
-            </ul>
-            <p>These materials help you revisit the lesson without depending entirely on memory. Recordings are made only with your agreement; see the <a href="/privacy-policy.html" class="text-link">privacy policy</a> for details.</p>
+            <h2>Lesson notes and materials</h2>
+            <p>Where the automated note service is used, Microsoft Teams transcription supports personalised lesson notes and a practice plan. Transcription is required for that service; lesson recording is separate and optional. Materials may be held in Microsoft 365 and private lesson folders. See the <a href="/privacy-policy.html" class="text-link">Privacy Policy</a> for details.</p>
         </div>
     </section>
 
@@ -190,22 +215,10 @@
 
     <section class="section">
         <div class="container">
-            <h2>Why the programme costs less than ten separate lessons</h2>
-            <dl class="programme-price-list">
-                <div>
-                    <dt>Ten individual lessons</dt>
-                    <dd>£1,500</dd>
-                </div>
-                <div>
-                    <dt>Development Programme</dt>
-                    <dd>£1,400</dd>
-                </div>
-                <div>
-                    <dt>You save</dt>
-                    <dd>£100</dd>
-                </div>
-            </dl>
-            <p>At £150 each, ten separate Private Vocal Coaching sessions would cost £1,500. The programme is £1,400 paid upfront and saves £100. It also gives the work continuity, structure and accountability across all ten sessions.</p>
+            <h2>Programme commitment and scheduling</h2>
+            <p>The Development Programme is one ten-session commitment, not ten separately purchased or separately refundable lessons. The £1,400 fee is paid in full upfront.</p>
+            <p>The programme is valid for six months from the originally booked first-lesson date. Weekly sessions are strongly recommended; fortnightly sessions may work where necessary. Approximately two hours of independent practice each week is expected.</p>
+            <p>Sessions are completely individual and live through Microsoft Teams. There is no generic curriculum and no guaranteed result. The programme is personal and non-transferable.</p>
         </div>
     </section>
 
@@ -215,21 +228,21 @@
             <h3>Why choose the programme instead of Private Vocal Coaching?</h3>
             <p>Choose Private Vocal Coaching for one focused issue. Choose the programme when a problem keeps returning, progress has stalled, or you want a structured body of work with consistent follow-through.</p>
             <h3>Can I start with a consultation?</h3>
-            <p>Yes. The £25 consultation is available if you want a diagnosis and an honest recommendation before committing.</p>
+            <p>Yes. The £25, 30-minute Consultation includes an initial vocal assessment and recommendation and is not credited against another service.</p>
             <h3>Is the programme suitable for beginners?</h3>
             <p>Yes, if you want structured development. The work starts from your voice as it is and is adapted to you.</p>
             <h3>How much progress should I expect?</h3>
             <p>Progress varies by singer, the issue being addressed, attendance, practice and how established existing habits are. There is no fixed result or timetable.</p>
             <h3>How long do I have to use the sessions?</h3>
-            <p>All ten lessons must be used within six calendar months of purchase. See the <a href="/terms.html" class="text-link">Terms</a> for the full conditions.</p>
+            <p>The programme is valid for six months from the originally booked first-lesson date. See the <a href="/terms.html" class="text-link">Terms</a>.</p>
         </div>
     </section>
 
     <section class="cta-section">
         <div class="container">
-            <h2>Your voice is probably capable of more than you think</h2>
-            <p>You need clarity, consistency and a plan built around your actual voice—not more disconnected information. The programme identifies obstacles, works on them in context and gives you a clearer route forward.</p>
-            <p><strong>Development Programme<br>10 structured one-to-one sessions<br>£1,400 paid upfront</strong></p>
+            <h2>Explore the Development Programme</h2>
+            <p>Ten completely individual sessions built around your voice, your music and the work you want to do. Outcomes are not guaranteed.</p>
+            <p><strong>Development Programme<br>One ten-session commitment<br>£1,400 paid in full upfront</strong></p>
             <div class="cta-block">
                 <a href="https://pci.jotform.com/form/262622799830063" class="btn primary" data-booking-option="development_programme">Book the Programme</a>
             </div>
