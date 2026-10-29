@@ -1,38 +1,83 @@
 # Sing The Easy Way, project handover
 
-**Current as of 20 September 2026.**
+**Current as of 29 October 2026.**
 
-This file replaces earlier handover documents. `AI_RULES.md` is the source of truth. `README.md` describes the repository. This file records current status, known gaps and the next planned change.
+`AI_RULES.md` is the source of truth for approved service facts and project
+rules. `README.md` describes the repository. Dated implementation records
+below are historical snapshots; use the current facts in this opening section
+instead of stale prices, routes, status or technical details in those records.
 
 ## Business summary
 
-Matt Thompson teaches live one-to-one online singing lessons on Microsoft Teams. He has more than 25 years of experience and trained at the Academy of Contemporary Music. Students range from complete beginners to recording artists, touring performers and actors.
+Sing The Easy Way provides live, private, one-to-one online vocal coaching
+through the Microsoft Teams app, focused on contemporary and popular singing.
+The distinction is diagnosis-led judgement applied inside real music while
+protecting what makes the singer's voice recognisably their own. Avoid
+unsupported prestige, qualifications, outcomes or guarantees.
 
-The website exists to turn suitable visitors into consultation bookings and ongoing students.
+Current services:
 
-Current prices:
+- Consultation: £25 for 30 minutes; initial vocal assessment and
+  recommendation; not credited against another service.
+- Private Vocal Coaching: £150 for one 60-minute session; no discounted
+  block-booking rate.
+- Development Programme: £1,400 paid upfront for one ten-session commitment.
+  Sessions 1–9 are 60 minutes; session 10 is 75 minutes with a 15-minute
+  progress review and next-step plan. Valid six months from the originally
+  booked first-lesson date; personal and non-transferable; no guaranteed
+  result. Weekly sessions are strongly recommended, fortnightly may work
+  where necessary, and approximately two hours of independent practice each
+  week is expected.
+- Professional Artist Coaching: from £250 per hour, one-hour minimum,
+  confidential enquiry, scope agreed before delivery, and no immediate
+  payment through ordinary coaching routes.
 
-- 30-minute consultation: £25
-- Single 60-minute lesson: £85
-- Development Programme (10 lessons): £700
+Coaching is available from age 16. For a 16- or 17-year-old, a parent or
+legal guardian purchases the service and accepts its terms.
 
-Positioning: lessons that make a singer sound more like themselves, not less. Individuality is the differentiator.
-
-Matt has ADHD. This is public on the site and is presented as part of why his teaching works. Never state or imply that Matt is autistic.
+Terms need narrow UK consumer-contract review. Privacy wording needs exact
+approved-copy follow-up; neither is represented as finally legally approved.
 
 ## Current website status
 
-- The site is live at the non-www domain.
-- Core pages, specialist pages and blog posts are listed in `sitemap.xml`.
-- The standard header includes ADHD & Autism immediately after Lessons.
-- ADHD & Autism appears in both the header and footer.
-- The standard footer includes Film & Recording and Cookie Settings.
-- The current primary call to action is **Book Online**, linking to `/book-online.html`.
-- The approved booking form URL is `https://pci.jotform.com/form/262622799830063`.
-- The approved booking form ID is `262622799830063`.
-- The old enquiry form ID `261603325649357` is RETIRED. It must not be used for any booking or contact button, and it has been removed from the codebase.
-- The community signup form ID is `261037482331047`.
-- Analytics is consent-gated.
+- Implementation commits are on `review/private-vocal-coaching-pricing`:
+  - Logo: `339f1630467bacfefd0351d48dde2fdfa0d9c79a`
+  - Website implementation: `9cb5d75a4bde4981bea0b959cddc5a49cd4d7d79`
+- Pull request #11 targets `main`. It is open and has not been merged,
+  deployed or published.
+- `app/` and `worker/` were not changed.
+- The site checker reports only the two approved capital-letter exceptions in
+  preserved source-logo filenames.
+- The current sitemap contains 51 canonical public pages. Utility pages and
+  templates are excluded.
+- Paid coaching form:
+  `https://pci.jotform.com/form/262622799830063`
+- General Enquiry:
+  `https://form.jotform.com/263014255269052`
+- Professional Artist and Industry Enquiry:
+  `https://form.jotform.com/263013855697062`
+- Community signup form `261037482331047` remains separate.
+- GA4 loads only after analytics consent. Only clicks to the three approved
+  forms are measured; form completion and payment are not measured. Advertising
+  and marketing consent remain denied.
+- Browser screenshots are unavailable because the local MCP browser
+  repeatedly malformed or rejected the local URL; responsive browser testing
+  was not completed.
+- The public photo comparison did not establish a shorter-haired duplicate of
+  the long-haired image. References remain unchanged. Candidate paths are
+  `assets/images/matt/matt-thompson-online-vocal-coaching.webp` (longer hair)
+  and the visually shorter-haired but compositionally different
+  `assets/images/matt/matt-thompson-vocal-coaching-session.webp`,
+  `assets/images/matt/matt-thompson-piano-headshot.webp`,
+  `assets/images/matt/matt-thompson-portrait.webp`, and
+  `assets/images/matt/matt-thompson-studio-headshot.webp`.
+
+## Historical implementation records
+
+The dated sections below document earlier repository states. Any historical
+price, service name, conversion flow, consent behaviour, unresolved item or
+deployment status in those entries is superseded by the current status above
+and `AI_RULES.md`.
 
 ## Documentation correction made on 20 September 2026
 

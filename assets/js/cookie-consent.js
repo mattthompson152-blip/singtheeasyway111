@@ -1,6 +1,6 @@
 /** 
  * GDPR Cookie Consent Manager
- * Handles Google Analytics and JotForm consent
+ * Handles consent-gated Google Analytics
  */
 
 (function() {
@@ -9,7 +9,6 @@
     // Cookie names
     const CONSENT_COOKIE = 'SingTheEasyWay_Consent';
     const ANALYTICS_COOKIE = 'SingTheEasyWay_Analytics';
-    const MARKETING_COOKIE = 'SingTheEasyWay_Marketing';
     
     // Google Analytics ID
     const GA_ID = 'G-72QBZSZZBP';
@@ -17,6 +16,27 @@
     // Initialize when DOM is ready
     document.addEventListener('DOMContentLoaded', function() {
         initCookieConsent();
+    });
+    document.addEventListener('click', function(event) {
+        const anchor = event.target.closest && event.target.closest('a[href]');
+        if (!anchor || !window.gaScriptLoaded || window['ga-disable-' + GA_ID]) return;
+
+        const destination = new URL(anchor.href, window.location.href);
+        const bookingUrl = 'https://pci.jotform.com/form/262622799830063';
+        let eventName;
+        if (destination.href === bookingUrl) {
+            eventName = 'paid_service_booking_click';
+        } else if (destination.href === 'https://form.jotform.com/263014255269052') {
+            eventName = 'general_enquiry_click';
+        } else if (destination.href === 'https://form.jotform.com/263013855697062') {
+            eventName = 'professional_enquiry_click';
+        }
+
+        if (eventName) {
+            window.gtag('event', eventName, {
+                service_type: anchor.dataset.bookingOption || 'unspecified'
+            });
+        }
     });
     
     function initCookieConsent() {
@@ -51,11 +71,10 @@
             <div class="cookie-banner-container">
                 <div class="cookie-banner-text">
                     <h3>🍪 We value your privacy</h3>
-                    <p>We use cookies to enhance your browsing experience, serve personalised content, and analyse our traffic. 
-                    By clicking "Accept All", you consent to our use of cookies. <a href="/privacy-policy.html">Read our Privacy Policy</a></p>
+                    <p>We use essential cookies and, if you agree, analytics cookies to understand how visitors use the site. <a href="/privacy-policy.html">Read our Privacy Policy</a></p>
                 </div>
                 <div class="cookie-banner-buttons">
-                    <button class="cookie-btn cookie-btn-accept" onclick="acceptAllCookies()">Accept All</button>
+                    <button class="cookie-btn cookie-btn-accept" onclick="acceptAllCookies()">Accept analytics</button>
                     <button class="cookie-btn cookie-btn-settings" onclick="openCookieSettings()">Cookie Settings</button>
                     <button class="cookie-btn cookie-btn-reject" onclick="rejectAllCookies()">Reject All</button>
                 </div>
@@ -110,18 +129,6 @@
                     </p>
                 </div>
                 
-                <div class="cookie-category">
-                    <div class="cookie-category-header">
-                        <div>
-                            <h3>Marketing Cookies</h3>
-                            <p>Used to deliver personalised advertisements and content.</p>
-                        </div>
-                        <label class="cookie-toggle">
-                            <input type="checkbox" id="marketing-toggle">
-                            <span class="cookie-toggle-slider"></span>
-                        </label>
-                    </div>
-                </div>
                 
                 <div class="cookie-settings-footer">
                     <button class="cookie-btn cookie-btn-reject" onclick="closeCookieSettings()">Cancel</button>
@@ -144,7 +151,7 @@
         const preferences = {
             essential: true,
             analytics: true,
-            marketing: true,
+            marketing: false,
             timestamp: new Date().toISOString()
         };
         
@@ -174,7 +181,6 @@
             if (consent) {
                 const prefs = JSON.parse(consent);
                 document.getElementById('analytics-toggle').checked = prefs.analytics || false;
-                document.getElementById('marketing-toggle').checked = prefs.marketing || false;
             }
             modal.classList.add('active');
         }
@@ -191,7 +197,7 @@
         const preferences = {
             essential: true,
             analytics: document.getElementById('analytics-toggle').checked,
-            marketing: document.getElementById('marketing-toggle').checked,
+            marketing: false,
             timestamp: new Date().toISOString()
         };
         
@@ -209,12 +215,7 @@
             disableGoogleAnalytics();
         }
         
-        // Handle Marketing cookies
-        if (preferences.marketing) {
-            enableMarketingCookies();
-        } else {
-            disableMarketingCookies();
-        }
+        disableMarketingCookies();
     }
     
     function enableGoogleAnalytics() {
@@ -223,11 +224,7 @@
         window.dataLayer = window.dataLayer || [];
         window.gtag = window.gtag || function(){window.dataLayer.push(arguments);};
 
-        // Tell Consent Mode the visitor has granted analytics storage only.
-        // Without this update call, GA4 keeps treating analytics_storage as
-        // 'denied' (the page head default) even after gtag.js loads, so no
-        // hits are ever sent to the property. Advertising signals are
-        // controlled separately by the marketing toggle.
+        // Grant analytics storage only. Advertising signals remain denied.
         gtag('consent', 'update', {
             analytics_storage: 'granted'
         });
@@ -237,17 +234,21 @@
 
             const script = document.createElement('script');
             script.async = true;
-            script.src = 'https://www.googletagmanager.com/gtag/js?id=G-72QBZSZZBP';
+            script.src = 'https://www.googletagmanager.com/gtag/js?id=' + GA_ID;
             document.head.appendChild(script);
 
             gtag('js', new Date());
-            gtag('config', 'G-72QBZSZZBP', { send_page_view: true });
+            gtag('config', GA_ID, {
+                send_page_view: false,
+                allow_google_signals: false,
+                allow_ad_personalization_signals: false
+            });
         }
 
         // Lets other site scripts act only once analytics consent exists.
         document.dispatchEvent(new CustomEvent('analytics-consent-granted'));
 
-        window['ga-disable-G-72QBZSZZBP'] = false;
+        window['ga-disable-' + GA_ID] = false;
         setCookie(ANALYTICS_COOKIE, 'enabled', 365);
     }
     
@@ -256,7 +257,7 @@
         window['ga-disable-' + GA_ID] = true;
 
         // Tell Consent Mode the visitor has denied analytics storage.
-        // Advertising signals follow the marketing toggle separately.
+        // Advertising signals always remain denied.
         if (typeof window.gtag === 'function') {
             window.gtag('consent', 'update', {
                 analytics_storage: 'denied'
@@ -270,24 +271,18 @@
         deleteCookie(ANALYTICS_COOKIE);
     }
     
-    function updateAdConsent(state) {
+    function updateAdConsent() {
         window.dataLayer = window.dataLayer || [];
         window.gtag = window.gtag || function(){window.dataLayer.push(arguments);};
         window.gtag('consent', 'update', {
-            ad_storage: state,
-            ad_user_data: state,
-            ad_personalization: state
+            ad_storage: 'denied',
+            ad_user_data: 'denied',
+            ad_personalization: 'denied'
         });
     }
 
-    function enableMarketingCookies() {
-        updateAdConsent('granted');
-        setCookie(MARKETING_COOKIE, 'enabled', 365);
-    }
-    
     function disableMarketingCookies() {
-        updateAdConsent('denied');
-        deleteCookie(MARKETING_COOKIE);
+        updateAdConsent();
         // Delete any marketing-related cookies here
     }
     

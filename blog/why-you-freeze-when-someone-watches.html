@@ -56,69 +56,55 @@
     <meta name="theme-color" content="#0a0a0a">
 
     <!-- Structured data -->
-    <script type="application/ld+json">
-{
+
+
+<script type="application/ld+json">{
   "@context": "https://schema.org",
-  "@type": "Article",
-  "headline": "Why You Freeze When Someone Watches You Sing",
-  "description": "The difference between singing alone and singing watched, why the freeze happens, and practical ways to work with it rather than against it.",
-  "image": "https://singtheeasyway.com/assets/images/blog/online-singing-lessons-stage-nerves-1609.jpg",
-  "datePublished": "2026-09-16",
-  "dateModified": "2026-09-16",
-  "mainEntityOfPage": {
-    "@type": "WebPage",
-    "@id": "https://singtheeasyway.com/blog/why-you-freeze-when-someone-watches.html"
-  },
-  "author": {
-    "@type": "Person",
-    "name": "Matt Thompson",
-    "url": "https://singtheeasyway.com/about.html"
-  },
-  "publisher": {
-    "@type": "Organization",
-    "name": "Sing The Easy Way",
-    "url": "https://singtheeasyway.com/",
-    "logo": {
-      "@type": "ImageObject",
-      "url": "https://singtheeasyway.com/assets/images/global/logo.png"
-    }
-  },
-  "inLanguage": "en-GB"
-}
-    </script>
-    <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  "itemListElement": [
+  "@graph": [
     {
-      "@type": "ListItem",
-      "position": 1,
-      "name": "Home",
-      "item": "https://singtheeasyway.com/"
+      "@type": "Organization",
+      "@id": "https://singtheeasyway.com/#organization",
+      "name": "Sing The Easy Way",
+      "url": "https://singtheeasyway.com/",
+      "logo": "https://singtheeasyway.com/assets/images/Logo/sing-the-easy-way-logo-transparent.png",
+      "email": "matt@singtheeasyway.com",
+      "telephone": "+44-7792-511393",
+      "sameAs": [
+        "https://www.instagram.com/singtheeasyway",
+        "https://www.tiktok.com/@mattsjourneysofar"
+      ]
     },
     {
-      "@type": "ListItem",
-      "position": 2,
-      "name": "Blog",
-      "item": "https://singtheeasyway.com/blog.html"
+      "@type": "WebSite",
+      "@id": "https://singtheeasyway.com/#website",
+      "url": "https://singtheeasyway.com/",
+      "name": "Sing The Easy Way",
+      "publisher": {
+        "@id": "https://singtheeasyway.com/#organization"
+      }
     },
     {
-      "@type": "ListItem",
-      "position": 3,
-      "name": "Why You Freeze When Someone Watches You Sing",
-      "item": "https://singtheeasyway.com/blog/why-you-freeze-when-someone-watches.html"
+      "@type": "WebPage",
+      "@id": "https://singtheeasyway.com/blog/why-you-freeze-when-someone-watches.html#webpage",
+      "url": "https://singtheeasyway.com/blog/why-you-freeze-when-someone-watches.html",
+      "name": "Why You Freeze When Someone Watches You Sing | Sing The Easy Way",
+      "description": "The difference between singing alone and singing watched, why the freeze happens, and practical ways to work with it rather than against it.",
+      "isPartOf": {
+        "@id": "https://singtheeasyway.com/#website"
+      },
+      "publisher": {
+        "@id": "https://singtheeasyway.com/#organization"
+      }
     }
   ]
-}
-    </script>
+}</script>
 </head>
 <body>
 
 <a href="#main-content" class="skip-link">Skip to main content</a>
 <nav>
     <div class="nav-container">
-        <a href="/" class="logo">Sing The Easy Way</a>
+        <a href="/" class="logo" aria-label="Sing The Easy Way home"><img src="/assets/images/Logo/sing-the-easy-way-logo-transparent.png" alt="Sing The Easy Way" width="1536" height="1024"></a>
         <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Toggle menu" aria-controls="mainNav" aria-expanded="false">
             <span></span><span></span><span></span>
         </button>
@@ -143,7 +129,7 @@
 
     <h1>Why You Freeze When Someone Watches You Sing</h1>
 
-    <img src="/assets/images/blog/online-singing-lessons-stage-nerves-1609.jpg" alt="Why You Freeze When Someone Watches You Sing" class="blog-hero-image" width="1200" height="1200" loading="eager">
+    <img src="/assets/images/blog/online-singing-lessons-stage-nerves-1609.jpg" alt="Why You Freeze When Someone Watches You Sing" class="blog-hero-image" loading="eager" width="1200" height="1200">
 
 <div class="matt-hook">
 <p>You sound fine in the kitchen. You sound fine in the car. Then one person turns to listen and something shuts down. That is not a confidence flaw, it is a well documented physical response, and it can be worked with.</p>
@@ -232,7 +218,7 @@
     <div class="container">
         <div class="footer-grid">
             <div>
-                <div class="footer-logo">Sing The Easy Way</div>
+                <div class="footer-logo"><img loading="lazy" src="/assets/images/Logo/sing-the-easy-way-logo-transparent.png" alt="Sing The Easy Way" width="1536" height="1024"></div>
                 <p>Live one-to-one vocal coaching with Matt Thompson. Diagnosis, clarity and personal progress.</p>
                 <p class="trading-as">Previously trading as Arpeggio Music</p>
                 <div class="socials">

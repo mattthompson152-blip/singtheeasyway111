@@ -56,69 +56,55 @@
     <meta name="theme-color" content="#0a0a0a">
 
     <!-- Structured data -->
-    <script type="application/ld+json">
-{
+
+
+<script type="application/ld+json">{
   "@context": "https://schema.org",
-  "@type": "Article",
-  "headline": "Confidence Is Not A Personality Trait",
-  "description": "Why vocal confidence is built from evidence rather than belief, and the practical route to getting it. From a vocal coach with more than 25 years of experience.",
-  "image": "https://singtheeasyway.com/assets/images/blog/vocal-coach-confidence-building-1009.jpg",
-  "datePublished": "2026-09-10",
-  "dateModified": "2026-09-10",
-  "mainEntityOfPage": {
-    "@type": "WebPage",
-    "@id": "https://singtheeasyway.com/blog/confidence-is-not-a-personality-trait.html"
-  },
-  "author": {
-    "@type": "Person",
-    "name": "Matt Thompson",
-    "url": "https://singtheeasyway.com/about.html"
-  },
-  "publisher": {
-    "@type": "Organization",
-    "name": "Sing The Easy Way",
-    "url": "https://singtheeasyway.com/",
-    "logo": {
-      "@type": "ImageObject",
-      "url": "https://singtheeasyway.com/assets/images/global/logo.png"
-    }
-  },
-  "inLanguage": "en-GB"
-}
-    </script>
-    <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  "itemListElement": [
+  "@graph": [
     {
-      "@type": "ListItem",
-      "position": 1,
-      "name": "Home",
-      "item": "https://singtheeasyway.com/"
+      "@type": "Organization",
+      "@id": "https://singtheeasyway.com/#organization",
+      "name": "Sing The Easy Way",
+      "url": "https://singtheeasyway.com/",
+      "logo": "https://singtheeasyway.com/assets/images/Logo/sing-the-easy-way-logo-transparent.png",
+      "email": "matt@singtheeasyway.com",
+      "telephone": "+44-7792-511393",
+      "sameAs": [
+        "https://www.instagram.com/singtheeasyway",
+        "https://www.tiktok.com/@mattsjourneysofar"
+      ]
     },
     {
-      "@type": "ListItem",
-      "position": 2,
-      "name": "Blog",
-      "item": "https://singtheeasyway.com/blog.html"
+      "@type": "WebSite",
+      "@id": "https://singtheeasyway.com/#website",
+      "url": "https://singtheeasyway.com/",
+      "name": "Sing The Easy Way",
+      "publisher": {
+        "@id": "https://singtheeasyway.com/#organization"
+      }
     },
     {
-      "@type": "ListItem",
-      "position": 3,
-      "name": "Confidence Is Not A Personality Trait",
-      "item": "https://singtheeasyway.com/blog/confidence-is-not-a-personality-trait.html"
+      "@type": "WebPage",
+      "@id": "https://singtheeasyway.com/blog/confidence-is-not-a-personality-trait.html#webpage",
+      "url": "https://singtheeasyway.com/blog/confidence-is-not-a-personality-trait.html",
+      "name": "Confidence Is Not A Personality Trait | Sing The Easy Way",
+      "description": "Why vocal confidence is built from evidence rather than belief, and the practical route to getting it. From a vocal coach with more than 25 years of experience.",
+      "isPartOf": {
+        "@id": "https://singtheeasyway.com/#website"
+      },
+      "publisher": {
+        "@id": "https://singtheeasyway.com/#organization"
+      }
     }
   ]
-}
-    </script>
+}</script>
 </head>
 <body>
 
 <a href="#main-content" class="skip-link">Skip to main content</a>
 <nav>
     <div class="nav-container">
-        <a href="/" class="logo">Sing The Easy Way</a>
+        <a href="/" class="logo" aria-label="Sing The Easy Way home"><img src="/assets/images/Logo/sing-the-easy-way-logo-transparent.png" alt="Sing The Easy Way" width="1536" height="1024"></a>
         <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Toggle menu" aria-controls="mainNav" aria-expanded="false">
             <span></span><span></span><span></span>
         </button>
@@ -143,7 +129,7 @@
 
     <h1>Confidence Is Not A Personality Trait</h1>
 
-    <img src="/assets/images/blog/vocal-coach-confidence-building-1009.jpg" alt="Confidence Is Not A Personality Trait" class="blog-hero-image" width="1200" height="1200" loading="eager">
+    <img src="/assets/images/blog/vocal-coach-confidence-building-1009.jpg" alt="Confidence Is Not A Personality Trait" class="blog-hero-image" loading="eager" width="1200" height="1200">
 
 <div class="matt-hook">
 <p>People talk about confidence as though it were eye colour. Some have it, some do not, bad luck. In singing that is simply wrong. Confidence is a by-product of competence, and competence is built in a specific order.</p>
@@ -232,7 +218,7 @@
     <div class="container">
         <div class="footer-grid">
             <div>
-                <div class="footer-logo">Sing The Easy Way</div>
+                <div class="footer-logo"><img loading="lazy" src="/assets/images/Logo/sing-the-easy-way-logo-transparent.png" alt="Sing The Easy Way" width="1536" height="1024"></div>
                 <p>Live one-to-one vocal coaching with Matt Thompson. Diagnosis, clarity and personal progress.</p>
                 <p class="trading-as">Previously trading as Arpeggio Music</p>
                 <div class="socials">
