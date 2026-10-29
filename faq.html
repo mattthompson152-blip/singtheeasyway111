@@ -33,91 +33,7 @@
       line-height: 1.6;
     }
     
-    /* Navigation */
-    nav {
-      background: #1a1a1a;
-      border-bottom: 1px solid #333;
-      position: sticky;
-      top: 0;
-      z-index: 100;
-    }
-    
-    .nav-container {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 0 2rem;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      height: 70px;
-    }
-    
-    .nav-container .logo {
-      display: flex;
-      align-items: center;
-    }
-    
-    .nav-container .logo img {
-      height: 40px;
-      width: auto;
-    }
-    
-    .nav-container ul {
-      display: flex;
-      list-style: none;
-      gap: 2rem;
-    }
-    
-    .nav-container ul li a {
-      color: #fff;
-      text-decoration: none;
-      font-weight: 500;
-      transition: color 0.3s;
-    }
-    
-    .nav-container ul li a:hover {
-      color: #ff6b4a;
-    }
-    
-    .mobile-menu-toggle {
-      display: none;
-      flex-direction: column;
-      gap: 5px;
-      background: none;
-      border: none;
-      cursor: pointer;
-    }
-    
-    .mobile-menu-toggle span {
-      width: 25px;
-      height: 2px;
-      background: #fff;
-      transition: 0.3s;
-    }
-    
-    @media (max-width: 768px) {
-      .mobile-menu-toggle {
-        display: flex;
-      }
-      
-      .nav-container ul {
-        position: absolute;
-        top: 70px;
-        left: 0;
-        right: 0;
-        background: #1a1a1a;
-        flex-direction: column;
-        padding: 1rem 2rem;
-        gap: 1rem;
-        display: none;
-      }
-      
-      .nav-container ul.active {
-        display: flex;
-      }
-    }
-    
-    .container {
+    body > .container {
       max-width: 800px;
       margin: 0 auto;
       padding: 2rem;
@@ -208,7 +124,7 @@
       margin-bottom: 1rem;
     }
     
-    .btn {
+    .cta-box .btn {
       display: inline-block;
       padding: 1rem 2rem;
       background: #ff6b4a;
@@ -219,42 +135,8 @@
       margin-top: 1rem;
     }
     
-    .btn:hover {
+    .cta-box .btn:hover {
       background: #e55a3a;
-    }
-    
-    nav {
-      background: #0a0a0a;
-      padding: 1rem 2rem;
-      border-bottom: 1px solid #333;
-    }
-    
-    nav a {
-      color: #fff;
-      text-decoration: none;
-      margin-right: 2rem;
-    }
-    
-    nav a:hover {
-      color: #ff6b4a;
-    }
-    
-    footer {
-      background: #0a0a0a;
-      padding: 2rem;
-      text-align: center;
-      border-top: 1px solid #333;
-      margin-top: 4rem;
-    }
-    
-    footer a {
-      color: #a3a3a3;
-      text-decoration: none;
-      margin: 0 1rem;
-    }
-    
-    footer a:hover {
-      color: #ff6b4a;
     }
   </style>
   
@@ -277,8 +159,8 @@
   <link rel="manifest" href="/site.webmanifest">
   <meta name="theme-color" content="#0a0a0a">
     <link rel="stylesheet" href="/assets/css/styles.css?v=3">
-    <link rel="stylesheet" href="/assets/css/responsive.css?v=3">
     <link rel="stylesheet" href="/assets/css/cookie-consent.css?v=3">
+    <link rel="stylesheet" href="/assets/css/responsive.css?v=3">
 
     <!-- Structured data -->
 

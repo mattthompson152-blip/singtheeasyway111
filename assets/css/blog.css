@@ -9,9 +9,20 @@
     max-width: 800px;
 }
 
+article,
+.back-to-blog {
+    box-sizing: border-box;
+    width: 100%;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: clamp(var(--space-sm), 4vw, var(--space-md));
+    padding-right: clamp(var(--space-sm), 4vw, var(--space-md));
+}
+
 /* Breadcrumb */
 .breadcrumb {
-    color: var(--text-muted);
+    color: var(--text-secondary);
     font-size: 0.875rem;
     margin-bottom: var(--space-md);
 }
@@ -31,7 +42,7 @@ article header {
 }
 
 article .meta {
-    color: var(--text-muted);
+    color: var(--text-secondary);
     font-size: 0.875rem;
     margin-bottom: var(--space-sm);
 }
@@ -58,17 +69,17 @@ article h2 {
 article h3 {
     font-size: 1.25rem;
     margin: var(--space-md) 0 var(--space-xs);
-    color: var(--text);
+    color: var(--text-primary);
 }
 
 article p {
     margin-bottom: var(--space-sm);
-    color: var(--text-muted);
+    color: var(--text-secondary);
     line-height: 1.8;
 }
 
 article strong {
-    color: var(--text);
+    color: var(--text-primary);
     font-weight: 600;
 }
 
@@ -76,7 +87,7 @@ article strong {
 article ul,
 article ol {
     margin: var(--space-sm) 0 var(--space-sm) var(--space-md);
-    color: var(--text-muted);
+    color: var(--text-secondary);
 }
 
 article li {
@@ -99,7 +110,7 @@ article li {
 
 /* Tip Box */
 .tip-box {
-    background: var(--surface);
+    background: var(--bg-card);
     border-left: 4px solid var(--accent);
     padding: var(--space-md);
     margin: var(--space-md) 0;
@@ -108,12 +119,12 @@ article li {
 
 .tip-box p {
     margin: 0;
-    color: var(--text);
+    color: var(--text-primary);
 }
 
 /* Exercise Box */
 .exercise-box {
-    background: var(--surface);
+    background: var(--bg-card);
     border: 1px solid var(--border);
     padding: var(--space-md);
     margin: var(--space-md) 0;
@@ -188,16 +199,14 @@ article li {
 
 /* Page Header */
 .page-header {
-    background: linear-gradient(135deg, var(--surface) 0%, var(--bg) 100%);
+    background: linear-gradient(135deg, var(--bg-card) 0%, var(--bg-dark) 100%);
     padding: var(--space-md) 0;
     border-bottom: 1px solid var(--border);
 }
 
 /* Back to Blog Button */
 .back-to-blog {
-    max-width: 800px;
-    margin: 0 auto var(--space-sm);
-    padding: 0 var(--space-md);
+    margin-bottom: var(--space-sm);
 }
 
 .back-to-blog .btn {
