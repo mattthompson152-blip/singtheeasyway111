@@ -16,6 +16,48 @@ Do not invent new folders, layouts, button styles, page types, or URL structures
 
 If a requested change conflicts with this file, stop and report the conflict.
 
+## CURRENT APPROVED SERVICE AND BRAND FACTS
+
+These current owner-approved facts supersede any older prices, service names,
+eligibility, delivery, booking, privacy, analytics or marketing wording in
+dated repository notes:
+
+- Sing The Easy Way provides live, private, one-to-one online vocal coaching
+  through the Microsoft Teams app, focused on contemporary and popular
+  singing.
+- The distinction is diagnosis-led judgement applied inside real music while
+  protecting what makes the singer's voice recognisably their own. Do not
+  invent prestige, exclusivity, qualifications, outcomes or guarantees.
+- Consultation: £25 for 30 minutes. It provides an initial vocal assessment
+  and recommendation and is not credited against another service.
+- Private Vocal Coaching: £150 for one 60-minute session. There is no
+  discounted block-booking rate.
+- Development Programme: £1,400 paid upfront for one ten-session commitment.
+  Sessions 1–9 are 60 minutes; session 10 is 75 minutes and includes a
+  15-minute progress review and next-step plan. It is valid for six months
+  from the originally booked first-lesson date, is personal and
+  non-transferable, and has no guaranteed result. Weekly sessions are
+  strongly recommended; fortnightly may work where necessary. Approximately
+  two hours of independent practice each week is expected.
+- Coaching is available from age 16. For a 16- or 17-year-old, a parent or
+  legal guardian purchases the service and accepts its terms.
+- Professional Artist Coaching is online and separate from ordinary coaching:
+  from £250 per hour, one-hour minimum, confidential enquiry, scope agreed
+  before delivery, and no immediate payment through ordinary coaching routes.
+- Paid Consultation, Private Vocal Coaching and Development Programme:
+  `https://pci.jotform.com/form/262622799830063`
+- General Enquiry: `https://form.jotform.com/263014255269052`
+- Professional Artist and Industry Enquiry:
+  `https://form.jotform.com/263013855697062`
+- Do not imply in-person, classical or operatic coaching. Do not describe
+  recordings, automated notes, booking confirmation or delivery outcomes as
+  guaranteed.
+- Terms need narrow UK consumer-contract review. Privacy wording needs exact
+  approved-copy follow-up; do not claim either has final legal approval.
+- Browser screenshots were not captured because the local MCP browser
+  repeatedly malformed or rejected the local URL. Do not represent responsive
+  browser testing as completed.
+
 ## REPOSITORY DESTINATIONS
 
 ### Core pages
@@ -525,100 +567,41 @@ Use specific wording such as `Book Online`, `View Lesson Options`, or `See Clien
 
 Use anchor elements for navigation. Use button elements for actions.
 
-### Primary booking destination
-
-```text
-/book-online.html
-```
-
-`Book Online` and every primary booking call to action must point there.
-
 ## CALL TO ACTION WORDING
 
-The site uses one primary call to action everywhere:
-
-```text
-Book Online
-```
-
-It links to `/book-online.html`.
-
-Approved secondaries, used sparingly:
-
-```text
-View lesson prices
-Send a message
-Read common questions
-```
-
-Do not invent new button wording. Do not use Enquire, Submit, Learn More, Click Here, Go, or anything vague.
-
-## DIRECT BOOKING SYSTEM
-
-The live booking form allows visitors to choose:
-
-- 30-minute consultation, £25
-- Single 60-minute lesson, £85
-- Development Programme (10 lessons), £700
-
-Booking URL:
-
-`https://pci.jotform.com/form/262622799830063`
-
-Booking form ID:
-
-`262622799830063`
-
-The site must keep one clear primary booking journey. Do not create separate competing forms for the three products unless Matt explicitly approves that change.
-
-Product-specific buttons may be used on the pricing page, but they must open the same booking form, with the relevant option preselected where the booking system supports it.
-
-Keep the contact route available for visitors who have questions before booking.
-
-Keep `/contact.html` as a support and questions route for pre-booking questions, existing student communication, general contact, and technical issues.
+Use clear, service-specific calls to action. Paid booking links use the
+approved paid-service form. General questions and Professional Artist and
+Industry enquiries use their separate approved forms. Do not route a general
+enquiry to a paid form or present general contact as free coaching or
+assessment.
 
 ## ANALYTICS AND CONSENT
 
-Google Analytics must never load before consent.
+Google Analytics 4 is loaded only after analytics consent. Advertising and
+marketing consent remains denied; do not add advertising, remarketing, Google
+Signals, demographic reporting or enhanced conversions.
 
-Every page carries a Consent Mode default of `denied` in the head. Analytics is loaded only by `/assets/js/cookie-consent.js` after the visitor accepts.
-
-Never paste a raw `googletagmanager.com/gtag/js` tag into a page. Doing so breaks UK GDPR and PECR compliance.
-
-## CONVERSION TRACKING
-
-`booking_complete` is the ONLY primary conversion. It is recorded server-side only, by the Cloudflare Worker in `/worker/`, from a verified, PAID Jotform submission, deduplicated forever on the Jotform submission ID, and only when the visitor consented to analytics. No client code may send `booking_complete`, and a page load (including `/thank-you.html`) is never conversion proof. See `/docs/booking-conversion-tracking.md`.
-
-`/assets/js/main.js` sends these SECONDARY funnel events (they are not conversions) so Matt can see which calls to action work:
-
-```text
-book_online_click                any booking button, with its text and page section
-consultation_selection           Consultation option chosen
-single_lesson_selection          Single Lesson option chosen
-development_programme_selection  Development Programme option chosen
-phone_click                      tap on the phone number
-email_click                      tap on the email address
-pricing_viewed                   visitor scrolled as far as the prices
-signup_viewed                    visitor reached the community signup
-generate_lead                    local contact.html support form only (booking leads come from the Worker)
-```
-
-`data-booking-option` values are `consultation`, `single_lesson` and `development_programme`. Never reintroduce the retired ten-lesson option id (enforced by `check-site.py`).
-
-Events only fire when the visitor has accepted analytics. Never make tracking fire regardless of consent. Consent Mode: the analytics toggle grants `analytics_storage` only; the marketing toggle alone grants `ad_storage`, `ad_user_data` and `ad_personalization`.
-
-When analytics consent exists, `main.js` appends pseudonymous GA identifiers (and, with marketing consent, Google click IDs) to the Jotform booking link. With no consent the link is unchanged. Never append names, emails, phone numbers, appointment or singing details.
+After analytics consent, the website may measure clicks only to the paid
+booking form, General Enquiry form and Professional Artist and Industry
+Enquiry form. Do not measure form completion or payment as a conversion.
+Events must not include names, email addresses, phone numbers, form content,
+payment details or other personal data. Do not append analytics or advertising
+identifiers to form URLs. Do not add a second analytics installation or invent
+a measurement ID.
 
 ## THANK-YOU PAGE
 
-`/thank-you.html` is the intended destination after a successful booking through Jotform form `262622799830063`. The Jotform redirect is configured in Jotform, not in this repository, and must be verified there.
+`/thank-you.html` is a utility page, not proof of a completed or paid booking.
+Do not claim the external form redirects there unless that configuration has
+been verified.
 
 - It must stay `noindex, nofollow`, outside `sitemap.xml`, and out of the header, the footer, page cards, promotional links and the normal browsing journey.
 - It is not a normal landing page and must not be treated or promoted as one.
 - It must not show form answers or personal data. The redirect URL must carry no personal data, Jotform field variables or booking parameters.
 - It keeps the standard header, footer and `Cookie Settings` link, and loads `/assets/js/main.js` and `/assets/js/cookie-consent.js`.
 - It must confirm only that the booking has been received. It must not claim confirmed appointments, confirmed payment, emails sent, links or joining instructions sent, receipts, or a confirmed date or time, unless that behaviour has been verified.
-- It must stay static and send no analytics event. `booking_complete` is never recorded from this page; it comes only from the server-side Worker after a verified paid submission. It must never send personal information to analytics.
+- It must stay static and must not send a booking-completion or payment event.
+- It must never send personal information to analytics.
 - Do not describe a Google Ads conversion as existing until it has been configured and verified.
 
 ## EMAIL LINKS
@@ -627,7 +610,9 @@ Every email link to Matt must use only `mailto:matt@singtheeasyway.com`. No subj
 
 ## COOKIE CONSENT
 
-The banner is created by `/assets/js/cookie-consent.js` on first visit and offers Accept All, Reject All and Cookie Settings.
+The banner is created by `/assets/js/cookie-consent.js` on first visit and
+offers Accept analytics, Reject All and Cookie Settings. Only analytics
+consent can be granted.
 
 Every page footer must carry a `Cookie Settings` link pointing at `#cookie-settings`. The script wires it up. Removing it would leave visitors unable to change their mind, which UK GDPR does not allow.
 
@@ -736,17 +721,15 @@ All form fields require visible labels.
 
 All interactive elements must work with a keyboard and display a visible focus state.
 
-## WHAT A STUDENT RECEIVES
+## LESSON NOTES AND RECORDING
 
-After every lesson the student is sent a link to their own lesson folder. It contains:
-
-```text
-The lesson recording
-A written summary of what was worked on
-A clear path setting out what to practise next
-```
-
-The folder stays available to the student. Describe it in those terms. Do not promise anything beyond this list, and do not describe it as an app, a portal or a course.
+Where the automated note service is used, Microsoft Teams transcription
+supports personalised lesson notes and a practice plan. Transcription is
+required for that service. Lesson recording is separate and optional.
+Materials may be held in Microsoft 365 and private lesson folders; retention
+and deletion may differ across provider backups and service systems. Do not
+promise a recording, notes, folder availability or immediate deletion unless
+that specific service behaviour has been verified.
 
 ## COMMUNITY EMAIL SIGNUP
 
@@ -767,18 +750,20 @@ Rules:
 
 ## PRICING CONSISTENCY
 
-Prices appear on the homepage, the pricing page, the FAQ and the terms.
-
-If a price changes, all four must be updated in the same task, including the worked refund example in the terms.
+Keep prices and service names consistent across the homepage, pricing,
+booking, FAQ, programme details and Terms. If a price changes, update every
+affected visible page, metadata description and structured-data reference in
+the same task. Do not invent a worked refund example.
 
 Calculate every figure. Do not estimate.
 
-Current prices:
+Current services and prices:
 
 ```text
-30 minute consultation    £25
-Single 60 minute lesson   £85
-Development Programme      £700 (10 lessons)
+Consultation                £25 / 30 minutes
+Private Vocal Coaching      £150 / 60 minutes, no discounted block rate
+Development Programme      £1,400 / ten-session commitment, paid upfront
+Professional Artist Coaching from £250 / hour, one-hour minimum
 ```
 
 ## CLAIMS AND EVIDENCE

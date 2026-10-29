@@ -1,10 +1,14 @@
 # Sing The Easy Way, Website
 
-Live one-to-one online singing lessons with Matt Thompson.
+Live, private, one-to-one online vocal coaching through the Microsoft Teams
+app, focused on contemporary and popular singing.
 
 Site: https://singtheeasyway.com
 
-`AI_RULES.md` is the source of truth for structure, layout, links and conversion rules. `HANDOVER.md` carries current status and history. This README describes the repository. If they disagree, `AI_RULES.md` wins and this file must be corrected.
+`AI_RULES.md` is the source of truth for approved service facts and project
+rules. `HANDOVER.md` records current status and dated history. This README
+describes the repository. If they disagree, `AI_RULES.md` wins and this file
+must be corrected.
 
 ## Repository structure
 
@@ -128,29 +132,37 @@ The Information footer includes:
 
 It also includes the business name, copyright notice, primary contact method and valid social links.
 
-## Calls to action and booking flow
+## Services and enquiry routes
 
-The site-wide primary call to action is:
+The approved offers are:
 
-**Book Online**
+- Consultation: £25 for 30 minutes; initial vocal assessment and
+  recommendation; not credited against another service.
+- Private Vocal Coaching: £150 for one live, private 60-minute session; no
+  discounted block-booking rate.
+- Development Programme: £1,400 paid upfront for one ten-session commitment.
+  Sessions 1–9 are 60 minutes; session 10 is 75 minutes with a 15-minute
+  progress review and next-step plan. The programme is valid for six months
+  from the originally booked first-lesson date.
+- Professional Artist Coaching: from £250 per hour, one-hour minimum,
+  confidential enquiry, scope agreed before delivery, and no immediate
+  payment through ordinary coaching routes.
 
-Primary CTA destination:
+All coaching is online through Microsoft Teams and focuses on contemporary
+and popular singing. Coaching is available from age 16; for a 16- or
+17-year-old, a parent or legal guardian purchases the service and accepts its
+terms.
 
-`/book-online.html`
+Approved routes:
 
-Approved booking URL:
+- Paid Consultation, Private Vocal Coaching and Development Programme:
+  `https://pci.jotform.com/form/262622799830063`
+- General Enquiry: `https://form.jotform.com/263014255269052`
+- Professional Artist and Industry Enquiry:
+  `https://form.jotform.com/263013855697062`
 
-`https://pci.jotform.com/form/262622799830063`
-
-Booking options:
-
-- 30-minute consultation, £25
-- Single 60-minute lesson, £85
-- Development Programme (10 lessons), £700
-
-The old enquiry form (`261603325649357`) is RETIRED. It must not be used for any booking or contact button, popup or handler, and it has been removed from the codebase. The community email signup form (`261037482331047`) remains separate.
-
-Keep `/contact.html` as the support and questions route for pre-booking questions, existing student communication, general contact, and technical issues.
+The community email signup form (`261037482331047`) is separate. Do not treat
+the General Enquiry route as a free lesson, coaching or assessment.
 
 ### Booking completion page
 
@@ -161,7 +173,10 @@ Intended journey:
 Website → Book Online → Jotform form `262622799830063` → successful submission → `/thank-you.html`
 
 - The website page and the Jotform redirect are separate implementation stages. Publishing the HTML does not prove the redirect works. Matt must enter `https://singtheeasyway.com/thank-you.html` as the redirect in Jotform, with no personal data in the URL, and test it.
-- GA4 conversion configuration and Google Ads conversion configuration each need separate verification. The page sends no event. `booking_complete` is the only primary conversion and is recorded server-side only (Cloudflare Worker in `worker/`, see `docs/booking-conversion-tracking.md`) from a verified paid Jotform submission, deduplicated on the submission ID, with analytics consent. `pricing_viewed`, `book_online_click` and the product selection events are secondary funnel events, not conversions. Nothing has been verified live until the owner completes the paid tests.
+- Analytics measures only clicks to the three approved routes after analytics
+  consent. It does not measure form completion or payment. Advertising and
+  marketing consent remains denied. No Google Ads conversion or booking
+  conversion is claimed.
 - Analytics remains consent-gated. Do not describe this journey as live until it has been deployed and tested.
 
 ### Email links
@@ -172,23 +187,14 @@ Email links to Matt are plain `mailto:matt@singtheeasyway.com` with no prepared 
 
 Lessons are taught live on Microsoft Teams. After booking, the student receives an email containing the Teams link and the information needed for the lesson.
 
-## Current pricing
+## Lesson notes and recording
 
-- 30-minute consultation: £25
-- Single 60-minute lesson: £85
-- Development Programme (10 lessons): £700
-
-Prices appear on the homepage, pricing page, FAQ and terms. If a price changes, update all four in one task, including the worked refund example in the terms.
-
-## What students receive
-
-After every lesson, the student is sent a link to their own lesson folder containing:
-
-- The lesson recording
-- A written summary of what was covered
-- A clear path setting out what to practise next
-
-Do not describe this as an app, portal or course.
+Where the automated note service is used, Microsoft Teams transcription
+supports personalised lesson notes and a practice plan. Transcription is
+required for that service; recording is separate and optional. Materials may
+be held in Microsoft 365 and private lesson folders, and retention can differ
+across provider backups and service systems. Do not promise a recording,
+notes, folder availability or immediate deletion unless verified.
 
 ## Analytics and consent
 
