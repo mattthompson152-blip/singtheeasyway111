@@ -69,7 +69,12 @@
     }
 }
 
-@media (min-width: 769px) and (max-width: 1100px) {
+@media (min-width: 769px) and (max-width: 1359px) {
+    :root {
+        --nav-h: 116px;
+        --logo-w: 148px;
+    }
+
     .mobile-menu-toggle {
         display: flex;
     }
@@ -83,6 +88,8 @@
     .nav-container ul.active {
         display: flex !important;
         flex-direction: column;
+        align-items: stretch;
+        gap: 0;
         position: absolute;
         top: 100%;
         right: var(--space-md);
@@ -109,12 +116,15 @@
    MOBILE (max-width: 768px)
    ======================================= */
 @media (max-width: 768px) {
-    .logo {
-        width: clamp(112px, 34vw, 150px);
+    :root {
+        --nav-h: 98px;
+        --logo-w: 120px;
     }
 
     .footer-logo {
-        width: min(160px, 100%);
+        width: min(130px, 100%);
+        margin-left: auto;
+        margin-right: auto;
     }
 
     .mobile-menu-toggle {
@@ -132,7 +142,7 @@
     
     .hero {
         min-height: auto;
-        padding: 120px var(--space-md) var(--space-xl);
+        padding: var(--space-lg) var(--space-md) var(--space-xl);
     }
     
     .hero-stats {
@@ -162,7 +172,7 @@
     }
     
     .page-header {
-        padding: 120px 0 40px;
+        padding: var(--space-lg) 0 40px;
     }
     
     .cta-section h2 {
@@ -281,6 +291,8 @@
     .nav-container ul.active {
         display: flex !important;
         flex-direction: column;
+        align-items: stretch;
+        gap: 0;
         position: absolute;
         top: 100%;
         left: 0;
@@ -319,5 +331,16 @@
     to {
         opacity: 1;
         transform: translateY(0);
+    }
+}
+
+/* =======================================
+   TABLET HEADER SIZE (600px to 1359px)
+   Keeps the logo in the tablet range, including 768px.
+   ======================================= */
+@media (min-width: 600px) and (max-width: 1359px) {
+    :root {
+        --nav-h: 116px;
+        --logo-w: 148px;
     }
 }
