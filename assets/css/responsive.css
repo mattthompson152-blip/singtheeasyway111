@@ -108,6 +108,14 @@
    MOBILE (max-width: 768px)
    ======================================= */
 @media (max-width: 768px) {
+    .logo {
+        width: clamp(112px, 34vw, 150px);
+    }
+
+    .footer-logo {
+        width: min(160px, 100%);
+    }
+
     .mobile-menu-toggle {
         display: flex;
     }
