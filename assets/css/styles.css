@@ -580,6 +580,11 @@ nav ul.active a {
     grid-column: 1 / -1;
 }
 
+.pricing-grid:has(> .pricing-card:nth-child(4)).pricing-grid-balanced > .pricing-card.featured,
+.pricing-grid:has(> .pricing-card:nth-child(4)).pricing-grid-balanced > .pricing-card:last-child {
+    grid-column: auto;
+}
+
 /* Pricing cards styled to be predominantly black & orange */
 .pricing-card {
     background: linear-gradient(180deg, #000000, #0a0a0a);
@@ -926,7 +931,6 @@ img[width][height] {
     display: block;
     width: 100%;
     height: auto;
-    aspect-ratio: 2 / 3;
     object-fit: contain;
     border-radius: var(--radius-lg);
     box-shadow: 0 20px 40px rgba(0,0,0,0.4);
