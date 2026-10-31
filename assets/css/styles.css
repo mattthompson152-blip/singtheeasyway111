@@ -1117,12 +1117,6 @@ label {
     font-weight: 600;
 }
 
-.testimonial-source {
-    color: var(--text-secondary);
-    font-size: 0.82rem;
-    font-weight: 500;
-}
-
 .testimonial-extract-note {
     flex-basis: 100%;
     color: var(--text-secondary);
