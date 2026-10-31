@@ -71,8 +71,8 @@
 
 @media (min-width: 769px) and (max-width: 1359px) {
     :root {
-        --nav-h: 116px;
-        --logo-w: 148px;
+        --nav-h: 134.33px;
+        --logo-w: 176px;
     }
 
     .mobile-menu-toggle {
@@ -117,8 +117,8 @@
    ======================================= */
 @media (max-width: 768px) {
     :root {
-        --nav-h: 98px;
-        --logo-w: 120px;
+        --nav-h: 117px;
+        --logo-w: 150px;
     }
 
     .footer-logo {
@@ -144,6 +144,14 @@
         min-height: auto;
         padding: var(--space-lg) var(--space-md) var(--space-xl);
     }
+
+    .hero.home-hero {
+        min-height: auto;
+    }
+
+    .section {
+        padding: var(--space-lg) 0;
+    }
     
     .hero-stats {
         flex-direction: column;
@@ -160,6 +168,10 @@
     }
     
     .pricing-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .pricing-grid:has(> .pricing-card:nth-child(4)) {
         grid-template-columns: 1fr;
     }
     
@@ -331,16 +343,5 @@
     to {
         opacity: 1;
         transform: translateY(0);
-    }
-}
-
-/* =======================================
-   TABLET HEADER SIZE (600px to 1359px)
-   Keeps the logo in the tablet range, including 768px.
-   ======================================= */
-@media (min-width: 600px) and (max-width: 1359px) {
-    :root {
-        --nav-h: 116px;
-        --logo-w: 148px;
     }
 }
