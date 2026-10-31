@@ -63,13 +63,7 @@ approved-copy follow-up; neither is represented as finally legally approved.
 - Browser screenshots are unavailable because the local MCP browser
   repeatedly malformed or rejected the local URL; responsive browser testing
   was not completed.
-- The public photo comparison did not establish a shorter-haired duplicate of
-  the long-haired image. References remain unchanged. Candidate paths are
-  `assets/images/matt/matt-thompson-online-vocal-coaching.webp` (longer hair)
-  and the visually shorter-haired but compositionally different
-  `assets/images/matt/matt-thompson-vocal-coaching-session.webp`,
-  `assets/images/matt/matt-thompson-piano-headshot.webp`,
-  `assets/images/matt/matt-thompson-portrait.webp`, and
+- The shared public and template photo placements use the approved
   `assets/images/matt/matt-thompson-studio-headshot.webp`.
 
 ## Historical implementation records
