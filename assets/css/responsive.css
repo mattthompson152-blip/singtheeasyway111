@@ -71,8 +71,8 @@
 
 @media (min-width: 769px) and (max-width: 1359px) {
     :root {
-        --nav-h: 134.33px;
-        --logo-w: 176px;
+        --nav-h: 145px;
+        --logo-w: 192px;
     }
 
     .mobile-menu-toggle {
@@ -117,8 +117,8 @@
    ======================================= */
 @media (max-width: 768px) {
     :root {
-        --nav-h: 117px;
-        --logo-w: 150px;
+        --nav-h: 123.67px;
+        --logo-w: 160px;
     }
 
     .footer-logo {
