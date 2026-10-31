@@ -25,8 +25,8 @@
     --radius-lg: 12px;
     --transition: 0.3s ease;
 
-    --nav-h: 150.33px;
-    --logo-w: 200px;
+    --nav-h: 163.67px;
+    --logo-w: 220px;
     --text-link: #ff8a5c;
 }
 
@@ -562,7 +562,7 @@ nav ul.active a {
 .pricing-grid {
     display: grid;
     grid-template-columns: repeat(3, minmax(0, 1fr));
-    align-items: start;
+    align-items: stretch;
     gap: var(--space-md);
     margin-top: var(--space-md);
 }
@@ -572,6 +572,12 @@ nav ul.active a {
     max-width: 1000px;
     margin-left: auto;
     margin-right: auto;
+}
+
+/* Dense Programme card and the closing card take a full row so no short card is stretched */
+.pricing-grid:has(> .pricing-card:nth-child(4)) > .pricing-card.featured,
+.pricing-grid:has(> .pricing-card:nth-child(4)) > .pricing-card:last-child {
+    grid-column: 1 / -1;
 }
 
 /* Pricing cards styled to be predominantly black & orange */
@@ -672,8 +678,16 @@ nav ul.active a {
     font-weight: bold;
 }
 
-.pricing-card .btn {
-    margin-top: var(--space-sm);
+.pricing-card > .btn {
+    margin-top: auto;
+}
+
+.pricing-card > p:not(.price-note) {
+    margin: 0 auto var(--space-sm);
+}
+
+.pricing-card > p:last-child {
+    margin-bottom: 0;
 }
 
 /* Savings Display */
@@ -894,6 +908,28 @@ img[width][height] {
     grid-template-columns: 1fr 1fr;
     gap: var(--space-lg);
     align-items: center;
+}
+
+/* Copy-led split: text about 62%, supporting photograph about 38% */
+.split-grid-photo {
+    grid-template-columns: minmax(0, 62fr) minmax(0, 38fr);
+    gap: var(--space-lg);
+}
+
+.split-photo {
+    justify-self: end;
+    width: 100%;
+    max-width: 380px;
+}
+
+.split-photo img {
+    display: block;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 2 / 3;
+    object-fit: contain;
+    border-radius: var(--radius-lg);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.4);
 }
 
 /* Cards used for the three audience paths */
@@ -1120,9 +1156,15 @@ img[width][height] {
 
 @media (max-width: 900px) {
     .split-grid,
+    .split-grid-photo,
     .path-grid,
     .credit-grid {
         grid-template-columns: 1fr;
+    }
+
+    .split-photo {
+        justify-self: start;
+        max-width: 360px;
     }
 
     .programme-hero-grid {
