@@ -10,7 +10,7 @@
     padding: 20px;
     z-index: 10000;
     box-shadow: 0 -10px 40px rgba(0,0,0,0.5);
-    font-family: var(--font-body, 'Inter', sans-serif);
+    font-family: var(--font-body);
 }
 
 .cookie-banner-container {
