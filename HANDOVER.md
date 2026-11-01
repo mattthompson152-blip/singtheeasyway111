@@ -1,168 +1,301 @@
-Sing The Easy Way, Definitive Operational Handover
+# Sing The Easy Way, Project Handover
 
-Owner: Matt Thompson
-Primary domain: https://singtheeasyway.com
-Repository: https://github.com/mattthompson152-blip/singtheeasyway111
-Publishing branch: main
-Governing position: Elite, diagnosis-led, owner-delivered and high-trust
-Current date: 1 November 2026
+**Owner:** Matt Thompson
 
-1. Executive Strategic Intent
+**Current as of:** 1 November 2026
 
-1.1 Governing commercial position
+**Status:** Active handover for the next AI or GitHub Copilot session
 
-Sing The Easy Way is an elite, diagnosis-led, owner-delivered vocal-coaching practice.
+## 1. Start here
 
-The business, website, coaching, brand, commercial position and intended client experience must not be described as merely premium.
+Read before implementation:
 
-The governing standard is elite.
+- `Project_Master_Context_v1.md`
+- `AI_RULES.md`
+- `README.md`
+- `HANDOVER.md`
+- `student lesson transcription system.docx` only when transcription, recording, notes, privacy or retention is relevant
 
-The website must move decisively away from the structure, presentation and language of a low-barrier, mass-market online singing business.
+Do not restart completed discovery.
 
-The website must communicate:
+## 2. Non-negotiable position
 
-specialist diagnostic judgement;
-root-cause analysis;
-direct access to Matt Thompson’s expertise;
-individual technical interpretation;
-work applied inside real music;
-protection of the singer’s recognisable identity;
-disciplined and verifiable evidence;
-confidentiality;
-selectivity;
-authority;
-restraint;
-high trust;
-clear commercial boundaries.
-The website must not depend on empty luxury language, artificial exclusivity, invented prestige, unsupported credentials, fabricated scarcity or guaranteed outcomes.
+Sing The Easy Way is an elite, diagnosis-led, owner-delivered, high-trust vocal-coaching practice.
 
-Elite positioning must be demonstrated through the quality of the diagnosis, the structure of the services, the discipline of the evidence, the clarity of the routes and the restraint of the presentation.
+It is not merely premium.
 
-1.2 Core strategic hook
+The next implementation is intended to remove remaining premium, retail and mass-market residue without introducing empty luxury language, unsupported prestige or artificial exclusivity.
 
-The central proposition is diagnosis before exercises.
+The website must demonstrate its position through specialist judgement, diagnosis before exercises, direct owner delivery, disciplined evidence, confidential professional handling, restraint and deliberate conversion routes.
 
-Engagement must be framed around identifying the actual technical, behavioural, interpretive or performance-related cause of the singer’s difficulty.
+## 3. Approved services
 
-The website must not reduce Matt’s work to:
+### Consultation
 
-generic singing lessons;
-hourly tuition;
-exercise delivery;
-warm-up routines;
-low-risk trials;
-low-ticket entry products;
-casual online coaching;
-a menu of interchangeable lesson options.
-The core promise is not access to more exercises.
+- £25
+- 30 minutes
+- initial vocal assessment and recommendation
+- controlled diagnostic access
+- not credited against another service
 
-The core value is access to Matt Thompson’s individual diagnostic judgement.
+### Private Vocal Coaching
 
-The website must explain that two singers can describe the same apparent problem while requiring completely different interventions.
+- £150
+- one private 60-minute online session
+- no discounted block-booking rate
 
-The work must be presented as specialist diagnosis applied inside real music, with the smallest useful adjustment identified, tested and integrated without removing what makes the singer’s voice recognisably their own.
+### Development Programme
 
-1.3 Transactional elimination
+- £1,400 paid upfront
+- ten completely individual sessions
+- sessions 1-9 are 60 minutes
+- session 10 is 75 minutes with a 15-minute progress review and next-step plan
+- valid for six months from the originally booked first-lesson date
+- personal and non-transferable
+- weekly sessions strongly recommended
+- approximately two hours of independent practice each week expected
+- no generic curriculum
+- no guaranteed result
 
-The elite-positioning implementation must remove or reduce mass-market retail signals, including:
+### Professional Artist Coaching
 
-prominent price-led service menus;
-repeated pricing cards;
-low-risk trial framing;
-excessive Book Online repetition;
-excessive View Pricing repetition;
-generic Choose Your Route language;
-multiple competing calls to action;
-heavy retail-style conversion pressure;
-low-ticket framing;
-discount-led language;
-casual lesson-shopping language;
-prominent presentation of the £25 Consultation as the cheapest available item.
-Approved prices must remain accurate and available where commercially necessary.
+- online
+- from £250 per hour
+- one-hour minimum
+- separate confidential enquiry
+- scope agreed before delivery
+- no immediate payment through ordinary consumer-coaching routes
 
-The website must not hide approved prices or introduce artificial mystery.
+### Delivery
 
-Price must support the decision rather than dominate the positioning.
+- Microsoft Teams
+- contemporary and popular singing
+- age 16+
+- parent or guardian purchase for 16- and 17-year-olds
+- no classical, operatic or ordinary in-person coaching
 
-1.4 Approved business facts
+## 4. Exact approved routes
 
-Sing The Easy Way provides live, private, one-to-one online vocal coaching through the Microsoft Teams app.
+- Website: `https://singtheeasyway.com`
+- Repository: `https://github.com/mattthompson152-blip/singtheeasyway111`
+- Paid Consultation, Private Vocal Coaching and Development Programme: `https://pci.jotform.com/form/262622799830063`
+- General Enquiry: `https://form.jotform.com/263014255269052`
+- Professional Artist and Industry Enquiry: `https://form.jotform.com/263013855697062`
+- Privacy Policy: `https://singtheeasyway.com/privacy-policy.html`
+- Thank-you page: `https://singtheeasyway.com/thank-you.html`
+- Contact: `mailto:matt@singtheeasyway.com`
 
-The work focuses on contemporary and popular singing.
+General Enquiry is not free coaching, diagnosis, assessment, recording analysis or personalised advice.
 
-Do not imply:
+Professional Artist and Industry Enquiry remains confidential and outside the consumer payment route.
 
-classical coaching;
-operatic coaching;
-ordinary in-person coaching;
-generic group instruction;
-guaranteed results;
-guaranteed recording;
-guaranteed automated notes;
-guaranteed booking, confirmation or payment outcomes.
-Consultation
+## 5. Jotform and conversion state
 
-£25;
-30 minutes;
-live through Microsoft Teams;
-initial vocal assessment and recommendation;
-not credited against another service.
-The Consultation must be positioned as controlled, gated diagnostic access to Matt Thompson’s expertise.
+Approved paid products:
 
-It is a selective first step used to identify the vocal issue, assess technical compatibility and recommend the most appropriate next action.
+- Consultation: £25
+- Private Vocal Coaching: £150
+- Development Programme: £1,400
 
-It must not be positioned as:
+Owner-verified Booking Options unique field name:
 
-a cheap trial;
-a discounted lesson;
-the cheapest service;
-a low-risk retail product;
-a complimentary assessment;
-free coaching;
-an introductory bargain.
-Private Vocal Coaching
+`bookingOptions`
 
-£150;
-one private 60-minute online session;
-individual work on a specific problem, song or goal;
-no discounted block-booking rate.
-Development Programme
+Community-signup form ID:
 
-£1,400 paid upfront;
-one ten-session commitment;
-ten completely individual sessions;
-no generic curriculum;
-sessions 1–9 are 60 minutes;
-session 10 is 75 minutes;
-session 10 includes a 15-minute progress review and next-step plan;
-valid for six months from the originally booked first-lesson date;
-personal and non-transferable;
-weekly sessions strongly recommended;
-fortnightly scheduling may work where necessary;
-approximately two hours of independent practice each week expected;
-no guaranteed result.
-Professional Artist Coaching
+`261037482331047`
 
-online;
-from £250 per hour;
-one-hour minimum;
-separate confidential enquiry;
-scope agreed before delivery;
-no immediate payment through ordinary consumer-coaching routes;
-recording, performance, production, pronunciation, diction and industry work may be included where agreed.
-Professional Artist Coaching must not be called:
+Jotform configuration is external to the repository.
 
-VIP lessons;
-VIP coaching;
-elite lessons.
-Eligibility
+The documented primary conversion is `booking_complete`, intended to be recorded server-side from a verified paid Jotform submission with payment and product verification, submission-ID deduplication and analytics consent.
 
-coaching is available from age 16;
-a parent or legal guardian purchases the service and accepts the terms for a 16- or 17-year-old.
-2. Absolute Domain and Asset Mappings
+Do not alter Jotform, Worker, payment, analytics or consent during the elite-positioning implementation.
 
-2.1 Primary authority domain
+## 6. Known repository checkpoint
 
-The canonical public website is:
+Publishing branch:
 
-https://singtheeasyway.com
+`main`
+
+Historical verified deployed baseline:
+
+- PR #13 source commit: `241085828eb8716c55ac403ef2b5f6278a3eb53d`
+- PR #13 merge commit: `908a6bc1afd34be8c6be25820a23a5c08a048eca`
+- GitHub Pages deployment #362: success
+- Run: `https://github.com/mattthompson152-blip/singtheeasyway111/actions/runs/40968585917`
+
+Later conversation records state:
+
+- PR #17 was merged;
+- commit `255df47` removed former review-platform references while retaining client reviews;
+- commit `95258c6` updated favicon and app icons to the approved logo;
+- a new pull request was prepared to contain `255df47` and `95258c6` after PR #17 had merged.
+
+The number, URL, state, merge commit and deployment state of that later pull request were not captured in the available record.
+
+### Verify once before new implementation
+
+Confirm:
+
+- current `origin/main`;
+- whether `255df47` is in `main`;
+- whether `95258c6` is in `main`;
+- whether a pull request from `fix/cards-spacing-logo-prominence` was opened after PR #17;
+- its number, URL and state;
+- latest GitHub Pages deployment;
+- clean working tree.
+
+Do not recreate or duplicate completed commits.
+
+## 7. Completed implementation recorded in the conversation
+
+A later bounded implementation on `fix/cards-spacing-logo-prominence` covered:
+
+- shared Manrope typography;
+- increased logo prominence;
+- service-card layout and CTA treatment;
+- four services on the homepage and Pricing page;
+- approved owner-image placement;
+- supplied client reviews and selective testimonial placement;
+- responsive measurement and static validation.
+
+PR #17 was subsequently reported as merged.
+
+Commit `255df47` was pushed after PR #17 had merged and therefore was not in PR #17.
+
+Commit `95258c6` followed for favicon and app-icon updates.
+
+Do not repeat the typography, logo, service-card, image, review, source-reference or favicon implementation.
+
+## 8. Review evidence rules
+
+The supplied review set contains ten complete reviews and one incomplete source-limited Ali extract.
+
+Use first names only where approved.
+
+Preserve wording exactly.
+
+Do not add ratings, dates, surnames, occupations, locations, purchases or outcomes.
+
+Do not name the former review platform or add unsupported replacement attribution.
+
+Do not reconstruct Ali's missing ending.
+
+Before the elite-positioning implementation, inspect `testimonials.html` once for older material outside the approved set. Do not remove anything without evidence review and authority.
+
+## 9. Approved assets
+
+- Primary logo: `assets/images/Logo/sing-the-easy-way-logo-transparent.png`
+- Preserved source: `assets/images/Logo/Logo No Background.png`
+- Preserved source: `assets/images/Logo/Logo black backgroud.png`
+- Approved owner image: `assets/images/matt/matt-thompson-studio-headshot.webp`
+- Rejected image: `assets/images/matt/matt-thompson-online-vocal-coaching.webp`
+
+Do not restore the rejected image or alter approved binaries.
+
+## 10. Protected areas
+
+Do not alter without Matt's explicit current instruction:
+
+- `app/`
+- `worker/`
+- Jotform
+- Stripe
+- payment or booking logic
+- email automation
+- Microsoft Teams configuration
+- Power Automate
+- transcription and recording
+- lesson-data storage
+- analytics and consent
+- secrets and credentials
+- DNS
+- `CNAME`
+- deployment and GitHub Pages settings
+- repository settings
+
+Never delete `/CNAME` or `/googlef8e9acb5c788aa99.html`.
+
+## 11. Next workstream
+
+The next material task is one bounded elite-positioning implementation.
+
+It must:
+
+1. Make diagnosis-led judgement the dominant homepage signal.
+2. Reframe the Consultation as controlled diagnostic access.
+3. Reduce retail language and price-led selling.
+4. Use fewer, deliberate conversion routes.
+5. Preserve the separation between consumer coaching and confidential professional work.
+6. Protect General Enquiry from free-coaching framing.
+7. Preserve all approved routes.
+8. Review testimonial and transformation claims against approved evidence.
+9. Curate the visible blog index around diagnosis-led authority.
+10. Preserve accessibility, approved services, prices and responsive behaviour.
+11. Avoid empty luxury wording and unsupported prestige.
+12. Leave analytics, consent, Jotform, payment, Worker and booking-conversion systems unchanged.
+
+Expected implementation area:
+
+- `index.html`
+- `pricing.html`
+- `book-online.html`
+- `development-programme.html`
+- `professional-services.html`
+- `testimonials.html`
+- `blog.html`
+- `templates/page-template.html`
+- `templates/blog-post-template.html`
+- `assets/css/styles.css`
+- `assets/css/responsive.css` only if required
+
+Confirm exact scope from the current repository. Do not assume every listed file must change.
+
+## 12. Approval and execution policy
+
+Use one bounded implementation prompt.
+
+Matt may enable `Tool permissions: Unconditional approval / Allow All` to prevent repeated prompt loops.
+
+Complete authorised inspection, editing, validation, diff review, commit, push and one pull-request action continuously.
+
+Do not ask for conversational approval between authorised stages.
+
+Do not repeat successful or denied commands.
+
+Do not restart completed discovery or blocked browser testing.
+
+Allow All does not authorise actions outside the declared scope and does not independently authorise merge, deployment, publication, branch deletion, destructive Git actions, settings changes or protected-system changes.
+
+## 13. Required validation
+
+```bash
+git diff --check
+python3 assets/scripts/check-site.py
+git status --short -- app/ worker/
+git status --short
+git diff --stat
+git diff --name-only
+```
+
+Review the complete diff.
+
+The only accepted filename-policy exceptions are:
+
+- `assets/images/Logo/Logo No Background.png`
+- `assets/images/Logo/Logo black backgroud.png`
+
+Any other checker failure is a blocker.
+
+## 14. Next-session instruction
+
+A new AI or Copilot session must:
+
+1. Read the four governing Markdown files.
+2. Verify the later remote pull-request and deployment state once.
+3. Start a new bounded branch from current `origin/main` when Matt authorises repository work.
+4. Preserve routes, prices, evidence and protected systems.
+5. Use one bounded implementation prompt.
+6. Complete the authorised sequence without micro-approval loops.
+7. Do not merge, deploy or publish unless Matt explicitly authorises those actions.
+8. Return exact files, validation results, commit, pull request and publication state.
