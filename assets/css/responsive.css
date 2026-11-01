@@ -241,6 +241,14 @@
     .hero h1 {
         font-size: 2rem;
     }
+
+    .home-hero h1 {
+        margin-bottom: var(--space-sm);
+    }
+
+    .home-hero .cta-block {
+        margin: var(--space-sm) 0;
+    }
     
     .hero p {
         font-size: 1rem;
