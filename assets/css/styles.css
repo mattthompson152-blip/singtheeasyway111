@@ -162,12 +162,12 @@ nav {
 nav ul {
     display: flex;
     align-items: center;
-    gap: clamp(var(--space-xs), 0.65vw, 12px);
+    gap: 4px;
     list-style: none;
 }
 
 nav a {
-    color: var(--text-secondary);
+    color: #f4efe6;
     text-decoration: none;
     font-size: 0.82rem;
     font-weight: 500;
@@ -178,9 +178,16 @@ nav a {
     align-items: center;
 }
 
-nav a:hover,
-nav a:visited:hover {
+nav a:not(.btn) {
+    padding: 0 6px;
+    font-weight: 500;
+    box-shadow: inset 0 -2px 0 transparent;
+}
+
+nav a:not(.btn):hover,
+nav a:not(.btn):visited:hover {
     color: var(--text-primary);
+    box-shadow: inset 0 -2px 0 var(--accent);
 }
 
 nav a.active:not(.btn) {
