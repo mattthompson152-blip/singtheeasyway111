@@ -1,6 +1,8 @@
 # Blog Image Generation Manifest
 
-**Status:** Production specifications only. This session did not generate or visually inspect new image files. No binary image was added. The existing image for each retained article remains in place and is temporary until its replacement is generated, reviewed and processed.
+**Status:** Production specifications for retained articles, with one additional processed-image record for the ADHD teaching article. Its owner-approved source was visually reviewed and processed on 2 November 2026.
+
+**Processed image record:** `assets/images/blog/adhd-informed-individual-singing-coaching-master.png` was processed with `assets/scripts/prepare-image.py` to `assets/images/blog/why-having-adhd-shapes-my-singing-teaching-0311.jpg` (JPEG, 1200 × 800, 120 KB). The output contains no EXIF or location metadata. It is used for the article hero, blog card, Open Graph and Twitter image. Alt text: “Matt Thompson considers an individual singing task in a contemporary coaching studio.”
 
 ## Shared production specification
 
