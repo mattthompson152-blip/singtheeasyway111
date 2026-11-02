@@ -1,44 +1,47 @@
 # Project Master Context v1
 
-**Project:** Sing The Easy Way website and commercial implementation
+**Project:** Sing The Easy Way website and commercial implementation  
+**Owner:** Matt Thompson  
+**Status:** Active authority  
+**Updated:** 2 November 2026
 
-**Owner:** Matt Thompson
+## 1. Purpose and current state
 
-**Status:** Active authority
-**Updated:** 1 November 2026
+This file is the concise active authority for Sing The Easy Way. The elite-positioning website implementation is complete. Matt Thompson has confirmed that it was merged into `main`, deployed, and is live and working. It is no longer an outstanding workstream and must not be restarted.
 
-## 1. Purpose
+No further speculative redesign or copy rewrite is currently required. Future website changes must be evidence-led, bounded and separately authorised.
 
-This file enables a fresh AI or GitHub Copilot session to continue without repeating completed discovery or reverting settled commercial decisions.
+Known pre-merge implementation evidence:
 
-The immediate objective is to complete one final bounded website implementation that removes remaining premium, retail and mass-market residue and makes the public presentation consistently elite, diagnosis-led, owner-delivered and high-trust.
+- Starting `origin/main`: `8cbca80cffb4a7c62086af4ab883188be2497389`
+- Working branch: `feat/elite-positioning`
+- Implementation commit: `f85fada7a068e0c2e731b591483b1d8c81311234`
+- Commit message: `Complete the elite website positioning`
+
+Final elite-positioning merge and live deployment were confirmed by Matt Thompson. Exact final pull-request, merge-commit, deployment-run and deployed-SHA identifiers require repository verification and must not be invented.
 
 ## 2. Authority order
 
 1. Matt Thompson's newest explicit instruction.
 2. This file, `Project_Master_Context_v1.md`.
 3. `AI_RULES.md`.
-4. Current repository content for implementation facts.
+4. Current owner-supplied repository evidence for website facts.
 5. `README.md` for repository structure and working practice.
 6. `HANDOVER.md` for the latest execution checkpoint.
-7. `student lesson transcription system.docx` for the inspected transcription workflow.
+7. `student lesson transcription system.docx` for transcription, recording, automated notes, privacy, retention and storage facts.
 8. Approved evidence expressly identified by Matt.
 
-Historical files are background only when Matt asks for them. Surface conflicts immediately. Never guess or silently reconcile facts.
+Historical audits, dated snapshots, old handovers, copied conversations, cached pages and public search results are background only. Surface conflicts. Do not guess or silently reconcile them.
 
 ## 3. Owner-control boundary
 
-Matt alone authorises edits, commits, pushes, pull requests, merges, deployment, publication, branch deletion, settings changes and external configuration changes.
-
-Keep protected systems untouched unless Matt's current instruction explicitly includes them.
+Matt alone authorises edits, commits, pushes, pull requests, merges, deployment, publication, branch deletion, settings changes and external configuration changes. Keep protected systems untouched unless Matt's current instruction explicitly includes the exact change.
 
 ## 4. Commercial position
 
-Sing The Easy Way is an elite, diagnosis-led, owner-delivered vocal-coaching practice.
+Sing The Easy Way is an elite, diagnosis-led, owner-delivered, high-trust vocal-coaching practice.
 
-The practice is not positioned as merely premium.
-
-The elite position is built on:
+The position is demonstrated through:
 
 - diagnosis before exercises;
 - root-cause analysis;
@@ -46,24 +49,12 @@ The elite position is built on:
 - direct owner delivery;
 - work applied inside real music;
 - protection of the singer's recognisable identity;
-- disciplined evidence;
-- confidentiality;
-- commercial separation between consumer and professional work;
-- restrained presentation;
-- deliberate conversion routes.
+- disciplined and verifiable evidence;
+- confidential professional handling;
+- deliberate hierarchy and restrained presentation;
+- selective, high-trust conversion routes.
 
-Remove or reduce:
-
-- price-first presentation;
-- crowded retail cards;
-- low-ticket framing;
-- casual lesson-shopping language;
-- repeated generic calls to action;
-- generic singing-tip content;
-- empty luxury language;
-- unsupported prestige statements.
-
-The word `elite` must not be used as a product name or unsupported claim. The website must show the position through structure, proof, judgement and restraint.
+Avoid price-first presentation, low-ticket framing, casual retail language, generic exercise-led claims, mass-market lesson language, empty luxury language, artificial scarcity, invented prestige and guaranteed outcomes.
 
 ## 5. Settled services
 
@@ -74,7 +65,7 @@ The word `elite` must not be used as a product name or unsupported claim. The we
 - live through Microsoft Teams
 - initial vocal assessment and recommendation
 - not credited against another service
-- controlled diagnostic access, not a cheap trial
+- controlled diagnostic access, not a trial, taster, starter lesson, discount or free assessment
 
 ### Private Vocal Coaching
 
@@ -86,14 +77,15 @@ The word `elite` must not be used as a product name or unsupported claim. The we
 ### Development Programme
 
 - £1,400 paid upfront
+- one ten-session commitment
 - ten completely individual sessions
-- sessions 1-9 are 60 minutes
-- session 10 is 75 minutes with a 15-minute progress review and next-step plan
+- sessions 1–9 are 60 minutes
+- session 10 is 75 minutes and includes a 15-minute progress review and next-step plan
 - valid for six months from the originally booked first-lesson date
+- personal and non-transferable
 - weekly sessions strongly recommended
 - fortnightly scheduling may work where necessary
 - approximately two hours of independent practice each week expected
-- personal and non-transferable
 - no generic curriculum
 - no guaranteed result
 
@@ -104,177 +96,116 @@ The word `elite` must not be used as a product name or unsupported claim. The we
 - one-hour minimum
 - separate confidential enquiry
 - scope agreed before delivery
-- no immediate payment through ordinary consumer-coaching routes
+- outside the ordinary consumer payment journey
 
-### Delivery and eligibility
+Professional work may include agreed recording, performance, production, pronunciation, diction or industry support. Friendships, legacy arrangements and exceptional private agreements do not alter the published or standard professional-service position.
+
+No client name, relationship, booking, result or endorsement may be disclosed without written permission covering the exact proposed use.
+
+### Eligibility and delivery
 
 - online through Microsoft Teams
 - contemporary and popular singing
-- age 16+
-- parent or guardian purchases for 16- and 17-year-olds
+- available from age 16
+- parent or legal guardian purchase for a 16- or 17-year-old
 - do not imply classical, operatic or ordinary in-person coaching
 
 ## 6. Exact destinations
 
-- Website: `https://singtheeasyway.com`
-- Repository: `https://github.com/mattthompson152-blip/singtheeasyway111`
-- Paid Consultation, Private Vocal Coaching and Development Programme: `https://pci.jotform.com/form/262622799830063`
-- General Enquiry: `https://form.jotform.com/263014255269052`
-- Professional Artist and Industry Enquiry: `https://form.jotform.com/263013855697062`
-- Privacy Policy: `https://singtheeasyway.com/privacy-policy.html`
-- Thank-you page: `https://singtheeasyway.com/thank-you.html`
-- Contact: `mailto:matt@singtheeasyway.com`
+- Website: https://singtheeasyway.com
+- Repository: https://github.com/mattthompson152-blip/singtheeasyway111
+- Paid Consultation, Private Vocal Coaching and Development Programme: https://pci.jotform.com/form/262622799830063
+- General Enquiry: https://form.jotform.com/263014255269052
+- Professional Artist and Industry Enquiry: https://form.jotform.com/263013855697062
+- Privacy Policy: https://singtheeasyway.com/privacy-policy.html
+- Thank-you page: https://singtheeasyway.com/thank-you.html
+- Contact: mailto:matt@singtheeasyway.com
 
-General Enquiry is for general information and triage only. It must not be presented as free coaching, free diagnosis, free assessment, recording analysis or personalised advice.
+General Enquiry is for general information, operational questions, theoretical questions and service-suitability clarification. It is not free coaching, free diagnosis, free assessment, recording analysis or personalised advice.
 
-Professional Artist and Industry Enquiry remains confidential, separately scoped and outside the consumer payment route.
+Professional work remains confidential, separately scoped and outside the consumer payment journey.
 
-## 7. Jotform and conversion facts
+## 7. Jotform, conversion and consent boundaries
 
-Approved paid products:
+Preserve:
 
-- Consultation: £25
-- Private Vocal Coaching: £150
-- Development Programme: £1,400
+- approved paid products and prices above;
+- Booking Options unique field name `bookingOptions`;
+- community-signup form ID `261037482331047`;
+- documented primary conversion `booking_complete`;
+- consent-gated analytics behaviour;
+- the thank-you page's limited role.
 
-Owner-verified Booking Options unique field name:
+`booking_complete` is intended to be recorded server-side from a verified paid Jotform submission after product and payment verification, once per submission ID, with analytics consent, the correct service, value and GBP currency.
 
-`bookingOptions`
+Jotform configuration is external to the repository. Repository code does not prove the current saved configuration.
 
-Community-signup form ID:
+## 8. Approved assets and evidence
 
-`261037482331047`
+- Primary logo: `assets/images/Logo/sing-the-easy-way-logo-transparent.png`
+- Preserved source logo: `assets/images/Logo/Logo No Background.png`
+- Preserved source logo: `assets/images/Logo/Logo black backgroud.png`
+- Approved owner image: `assets/images/matt/matt-thompson-studio-headshot.webp`
+- Rejected image: `assets/images/matt/matt-thompson-online-vocal-coaching.webp`
 
-Jotform configuration is external to the repository. Repository code cannot prove current saved configuration.
+Do not restore the rejected image or alter approved binaries without authority.
 
-The documented primary conversion is `booking_complete`, intended to be sent server-side from a verified paid Jotform submission with product and payment verification, analytics consent and submission-ID deduplication.
+The approved review set contains ten complete reviews and one incomplete source-limited Ali extract. Preserve approved wording and first-name attribution exactly. Do not invent missing text, ratings, surnames, occupations, locations, purchases, outcomes or source claims. Do not name the former review platform or reconstruct Ali's missing ending.
 
-`/thank-you.html` is not the source of `booking_complete`.
+## 9. Protected systems and files
 
-Do not alter Jotform, Worker, payment, analytics or consent systems during the elite-positioning implementation.
+Do not alter without Matt's exact current instruction:
 
-## 8. Approved assets
+- `app/`
+- `worker/`
+- Jotform configuration
+- Stripe
+- payment and booking logic
+- email automation
+- Microsoft Teams configuration
+- Power Automate
+- transcription and recording
+- lesson-data storage
+- analytics and cookie consent
+- secrets and credentials
+- DNS and CNAME
+- GitHub Pages and deployment configuration
+- repository settings
 
-Primary logo:
+Never delete `/CNAME` or `/googlef8e9acb5c788aa99.html`.
 
-`assets/images/Logo/sing-the-easy-way-logo-transparent.png`
+## 10. Transcription and privacy boundaries
 
-Preserved source-logo files:
+Use `student lesson transcription system.docx` as the specialist authority.
 
-- `assets/images/Logo/Logo No Background.png`
-- `assets/images/Logo/Logo black backgroud.png`
+- Automated evidence-based notes require a transcript.
+- MP4 recording is a separate and optional branch.
+- The verified lesson-date process may still depend on a matching recording.
+- The exact AI model or subprocessor remains unverified unless newer evidence proves it.
+- Do not claim UK-only processing.
+- Do not claim complete deletion after a fixed period unless verified.
+- Do not claim exact Microsoft retention periods or folder permissions unless verified.
+- Do not claim immediate complete erasure after visible-folder deletion.
+- Matt must personally check every final ten-session review before it is shared.
 
-Approved owner image:
+## 11. Current marketing direction
 
-`assets/images/matt/matt-thompson-studio-headshot.webp`
+> Market Sing The Easy Way as the diagnosis-led choice for singers whom generic exercises and advice have failed.
 
-Rejected image:
+- Problem-specific short-form diagnostic video creates demand.
+- Problem-specific organic search content builds authority and discoverability.
+- Google Search may capture high-intent demand after conversion measurement is verified.
+- Professional referrals create higher-trust introductions.
+- Restrained email follow-up supports conversion without pressure.
+- Retargeting should be considered only when consent, tracking and audience volume are suitable.
 
-`assets/images/matt/matt-thompson-online-vocal-coaching.webp`
+Do not use discounts, free assessments, cheap-entry framing, invented case studies, confidential clients as proof, artificial scarcity, guaranteed outcomes or unapproved new service categories. Measure qualified enquiries, attended Consultations, suitable paying clients and professional enquiries rather than views or followers alone.
 
-Preserve approved binaries. Do not restore the rejected image.
+## 12. Current next priorities
 
-## 9. Reviews
-
-The current approved supplied review set consists of ten complete reviews and one incomplete source-limited Ali extract.
-
-Use first names only where approved.
-
-Preserve wording exactly.
-
-Do not name the former review platform or add unsupported replacement attribution.
-
-Do not invent missing text, ratings, surnames, occupations, locations, purchases or outcomes.
-
-## 10. Repository and release state
-
-Publishing branch:
-
-`main`
-
-Historical verified deployed baseline:
-
-- PR #13 source commit: `241085828eb8716c55ac403ef2b5f6278a3eb53d`
-- PR #13 merge commit: `908a6bc1afd34be8c6be25820a23a5c08a048eca`
-- GitHub Pages deployment #362: success
-- Recorded deployment run: `https://github.com/mattthompson152-blip/singtheeasyway111/actions/runs/40968585917`
-
-Later conversation records refer to:
-
-- PR #17 as merged;
-- correction commit `255df47` removing former-platform references;
-- favicon commit `95258c6` updating approved favicon and app icons;
-- a prepared new pull request intended to contain both commits.
-
-Those later remote states must be verified once from GitHub before new implementation. Do not recreate or duplicate the commits.
-
-## 11. Current next workstream
-
-The final elite-positioning implementation must:
-
-1. Make diagnosis-led judgement the dominant homepage signal.
-2. Reframe Consultation as controlled diagnostic access.
-3. Reduce retail language and price-led selling.
-4. Use fewer, more deliberate conversion routes.
-5. Preserve the separation between consumer coaching and confidential professional work.
-6. Protect General Enquiry from free-coaching framing.
-7. Preserve all approved routes.
-8. Review testimonial and transformation claims against approved evidence.
-9. Curate the visible blog index around diagnosis-led authority.
-10. Preserve accessibility, approved services, prices and responsive behaviour.
-11. Avoid empty luxury wording and unsupported prestige.
-12. Leave analytics, consent, Jotform, payment, Worker and booking-conversion systems unchanged.
-
-Expected implementation area:
-
-- `index.html`
-- `pricing.html`
-- `book-online.html`
-- `development-programme.html`
-- `professional-services.html`
-- `testimonials.html`
-- `blog.html`
-- `templates/page-template.html`
-- `templates/blog-post-template.html`
-- `assets/css/styles.css`
-- `assets/css/responsive.css` only if required
-
-Do not assume every listed file must change. Confirm exact scope from the current repository.
-
-## 12. Execution standard
-
-Use one bounded implementation prompt with:
-
-- exact working branch;
-- file allow-list;
-- protected paths;
-- approved routes and prices;
-- validation commands;
-- commit message;
-- push branch;
-- pull-request target;
-- explicit merge and deployment boundary.
-
-Avoid repeated allow/deny loops. Matt may select `Tool permissions: Unconditional approval / Allow All` at the platform level. This changes platform prompting only and does not expand the authorised task scope.
-
-Do not merge, deploy or publish unless Matt's active instruction explicitly includes those actions.
-
-## 13. Required validation
-
-```bash
-git diff --check
-python3 assets/scripts/check-site.py
-git status --short -- app/ worker/
-git status --short
-git diff --stat
-git diff --name-only
-```
-
-Review the complete diff.
-
-The only accepted filename-policy exceptions are:
-
-- `assets/images/Logo/Logo No Background.png`
-- `assets/images/Logo/Logo black backgroud.png`
-
-Any other checker failure is a blocker.
+1. Preserve the completed live website and do not restart elite-positioning work.
+2. Verify exact final merge and deployment identifiers only when material to a future task.
+3. Run evidence-led marketing tests within the agreed positioning and privacy boundaries.
+4. Verify conversion measurement before paid advertising or retargeting.
+5. Keep form, conversion, analytics and transcription changes as separately authorised workstreams.
+6. Start future material website work from current `origin/main` on a newly authorised bounded branch.

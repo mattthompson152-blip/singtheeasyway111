@@ -1,140 +1,89 @@
-# Sing The Easy Way, Website
+# Sing The Easy Way Website
 
 Sing The Easy Way is an elite, diagnosis-led, owner-delivered vocal-coaching practice providing live, private, one-to-one online coaching through Microsoft Teams for contemporary and popular singers.
 
-The governing commercial standard is elite, not merely premium.
+## Current live state
 
-## Authority
+Matt Thompson has confirmed that the elite-positioning implementation was merged into `main`, deployed and is live and working. No further speculative redesign or copy rewrite is currently required.
 
-Resolve conflicts in this order:
+Final elite-positioning merge and live deployment were confirmed by Matt Thompson. Exact final pull-request, merge-commit, deployment-run and deployed-SHA identifiers require repository verification.
 
-1. Matt Thompson's newest explicit instruction.
-2. `Project_Master_Context_v1.md`.
-3. `AI_RULES.md`.
-4. Current content in the owner-supplied repository.
-5. `README.md`.
-6. `HANDOVER.md`.
-7. `student lesson transcription system.docx` when transcription, recording, lesson notes, privacy or retention is relevant.
+Known implementation evidence before final merge:
 
-## Primary routes
+- starting `origin/main`: `8cbca80cffb4a7c62086af4ab883188be2497389`
+- branch: `feat/elite-positioning`
+- implementation commit: `f85fada7a068e0c2e731b591483b1d8c81311234`
+- commit message: `Complete the elite website positioning`
 
-- Website: `https://singtheeasyway.com`
-- Repository: `https://github.com/mattthompson152-blip/singtheeasyway111`
-- Paid Consultation, Private Vocal Coaching and Development Programme: `https://pci.jotform.com/form/262622799830063`
-- General Enquiry: `https://form.jotform.com/263014255269052`
-- Professional Artist and Industry Enquiry: `https://form.jotform.com/263013855697062`
-- Privacy Policy: `https://singtheeasyway.com/privacy-policy.html`
-- Thank-you page: `https://singtheeasyway.com/thank-you.html`
-- Contact: `mailto:matt@singtheeasyway.com`
+## Canonical governance files
 
-Use the non-www domain. Do not alter, shorten or substitute approved destinations.
+Read before material work:
 
-## Positioning
+1. `Project_Master_Context_v1.md` — concise active master authority.
+2. `AI_RULES.md` — durable operational rules.
+3. `README.md` — practical repository guide.
+4. `HANDOVER.md` — current execution checkpoint.
+5. `student lesson transcription system.docx` — specialist authority only for transcription, recording, automated notes, privacy, retention and storage.
 
-The website must demonstrate:
+Matt's newest explicit instruction takes precedence. Current owner-supplied repository evidence is authoritative for website facts. Historical snapshots and copied conversations are background only.
 
-- diagnosis before exercises;
-- root-cause analysis;
-- specialist individual judgement;
-- direct owner delivery;
-- work applied inside real music;
-- protection of the singer's recognisable identity;
-- disciplined evidence;
-- confidential professional handling;
-- deliberate hierarchy;
-- restrained presentation;
-- selective, high-trust conversion routes.
+## Commercial position
 
-Avoid low-ticket framing, casual retail language, price-first selling, generic exercise-led messaging, mass-market lesson language, empty luxury claims and unsupported prestige.
+The website must demonstrate diagnosis before exercises, root-cause analysis, Matt's individual judgement, direct owner delivery, work inside real music, protection of vocal identity, disciplined evidence, confidential professional handling, deliberate hierarchy, restrained presentation and selective conversion routes.
+
+Avoid low-ticket framing, casual retail language, price-first selling, generic exercise-led messaging, mass-market lesson language, empty luxury claims, artificial scarcity and unsupported prestige.
 
 ## Services
 
 ### Consultation
 
-- £25
-- 30 minutes
-- initial vocal assessment and recommendation
-- not credited against another service
-
-Frame the Consultation as controlled diagnostic access, not a trial, taster, starter lesson, discount or free assessment.
+£25 for 30 minutes through Microsoft Teams, providing an initial vocal assessment and recommendation. It is not credited against another service. Frame it as controlled diagnostic access, not a trial, taster, starter lesson, discount or free assessment.
 
 ### Private Vocal Coaching
 
-- £150
-- one private 60-minute online session
-- no discounted block-booking rate
+£150 for one private 60-minute online session involving individual work on a particular problem, song or goal. No discounted block-booking rate.
 
 ### Development Programme
 
-- £1,400 paid upfront
-- ten completely individual sessions
-- sessions 1-9 are 60 minutes
-- session 10 is 75 minutes with a 15-minute progress review and next-step plan
-- valid for six months from the originally booked first-lesson date
-- weekly sessions strongly recommended
-- approximately two hours of independent practice each week expected
-- personal and non-transferable
-- no generic curriculum
-- no guaranteed result
+£1,400 paid upfront for one ten-session individual commitment. Sessions 1–9 are 60 minutes; session 10 is 75 minutes and includes a 15-minute progress review and next-step plan. Valid for six months from the originally booked first-lesson date, personal and non-transferable. Weekly sessions are strongly recommended, fortnightly scheduling may work where necessary, and approximately two hours of independent practice each week is expected. No generic curriculum or guaranteed result.
 
 ### Professional Artist Coaching
 
-- online
-- from £250 per hour
-- one-hour minimum
-- separate confidential enquiry
-- scope agreed before delivery
-- no immediate payment through ordinary consumer-coaching routes
+Online, from £250 per hour, with a one-hour minimum, a separate confidential enquiry and scope agreed before delivery. Outside the ordinary consumer payment journey.
 
-Coaching is online through Microsoft Teams, available from age 16 and limited to contemporary and popular singing.
+Friendships, legacy arrangements and exceptional private agreements do not alter the published or standard professional-service position. Do not disclose client names, relationships, bookings, results or endorsements without exact written permission.
 
-## Customer routing
+### Eligibility and delivery
 
-### Request a Consultation
+Online through Microsoft Teams; contemporary and popular singing; available from age 16; parent or legal guardian purchase for a 16- or 17-year-old. Do not imply classical, operatic or ordinary in-person coaching.
 
-Use `https://pci.jotform.com/form/262622799830063`.
+## Primary routes
 
-### Private Vocal Coaching
+- Website: https://singtheeasyway.com
+- Repository: https://github.com/mattthompson152-blip/singtheeasyway111
+- Paid Consultation, Private Vocal Coaching and Development Programme: https://pci.jotform.com/form/262622799830063
+- General Enquiry: https://form.jotform.com/263014255269052
+- Professional Artist and Industry Enquiry: https://form.jotform.com/263013855697062
+- Privacy Policy: https://singtheeasyway.com/privacy-policy.html
+- Thank-you page: https://singtheeasyway.com/thank-you.html
+- Contact: mailto:matt@singtheeasyway.com
 
-Use `https://pci.jotform.com/form/262622799830063`.
+General Enquiry is not free coaching, diagnosis, assessment, recording analysis or personalised advice. Professional work remains separate, confidential and outside the consumer payment journey.
 
-### Apply for the Development Programme
+## Jotform and conversion constants
 
-Use `https://pci.jotform.com/form/262622799830063`.
+Preserve:
 
-### General Enquiry
+- approved prices above;
+- Booking Options field name `bookingOptions`;
+- community-signup form ID `261037482331047`;
+- documented primary conversion `booking_complete`;
+- consent-gated analytics;
+- the thank-you page's limited role.
 
-Use `https://form.jotform.com/263014255269052` only for general information, operational questions, theoretical questions and clarification of service suitability.
+Jotform configuration is external to the repository. A thank-you page load, booking click, form view or product selection is not proof of completed booking.
 
-Never present General Enquiry as free coaching, a free lesson, free diagnosis, free assessment, recording analysis, personalised advice or a substitute for a paid service.
-
-### Confidential Professional Enquiry
-
-Use `https://form.jotform.com/263013855697062` for professional artists, recordings, performance preparation, production, pronunciation, diction, label, West End and confidential industry enquiries.
-
-Never route professional work through the consumer payment form.
-
-## Jotform
-
-Approved paid products:
-
-- Consultation: £25
-- Private Vocal Coaching: £150
-- Development Programme: £1,400
-
-Owner-verified Booking Options unique field name:
-
-`bookingOptions`
-
-Community-signup form ID:
-
-`261037482331047`
-
-The community signup is separate from paid booking and enquiry routes.
-
-Jotform configuration is external to the repository. Do not claim repository code proves the current external configuration.
-
-## Repository structure
+## Repository layout
 
 ```text
 /
@@ -161,41 +110,13 @@ Jotform configuration is external to the repository. Do not claim repository cod
         └── check-site.py
 ```
 
-Core pages remain in the repository root. Blog articles remain in `/blog/`. Templates remain in `/templates/`. Assets remain in their established directories. `sitemap.xml` is the canonical live-page inventory.
+Core public pages remain in the repository root. Blog articles remain in `/blog/`. Templates remain in `/templates/`. Assets remain in established directories. `sitemap.xml` is the canonical live-page inventory.
 
 ## Templates
 
-Use:
+Use `/templates/page-template.html` and `/templates/blog-post-template.html`. Do not build a new page from scratch or copy a live page. Templates remain `noindex, nofollow`, outside `sitemap.xml`, blocked in `robots.txt` and outside public navigation.
 
-- `/templates/page-template.html`
-- `/templates/blog-post-template.html`
-
-Do not build new pages from scratch or copy a live page.
-
-Templates remain `noindex, nofollow`, outside `sitemap.xml`, blocked in `robots.txt` and outside navigation.
-
-## Protected systems
-
-Do not alter without Matt's explicit instruction:
-
-- `app/`
-- `worker/`
-- Jotform configuration
-- Stripe
-- payment and booking logic
-- email automation
-- Microsoft Teams configuration
-- Power Automate
-- transcription and recording
-- lesson-data storage
-- analytics and consent
-- secrets and credentials
-- DNS
-- `CNAME`
-- GitHub Pages and deployment settings
-- repository settings
-
-Never delete `/CNAME` or `/googlef8e9acb5c788aa99.html`.
+Update both templates when a shared header, footer, stylesheet list, form route or booking destination changes.
 
 ## Approved assets
 
@@ -205,39 +126,11 @@ Never delete `/CNAME` or `/googlef8e9acb5c788aa99.html`.
 - Approved owner image: `assets/images/matt/matt-thompson-studio-headshot.webp`
 - Rejected image: `assets/images/matt/matt-thompson-online-vocal-coaching.webp`
 
-Do not restore the rejected image or alter approved binaries.
+Do not restore the rejected image or alter approved binaries without authority.
 
 ## Reviews and evidence
 
-Never invent or embellish reviews, results, students, statistics, credentials, clients, productions, guarantees or outcomes.
-
-Preserve owner-approved review wording exactly.
-
-Do not name the former review platform or add unsupported replacement attribution.
-
-Ali's review remains an incomplete, source-limited extract. Do not reconstruct the ending.
-
-## Analytics and consent
-
-Google Analytics must remain consent-gated and must not load before analytics consent.
-
-Consent is controlled through `assets/js/cookie-consent.js`.
-
-Cookie Settings must remain available at `#cookie-settings`.
-
-The documented primary conversion is `booking_complete`. It is intended to be recorded server-side from a verified paid Jotform submission with product and payment verification, submission-ID deduplication, analytics consent, the correct service, value and GBP currency.
-
-Conversion documentation: `docs/booking-conversion-tracking.md`.
-
-A thank-you page load, booking click, form view or product-selection event is not proof of a completed booking.
-
-Do not invent or expose analytics identifiers, secrets or credentials.
-
-## Thank-you page
-
-`/thank-you.html` remains `noindex, nofollow`, outside `sitemap.xml`, outside navigation, free of personal data and limited to acknowledging receipt of a submission.
-
-It is not proof of payment or appointment confirmation and is not the source of `booking_complete`.
+Never invent or embellish reviews, results, students, statistics, credentials, clients, productions, guarantees, relationships or outcomes. Preserve approved review wording. Do not name the former review platform or add replacement attribution. Ali's review remains an incomplete source-limited extract; do not reconstruct the ending.
 
 ## Blog publishing
 
@@ -250,11 +143,31 @@ Every new post requires:
 5. A passing site checker.
 6. Desktop, tablet and mobile validation.
 
-Blog content must strengthen diagnosis-led authority and avoid generic search filler, mass-market tips, fabricated examples and unsupported claims.
+Blog content must strengthen diagnosis-led authority and avoid generic search filler, mass-market tips, arbitrary listicles, fabricated examples, quick-result promises and unsupported claims.
+
+## Protected areas
+
+Do not alter without Matt's explicit instruction:
+
+- `app/` and `worker/`
+- Jotform, Stripe, payment and booking logic
+- email automation
+- Microsoft Teams and Power Automate configuration
+- transcription, recording and lesson-data storage
+- analytics and cookie consent
+- secrets and credentials
+- DNS and CNAME
+- GitHub Pages, deployment and repository settings
+
+Never delete `/CNAME` or `/googlef8e9acb5c788aa99.html`.
+
+## Transcription and privacy
+
+Use `student lesson transcription system.docx` for technical facts. Automated evidence-based notes require a transcript; MP4 recording is separate and optional; the verified lesson-date process may still depend on a matching recording. Do not claim UK-only processing, fixed complete deletion, exact retention, exact model or subprocessor, exact folder permissions or immediate complete erasure without verification. Matt must personally check every final ten-session review before sharing.
 
 ## Required validation
 
-```bash
+```text
 git diff --check
 python3 assets/scripts/check-site.py
 git status --short -- app/ worker/
@@ -263,70 +176,30 @@ git diff --stat
 git diff --name-only
 ```
 
-Review the complete diff and confirm:
-
-- elite positioning is preserved or strengthened;
-- merely premium framing is absent;
-- prices and routes remain exact;
-- General Enquiry is not free-coaching framed;
-- professional enquiries remain separate;
-- `bookingOptions` remains unchanged;
-- analytics and consent remain unchanged unless explicitly authorised;
-- no former review-platform reference returns;
-- links and assets resolve;
-- each changed public page has one H1;
-- accessibility and responsive behaviour remain sound;
-- protected areas remain untouched;
-- only authorised files changed.
+Review the full diff. Confirm positioning, exact prices and routes, enquiry separation, `bookingOptions`, community-signup form ID `261037482331047`, analytics and consent, evidence rules, links, assets, H1 structure, accessibility, responsive behaviour, approved binaries, protected areas and authorised file scope.
 
 The only accepted filename-policy exceptions are:
 
 - `assets/images/Logo/Logo No Background.png`
 - `assets/images/Logo/Logo black backgroud.png`
 
-## Bounded autonomous execution
+## Bounded branch-to-pull-request practice
 
-One explicit bounded instruction authorises inspection, authorised editing, validation, diff review, staging, the specified commit, push to the authorised branch and one authorised pull-request action.
+1. Read the four canonical governance files.
+2. Verify current `origin/main`, active branch and working-tree state.
+3. Use one new bounded branch authorised by Matt.
+4. Declare exact scope, protected areas, validation, commit message, pull-request target and stop condition.
+5. Edit only authorised files.
+6. Run validation and review the full diff.
+7. Stage only authorised files.
+8. Push only the authorised branch.
+9. Open or update no more than one authorised pull request into `main`.
+10. Report exact files, validation, commit, pull request, merge and publication state.
 
-Do not ask for conversational approval between authorised stages.
+Do not force-push, use destructive reset, rebase shared work, delete branches, alter settings, merge, deploy or publish unless Matt explicitly authorises the exact action.
 
-Combine independent checks. Combine staging, commit and push where practical. Do not request approval for temporary-file cleanup. Do not repeat successful or denied commands. Do not restart completed discovery or blocked browser testing.
+## Current priority
 
-Matt may select `Tool permissions: Unconditional approval / Allow All` to remove repeated platform prompts. This does not authorise anything outside the declared scope and does not independently authorise merging, deployment, publication, branch deletion, destructive Git actions, settings changes or protected-system changes.
+Do not reopen the completed elite-positioning implementation. The current commercial priority is evidence-led acquisition using diagnosis-led authority content, qualified Consultation requests, professional referrals, measured search testing and restrained follow-up.
 
-## Current next workstream
-
-The next material task is one bounded elite-positioning implementation that must:
-
-1. Make diagnosis-led judgement the dominant homepage signal.
-2. Reframe the Consultation as controlled diagnostic access.
-3. Reduce retail language and price-led selling.
-4. Use fewer, deliberate conversion routes.
-5. Keep consumer and confidential professional work separate.
-6. Protect General Enquiry from free-coaching framing.
-7. Preserve all approved routes.
-8. Review testimonial claims against approved evidence.
-9. Curate the visible blog index around diagnosis-led authority.
-10. Preserve accessibility, prices and responsive behaviour.
-11. Avoid empty luxury wording and unsupported prestige.
-12. Leave analytics, consent, Jotform, payment, Worker and booking-conversion systems unchanged.
-
-Expected implementation area:
-
-- `index.html`
-- `pricing.html`
-- `book-online.html`
-- `development-programme.html`
-- `professional-services.html`
-- `testimonials.html`
-- `blog.html`
-- `templates/page-template.html`
-- `templates/blog-post-template.html`
-- `assets/css/styles.css`
-- `assets/css/responsive.css` only if required
-
-Confirm the exact scope from the current repository. Do not assume every listed file must change.
-
-## Contact
-
-`matt@singtheeasyway.com`
+Measure qualified enquiries, attended Consultations, suitable paying clients and professional enquiries rather than follower or view counts alone.
