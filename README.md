@@ -94,7 +94,10 @@ Jotform configuration is external to the repository. A thank-you page load, book
 ├── public HTML pages
 ├── blog/
 ├── docs/
-│   └── booking-conversion-tracking.md
+│   ├── booking-conversion-tracking.md
+│   ├── BLOG_PUBLISHING_WORKFLOW.md
+│   ├── BLOG_RENEWAL_DECISION_REGISTER.md
+│   └── BLOG_IMAGE_GENERATION_MANIFEST.md
 ├── templates/
 │   ├── page-template.html
 │   └── blog-post-template.html
@@ -134,16 +137,17 @@ Never invent or embellish reviews, results, students, statistics, credentials, c
 
 ## Blog publishing
 
-Every new post requires:
+Follow `docs/BLOG_PUBLISHING_WORKFLOW.md` for the complete editorial, evidence, metadata, linking, CTA, image and validation process. Every retained indexable post requires:
 
-1. An image prepared with `assets/scripts/prepare-image.py`.
-2. The article in `/blog/`.
-3. A newest-first card on `/blog.html`.
+1. A reviewed image prepared with `assets/scripts/prepare-image.py`.
+2. The canonical article in `/blog/`.
+3. One card in the deterministic topic hierarchy on `/blog.html`.
 4. A canonical entry in `/sitemap.xml`.
-5. A passing site checker.
-6. Desktop, tablet and mobile validation.
+5. A site-checker run with no unexpected failures and responsive validation. The two documented source-logo filename exceptions are accepted repository baseline issues.
 
 Blog content must strengthen diagnosis-led authority and avoid generic search filler, mass-market tips, arbitrary listicles, fabricated examples, quick-result promises and unsupported claims.
+
+The current article decisions are recorded in `docs/BLOG_RENEWAL_DECISION_REGISTER.md`; pending image-generation specifications are in `docs/BLOG_IMAGE_GENERATION_MANIFEST.md`.
 
 ## Protected areas
 

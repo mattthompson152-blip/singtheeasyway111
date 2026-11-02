@@ -211,9 +211,9 @@ Use `student lesson transcription system.docx` for technical facts.
 
 ## 20. Blog standard
 
-Every new post requires an image prepared through `assets/scripts/prepare-image.py`, the article in `/blog/`, a newest-first card on `/blog.html`, a canonical `sitemap.xml` entry, a passing site checker and desktop/tablet/mobile validation.
+Follow `docs/BLOG_PUBLISHING_WORKFLOW.md` for the complete blog editorial and publishing process. Every retained indexable post requires an appropriately prepared image, the article in `/blog/`, one card in the deterministic topic hierarchy on `/blog.html`, a canonical `sitemap.xml` entry, a site-checker run with no unexpected failures and responsive validation. The two documented source-logo filename exceptions are not new blog failures.
 
-Prioritise specific vocal problems, root-cause analysis, the failure of generic advice, individual adjustment, performance pressure, confidence as a practical coaching issue, contemporary singing and Matt's perspective. Avoid generic filler, mass-market tips, arbitrary lists, exaggerated transformations, universal routines, fabricated examples and unsupported medical claims.
+Prioritise specific vocal problems, root-cause analysis, the failure of generic advice, individual adjustment, performance pressure, confidence as a practical coaching issue, contemporary singing and Matt's perspective. Avoid generic filler, mass-market tips, arbitrary lists, exaggerated transformations, universal routines, fabricated examples and unsupported medical claims. Preserve useful URLs; do not invent redirects or historical publication dates. See `docs/BLOG_RENEWAL_DECISION_REGISTER.md` for the recorded decisions and `docs/BLOG_IMAGE_GENERATION_MANIFEST.md` for pending image specifications.
 
 ## 21. Marketing guardrails
 

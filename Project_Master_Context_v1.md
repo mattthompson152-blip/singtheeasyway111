@@ -209,3 +209,7 @@ Do not use discounts, free assessments, cheap-entry framing, invented case studi
 4. Verify conversion measurement before paid advertising or retargeting.
 5. Keep form, conversion, analytics and transcription changes as separately authorised workstreams.
 6. Start future material website work from current `origin/main` on a newly authorised bounded branch.
+
+## 13. Blog publishing
+
+Use `docs/BLOG_PUBLISHING_WORKFLOW.md` for the operational editorial, evidence, metadata, schema, linking, CTA, image, sitemap and validation requirements. Use `templates/blog-post-template.html` for new posts. The renewal decisions and image-generation specifications are recorded in `docs/BLOG_RENEWAL_DECISION_REGISTER.md` and `docs/BLOG_IMAGE_GENERATION_MANIFEST.md`. Preserve useful article URLs unless a safe, verified alternative is specifically authorised; do not invent publication dates or image-generation outcomes.

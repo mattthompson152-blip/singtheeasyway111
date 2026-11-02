@@ -18,13 +18,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Vocal Diagnosis and Singing | Sing The Easy Way</title>
-    <meta name="description" content="Notes from Matt Thompson on vocal problems, their possible causes and the individual adjustments tested in real music.">
+    <meta name="description" content="Explore diagnosis-led notes on contemporary singing, performance context and the individual adjustments tested in real music.">
     <meta name="author" content="Matt Thompson">
     <meta name="robots" content="index, follow">
     
     <!-- Open Graph -->
     <meta property="og:title" content="Vocal Diagnosis and Singing | Sing The Easy Way">
-    <meta property="og:description" content="Notes on vocal problems, their possible causes and individual adjustments in real music.">
+    <meta property="og:description" content="Explore diagnosis-led notes on contemporary singing, performance context and the individual adjustments tested in real music.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://singtheeasyway.com/blog.html">
     <meta property="og:image" content="https://singtheeasyway.com/assets/images/matt/matt-thompson-piano-headshot.webp">
@@ -33,7 +33,7 @@
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:image" content="https://singtheeasyway.com/assets/images/matt/matt-thompson-piano-headshot.webp">
     <meta name="twitter:title" content="Vocal Diagnosis and Singing | Sing The Easy Way">
-    <meta name="twitter:description" content="Notes on vocal problems, their possible causes and individual adjustments in real music.">
+    <meta name="twitter:description" content="Explore diagnosis-led notes on contemporary singing, performance context and the individual adjustments tested in real music.">
     
     <!-- Canonical -->
     <link rel="canonical" href="https://singtheeasyway.com/blog.html">
@@ -70,6 +70,39 @@
             color: #a3a3a3;
             font-size: 1.2rem;
         }
+        .blog-library {
+            padding: 1rem 0 3rem;
+        }
+        .blog-featured {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1.5rem 2rem 0;
+        }
+        .blog-featured h2,
+        .blog-topic > h2 {
+            color: #fff;
+            font-family: var(--font-display);
+        }
+        .blog-featured ul {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.75rem 1.5rem;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+        .blog-featured a {
+            color: #ff6b4a;
+        }
+        .blog-topic {
+            padding-top: 1.5rem;
+        }
+        .blog-topic > h2 {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            font-size: 1.75rem;
+        }
         
         /* Blog Grid */
         .blog-grid {
@@ -95,7 +128,7 @@
         .blog-card .image-link {
             display: block;
         }
-        .blog-card img {
+        .blog-card img[width][height] {
             width: 100%;
             height: 200px;
             object-fit: cover;
@@ -114,15 +147,15 @@
             font-size: 0.8rem;
             margin-bottom: 1rem;
         }
-        .blog-card h2 {
+        .blog-card h3 {
             font-size: 1.25rem;
             margin-bottom: 0.75rem;
         }
-        .blog-card h2 a {
+        .blog-card h3 a {
             color: #fff;
             text-decoration: none;
         }
-        .blog-card h2 a:hover {
+        .blog-card h3 a:hover {
             color: #ff6b4a;
         }
         .blog-card p {
@@ -148,6 +181,13 @@
             .blog-grid {
                 grid-template-columns: 1fr;
                 padding: 2rem 1rem;
+            }
+            .blog-featured {
+                padding: 1.5rem 1rem 0;
+            }
+            .blog-topic > h2 {
+                padding: 0 1rem;
+                font-size: 1.5rem;
             }
         }
     </style>
@@ -184,7 +224,7 @@
       "@id": "https://singtheeasyway.com/blog.html#webpage",
       "url": "https://singtheeasyway.com/blog.html",
       "name": "Vocal Diagnosis and Singing | Sing The Easy Way",
-      "description": "Notes from Matt Thompson on vocal problems, their possible causes and the individual adjustments tested in real music.",
+      "description": "Explore diagnosis-led notes on contemporary singing, performance context and the individual adjustments tested in real music.",
       "isPartOf": {
         "@id": "https://singtheeasyway.com/#website"
       },
@@ -220,136 +260,57 @@
         </ul>
     </div>
 </nav>
-<div id="main-content"></div>
-
 <!-- Blog Header -->
-<section class="blog-header">
-    <div class="container">
-        <div class="breadcrumb">
-            <a href="/">Home</a> / Blog
-        </div>
-        <h1>Understanding the voice</h1>
-        <p>Notes on vocal problems, possible causes and individual adjustments tested in real music.</p>
-    </div>
-</section>
-
-<!-- Blog Grid -->
-<section class="blog-grid">
-    <article class="blog-card">
-        <a href="/blog/why-singing-lessons-fail-adhd.html" class="image-link">
-            <img src="/assets/images/blog/online-singing-lessons-adhd-focus-1909.jpg" alt="Why Singing Lessons Fail People With ADHD - Online Singing Lessons" loading="lazy" width="1200" height="1200">
-        </a>
-        <div class="blog-card-content">
-            <span class="blog-date">19 September, 2026</span>
-            <h2><a href="/blog/why-singing-lessons-fail-adhd.html">Why Singing Lessons Fail People With ADHD</a></h2>
-            <p>I have ADHD. I also spent years being taught by people who did not, and I know exactly why those lessons did not stick. It was not effort and it was not talent.</p>
-            <a href="/blog/why-singing-lessons-fail-adhd.html" class="read-more">Read more &rarr;</a>
-        </div>
-    </article>
-    <article class="blog-card">
-        <a href="/blog/singing-lessons-autistic-adults.html" class="image-link">
-            <img src="/assets/images/blog/virtual-singing-lessons-quiet-space-1809.jpg" alt="Singing Lessons When You Are Autistic - Online Singing Lessons" loading="lazy" width="1200" height="1200">
-        </a>
-        <div class="blog-card-content">
-            <span class="blog-date">18 September, 2026</span>
-            <h2><a href="/blog/singing-lessons-autistic-adults.html">Singing Lessons When You Are Autistic</a></h2>
-            <p>Most of what makes a singing lesson hard for autistic adults has nothing to do with singing. It is the room, the unpredictability, the eye contact, and the exhausting work of appearing...</p>
-            <a href="/blog/singing-lessons-autistic-adults.html" class="read-more">Read more &rarr;</a>
-        </div>
-    </article>
-    <article class="blog-card">
-        <a href="/blog/voice-in-your-head-says-you-cannot-sing.html" class="image-link">
-            <img src="/assets/images/blog/vocal-coach-inner-critic-1709.jpg" alt="The Voice In Your Head That Says You Cannot Sing - Online Singing Lessons" loading="lazy" width="1200" height="1200">
-        </a>
-        <div class="blog-card-content">
-            <span class="blog-date">17 September, 2026</span>
-            <h2><a href="/blog/voice-in-your-head-says-you-cannot-sing.html">The Voice In Your Head That Says You Cannot Sing</a></h2>
-            <p>Almost every adult who tells me they cannot sing can name the moment they decided it. A comment, a laugh, one teacher, one audition. Usually decades ago. Usually from somebody who was...</p>
-            <a href="/blog/voice-in-your-head-says-you-cannot-sing.html" class="read-more">Read more &rarr;</a>
-        </div>
-    </article>
-    <article class="blog-card">
-        <a href="/blog/why-you-freeze-when-someone-watches.html" class="image-link">
-            <img src="/assets/images/blog/online-singing-lessons-stage-nerves-1609.jpg" alt="Why You Freeze When Someone Watches You Sing - Online Singing Lessons" loading="lazy" width="1200" height="1200">
-        </a>
-        <div class="blog-card-content">
-            <span class="blog-date">16 September, 2026</span>
-            <h2><a href="/blog/why-you-freeze-when-someone-watches.html">Why You Freeze When Someone Watches You Sing</a></h2>
-            <p>A look at how the experience of being watched can differ from singing alone.</p>
-            <a href="/blog/why-you-freeze-when-someone-watches.html" class="read-more">Read more &rarr;</a>
-        </div>
-    </article>
-    <article class="blog-card">
-        <a href="/blog/told-you-could-not-sing-as-a-child.html" class="image-link">
-            <img src="/assets/images/blog/singing-technique-childhood-memory-1509.jpg" alt="Being Told You Could Not Sing As A Child - Online Singing Lessons" loading="lazy" width="1200" height="1200">
-        </a>
-        <div class="blog-card-content">
-            <span class="blog-date">15 September, 2026</span>
-            <h2><a href="/blog/told-you-could-not-sing-as-a-child.html">Being Told You Could Not Sing As A Child</a></h2>
-            <p>Ask a room of adults who cannot sing and most of them will trace it to primary school. A teacher, a choir audition, being asked to mime. It is remarkable how durable those moments are,...</p>
-            <a href="/blog/told-you-could-not-sing-as-a-child.html" class="read-more">Read more &rarr;</a>
-        </div>
-    </article>
-    <article class="blog-card">
-        <a href="/blog/perfectionism-is-hurting-your-singing.html" class="image-link">
-            <img src="/assets/images/blog/professional-singing-lessons-perfectionism-1409.jpg" alt="Perfectionism Is Hurting Your Singing - Online Singing Lessons" loading="lazy" width="1200" height="1200">
-        </a>
-        <div class="blog-card-content">
-            <span class="blog-date">14 September, 2026</span>
-            <h2><a href="/blog/perfectionism-is-hurting-your-singing.html">Perfectionism Is Hurting Your Singing</a></h2>
-            <p>The most technically perfect performance I have ever heard was also the most boring, and I have thought about that a great deal since. Perfectionism does not just make singers miserable....</p>
-            <a href="/blog/perfectionism-is-hurting-your-singing.html" class="read-more">Read more &rarr;</a>
-        </div>
-    </article>
-    <article class="blog-card">
-        <a href="/blog/why-you-sound-better-alone.html" class="image-link">
-            <img src="/assets/images/blog/remote-singing-lessons-singing-alone-1309.jpg" alt="Why You Sound Better Alone Than In Front Of People - Online Singing Lessons" loading="lazy" width="1200" height="1200">
-        </a>
-        <div class="blog-card-content">
-            <span class="blog-date">13 September, 2026</span>
-            <h2><a href="/blog/why-you-sound-better-alone.html">Why You Sound Better Alone Than In Front Of People</a></h2>
-            <p>In the kitchen you sound like a singer. In front of one person you sound like someone apologising. That gap is one of the most common things people bring me, and it is not a mystery.</p>
-            <a href="/blog/why-you-sound-better-alone.html" class="read-more">Read more &rarr;</a>
-        </div>
-    </article>
-    <article class="blog-card">
-        <a href="/blog/the-fear-arrives-before-the-note.html" class="image-link">
-            <img src="/assets/images/blog/digital-singing-lessons-anticipation-1209.jpg" alt="The Fear Arrives Before The Note - Online Singing Lessons" loading="lazy" width="1200" height="1200">
-        </a>
-        <div class="blog-card-content">
-            <span class="blog-date">12 September, 2026</span>
-            <h2><a href="/blog/the-fear-arrives-before-the-note.html">The Fear Arrives Before The Note</a></h2>
-            <p>Watch a singer approach the line they are dreading and you will see it before you hear it. The face changes. The body braces. They start pushing before they have arrived. By the time the...</p>
-            <a href="/blog/the-fear-arrives-before-the-note.html" class="read-more">Read more &rarr;</a>
-        </div>
-    </article>
-    <article class="blog-card">
-        <a href="/blog/comparing-your-voice-to-other-singers.html" class="image-link">
-            <img src="/assets/images/blog/live-online-singing-lessons-comparison-1109.jpg" alt="Stop Comparing Your Voice To Other Singers - Online Singing Lessons" loading="lazy" width="1200" height="1200">
-        </a>
-        <div class="blog-card-content">
-            <span class="blog-date">11 September, 2026</span>
-            <h2><a href="/blog/comparing-your-voice-to-other-singers.html">Stop Comparing Your Voice To Other Singers</a></h2>
-            <p>You are comparing your voice, live, in a room, on a Tuesday, against a recording that took a week, a producer, and several hundred takes. That is not a fair fight and it never was.</p>
-            <a href="/blog/comparing-your-voice-to-other-singers.html" class="read-more">Read more &rarr;</a>
-        </div>
-    </article>
-    <article class="blog-card">
-        <a href="/blog/confidence-is-not-a-personality-trait.html" class="image-link">
-            <img src="/assets/images/blog/vocal-coach-confidence-building-1009.jpg" alt="Confidence Is Not A Personality Trait - Online Singing Lessons" loading="lazy" width="1200" height="1200">
-        </a>
-        <div class="blog-card-content">
-            <span class="blog-date">10 September, 2026</span>
-            <h2><a href="/blog/confidence-is-not-a-personality-trait.html">Confidence Is Not A Personality Trait</a></h2>
-            <p>People talk about confidence as though it were eye colour. Some have it, some do not, bad luck. In singing that is simply wrong. Confidence is a by-product of competence, and competence...</p>
-            <a href="/blog/confidence-is-not-a-personality-trait.html" class="read-more">Read more &rarr;</a>
-        </div>
-    </article>
-
-</section>
-
-<!-- Footer -->
-
+<section class="blog-header"><div class="container"><div class="breadcrumb"><a href="/">Home</a> / Blog</div><h1>Understanding the voice</h1><p>Diagnosis-led notes on contemporary singing: what may be happening, what is worth testing, and when individual coaching can help.</p></div></section>
+<main id="main-content" class="blog-library">
+<section class="blog-featured" aria-labelledby="featured-reading"><h2 id="featured-reading">Start with a useful question</h2><ul><li><a href="/blog/why-singing-lessons-fail-adhd.html">What makes a singing lesson usable for you?</a></li><li><a href="/blog/the-fear-arrives-before-the-note.html">What changes before a difficult note?</a></li><li><a href="/blog/comparing-your-voice-to-other-singers.html">Are you comparing a live voice with a produced track?</a></li></ul></section>
+<section class="blog-topic" aria-labelledby="topic-1"><h2 id="topic-1">Neurodivergent lesson access</h2><div class="blog-grid">
+<article class="blog-card"><a href="/blog/why-singing-lessons-fail-adhd.html" class="image-link"><img src="/assets/images/blog/online-singing-lessons-adhd-focus-1909.jpg" alt="A singer keeps one clear practice reminder beside a keyboard." loading="lazy" width="1200" height="1200"></a><div class="blog-card-content"><span class="blog-date">First published 19 September 2026 · updated 2 November 2026</span><h3><a href="/blog/why-singing-lessons-fail-adhd.html">When Singing Lessons Do Not Work for Some People with ADHD</a></h3><p>How lesson structure and recall can affect usefulness for some singers with ADHD, without generalising individual experience.</p><a href="/blog/why-singing-lessons-fail-adhd.html" class="read-more" aria-label="Read When Singing Lessons Do Not Work for Some People with ADHD">Read article</a></div></article>
+<article class="blog-card"><a href="/blog/singing-lessons-autistic-adults.html" class="image-link"><img src="/assets/images/blog/virtual-singing-lessons-quiet-space-1809.jpg" alt="An adult singer practises in a calm, uncluttered room." loading="lazy" width="1200" height="1200"></a><div class="blog-card-content"><span class="blog-date">First published 18 September 2026 · updated 2 November 2026</span><h3><a href="/blog/singing-lessons-autistic-adults.html">Singing Lessons When You Are Autistic</a></h3><p>Ways to discuss predictability and sensory preferences without assuming autistic adults share one experience.</p><a href="/blog/singing-lessons-autistic-adults.html" class="read-more" aria-label="Read Singing Lessons When You Are Autistic">Read article</a></div></article>
+</div></section>
+<section class="blog-topic" aria-labelledby="topic-2"><h2 id="topic-2">Performance context and anticipation</h2><div class="blog-grid">
+<article class="blog-card"><a href="/blog/why-you-sound-better-alone.html" class="image-link"><img src="/assets/images/blog/remote-singing-lessons-singing-alone-1309.jpg" alt="A singer practises a familiar song alone at home." loading="lazy" width="1200" height="1200"></a><div class="blog-card-content"><span class="blog-date">First published 13 September 2026 · updated 2 November 2026</span><h3><a href="/blog/why-you-sound-better-alone.html">Why Singing Can Feel Different When You Are Alone</a></h3><p>Why a singer may experience a gap between private practice and singing in front of another person.</p><a href="/blog/why-you-sound-better-alone.html" class="read-more" aria-label="Read Why Singing Can Feel Different When You Are Alone">Read article</a></div></article>
+<article class="blog-card"><a href="/blog/why-you-freeze-when-someone-watches.html" class="image-link"><img src="/assets/images/blog/online-singing-lessons-stage-nerves-1609.jpg" alt="A singer rehearses a phrase with one trusted listener present." loading="lazy" width="1200" height="1200"></a><div class="blog-card-content"><span class="blog-date">First published 16 September 2026 · updated 2 November 2026</span><h3><a href="/blog/why-you-freeze-when-someone-watches.html">Why You Freeze When Someone Watches You Sing</a></h3><p>What to notice when a song changes as soon as another person is listening, without diagnosing the response.</p><a href="/blog/why-you-freeze-when-someone-watches.html" class="read-more" aria-label="Read Why You Freeze When Someone Watches You Sing">Read article</a></div></article>
+<article class="blog-card"><a href="/blog/the-fear-arrives-before-the-note.html" class="image-link"><img src="/assets/images/blog/anticipation-before-difficult-note-0211.jpg" alt="A singer prepares for a demanding phrase on stage." loading="lazy" width="1200" height="800"></a><div class="blog-card-content"><span class="blog-date">First published 12 September 2026 · updated 2 November 2026</span><h3><a href="/blog/the-fear-arrives-before-the-note.html">The Fear Arrives Before The Note</a></h3><p>Why the lead-in to a difficult phrase may be more useful to examine than repeatedly attacking the note itself.</p><a href="/blog/the-fear-arrives-before-the-note.html" class="read-more" aria-label="Read The Fear Arrives Before The Note">Read article</a></div></article>
+<article class="blog-card"><a href="/blog/stage-fright.html" class="image-link"><img src="/assets/images/blog/digital-singing-lessons-stage-performance-1204.jpg" alt="Musicians perform on a dimly lit stage in front of an audience." loading="lazy" width="800" height="533"></a><div class="blog-card-content"><span class="blog-date">Updated 2 November 2026</span><h3><a href="/blog/stage-fright.html">Singing with Performance Nerves</a></h3><p>A song-focused way to think about performance nerves without promising to eliminate anxiety or diagnosing its cause.</p><a href="/blog/stage-fright.html" class="read-more" aria-label="Read Singing with Performance Nerves">Read article</a></div></article>
+<article class="blog-card"><a href="/blog/perfectionism-is-hurting-your-singing.html" class="image-link"><img src="/assets/images/blog/professional-singing-lessons-perfectionism-1409.jpg" alt="A singer listens back to a recording without judging every detail." loading="lazy" width="1200" height="1200"></a><div class="blog-card-content"><span class="blog-date">First published 14 September 2026 · updated 2 November 2026</span><h3><a href="/blog/perfectionism-is-hurting-your-singing.html">Perfectionism and Singing: When Monitoring Interrupts Music</a></h3><p>How excessive self-monitoring can interrupt a phrase, and how to keep useful standards without demanding a flawless take.</p><a href="/blog/perfectionism-is-hurting-your-singing.html" class="read-more" aria-label="Read Perfectionism and Singing: When Monitoring Interrupts Music">Read article</a></div></article>
+<article class="blog-card"><a href="/blog/confidence-is-not-a-personality-trait.html" class="image-link"><img src="/assets/images/blog/vocal-coach-confidence-building-1009.jpg" alt="A singer prepares one clear musical task for rehearsal." loading="lazy" width="1200" height="1200"></a><div class="blog-card-content"><span class="blog-date">First published 10 September 2026 · updated 2 November 2026</span><h3><a href="/blog/confidence-is-not-a-personality-trait.html">Confidence and Context in Singing</a></h3><p>Why confidence in singing can depend on context and evidence rather than a fixed personal trait.</p><a href="/blog/confidence-is-not-a-personality-trait.html" class="read-more" aria-label="Read Confidence and Context in Singing">Read article</a></div></article>
+<article class="blog-card"><a href="/blog/building-confidence.html" class="image-link"><img src="/assets/images/blog/online-vocal-lessons-confidence-1904.jpg" alt="Two people beside a screen displaying a pitch graph." loading="lazy" width="1280" height="853"></a><div class="blog-card-content"><span class="blog-date">Updated 2 November 2026</span><h3><a href="/blog/building-confidence.html">Confidence in Singing: Working with Context</a></h3><p>A practical account of confidence as something that can grow through specific, repeatable experiences of singing.</p><a href="/blog/building-confidence.html" class="read-more" aria-label="Read Confidence in Singing: Working with Context">Read article</a></div></article>
+</div></section>
+<section class="blog-topic" aria-labelledby="topic-3"><h2 id="topic-3">Learned beliefs and vocal identity</h2><div class="blog-grid">
+<article class="blog-card"><a href="/blog/told-you-could-not-sing-as-a-child.html" class="image-link"><img src="/assets/images/blog/singing-technique-childhood-memory-1509.jpg" alt="An adult singer reflects on an old music book before practising." loading="lazy" width="1200" height="1200"></a><div class="blog-card-content"><span class="blog-date">First published 15 September 2026 · updated 2 November 2026</span><h3><a href="/blog/told-you-could-not-sing-as-a-child.html">Being Told You Could Not Sing As A Child</a></h3><p>How an old comment about singing can influence someone now without proving what their voice can or cannot do.</p><a href="/blog/told-you-could-not-sing-as-a-child.html" class="read-more" aria-label="Read Being Told You Could Not Sing As A Child">Read article</a></div></article>
+<article class="blog-card"><a href="/blog/voice-in-your-head-says-you-cannot-sing.html" class="image-link"><img src="/assets/images/blog/vocal-coach-inner-critic-1709.jpg" alt="A singer prepares to explore a familiar song without a verdict." loading="lazy" width="1200" height="1200"></a><div class="blog-card-content"><span class="blog-date">First published 17 September 2026 · updated 2 November 2026</span><h3><a href="/blog/voice-in-your-head-says-you-cannot-sing.html">The Voice In Your Head That Says You Cannot Sing</a></h3><p>How to examine the difference between a discouraging thought and what can be heard in a present-day singing task.</p><a href="/blog/voice-in-your-head-says-you-cannot-sing.html" class="read-more" aria-label="Read The Voice In Your Head That Says You Cannot Sing">Read article</a></div></article>
+<article class="blog-card"><a href="/blog/comparing-your-voice-to-other-singers.html" class="image-link"><img src="/assets/images/blog/live-online-singing-lessons-comparison-1109.jpg" alt="A person looks at a phone while sitting on a bed." loading="lazy" width="1200" height="1200"></a><div class="blog-card-content"><span class="blog-date">First published 11 September 2026 · updated 2 November 2026</span><h3><a href="/blog/comparing-your-voice-to-other-singers.html">Comparing a Live Voice with Produced Recordings</a></h3><p>Why a live, unedited voice is not a fair comparison with a produced recording.</p><a href="/blog/comparing-your-voice-to-other-singers.html" class="read-more" aria-label="Read Comparing a Live Voice with Produced Recordings">Read article</a></div></article>
+<article class="blog-card"><a href="/blog/authentic-voice.html" class="image-link"><img src="/assets/images/blog/authentic-voice-listening-session-0211.jpg" alt="A singer explores an individual sound in a home recording space." loading="lazy" width="1200" height="800" style="object-position: center top;"></a><div class="blog-card-content"><span class="blog-date">Updated 2 November 2026</span><h3><a href="/blog/authentic-voice.html">Finding Your Authentic Voice: Beyond Imitation</a></h3><p>How technique can support a singer’s recognisable sound instead of replacing it with imitation.</p><a href="/blog/authentic-voice.html" class="read-more" aria-label="Read Finding Your Authentic Voice: Beyond Imitation">Read article</a></div></article>
+</div></section>
+<section class="blog-topic" aria-labelledby="topic-4"><h2 id="topic-4">Vocal function in contemporary music</h2><div class="blog-grid">
+<article class="blog-card"><a href="/blog/pitch-accuracy.html" class="image-link"><img src="/assets/images/blog/virtual-singing-lessons-condenser-mic-1404.jpg" alt="A recording console with screens and audio equipment." loading="lazy" width="800" height="533"></a><div class="blog-card-content"><span class="blog-date">Updated 2 November 2026</span><h3><a href="/blog/pitch-accuracy.html">Pitch Accuracy in Contemporary Singing</a></h3><p>How to investigate pitch uncertainty in a song without reducing every mismatch to a single cause.</p><a href="/blog/pitch-accuracy.html" class="read-more" aria-label="Read Pitch Accuracy in Contemporary Singing">Read article</a></div></article>
+<article class="blog-card"><a href="/blog/vocal-range.html" class="image-link"><img src="/assets/images/blog/remote-singing-lessons-singer-piano-0404.jpg" alt="A close view of piano keys." loading="lazy" width="800" height="533"></a><div class="blog-card-content"><span class="blog-date">Updated 2 November 2026</span><h3><a href="/blog/vocal-range.html">Understanding Vocal Range in a Song</a></h3><p>How to think about range as a set of usable musical choices rather than a single impressive note count.</p><a href="/blog/vocal-range.html" class="read-more" aria-label="Read Understanding Vocal Range in a Song">Read article</a></div></article>
+<article class="blog-card"><a href="/blog/belt-safely.html" class="image-link"><img src="/assets/images/blog/contemporary-belting-song-0211.jpg" alt="A contemporary singer works on a strong phrase at a studio microphone." loading="lazy" width="1200" height="800"></a><div class="blog-card-content"><span class="blog-date">Updated 2 November 2026</span><h3><a href="/blog/belt-safely.html">Exploring Belting in Contemporary Singing</a></h3><p>A cautious, song-led way to investigate a demanding belt without promises of safety or damage prevention.</p><a href="/blog/belt-safely.html" class="read-more" aria-label="Read Exploring Belting in Contemporary Singing">Read article</a></div></article>
+<article class="blog-card"><a href="/blog/vocal-power.html" class="image-link"><img src="/assets/images/blog/virtual-singing-lessons-microphone-stage-0504.jpg" alt="A vintage-style microphone on a stand." loading="lazy" width="800" height="450"></a><div class="blog-card-content"><span class="blog-date">Updated 2 November 2026</span><h3><a href="/blog/vocal-power.html">Exploring Vocal Power in a Song</a></h3><p>A song-led look at what “power” might mean beyond simply singing louder.</p><a href="/blog/vocal-power.html" class="read-more" aria-label="Read Exploring Vocal Power in a Song">Read article</a></div></article>
+<article class="blog-card"><a href="/blog/vocal-stamina.html" class="image-link"><img src="/assets/images/blog/vocal-stamina-performance-context-0211.jpg" alt="A singer performs a strong phrase at a studio microphone." loading="lazy" width="1200" height="800"></a><div class="blog-card-content"><span class="blog-date">Updated 2 November 2026</span><h3><a href="/blog/vocal-stamina.html">Vocal Stamina in Performance Context</a></h3><p>How to examine vocal endurance in repertoire and performance context rather than prescribing generic drills.</p><a href="/blog/vocal-stamina.html" class="read-more" aria-label="Read Vocal Stamina in Performance Context">Read article</a></div></article>
+<article class="blog-card"><a href="/blog/vocal-agility.html" class="image-link"><img src="/assets/images/blog/singing-technique-performance-stage-0904.jpg" alt="A singer beside a labelled vocal-pitch diagram." loading="lazy" width="1280" height="853"></a><div class="blog-card-content"><span class="blog-date">Updated 2 November 2026</span><h3><a href="/blog/vocal-agility.html">Vocal Agility in Contemporary Songs</a></h3><p>How to approach quick melodic movement through the actual song rather than treating speed as the goal.</p><a href="/blog/vocal-agility.html" class="read-more" aria-label="Read Vocal Agility in Contemporary Songs">Read article</a></div></article>
+<article class="blog-card"><a href="/blog/vocal-dynamics.html" class="image-link"><img src="/assets/images/blog/digital-singing-lessons-gospel-choir-0804.jpg" alt="A singer explores a dynamic change in a phrase." loading="lazy" width="800" height="533"></a><div class="blog-card-content"><span class="blog-date">Updated 2 November 2026</span><h3><a href="/blog/vocal-dynamics.html">Shaping Vocal Dynamics in a Song</a></h3><p>How changes in loudness can serve phrasing and meaning without making louder singing the default goal.</p><a href="/blog/vocal-dynamics.html" class="read-more" aria-label="Read Shaping Vocal Dynamics in a Song">Read article</a></div></article>
+<article class="blog-card"><a href="/blog/vocal-twang.html" class="image-link"><img src="/assets/images/blog/online-singing-lessons-concert-audience-0204.jpg" alt="A crowd watches a live performance beneath stage lights." loading="lazy" width="800" height="533"></a><div class="blog-card-content"><span class="blog-date">Updated 2 November 2026</span><h3><a href="/blog/vocal-twang.html">Exploring Vocal Twang in Contemporary Singing</a></h3><p>A cautious description of twang as a sound quality some contemporary singers explore, not a universal fix.</p><a href="/blog/vocal-twang.html" class="read-more" aria-label="Read Exploring Vocal Twang in Contemporary Singing">Read article</a></div></article>
+<article class="blog-card"><a href="/blog/vibrato-mastery.html" class="image-link"><img src="/assets/images/blog/vibrato-as-musical-choice-0211.jpg" alt="A singer sustains a contemporary phrase at a studio microphone." loading="lazy" width="1200" height="800"></a><div class="blog-card-content"><span class="blog-date">Updated 2 November 2026</span><h3><a href="/blog/vibrato-mastery.html">Vibrato as a Musical Choice</a></h3><p>A careful distinction between natural pitch variation and a stylistic vibrato choice in contemporary singing.</p><a href="/blog/vibrato-mastery.html" class="read-more" aria-label="Read Vibrato as a Musical Choice">Read article</a></div></article>
+<article class="blog-card"><a href="/blog/sing-with-emotion.html" class="image-link"><img src="/assets/images/blog/singing-with-expression-in-song-0211.jpg" alt="A singer shapes a phrase during a home recording session." loading="lazy" width="1200" height="800" style="object-position: center top;"></a><div class="blog-card-content"><span class="blog-date">Updated 2 November 2026</span><h3><a href="/blog/sing-with-emotion.html">Singing with Expression: Choices Inside the Song</a></h3><p>How musical intention can shape phrasing without turning expression into a performance checklist.</p><a href="/blog/sing-with-emotion.html" class="read-more" aria-label="Read Singing with Expression: Choices Inside the Song">Read article</a></div></article>
+<article class="blog-card"><a href="/blog/breathing-techniques.html" class="image-link"><img src="/assets/images/blog/vocal-exercises-breathing-techniques-2004.jpg" alt="Two people sit beside a recording console with a guitar and papers." loading="lazy" width="1000" height="666"></a><div class="blog-card-content"><span class="blog-date">Updated 2 November 2026</span><h3><a href="/blog/breathing-techniques.html">Breathing in Singing: Start with the Song</a></h3><p>Why running out of breath in a song does not automatically mean breathing drills are the answer.</p><a href="/blog/breathing-techniques.html" class="read-more" aria-label="Read Breathing in Singing: Start with the Song">Read article</a></div></article>
+<article class="blog-card"><a href="/blog/vocal-warmups.html" class="image-link"><img src="/assets/images/blog/online-singing-lessons-recording-console-0104.jpg" alt="A singer prepares gently before working on a song." loading="lazy" width="800" height="533"></a><div class="blog-card-content"><span class="blog-date">Updated 2 November 2026</span><h3><a href="/blog/vocal-warmups.html">Choosing a Warm-up for the Song Ahead</a></h3><p>How to decide whether a warm-up is serving the song instead of becoming a routine for its own sake.</p><a href="/blog/vocal-warmups.html" class="read-more" aria-label="Read Choosing a Warm-up for the Song Ahead">Read article</a></div></article>
+<article class="blog-card"><a href="/blog/vocal-muscle-memory.html" class="image-link"><img src="/assets/images/blog/online-singing-lessons-choir-singing-0604.jpg" alt="A singer revisits a short phrase during focused practice." loading="lazy" width="1280" height="853"></a><div class="blog-card-content"><span class="blog-date">Updated 2 November 2026</span><h3><a href="/blog/vocal-muscle-memory.html">Practice and Vocal Reliability in Songs</a></h3><p>What repeated practice can and cannot tell you about making a vocal choice more dependable in a song.</p><a href="/blog/vocal-muscle-memory.html" class="read-more" aria-label="Read Practice and Vocal Reliability in Songs">Read article</a></div></article>
+<article class="blog-card"><a href="/blog/vocal-health.html" class="image-link"><img src="/assets/images/blog/remote-singing-lessons-female-singer-0704.jpg" alt="A crowd watches a concert under stage lights." loading="lazy" width="800" height="533"></a><div class="blog-card-content"><span class="blog-date">Updated 2 November 2026</span><h3><a href="/blog/vocal-health.html">Vocal Health: Limits of Singing Coaching</a></h3><p>A cautious guide to noticing voice changes and distinguishing coaching from healthcare.</p><a href="/blog/vocal-health.html" class="read-more" aria-label="Read Vocal Health: Limits of Singing Coaching">Read article</a></div></article>
+</div></section>
+<section class="blog-topic" aria-labelledby="topic-5"><h2 id="topic-5">Online coaching and practical setup</h2><div class="blog-grid">
+<article class="blog-card"><a href="/blog/first-online-lesson.html" class="image-link"><img src="/assets/images/blog/virtual-singing-lessons-singing-lesson-1704.jpg" alt="A singer prepares for a live online coaching session." loading="lazy" width="1280" height="853"></a><div class="blog-card-content"><span class="blog-date">Updated 2 November 2026</span><h3><a href="/blog/first-online-lesson.html">What to Expect From Your First Online Singing Lesson</a></h3><p>What a first online coaching session can involve, without requiring you to perform or buy a programme.</p><a href="/blog/first-online-lesson.html" class="read-more" aria-label="Read What to Expect From Your First Online Singing Lesson">Read article</a></div></article>
+<article class="blog-card"><a href="/blog/choosing-singing-teacher.html" class="image-link"><img src="/assets/images/blog/vocal-coach-teaching-online-session-1804.jpg" alt="A person sings into a microphone on a dimly lit stage." loading="lazy" width="1280" height="853"></a><div class="blog-card-content"><span class="blog-date">Updated 2 November 2026</span><h3><a href="/blog/choosing-singing-teacher.html">Choosing a Singing Coach: Questions Worth Asking</a></h3><p>Questions that help a singer judge whether a coach listens, explains and adapts to the problem in front of them.</p><a href="/blog/choosing-singing-teacher.html" class="read-more" aria-label="Read Choosing a Singing Coach: Questions Worth Asking">Read article</a></div></article>
+<article class="blog-card"><a href="/blog/online-vs-inperson.html" class="image-link"><img src="/assets/images/blog/online-singing-tutor-student-lesson-1504.jpg" alt="A singer joins a live coaching session from a home studio." loading="lazy" width="1280" height="853"></a><div class="blog-card-content"><span class="blog-date">Updated 2 November 2026</span><h3><a href="/blog/online-vs-inperson.html">Online Singing Lessons: What to Consider</a></h3><p>A practical comparison grounded in the online delivery model actually offered here.</p><a href="/blog/online-vs-inperson.html" class="read-more" aria-label="Read Online Singing Lessons: What to Consider">Read article</a></div></article>
+<article class="blog-card"><a href="/blog/tech-setup.html" class="image-link"><img src="/assets/images/blog/remote-singing-lessons-music-production-1104.jpg" alt="A simple device and headphone setup for an online lesson." loading="lazy" width="800" height="533"></a><div class="blog-card-content"><span class="blog-date">Updated 2 November 2026</span><h3><a href="/blog/tech-setup.html">Preparing for Online Singing Lessons: Essential Tech Setup Guide</a></h3><p>A task-led setup for live online singing coaching, without implying expensive equipment is required.</p><a href="/blog/tech-setup.html" class="read-more" aria-label="Read Preparing for Online Singing Lessons: Essential Tech Setup Guide">Read article</a></div></article>
+<article class="blog-card"><a href="/blog/microphones.html" class="image-link"><img src="/assets/images/blog/singer-home-recording-microphone-1604.jpg" alt="A modest home recording setup with a microphone and headphones." loading="lazy" width="1000" height="666"></a><div class="blog-card-content"><span class="blog-date">Updated 2 November 2026</span><h3><a href="/blog/microphones.html">Choosing a Microphone for Home Singing</a></h3><p>What to consider before buying a microphone, with emphasis on room, purpose and repeatability.</p><a href="/blog/microphones.html" class="read-more" aria-label="Read Choosing a Microphone for Home Singing">Read article</a></div></article>
+</div></section>
+<section class="blog-topic" aria-labelledby="topic-6"><h2 id="topic-6">Participation and practice</h2><div class="blog-grid">
+<article class="blog-card"><a href="/blog/30-day-singing.html" class="image-link"><img src="/assets/images/blog/30-day-singing-practice-assessment-0211.jpg" alt="An adult singer reviews a familiar song beside a keyboard." loading="lazy" width="1200" height="800" style="object-position: center top;"></a><div class="blog-card-content"><span class="blog-date">Updated 2 November 2026</span><h3><a href="/blog/30-day-singing.html">A Month of Singing Practice: What to Assess</a></h3><p>A month of practice can reveal what is changing, but no calendar challenge can guarantee a vocal result.</p><a href="/blog/30-day-singing.html" class="read-more" aria-label="Read A Month of Singing Practice: What to Assess">Read article</a></div></article>
+<article class="blog-card"><a href="/blog/choir-singing.html" class="image-link"><img src="/assets/images/blog/digital-singing-lessons-choir-conductor-2404.jpg" alt="A singer listens and responds within a contemporary choir." loading="lazy" width="1280" height="1024"></a><div class="blog-card-content"><span class="blog-date">Updated 2 November 2026</span><h3><a href="/blog/choir-singing.html">Listening and Blending in a Choir</a></h3><p>How an individual singer can contribute to a choir by listening, matching and responding to the ensemble.</p><a href="/blog/choir-singing.html" class="read-more" aria-label="Read Listening and Blending in a Choir">Read article</a></div></article>
+</div></section>
+</main>
 <!-- COMMUNITY EMAIL SIGNUP -->
 <section class="section signup-section">
     <div class="container">
