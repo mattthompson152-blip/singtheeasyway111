@@ -219,6 +219,26 @@ article li {
     color: var(--accent);
 }
 
+article nav.article-related {
+    position: static;
+    top: auto;
+    width: auto;
+    z-index: auto;
+    background: transparent;
+    backdrop-filter: none;
+    border: 0;
+}
+
+article nav.article-related ul {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    gap: var(--space-xs) var(--space-md);
+    list-style: disc;
+    margin: var(--space-sm) 0;
+    padding-left: var(--space-md);
+}
+
 /* Back Link */
 .back-link {
     display: inline-block;
