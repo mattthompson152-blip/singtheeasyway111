@@ -204,3 +204,7 @@ A new AI or GitHub Copilot session must:
 8. Preserve exact prices, routes, evidence rules and confidentiality.
 9. Run required validation and review the complete diff before any authorised commit.
 10. Not merge, deploy, publish, delete branches or alter settings without Matt's explicit authority.
+
+## 15. Blog publishing reference
+
+Use `docs/BLOG_PUBLISHING_WORKFLOW.md` for future blog proposals, editorial decisions, evidence, article metadata and schema, internal links, CTAs, image production, index hierarchy, sitemap and validation. The 34-page renewal decisions are recorded in `docs/BLOG_RENEWAL_DECISION_REGISTER.md`; new image production was not completed and is specified in `docs/BLOG_IMAGE_GENERATION_MANIFEST.md`. Do not assume the temporary existing article images have been replaced or visually approved.

@@ -20,31 +20,64 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <!-- REPLACE EVERY [SQUARE BRACKET] BEFORE PUBLISHING -->
-    <title>Blog Post Template | Sing The Easy Way</title>
-    <meta name="description" content="Non-indexable source template for Sing The Easy Way blog posts.">
+    <title>[ARTICLE TITLE] | Sing The Easy Way</title>
+    <meta name="description" content="[META DESCRIPTION]">
     <meta name="author" content="Matt Thompson">
     <meta name="robots" content="noindex, nofollow">
 
     <!-- Open Graph -->
-    <meta property="og:title" content="Blog Post Template | Sing The Easy Way">
-    <meta property="og:description" content="Non-indexable source template for Sing The Easy Way blog posts.">
+    <meta property="og:title" content="[ARTICLE TITLE] | Sing The Easy Way">
+    <meta property="og:description" content="[META DESCRIPTION]">
     <meta property="og:type" content="article">
-    <meta property="og:image" content="https://singtheeasyway.com/assets/images/blog/[IMAGE-NAME].jpg">
+    <!-- Add og:url only after the final canonical article URL is established. -->
+    <meta property="og:image" content="https://singtheeasyway.com/assets/images/blog/[PROCESSED-IMAGE-FILENAME].jpg">
     <meta property="og:locale" content="en_GB">
 
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Blog Post Template | Sing The Easy Way">
-    <meta name="twitter:description" content="Non-indexable source template for Sing The Easy Way blog posts.">
-    <meta name="twitter:image" content="https://singtheeasyway.com/assets/images/blog/[IMAGE-NAME].jpg">
+    <meta name="twitter:title" content="[ARTICLE TITLE] | Sing The Easy Way">
+    <meta name="twitter:description" content="[META DESCRIPTION]">
+    <meta name="twitter:image" content="https://singtheeasyway.com/assets/images/blog/[PROCESSED-IMAGE-FILENAME].jpg">
 
-    <!-- Canonical. Use / for the homepage -->
+    <!-- Add exactly one canonical link after the final article URL exists; never use a placeholder URL. -->
 
     <!-- Stylesheets. Do not add page specific CSS unless necessary -->
     <link rel="stylesheet" href="/assets/css/styles.css?v=3">
     <link rel="stylesheet" href="/assets/css/cookie-consent.css?v=3">
     <link rel="stylesheet" href="/assets/css/responsive.css?v=3">
     <link rel="stylesheet" href="/assets/css/blog.css">
+
+    <!-- Replace these article values. Omit datePublished when no defensible original date is known.
+         When the real URL is known, add @id, mainEntityOfPage and url using that exact URL. -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "Organization",
+          "@id": "https://singtheeasyway.com/#organization",
+          "name": "Sing The Easy Way",
+          "url": "https://singtheeasyway.com/"
+        },
+        {
+          "@type": "WebSite",
+          "@id": "https://singtheeasyway.com/#website",
+          "url": "https://singtheeasyway.com/",
+          "name": "Sing The Easy Way",
+          "publisher": {"@id": "https://singtheeasyway.com/#organization"}
+        },
+        {
+          "@type": "BlogPosting",
+          "headline": "[ARTICLE TITLE]",
+          "description": "[META DESCRIPTION]",
+          "author": {"@type": "Person", "name": "Matt Thompson"},
+          "publisher": {"@id": "https://singtheeasyway.com/#organization"},
+          "dateModified": "[YYYY-MM-DD]",
+          "image": "https://singtheeasyway.com/assets/images/blog/[PROCESSED-IMAGE-FILENAME].jpg"
+        }
+      ]
+    }
+    </script>
 
     <!-- Favicons -->
     <link rel="icon" type="image/x-icon" href="/assets/images/global/favicon.ico">
@@ -79,115 +112,35 @@
     </div>
 </nav>
 
-<!-- =====================================================
-     BLOG POST TEMPLATE
-     Section order is fixed by AI_RULES.md. Do not reorder.
-     Filename rules: lowercase, hyphens, no dates, no blog-post- prefix.
-     Save to /blog/[article-name].html
-     Then add the post to /blog.html and to /sitemap.xml
-
-     IMAGE: /assets/images/blog/[keyword-phrase]-[DDMM].jpg
-            landscape, about 3:2, 800 to 1280px wide, under 150KB
-            DDMM is the publication day and month
-
-     BLOG INDEX CARD, paste into <section class="blog-grid"> in
-     /blog.html, newest first:
-
-     <article class="blog-card">
-         <a href="/blog/[ARTICLE-NAME].html" class="image-link">
-             <img src="/assets/images/blog/[IMAGE-NAME]-[DDMM].jpg" alt="[ARTICLE TITLE]" loading="lazy">
-         </a>
-         <div class="blog-card-content">
-             <span class="blog-date">[Month DD, YYYY]</span>
-             <h2><a href="/blog/[ARTICLE-NAME].html">[ARTICLE TITLE]</a></h2>
-             <p>[SUMMARY]</p>
-             <a href="/blog/[ARTICLE-NAME].html" class="read-more">Read more &rarr;</a>
-         </div>
-     </article>
-
-<!-- COMMUNITY EMAIL SIGNUP -->
-<section class="section signup-section">
-    <div class="container">
-        <div class="signup-box">
-            <span class="badge">Just getting started</span>
-            <h2>Join the community</h2>
-            <p>I am building something new for singers. Occasional emails with practical vocal tips you can actually use, and first notice of any UK events and workshops I run.</p>
-            <p class="signup-small">No spam, and you can unsubscribe at any time. See the <a href="/privacy-policy.html" class="text-link">privacy policy</a>.</p>
-            <div class="signup-form">
-                <iframe
-                    id="JotFormIFrame-261037482331047"
-                    title="Join the community"
-                    onload="window.parent.scrollTo(0,0)"
-                    allowtransparency="true"
-                    allow="geolocation; microphone; camera"
-                    src="https://form.jotform.com/261037482331047"
-                    frameborder="0"
-                    style="min-width:100%;max-width:100%;height:420px;border:none;"
-                    scrolling="no">
-                </iframe>
-            </div>
-        </div>
-    </div>
-</section>
-
-
-     SITEMAP: add the post to /sitemap.xml, priority 0.6
-     ===================================================== -->
-
+<!-- Future blog articles must follow docs/BLOG_PUBLISHING_WORKFLOW.md.
+     Replace every bracketed value. Save as a lowercase, hyphenated filename under /blog/.
+     Keep this template noindex,nofollow, outside sitemap and public navigation.
+     Do not add a canonical element until the final article URL is known.
+     Use a visible publication date only when its original date is verified. -->
 <main id="main-content">
+<article class="blog-article" aria-labelledby="article-title">
+    <span class="badge">[ARTICLE CATEGORY]</span>
+    <h1 id="article-title">[ARTICLE TITLE]</h1>
+    <p class="article-date"><time datetime="[YYYY-MM-DD]">Published [D Month YYYY]</time> · <time datetime="[YYYY-MM-DD]">Updated [D Month YYYY]</time></p>
+    <p class="article-author">By Matt Thompson</p>
+    <p class="lead">[A concise introduction that names the reader's problem and diagnosis-led thesis.]</p>
+    <img class="blog-hero-image" src="/assets/images/blog/[PROCESSED-IMAGE-FILENAME].jpg" alt="[CONCISE, DESCRIPTIVE IMAGE ALT TEXT]" width="1200" height="800" loading="eager">
 
-<article class="blog-article">
+    <h2>[A SPECIFIC QUESTION OR DISTINCTION]</h2>
+    <p>[Explain what can be observed, what is a coaching interpretation, and what remains uncertain.]</p>
+    <h2>[A PRACTICAL SONG-LED NEXT STEP]</h2>
+    <p>[Explain a relevant adjustment and how to test it inside real contemporary or popular music.]</p>
 
-    <!-- 1. ARTICLE CATEGORY -->
-    <span class="badge">[CATEGORY, FOR EXAMPLE VOCAL TECHNIQUE]</span>
-
-    <!-- 2. ARTICLE TITLE. One H1 only -->
-    <h1>[ARTICLE TITLE]</h1>
-
-    <!-- 3. SHORT INTRODUCTION -->
-    <p class="lead">[TWO OR THREE SENTENCES SETTING UP THE PROBLEM THE ARTICLE SOLVES]</p>
-
-    <img src="/assets/images/blog/[IMAGE-NAME].jpg" alt="[DESCRIBE THE IMAGE]" width="1200" height="800" loading="lazy">
-
-    <!-- 4. MAIN ARTICLE CONTENT. Use h2 and h3 in logical order -->
-    <h2>[SECTION HEADING]</h2>
-    <p>[CONTENT]</p>
-
-    <h2>[SECTION HEADING]</h2>
-    <p>[CONTENT]</p>
-
-    <!-- 5. RELEVANT LESSON RECOMMENDATION. Link one commercial page -->
-    <section class="section">
-        <h2>[HOW LESSONS HELP WITH THIS]</h2>
-        <p>[ONE SHORT PARAGRAPH]</p>
-        <a href="/pricing.html" class="text-link">See service details and prices</a>
+    <section class="article-cta" aria-labelledby="article-cta-title">
+        <h2 id="article-cta-title">[CONTEXTUAL INVITATION]</h2>
+        <p>[One restrained sentence explaining the relevant next step.]</p>
+        <a class="btn primary" href="https://pci.jotform.com/form/262622799830063">Request a Consultation</a>
     </section>
-
-    <!-- 6. AUTHOR INFORMATION -->
-    <section class="author-box">
-        <img src="/assets/images/matt/matt-thompson-piano-headshot.webp" alt="Matt Thompson, live online vocal coach" loading="lazy" style="width: 120px; height: 120px; border-radius: 50%; object-fit: cover;" width="900" height="900">
-        <p><strong>Matt Thompson</strong> is a specialist one-to-one vocal coach. More than 25 years of experience with beginners, developing singers and professional performers.</p>
-    </section>
-
-    <!-- 7. RELATED ARTICLES. Use real posts that exist in /blog/ -->
-    <section class="section">
-        <h2>Related Articles</h2>
-        <ul>
-            <li><a href="/blog/[EXISTING-ARTICLE].html">[ARTICLE TITLE]</a></li>
-            <li><a href="/blog/[EXISTING-ARTICLE].html">[ARTICLE TITLE]</a></li>
-        </ul>
-        <p><a href="/blog.html" class="text-link">Back to the blog</a></p>
-    </section>
-
-    <!-- 8. BOOKING CALL TO ACTION -->
-    <section class="cta-section">
-        <h2>[CLOSING INVITATION]</h2>
-        <p>[ONE SENTENCE]</p>
-        <a href="https://pci.jotform.com/form/262622799830063" class="btn primary">Request a Consultation</a>
-    </section>
-
+    <nav class="article-related" aria-label="Related articles">
+        <h2>Related reading</h2>
+        <ul><li><a href="/blog/[EXISTING-ARTICLE].html">[DESCRIPTIVE LINK TEXT]</a></li></ul>
+    </nav>
 </article>
-
 </main>
 
 <footer>

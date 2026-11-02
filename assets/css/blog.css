@@ -51,6 +51,19 @@ article .meta span {
     color: var(--accent);
 }
 
+.article-date,
+.article-author {
+    font-size: 0.9rem;
+}
+
+.article-date {
+    color: var(--text-secondary);
+}
+
+.article-author {
+    color: var(--accent);
+}
+
 /* Article Content */
 article h1 {
     font-size: 2.5rem;
@@ -183,6 +196,27 @@ article li {
 
 .highlight-box p {
     margin: 0;
+}
+
+.article-cta {
+    background: var(--bg-card);
+    border-left: 4px solid var(--accent);
+    border-radius: 0 8px 8px 0;
+    margin: var(--space-lg) 0;
+    padding: var(--space-md);
+}
+
+.article-cta h2 {
+    margin-top: 0;
+}
+
+.article-cta .btn {
+    display: inline-block;
+    margin-top: var(--space-xs);
+}
+
+.article-related a {
+    color: var(--accent);
 }
 
 /* Back Link */
