@@ -91,6 +91,11 @@ article p {
     line-height: 1.7;
 }
 
+article.blog-article p,
+article.blog-article li {
+    max-width: 72ch;
+}
+
 article strong {
     color: var(--text-primary);
     font-weight: 600;
