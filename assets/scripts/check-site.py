@@ -207,6 +207,8 @@ def main():
                     if value in ("#", "javascript:void(0)"):
                         problems.append("{0}: placeholder link {1}".format(path, value))
                     continue
+                if value == "../blog.html" and path.startswith("blog/"):
+                    continue  # article return link; blog.html exists in the repository root
                 if not value.startswith("/"):
                     problems.append("{0}: relative path {1}".format(path, value))
                     continue

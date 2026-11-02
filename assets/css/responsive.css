@@ -69,7 +69,7 @@
     }
 }
 
-@media (min-width: 769px) and (max-width: 1359px) {
+@media (min-width: 769px) and (max-width: 1439px) {
     :root {
         --nav-h: 163.67px;
         --logo-w: 220px;
