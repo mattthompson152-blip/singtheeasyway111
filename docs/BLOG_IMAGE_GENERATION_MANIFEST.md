@@ -4,6 +4,8 @@
 
 **Processed image record:** `assets/images/blog/adhd-informed-individual-singing-coaching-master.png` was processed with `assets/scripts/prepare-image.py` to `assets/images/blog/why-having-adhd-shapes-my-singing-teaching-0311.jpg` (JPEG, 1200 × 800, 120 KB). The output contains no EXIF or location metadata. It is used for the article hero, blog card, Open Graph and Twitter image. Alt text: “Matt Thompson considers an individual singing task in a contemporary coaching studio.”
 
+**Processed image record:** The supplied `blog/why-adhd-can-become-a-strength-in-music.png` (PNG, 1536 × 1024) was processed with `assets/scripts/prepare-image.py` to `assets/images/blog/adhd-vocal-coaching-for-singers-1711.jpg` (JPEG, 1200 × 800, 150 KB). It is used for the article hero, blog card, Open Graph and Twitter image. Alt text: “Singer taking part in individual online vocal coaching through a laptop.”
+
 ## Shared production specification
 
 Generate one distinct master image for each article below. Use a premium contemporary vocal-coaching environment, believable professional equipment where shown, restrained cinematic contrast, charcoal and warm-neutral colour with restrained warm orange, natural skin and anatomy, and credible candid composition. The visual should support the particular article rather than imitate a generic stock coaching session.
