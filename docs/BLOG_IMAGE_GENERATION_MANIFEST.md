@@ -1,10 +1,12 @@
 # Blog Image Generation Manifest
 
-**Status:** Production specifications for retained articles, with one additional processed-image record for the ADHD teaching article. Its owner-approved source was visually reviewed and processed on 2 November 2026.
+**Status:** Production specifications for retained articles, with processed-image records for three ADHD-related articles. The supplied sources were visually reviewed and processed.
 
 **Processed image record:** `assets/images/blog/adhd-informed-individual-singing-coaching-master.png` was processed with `assets/scripts/prepare-image.py` to `assets/images/blog/why-having-adhd-shapes-my-singing-teaching-0311.jpg` (JPEG, 1200 × 800, 120 KB). The output contains no EXIF or location metadata. It is used for the article hero, blog card, Open Graph and Twitter image. Alt text: “Matt Thompson considers an individual singing task in a contemporary coaching studio.”
 
 **Processed image record:** The supplied `blog/why-adhd-can-become-a-strength-in-music.png` (PNG, 1536 × 1024) was processed with `assets/scripts/prepare-image.py` to `assets/images/blog/adhd-vocal-coaching-for-singers-1711.jpg` (JPEG, 1200 × 800, 150 KB). It is used for the article hero, blog card, Open Graph and Twitter image. Alt text: “Singer taking part in individual online vocal coaching through a laptop.”
+
+**Processed image record:** The supplied `blog/stop-telling-adhd-singers-to-concentrate.png` (PNG, 800 × 533) was processed with `assets/scripts/prepare-image.py` to `assets/images/blog/stop-telling-adhd-singers-to-concentrate-1811.jpg` (JPEG, 800 × 533, 90 KB). The output contains no EXIF or location metadata. It is used for the article hero, blog card, Open Graph and Twitter image. Alt text: “Singer working on one specific lyric during an individual online vocal coaching session.”
 
 ## Shared production specification
 
