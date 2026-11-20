@@ -1,6 +1,8 @@
 # Blog Image Generation Manifest
 
-**Status:** Production specifications for retained articles, with processed-image records for four articles. The supplied sources were visually reviewed and processed.
+**Status:** Production specifications for retained articles, with processed-image records for five articles. The supplied sources were visually reviewed and processed.
+
+**Processed image record:** The owner-approved `blog/why-talented-singers-fail-vocal-training-commitment.png` (PNG, 1536 × 1024) was processed with `assets/scripts/prepare-image.py` to `assets/images/blog/why-talented-singers-fail-vocal-training-commitment-2011.jpg` (JPEG, 1200 × 800, 124 KB). The output contains no EXIF or location metadata. It is used for the article hero, blog card, Open Graph and Twitter image. Alt text: “Contemporary singer following a structured vocal training routine with lyrics, headphones and recording equipment.”
 
 **Processed image record:** `assets/images/blog/adhd-informed-individual-singing-coaching-master.png` was processed with `assets/scripts/prepare-image.py` to `assets/images/blog/why-having-adhd-shapes-my-singing-teaching-0311.jpg` (JPEG, 1200 × 800, 120 KB). The output contains no EXIF or location metadata. It is used for the article hero, blog card, Open Graph and Twitter image. Alt text: “Matt Thompson considers an individual singing task in a contemporary coaching studio.”
 
