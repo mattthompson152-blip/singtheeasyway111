@@ -1,6 +1,6 @@
 # Blog Image Generation Manifest
 
-**Status:** Production specifications for retained articles, with processed-image records for five articles. The supplied sources were visually reviewed and processed.
+**Status:** Production specifications for retained articles, with processed-image records for six articles. The supplied sources were visually reviewed and processed.
 
 **Processed image record:** The owner-approved `blog/why-talented-singers-fail-vocal-training-commitment.png` (PNG, 1536 × 1024) was processed with `assets/scripts/prepare-image.py` to `assets/images/blog/why-talented-singers-fail-vocal-training-commitment-2011.jpg` (JPEG, 1200 × 800, 124 KB). The output contains no EXIF or location metadata. It is used for the article hero, blog card, Open Graph and Twitter image. Alt text: “Contemporary singer following a structured vocal training routine with lyrics, headphones and recording equipment.”
 
@@ -11,6 +11,8 @@
 **Processed image record:** The supplied `blog/stop-telling-adhd-singers-to-concentrate.png` (PNG, 800 × 533) was processed with `assets/scripts/prepare-image.py` to `assets/images/blog/stop-telling-adhd-singers-to-concentrate-1811.jpg` (JPEG, 800 × 533, 90 KB). The output contains no EXIF or location metadata. It is used for the article hero, blog card, Open Graph and Twitter image. Alt text: “Singer working on one specific lyric during an individual online vocal coaching session.”
 
 **Processed image record:** The supplied `blog/matt_thompson_develpment program.png` (PNG, 1536 × 1024) was processed with `assets/scripts/prepare-image.py` to `assets/images/blog/why-the-development-programme-is-more-than-ten-singing-lessons-1911.jpg` (JPEG, 1200 × 800, 130 KB). The output contains no EXIF or location metadata. It is used for the article hero, blog card, Open Graph and Twitter image. Alt text: “Matt Thompson presenting the Sing The Easy Way Development Programme for private online vocal coaching.”
+
+**Processed image record:** The existing approved `blog/why-singers-forget-lyrics-on-stage.png` (PNG, 1536 × 1024, 2,668,323 bytes, SHA-256 `5000fb3bbfb5a942c95834f9441ba9507149fc93c51a5419b414e9f8f6384eaa`) was processed without modifying the source using `assets/scripts/prepare-image.py` to `assets/images/blog/why-singers-forget-lyrics-on-stage-2111.jpg` (JPEG, 1200 × 800, 168,496 bytes). The source checksum was identical before and after processing. The derivative contains no EXIF, GPS, XMP or comment metadata. It is used for the article hero, blog card, Open Graph and Twitter image. Alt text: “Singer reviewing lyrics and performance cues backstage before entering the stage.”
 
 ## Shared production specification
 
